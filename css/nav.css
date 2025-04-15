@@ -1,0 +1,81 @@
+.navbar {
+    margin-bottom: 0; /* Asegúrate de que no haya espacio debajo de la navbar */
+  }
+  .color{
+      background-color:#10375C;
+   color:#F0F6FD;
+  }
+  .titulo-rodolfo{
+     color:#F0F6FD;
+      text-decoration: none;
+      margin-right: 25px; /* Ajusta el valor como lo necesites */
+  }
+  .titulo-rodolfo:hover{
+    color:#95AEE9 !important;
+  }
+   .navbar-nav .sobreMi{
+     color:#F0F6FD;
+    
+  }
+   .nav-item .experiencia{
+     color:#F0F6FD;
+     text-decoration: none;
+  }
+   .navbar-nav .formacion{
+     color:#F0F6FD;
+     text-decoration: none;
+  }
+   .nav-item .proyectos{
+     color:#F0F6FD;
+     text-decoration: none;
+  }
+  .nav-item .contactame{
+    color:#F0F6FD;
+    text-decoration: none;
+ }
+ .nav-item .titulo{
+    color:#F0F6FD;
+    text-decoration: none;
+ }
+ .nav-link {
+    color: #F0F6FD; /* Asegurarte que el color se aplique a todos los enlaces */
+    text-decoration: none; /* Eliminar subrayado */
+  }
+  
+  .nav-link:hover {
+    color: #F3C623 !important; /* Opcional: cambiar color al pasar el mouse */
+  }
+
+
+  .navbar-toggler{
+    background-color:#394476;
+    color: #95AEE9;;
+  }
+  
+  .navbar-toggler::after {
+    font-family: FontAwesome;
+    color: #95AEE9;
+    font-size: 14px; /* Ajusta el tamaño del icono */
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2395AEE9' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  
+  
+  .collapse {
+    display: none !important;
+  }
+  .collapse.show {
+    display: block !important;
+  }
+  
+  /* Personalización del ícono hamburguesa (blanco en este ejemplo) */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }

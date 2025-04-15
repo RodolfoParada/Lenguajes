@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: F4F6FF !important;;
+}
+/* texto de javascript*/
+.js-text{
+  font-size: 70px; /* Tamaño del texto */
+  color: #F7DF1E; /* Color amarillo de Javascript */
+  font-family: Arial, sans-serif; /* Fuente */
+  position: relative;
+  z-index: 1;
+}
+.js-text::before{
+  content: 'Javascript';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  color: rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: -1; /* Colocar detrás */
+}
+.hidden {
+  display: none; /* Oculta otros elementos */
+}
