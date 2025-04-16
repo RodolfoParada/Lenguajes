@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/index.css"/>
     <title>Javascript</title>
+  
 </head>
 <body>
     <nav class="mb-5">
@@ -13,13 +14,177 @@
     </nav>
     <main>
         <div class="hidden">Este texto será ocultado.</div>
-    <div class="js-text mx-5">Javascript</div>
-    </main>
+        <div class="js-text mx-5">Javascript</div>
+   
+        <mi-lista class="overflow-scroll">
+            <tema-item>
+                <titulo>
+                    <strong>Introducción:</strong><br>
+                    ¿Qué es JavaScript?,<br>
+                    <strong>Cómo funciona</strong>, instalación
+                  </titulo>
+                  <subtitulo></subtitulo>
+                  <div>
+                <h2>Qué es JavaScript?</h2>
+                  <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado y orientado a objetos, que se utiliza principalmente para crear páginas web interactivas. Junto con HTML y CSS , forma el núcleo de las tecnologías del desarrollo web frontend .y CSS, forma el núcleo de las tecnologías del desarrollo web frontend.</p>
+                <h2>¿Para qué sirve?</h2>
+                  <p>·&nbsp;Manipular el contenido de las páginas web (DOM).<br>·&nbsp;Validar formularios.<br>·&nbsp;Gestionar eventos del usuario.<br>·&nbsp;Realizar peticiones al servidor (AJAX / fetch).<br>·&nbsp;Desarrollar aplicaciones web completas (gracias a frameworks como React, Vue o Angular).<br>·&nbsp;También se usa del lado del servidor con Node.js.</p>
+                <h2>Cómo funciona JavaScript en el navegador.</h2>
+                <h3>1.&nbsp;Motor de JavaScript.</h3>
+                  <p>·&nbsp;V8 en Google Chrome y Opera.<br>·&nbsp;SpiderMonkey en Mozilla Firefox.<br>·&nbsp;JavaScriptCore (también conocido como Nitro) en Safari.<br>·&nbsp;Chakra en versiones antiguas de Microsoft Edge.</p>
+                  <p>Estos motores toman el código JavaScript, lo interpretan y, en muchos casos, lo compilan justo a tiempo (JIT, Just-In-Time) para optimizar el rendimiento.</p>
+                <h3>2.&nbsp;Proceso de Carga y Ejecución</h3>
+                  <p class="mb-1"><b>a) Carga y Parsing del HTML.</b></p>
+                  <p class="mb-1">Cuando visitas una página web, el navegador realiza lo siguiente:</p>
+                  <p>·&nbsp;Descarga del HTML: El navegador descarga el documento HTML, que puede contener etiquetas script.<br>·&nbsp;Construcción del DOM: El HTML se analiza y se transforma en un árbol de nodos llamado Document Object Model (DOM), que representa la estructura de la página.</p>
+                  <p class="mb-1"><b>b) Carga y Ejecución de JavaScript</b></p>
+                  <p class="mb-1">El código JavaScript puede incluirse de diferentes formas:</p>
+                  <p>·&nbsp;Código en línea (inline): Directamente en el HTML dentro de una etiqueta script.<br>·&nbsp;Archivos externos: A través de etiquetas <script src="archivo.js"></script>.</p>
+                  <p class="mb-1">El navegador puede ejecutar el código de formas distintas según cómo se carguen los scripts:</p>
+                  <p><b>Sin atributos adicionales:</b>El navegador detiene el parsing del HTML, descarga y ejecuta el script, y luego continúa con el rendering.<br><b>Con defer:</b> El script se descarga en paralelo, pero su ejecución se difiere hasta que el DOM esté completamente construido.<br><b>Con async:</b> El script se descarga de manera asíncrona y se ejecuta tan pronto como esté listo, lo que puede ocurrir en cualquier momento durante la carga de la página.</p>
+                <h3>3. Interacción con el DOM y Web APIs</h3>
+                  <p class="mb-1">Mientras se ejecuta el código JavaScript, puede interactuar con el contenido de la página a través del DOM. Esto permite:</p>
+                  <p><b>Manipulación del contenido:</b> Agregar, eliminar o modificar elementos HTML.<br><b>Estilos y animaciones:</b> Cambiar clases o aplicar estilos dinámicos a los elementos.<br><b>Gestión de eventos:</b> Registrar eventos (por ejemplo, clics, movimientos de mouse, entradas de teclado) y definir funciones que se ejecuten cuando ocurran esos eventos.</p>
+                  <p class="mb-1">Además del DOM, los navegadores proporcionan un conjunto de Web APIs que expanden la funcionalidad de JavaScript, como:</p>
+                  <p>·&nbsp;APIs para peticiones AJAX/fetch: Para comunicarse con servidores sin recargar la página.<br>·&nbsp;APIs para almacenamiento local: Como localStorage y sessionStorage.<br>·&nbsp;APIs para multimedia: Manipular audio y video.<br>·&nbsp;APIs gráficas: Como Canvas o WebGL para gráficos en 2D y 3D.</p>
+                <h4>4.&nbsp;Modelo de Concurrencia y Event Loop</h4>
+                  <p>JavaScript en el navegador se ejecuta en un único hilo (single-threaded). Para manejar operaciones asíncronas y mantener la interfaz responsiva, se utiliza el event loop, que funciona de la siguiente manera:</p>
+                  <p>1.&nbsp;Call Stack: Es una pila donde se ubican todas las funciones que se van a ejecutar. Cuando una función es llamada, se añade a la pila y, al finalizar, se retira.<br>2.&nbsp;Web APIs: Operaciones asíncronas (como temporizadores con setTimeout, peticiones AJAX, etc.) se delegan a las APIs del navegador.<br>3.&nbsp;Colas de tareas y microtareas: Una vez que las operaciones asíncronas completan, sus callbacks se colocan en una cola de tareas o microtareas para ser ejecutadas una vez que la pila se vacíe.<br>4.&nbsp;Event Loop: Es el mecanismo que supervisa el call stack y la cola, ejecutando los callbacks cuando la pila está libre.</p>
+                  <p>Este mecanismo permite que, aunque JavaScript sea single-threaded, se pueda trabajar de manera eficiente sin bloquear la interfaz del usuario.</p>
+               <h2>Como usar Javascript en un Proyecto</h2>
+                  <p>Crear un archivo .js y luego importarlo en el archivo html con la estiqueta.<b>script</b><br>también se puede usar con modulo hay que agregar dentro del script la palabra reservada<b>module.</b><br>Si lo vas a subir a un repositorio github debes incorporar en el script la palabra reservada <b>defer.</b></p>
+                <h3>Como dato adicional instalación de bootstrap</h3>
+                   <p>Puedes agregar esto en el html</p> 
+                <pre>
+                    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"&gt;
+                    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"&gt;&lt;/script&gt;
+                </pre>
+                    
+                   <p>Se puede actualizar y lo puedes encontrar en la página de Bootstrap.<br>
+                    Ir a <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>
+                   </p>
+                </div>  
+            </tema-item>
+        
+            <tema-item nombre="Introducción-Consola y entorno de desarrollo">
+                <h2>Contenido del Tema 2</h2>
+                <p>Este es otro tema con contenido diferente.</p>
+                <ul><li>Punto A</li><li>Punto B</li></ul>
+            </tema-item>
+        
+            <tema-item nombre="Introducción-Sintaxis y tipos de datos">
+                <h2>Tema sin tablas</h2>
+                <p>Sólo texto simple.</p>
+            </tema-item>
+            <tema-item nombre="Tema 4">
+                <h2>Contenido del Tema 1</h2>
+                <p>Este es un párrafo dentro del tema 1.</p>
+                <table class="table">
+                    <thead>
+                        <tr><th>Nombre</th><th>Edad</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ana</td><td>22</td></tr>
+                        <tr><td>Luis</td><td>35</td></tr>
+                    </tbody>
+                </table>
+            </tema-item>
+        
+            <tema-item nombre="Tema 5">
+                <h2>Contenido del Tema 2</h2>
+                <p>Este es otro tema con contenido diferente.</p>
+                <ul><li>Punto A</li><li>Punto B</li></ul>
+            </tema-item>
+        
+            <tema-item nombre="Tema 6">
+                <h2>Tema sin tablas</h2>
+                <p>Sólo texto simple.</p>
+            </tema-item>
+            <tema-item nombre="Tema 7">
+                <h2>Contenido del Tema 1</h2>
+                <p>Este es un párrafo dentro del tema 1.</p>
+                <table class="table">
+                    <thead>
+                        <tr><th>Nombre</th><th>Edad</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ana</td><td>22</td></tr>
+                        <tr><td>Luis</td><td>35</td></tr>
+                    </tbody>
+                </table>
+            </tema-item>
+        
+            <tema-item nombre="Tema 7">
+                <h2>Contenido del Tema 2</h2>
+                <p>Este es otro tema con contenido diferente.</p>
+                <ul><li>Punto A</li><li>Punto B</li></ul>
+            </tema-item>
+        
+            <tema-item nombre="Tema 9">
+                <h2>Tema sin tablas</h2>
+                <p>Sólo texto simple.</p>
+            </tema-item>
+            <tema-item nombre="Tema 10">
+                <h2>Contenido del Tema 1</h2>
+                <p>Este es un párrafo dentro del tema 1.</p>
+                <table class="table">
+                    <thead>
+                        <tr><th>Nombre</th><th>Edad</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ana</td><td>22</td></tr>
+                        <tr><td>Luis</td><td>35</td></tr>
+                    </tbody>
+                </table>
+            </tema-item>
+        
+            <tema-item nombre="Tema 11">
+                <h2>Contenido del Tema 2</h2>
+                <p>Este es otro tema con contenido diferente.</p>
+                <ul><li>Punto A</li><li>Punto B</li></ul>
+            </tema-item>
+        
+            <tema-item nombre="Tema 12">
+                <h2>Tema sin tablas</h2>
+                <p>Sólo texto simple.</p>
+            </tema-item>
+            <tema-item nombre="Tema 13">
+                <h2>Contenido del Tema 1</h2>
+                <p>Este es un párrafo dentro del tema 1.</p>
+                <table class="table">
+                    <thead>
+                        <tr><th>Nombre</th><th>Edad</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ana</td><td>22</td></tr>
+                        <tr><td>Luis</td><td>35</td></tr>
+                    </tbody>
+                </table>
+            </tema-item>
+        
+            <tema-item nombre="Tema 14">
+                <h2>Contenido del Tema 2</h2>
+                <p>Este es otro tema con contenido diferente.</p>
+                <ul><li>Punto A</li><li>Punto B</li></ul>
+            </tema-item>
+        
+            <tema-item nombre="Tema 15">
+                <h2>Tema sin tablas</h2>
+                <p>Sólo texto simple.</p>
+            </tema-item>
+        </mi-lista>
+
+
+
+
+
+</main>
     <footer class="footer">
         <mi-footer></mi-footer>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
       <script src="js/nav.js"defer></script>
       <script src="js/footer.js" defer></script>
+      <script src="js/lista.js" defer></script>
 </body>
 </html>

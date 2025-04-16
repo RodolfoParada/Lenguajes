@@ -6,10 +6,11 @@ html, body {
 body {
   background-color: F4F6FF !important;;
 }
+
 /* texto de javascript*/
 .js-text{
   font-size: 70px; /* Tamaño del texto */
-  color: #F7DF1E; /* Color amarillo de Javascript */
+  color: #F3C623; /* Color amarillo de Javascript */
   font-family: Arial, sans-serif; /* Fuente */
   position: relative;
   z-index: 1;

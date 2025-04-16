@@ -28,6 +28,7 @@ class Navegacion extends HTMLElement {
               <li class="nav-item"><a class="nav-link text-white" href="mysql.html">mySQL</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="mongodb.html">MongoDB</a></li>
               <li class="nav-item"><a class="nav-link text-white" href="sql.html">SQL</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="documentacion.html">Documentación</a></li>
             </ul>
             <!-- Aquí insertas tu componente modo oscuro -->
             <mi-modo-oscuro style="width: 40px; height: 40px; object-fit: cover; margin-left: 700px;"></mi-modo-oscuro>
