@@ -21,7 +21,7 @@
         <mi-lista class="overflow-scroll">
             <tema-item>
                 <titulo>
-                    <strong>Introducción:</strong><br>
+                    <strong>1. Introducción:</strong><br>
                     ¿Qué es JavaScript?,<br>
                     <strong>Cómo funciona</strong>, instalación
                 </titulo>
@@ -108,7 +108,7 @@
 
             <tema-item>
                 <titulo>
-                    <strong>Básico Sintaxis</strong><br>
+                    <strong>2. Básico Sintaxis</strong><br>
                     y Tipos de Datos.<br>
                     <strong></strong>
                   </titulo>
@@ -117,6 +117,202 @@
                 <h2>Sintaxis y Tipos de Datos.</h2>
                 <h3 class="mb-1">Variables</h3>
                 <p><b>Var:&nbsp;</b>tiene alcance de función, define una variable global o locan en una función din importar el ámbito del bloque.<br><b>Let:&nbsp;</b> tiene alcance de bloque y permite declarar variables limitando su alcance y se puede reasignar<br><b>Const:&nbsp;</b> tiene alcance de constante, se utiliza para declarar una constante que no se puede reasignar.</p>
+    
+              
+                <h3 class="mb-1">Tipos de Datos</h3>
+                <p><b>Undefine</b><br>Explicación: El tipo undefined representa una variable que ha sido declarada pero no inicializada.<br> Es el valor predeterminado de las variables que no se les ha asignado un valor.</p>
+                <pre><code>
+                    let x;
+                    console.log(x); // undefined
+                </code></pre>
+                <p><b>Null</b><br>Explicación:  null es un tipo de dato que representa la ausencia intencionada de un valor. <br>Se utiliza para indicar que una variable no tiene un valor válido. </p>
+                <pre><code>
+                    let y = null;
+                    console.log(y); // null                  
+                </code></pre>
+                <p><b>Boolean</b><br>Explicacion: El tipo boolean tiene solo dos valores posibles: true(verdadero) y false(falso). <br>Se utiliza para representar valores de verdad.</p>
+                <pre><code>
+                    let isTrue = true;
+                    let isFalse = false;                  
+                </code></pre>
+                <p><b>Number</b><br>Explicación:  El tipo number representa tanto enteros como números de punto flotante.<br> En JavaScript, todos los números son de tipo number, y no hay distinción entre enteros y decimales.</p>
+                <pre><code>
+                    let entero = 42;
+                    let decimal = 3.14;
+                    
+                </code></pre>
+                <p><b>BinInt</b><br>Explicación: BigIntes un tipo de dato que permite representar números enteros muy grandes que<br> no pueden ser representados por el tipo number. Se utiliza agregando nal final de un número.</p>
+                <pre><code>
+                    let grande = 1234567890123456789012345678901234567890n;
+                </code></pre>
+                <p><b>String</b><br>Explicación: El tipo string representa una secuencia de caracteres. Se puede definir utilizando comillas<br> simples, dobles o comillas invertidas (literales de plantilla).</p>
+                <pre><code>
+                    let texto = "Hola, mundo!";
+                </code></pre>
+                 <p><b>Simbol</b><br>Explicación:  Symbol es un tipo de dato introducido en ES6 que representa un identificador único e inmutable.<br>Se utiliza principalmente como clave para propiedades de objetos.</p>
+                <pre><code>
+                    const id = Symbol('id');
+                </code></pre>
+                <p><b>Object</b><br>Explicación:  El tipo object es una colección de pares clave-valor. Los objetos pueden almacenar datos y funciones<br>(métodos). Es el tipo de dato más complejo en JavaScript.</p>
+                <pre><code>
+                    let persona = {
+                        nombre: "Juan",
+                        edad: 30
+                    };
+                    
+                </code></pre>
+                <p><b>Array</b><br>Explicación: Aunque los arreglos son técnicamente un tipo de objeto, se consideran de forma separada.<br> Un array es una colección ordenada de elementos, que pueden ser de diferentes tipos. </p>
+                <pre><code>
+                    let frutas = ["manzana", "banana", "naranja"];
+                </code></pre>
+          
+                <p><b>Typeof</b><br>Explicación:    El operador typeof en JavaScript es una herramienta que se utiliza para determinar el tipo <br>de dato de una variable o de un valor. Es útil para entender qué tipo de datos estás manejando en tu código.<br>Aquí te explico cómo funciona typeof </p>
+                <pre><code>
+                    let edad = 30;
+                    console.log(typeof edad); // "number"
+                </code></pre>
+
+               <p>NOTA: Los tipos de datos compuestos son lo que pueden tener multiples datos como Function, Simbol, Array,<br>Object, Date, RegExp y todo los tipos de datos son llamados tipado dinámico</p>
+             
+                </div>
+            </tema-item>
+
+            <tema-item>
+                <titulo>
+                    <strong>3. Básico Operadores</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Operadores Aritmétios</h2>
+                <p>Suma (+): Suma dos operandos.</p>
+                <pre><code>
+                    let suma = 5 + 3; // 8
+                </code></pre>
+                <p>Resta (-): Resta el segundo operando del primero.</p>
+                <pre><code>
+                    let resta = 5 - 3; // 2
+                </code></pre>
+                <p>Multiplicación (*): Multiplica dos operandos.</p>
+                <pre><code>
+                    let multiplicacion = 5 * 3; // 15
+                </code></pre>
+                <P>División (/): Divide el primer operando por el segundo.</P>
+                <pre><code>
+                    let division = 5 / 2; // 2.5
+                </code></pre>
+                <p>Módulo (%): Retorna el residuo de la división entre dos operandos.</p>
+                <pre><code>
+                    let modulo = 5 % 2; // 1
+                </code></pre>
+                <p> Exponenciación (**): Eleva el primer operando a la potencia del segundo.</p>
+                <pre><code>
+                    let potencia = 2 ** 3; // 8
+                </code></pre>
+                <h3>Operadores Lógicos</h3>
+                <p>Los operadores lógicos se utilizan para combinar expresiones booleanas.</p>
+                <p>AND (&&): Retorna true si ambos operandos son verdaderos.</p>
+                <pre><code>
+                    let and = (true && false); // false
+                </code></pre>
+                <p>OR (||): Retorna true si al menos uno de los operandos es verdadero.</p>
+                <pre><code>
+                    let or = (true || false); // true
+                </code></pre>
+                <p>NOT (!): Invierte el valor de verdad de un operando.</p>
+                <pre><code>
+                    let not = !true; // false
+                </code></pre>
+                <h3>Operadores de Comparación</h3>
+                <p>Los operadores de comparación se utilizan para comparar dos valores y retornan un valor booleano (true o false).</p>
+                <p>gualdad (==): Compara dos valores y retorna true si son iguales, sin considerar el tipo.</p>
+                <pre><code>
+                    let igual = (5 == '5'); // true
+                </code></pre>
+                <p>Identidad (===): Compara dos valores y retorna true si son iguales y del mismo tipo.</p>
+                <pre><code>
+                    let identidad = (5 === '5'); // false
+                </code></pre>
+                <p>Desigualdad (!=): Compara dos valores y retorna true si no son iguales, sin considerar el tipo.</p>
+                <pre><code>
+                    let desigual = (5 != '5'); // false
+                </code></pre>
+                <p>No identidad (!==): Compara dos valores y retorna true si no son iguales o de diferente tipo.</p>
+                <pre><code>
+                    let noIdentidad = (5 !== '5'); // true
+                </code></pre>
+                <p>Mayor que (>): Retorna true si el primer operando es mayor que el segundo.</p>
+                <pre><code>
+                    let mayor = (5 > 3); // true
+                </code></pre>
+                <p>Menor que (<): Retorna true si el primer operando es menor que el segundo.</p>
+                <pre><code>
+                    let menor = (5 < 3); // false
+                </code></pre>
+               <p>Mayor o igual que (>=): Retorna true si el primer operando es mayor o igual que el segundo.</p>
+                <pre><code>
+                    let mayorIgual = (5 >= 5); // true
+                </code></pre>
+                <p>Menor o igual que (<=): Retorna true si el primer operando es menor o igual que el segundo.</p>
+                <pre><code>
+                    let menorIgual = (5 <= 3); // false
+                </code></pre>
+                <h3>Operadores de asignación</h3>
+                <p>Los operadores de asignación se utilizan para asignar valores a variables. El operador de asignación más básico es =.</p>
+                <p>Asignación simple (=): Asigna el valor del operando derecho a la variable izquierda.</p>
+                <pre><code>
+                    let a = 5;
+                </code></pre>
+                <p>Asignación de suma (+=): Suma el operando derecho al operando izquierdo y asigna el resultado al operando izquierdo.</p>
+                <pre><code>
+                    a += 3; // a ahora es 8
+                </code></pre>
+                <p>Asignación de resta (-=): Resta el operando derecho del operando izquierdo y asigna el resultado al operando izquierdo.</p>
+                <pre><code>
+                    a -= 2; // a ahora es 6
+                </code></pre>
+                <p>Asignación de multiplicación (*=): Multiplica el operando izquierdo por el derecho y asigna el resultado al operando izquierdo.</p>
+                <pre><code>
+                    a *= 2; // a ahora es 12
+                </code></pre>
+                <p>Asignación de división (/=): Divide el operando izquierdo por el derecho y asigna el resultado al operando izquierdo.</p>
+                <pre><code>
+                    a /= 3; // a ahora es 4
+                </code></pre>
+                <p>Asignación de módulo (%=): Aplica el operador módulo y asigna el resultado al operando izquierdo.</p>
+                <pre><code>
+                    a %= 2; // a ahora es 0
+                </code></pre>
+                <h3>Operadores Ternarios</h3>
+                <p>Uso en asignación: El operador ternario también se puede utilizar para asignar valores a variables de manera más compacta:</p>
+                <pre><code>
+                    let numero = 5;
+                let paridad = (numero % 2 === 0) ? "Par" : "Impar";
+
+                console.log(paridad); // "Impar"
+                </code></pre>
+                <p><b>Anidación de Operadores Ternarios<br><br>Los operadores ternarios se pueden anidar para manejar múltiples condiciones.<br> Sin embargo, es importante usarlos con moderación, ya que pueden hacer que el código sea menos legible.</p>
+                <pre><code>
+                    let nota = 85;
+                let resultado = (nota >= 90) ? "Sobresaliente" :
+                (nota >= 75) ? "Notable" :
+                (nota >= 60) ? "Aprobado" :
+                "Reprobado";
+
+                 console.log(resultado); // "Notable"
+                </code></pre>
+                </div>
+            </tema-item>
+            <tema-item>
+                <titulo>
+                    <strong>4. Básico Estructuras de Control</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Básico Estructuras de Control</h2>
                 <h3 class="mb-1">Estructura de Control</h3>
                 <p>Condicionales<br>Explicación:<br><b>if:</b> Ejecuta un bloque de código si la condición es verdadera.<br><b>if...else:</b>Proporciona una alternativa si la condición es falsa.<br><b>else if:</b> Permite verificar múltiples condiciones.</p>
                 <pre><code>
@@ -184,7 +380,8 @@
 
                 </code></pre>
                 <p><b>break:</b> Termina el bucle o el bloque switchactual.<br><b>continue:</b> Salta la iteración actual del bucle y pasa a la siguiente.</p>
-                <p>Try Catch<br>Explicación: Maneja excepciones que pueden ocurrir en el código.</p>   
+                <p><b>Try Catch</b><br>Explicación: Maneja excepciones que pueden ocurrir en el código.<br><b>Try:</b>La instrucción try se utiliza para envolver el código que puede generar un error.<br>Si se produce un error dentro del bloque try, el control se transfiere al bloque catch.<br><b>Catch:</b> El bloque catch se ejecuta si se produce un error en el bloque try.<br>Puedes acceder al objeto de error que se generó para obtener más información sobre el problema.<br><b>El bloque finally</b> se ejecuta después de los bloques try y catch, independientemente de si se lanzó un error o no.<br>Es útil para realizar tareas de limpieza, como cerrar conexiones o liberar recursos.</p>   
+
                 <pre><code>
                  try {
                     // código que puede causar un error
@@ -194,7 +391,35 @@
                     // código que se ejecuta siempre, sin importar si hubo error o no
                 }
                 
+                function dividir(a, b) {
+                    try {
+                        if (b === 0) {
+                            throw new Error("No se puede dividir por cero"); // Lanzar un error personalizado
+                        }
+                        let resultado = a / b;
+                        console.log("Resultado:", resultado);
+                    } catch (error) {
+                        console.error("Error:", error.message);
+                    } finally {
+                        console.log("Operación de división completada.");
+                    }
+                }
+                
+                // Llamadas a la función
+                dividir(10, 2); // Resultado: 5
+                dividir(10, 0); // Error: No se puede dividir por cero
                 </code></pre>
+                </div>
+            </tema-item>
+
+            <tema-item>
+                <titulo>
+                    <strong>5. Básico Funciones</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
                 <h3 class="mb-1">Funciones</h3>
                 <p><b>Funciones Declaradas.</b><br>Explicación:&nbsp;Son funciones definidas con la palabra clave functiony tienen un nombre.<br> Se pueden llamar antes de ser declaradas debido al levantamiento.</p>
                 <pre><code>
@@ -304,139 +529,56 @@
                             return n * factorial(n - 1);
                         }       
                 </code></pre>
-                <h3 class="mb-1">Tipos de Datos</h3>
-                <p><b>Undefine</b><br>Explicación: El tipo undefined representa una variable que ha sido declarada pero no inicializada.<br> Es el valor predeterminado de las variables que no se les ha asignado un valor.</p>
+                <p></p>
                 <pre><code>
-                    let x;
-                    console.log(x); // undefined
                 </code></pre>
-                <p><b>Null</b><br>Explicación:  null es un tipo de dato que representa la ausencia intencionada de un valor. <br>Se utiliza para indicar que una variable no tiene un valor válido. </p>
-                <pre><code>
-                    let y = null;
-                    console.log(y); // null                  
-                </code></pre>
-                <p><b>Boolean</b><br>Explicacion: El tipo boolean tiene solo dos valores posibles: true(verdadero) y false(falso). <br>Se utiliza para representar valores de verdad.</p>
-                <pre><code>
-                    let isTrue = true;
-                    let isFalse = false;                  
-                </code></pre>
-                <p><b>Number</b><br>Explicación:  El tipo number representa tanto enteros como números de punto flotante.<br> En JavaScript, todos los números son de tipo number, y no hay distinción entre enteros y decimales.</p>
-                <pre><code>
-                    let entero = 42;
-                    let decimal = 3.14;
-                    
-                </code></pre>
-                <p><b>BinInt</b><br>Explicación: BigIntes un tipo de dato que permite representar números enteros muy grandes que<br> no pueden ser representados por el tipo number. Se utiliza agregando nal final de un número.</p>
-                <pre><code>
-                    let grande = 1234567890123456789012345678901234567890n;
-                </code></pre>
-                <p><b>String</b><br>Explicación: El tipo string representa una secuencia de caracteres. Se puede definir utilizando comillas<br> simples, dobles o comillas invertidas (literales de plantilla).</p>
-                <pre><code>
-                    let texto = "Hola, mundo!";
-                </code></pre>
-                 <p><b>Simbol</b><br>Explicación:  Symbol es un tipo de dato introducido en ES6 que representa un identificador único e inmutable.<br>Se utiliza principalmente como clave para propiedades de objetos.</p>
-                <pre><code>
-                    const id = Symbol('id');
-                </code></pre>
-                <p><b>Object</b><br>Explicación:  El tipo object es una colección de pares clave-valor. Los objetos pueden almacenar datos y funciones<br>(métodos). Es el tipo de dato más complejo en JavaScript.</p>
-                <pre><code>
-                    let persona = {
-                        nombre: "Juan",
-                        edad: 30
-                    };
-                    
-                </code></pre>
-                <p><b>Array</b><br>Explicación: Aunque los arreglos son técnicamente un tipo de objeto, se consideran de forma separada.<br> Un array es una colección ordenada de elementos, que pueden ser de diferentes tipos. </p>
-                <pre><code>
-                    let frutas = ["manzana", "banana", "naranja"];
-                </code></pre>
-          
-                <p><b>Typeof</b><br>Explicación:    El operador typeof en JavaScript es una herramienta que se utiliza para determinar el tipo <br>de dato de una variable o de un valor. Es útil para entender qué tipo de datos estás manejando en tu código.<br>Aquí te explico cómo funciona typeof </p>
-                <pre><code>
-                    let edad = 30;
-                    console.log(typeof edad); // "number"
-                </code></pre>
-
-               <p>NOTA: Los tipos de datos compuestos son lo que pueden tener multiples datos como Function, Simbol, Array,<br>Object, Date, RegExp y todo los tipos de datos son llamados tipado dinámico</p>
-             
                 </div>
             </tema-item>
 
-            <tema-item nombre="Introducción-Sintaxis y tipos de datos">
-                <h2>Tema sin tablas</h2>
+            <tema-item>
+                <titulo>
+                    <strong>6. Básico Matrices y Objeto.</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Operadores</h2>
                 <p>Sólo texto simple.</p>
-            </tema-item>
-            <tema-item nombre="Tema 4">
-                <h2>Contenido del Tema 1</h2>
-                <p>Este es un párrafo dentro del tema 1.</p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ana</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Luis</td>
-                            <td>35</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <pre><code>
+                </code></pre>
+                </div>
+               
             </tema-item>
 
-            <tema-item nombre="Tema 5">
-                <h2>Contenido del Tema 2</h2>
-                <p>Este es otro tema con contenido diferente.</p>
-                <ul>
-                    <li>Punto A</li>
-                    <li>Punto B</li>
-                </ul>
-            </tema-item>
-
-            <tema-item nombre="Tema 6">
-                <h2>Tema sin tablas</h2>
+            <tema-item>
+                <titulo>
+                    <strong>7. DOM Básico</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Operadores</h2>
                 <p>Sólo texto simple.</p>
-            </tema-item>
-            <tema-item nombre="Tema 7">
-                <h2>Contenido del Tema 1</h2>
-                <p>Este es un párrafo dentro del tema 1.</p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ana</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Luis</td>
-                            <td>35</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <pre><code>
+                </code></pre>
+                </div>
             </tema-item>
 
-            <tema-item nombre="Tema 7">
-                <h2>Contenido del Tema 2</h2>
-                <p>Este es otro tema con contenido diferente.</p>
-                <ul>
-                    <li>Punto A</li>
-                    <li>Punto B</li>
-                </ul>
-            </tema-item>
-
-            <tema-item nombre="Tema 9">
-                <h2>Tema sin tablas</h2>
+            <tema-item>
+                <titulo>
+                    <strong>8. Intermedio-Funciones Avanzadas.</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Operadores</h2>
                 <p>Sólo texto simple.</p>
+                <pre><code>
+                </code></pre>
+                </div>
             </tema-item>
             <tema-item nombre="Tema 10">
                 <h2>Contenido del Tema 1</h2>
