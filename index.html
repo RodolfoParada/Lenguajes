@@ -19,13 +19,14 @@
         <div class="js-text mx-5">Javascript</div>
 
         <mi-lista class="overflow-scroll">
+<!-- 1.Introducción Javascript     -->
             <tema-item>
                 <titulo>
                     <strong>1. Introducción:</strong><br>
                     ¿Qué es JavaScript?,<br>
                     <strong>Cómo funciona</strong>, instalación
                 </titulo>
-                <subtitulo></subtitulo>
+                  <subtitulo></subtitulo>
                 <div>
                     <h2>Qué es JavaScript?</h2>
                     <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado y orientado a objetos,
@@ -105,7 +106,7 @@
                     </p>
                 </div>
             </tema-item>
-
+<!-- 2.Básico Sintaxis y Tipo de datos -->
             <tema-item>
                 <titulo>
                     <strong>2. Básico Sintaxis</strong><br>
@@ -176,7 +177,7 @@
              
                 </div>
             </tema-item>
-
+<!-- 3. Básico Operadores -->
             <tema-item>
                 <titulo>
                     <strong>3. Básico Operadores</strong><br>
@@ -292,7 +293,7 @@
 
                 console.log(paridad); // "Impar"
                 </code></pre>
-                <p><b>Anidación de Operadores Ternarios<br><br>Los operadores ternarios se pueden anidar para manejar múltiples condiciones.<br> Sin embargo, es importante usarlos con moderación, ya que pueden hacer que el código sea menos legible.</p>
+                <p><b>Anidación de Operadores Ternarios</b><br>Los operadores ternarios se pueden anidar para manejar múltiples condiciones.<br> Sin embargo, es importante usarlos con moderación, ya que pueden hacer que el código sea menos legible.</p>
                 <pre><code>
                     let nota = 85;
                 let resultado = (nota >= 90) ? "Sobresaliente" :
@@ -304,6 +305,7 @@
                 </code></pre>
                 </div>
             </tema-item>
+<!-- 4.Básico Estructuras de Control.             -->
             <tema-item>
                 <titulo>
                     <strong>4. Básico Estructuras de Control</strong><br>
@@ -312,8 +314,7 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Básico Estructuras de Control</h2>
-                <h3 class="mb-1">Estructura de Control</h3>
+                <h2>Estructuras de Control</h2>
                 <p>Condicionales<br>Explicación:<br><b>if:</b> Ejecuta un bloque de código si la condición es verdadera.<br><b>if...else:</b>Proporciona una alternativa si la condición es falsa.<br><b>else if:</b> Permite verificar múltiples condiciones.</p>
                 <pre><code>
                     if (condición1) {
@@ -411,7 +412,7 @@
                 </code></pre>
                 </div>
             </tema-item>
-
+<!-- 5.Funciones Básicas -->
             <tema-item>
                 <titulo>
                     <strong>5. Básico Funciones</strong><br>
@@ -534,7 +535,7 @@
                 </code></pre>
                 </div>
             </tema-item>
-
+<!-- 6. Matrices y Objetos básicos -->
             <tema-item>
                 <titulo>
                     <strong>6. Básico Matrices y Objeto.</strong><br>
@@ -543,14 +544,178 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Operadores</h2>
-                <p>Sólo texto simple.</p>
+                <h2>Matrices y Objetos Básicos.</h2>
+                <p>1. Crear y manipular matrices en JavaScript</p>
                 <pre><code>
+                    let frutas = ['manzana', 'banana', 'naranja'];
+                </code></pre>
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Función</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>.push()</td>
+                            <td>Añade uno o más elementos al final de la matriz</td>
+                            <td>frutas.push('pera'); // ['manzana', 'banana', 'naranja', 'pera']</td>
+                        </tr>
+                        <tr>
+                            <td>.pop()</td>
+                            <td>Elimina y devuelve el último elemento de la matriz</td>
+                            <td>let ultimaFruta = frutas.pop(); // 'pera' y matriz sin 'pera'</td>
+                        </tr>
+                        <tr>
+                            <td>.shift()</td>
+                            <td>Elimina y devuelve el primer elemento</td>
+                            <td>et primerFruta = frutas.shift(); // 'manzana' y matriz sin 'manzana'</td>
+                        </tr>
+                        <tr>
+                            <td>.unshift()</td>
+                            <td>Añade uno o más elementos al inicio</td>
+                            <td>frutas.unshift('fresa'); // ['fresa', 'banana', 'naranja']</td>
+                        </tr>
+                        <tr>
+                            <td>.splice()</td>
+                            <td>Elimina, reemplaza o añade elementos en la matriz</td>
+                            <td>frutas.splice(1, 1, 'limón'); // en índice 1 elimina 'banana' y añade 'limón'</td>
+                        </tr>
+                        <tr>
+                            <td>.slice()</td>
+                            <td>Extrae una copia de una parte de la matriz</td>
+                            <td>let algunasFrutas = frutas.slice(1, 3); // copia elementos en índice 1 y 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>2. Ejemplo práctico con todos los métodos</p>
+                <pre><code>
+                    let colores = ['rojo', 'azul', 'verde'];
+
+                // push
+                colores.push('amarillo'); // ['rojo', 'azul', 'verde', 'amarillo']
+
+                // pop
+                let ultimoColor = colores.pop(); // 'amarillo', matriz ahora ['rojo', 'azul', 'verde']
+
+                // unshift
+                colores.unshift('negro'); // ['negro', 'rojo', 'azul', 'verde']
+
+                // shift
+                let primerColor = colores.shift(); // 'negro', matriz ahora ['rojo', 'azul', 'verde']
+
+                // splice: reemplazar 'azul' por 'celeste'
+                colores.splice(1, 1, 'celeste'); // ['rojo', 'celeste', 'verde']
+
+                // slice: obtener una copia de los primeros dos colores
+                let primerosColores = colores.slice(0, 2); // ['rojo', 'celeste']
+
+                </code></pre>
+                <p>3. Crear objetos con propiedades y métodos</p>
+                <pre><code>
+                    let persona = {
+                        nombre: 'Juan',
+                        edad: 30,
+                      
+                        saludar: function() {
+                          console.log('Hola, mi nombre es ' + this.nombre);
+                        }
+                      };
+                      
+                      // Uso del método
+                      persona.saludar(); // 'Hola, mi nombre es Juan'
+
+                      persona.direccion = 'Calle 123';
+
+                      persona.saludarConEdad = function() {
+                      console.log('Hola, ' + this.nombre + '. Tienes ' + this.edad + ' años.');
+                    };
+
+                    persona.saludarConEdad(); // 'Hola, Juan. Tienes 30 años.'
+      
+                </code></pre>
+
+                <p>Ejemplo completo: Gestión de una librería</p>
+                <pre><code>
+                    // Crear una matriz de libros (cada libro es un objeto)
+                let libreria = [
+                 { titulo: 'Cien Años de Soledad', autor: 'Gabriel García Márquez' },
+                 { titulo: 'El Principito', autor: 'Antoine de Saint-Exupéry' },
+                 { titulo: 'Don Quijote', autor: 'Miguel de Cervantes' }
+                ];
+
+                // Función para mostrar todos los libros
+                function mostrarLibros() {
+                 console.log('Libros en la librería:');
+                 libreria.forEach((libro, index) => {
+                 console.log(`${index + 1}. "${libro.titulo}" por ${libro.autor}`);
+                 });
+                }
+
+                // Agregar un nuevo libro al final (push)
+                libreria.push({ titulo: 'La sombra del viento', autor: 'Carlos Ruiz Zafón' });
+                mostrarLibros();
+
+                // Eliminar el último libro (pop)
+                let libroEliminado = libreria.pop();
+                console.log('Libro eliminado:', libroEliminado.titulo);
+                mostrarLibros();
+
+                // Agregar un libro al inicio (unshift)
+                libreria.unshift({ titulo: '1984', autor: 'George Orwell' });
+                mostrarLibros();
+
+                // Eliminar el primer libro (shift)
+                let primerLibro = libreria.shift();
+                console.log('Primer libro eliminado:', primerLibro.titulo);
+                mostrarLibros();
+
+                // Reemplazar un libro en una posición específica (splice)
+                libreria.splice(1, 1, { titulo: 'Fahrenheit 451', autor: 'Ray Bradbury' });
+                mostrarLibros();
+
+                // Extraer algunos libros (slice)
+                let algunosLibros = libreria.slice(0, 2);
+                console.log('Algunos libros seleccionados:');
+                algunosLibros.forEach(libro => {
+                console.log(`- "${libro.titulo}" por ${libro.autor}`);
+                });
+
+               // Crear un objeto `biblioteca` con métodos para gestionar los libros
+               let biblioteca = {
+               libros: libreria,
+
+               agregarLibro: function(titulo, autor) {
+               this.libros.push({ titulo, autor });
+               },
+
+               eliminarLibro: function(titulo) {
+               this.libros = this.libros.filter(libro => libro.titulo !== titulo);
+               },
+
+               mostrarLibros: function() {
+               console.log('Libros en la biblioteca:');
+               this.libros.forEach((libro, index) => {
+               console.log(`${index + 1}. "${libro.titulo}" por ${libro.autor}`);
+               }); 
+             }
+            };
+
+               // Usando los métodos del objeto `biblioteca`
+               biblioteca.agregarLibro('El Hobbit', 'J.R.R. Tolkien');
+               biblioteca.mostrarLibros();
+
+               biblioteca.eliminarLibro('1984');
+               biblioteca.mostrarLibros();
+
                 </code></pre>
                 </div>
-               
             </tema-item>
-
+<!-- 7.DOM Básico -->
             <tema-item>
                 <titulo>
                     <strong>7. DOM Básico</strong><br>
@@ -559,29 +724,169 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Operadores</h2>
-                <p>Sólo texto simple.</p>
+                <h2>DOM Básico.</h2>
+                <p>1. Selección de elementos del DOM <br>getElementById: Permite seleccionar un elemento HTML por su atributo id.</p>
+                <pre><code>
+                    <div id="miDiv">Hola Mundo</div>
+
+                    let div = document.getElementById('miDiv');
+                    console.log(div.textContent); // "Hola Mundo"
+                </code></pre>
+                <p>querySelector: Permite seleccionar el primer elemento que coincida con un selector CSS (clases, etiquetas, atributos, etc.).</p>
+                <pre><code>
+                    <p class="parrafo">Este es un párrafo</p>
+
+                    let parrafo = document.querySelector('.parrafo');
+                    console.log(parrafo.textContent); // "Este es un párrafo"
+                    
+                    let btn = document.querySelector('button#miBoton');
+                </code></pre>
+                <p>2. Manipulación de textos y atributos<br>Cambiar el contenido de un elemento</p>
+                <pre><code>
+                    let titulo = document.getElementById('titulo');
+                    titulo.textContent = 'Nuevo Título'; // cambia solo el texto
+                    titulo.innerHTML = '<strong>Nuevo Título en negrita</strong>'; // cambia el contenido HTML
+                </code></pre>
+                <p>Manipular atributos</p>
+                <pre><code>
+                    let enlace = document.querySelector('a'); // supongamos que hay un enlace
+                    enlace.setAttribute('href', 'https://www.ejemplo.com'); // cambia o establece el atributo href
+                    console.log(enlace.getAttribute('href')); // obtiene el valor del atributo
+                    enlace.removeAttribute('href'); // elimina el atributo
+                </code></pre>
+                <p>3. Eventos: onclick y addEventListener<br>onclick (Directamente en HTML o JavaScript)</p>
+                <pre><code>
+                    <button id="miBoton">Haz clic</button>
+
+                    let boton = document.getElementById('miBoton');
+
+                    boton.onclick = function() {
+                     alert('¡Has hecho clic en el botón!');
+                    };
+                </code></pre>
+                <p>addEventListener (más flexible y recomendable)<br>Permite agregar múltiples manejadores de evento y es más limpio.</p>
+                <pre><code>
+                    let boton = document.getElementById('miBoton');
+
+                    boton.addEventListener('click', function() {
+                    alert('¡Evento con addEventListener!');
+                });
+                //También puedes escuchar otros eventos:
+                // Evento al pasar el mouse
+                boton.addEventListener('mouseover', function() {
+                console.log('El mouse está sobre el botón');
+                });
+                </code></pre>
+                <p>Ejemplo práctico.</p>
+                <pre><code>
+                    <body>
+                    
+                    //Código JavaScript para manipular elementos del DOM
+                    
+                    <!-- Aquí mostramos el código como texto formateado -->
+                    <pre><code>
+                    &lt;script&gt;
+                      // Selección de elementos
+                      const titulo = document.getElementById('titulo');
+                      const parrafo = document.querySelector('.parrafo');
+                      const enlace = document.querySelector('#enlace');
+                      const boton = document.getElementById('miBoton');
+                    
+                      // Manipulación de texto
+                      titulo.textContent = 'Título modificado con JavaScript';
+                      parrafo.innerHTML = 'Este párrafo tiene &lt;strong&gt;texto en negrita&lt;/strong&gt;';
+                    
+                      // Manipulación de atributos
+                      enlace.setAttribute('href', 'https://www.openai.com');
+                      console.log('Href del enlace:', enlace.getAttribute('href'));
+                    
+                      // Eventos
+                      boton.addEventListener('click', function() {
+                        alert('¡Has hecho clic en el botón!');
+                        // Cambiar el texto del título
+                        titulo.textContent = 'Título cambiado tras clic';
+                      });
+                    &lt;/script&gt;
+                    </code></pre>
+                    
+                    <!-- Aquí tienes el código HTML original para que puedas copiar y pegar -->
+                    //Código HTML completo (para copiar y usar)
+                    <pre><code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="es"&gt;
+                    &lt;head&gt;
+                    &lt;meta charset="UTF-8" /&gt;
+                    &lt;title&gt;Ejemplo DOM&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    
+                    &lt;h1 id="titulo"&gt;Título original&lt;/h1&gt;
+                    &lt;p class="parrafo"&gt;Texto del párrafo&lt;/p&gt;
+                    &lt;a id="enlace" href="#"&gt;Enlace&lt;/a&gt;
+                    &lt;br&gt;&lt;br&gt;
+                    &lt;button id="miBoton"&gt;Haz clic en mí&lt;/button&gt;
+                    
+                    &lt;script&gt;
+                      // Selección de elementos
+                      const titulo = document.getElementById('titulo');
+                      const parrafo = document.querySelector('.parrafo');
+                      const enlace = document.querySelector('#enlace');
+                      const boton = document.getElementById('miBoton');
+                    
+                      // Manipulación de texto
+                      titulo.textContent = 'Título modificado con JavaScript';
+                      parrafo.innerHTML = 'Este párrafo tiene &lt;strong&gt;texto en negrita&lt;/strong&gt;';
+                    
+                      // Manipulación de atributos
+                      enlace.setAttribute('href', 'https://www.openai.com');
+                      console.log('Href del enlace:', enlace.getAttribute('href'));
+                    
+                      // Eventos
+                      boton.addEventListener('click', function() {
+                        alert('¡Has hecho clic en el botón!');
+                        // Cambiar el texto del título
+                        titulo.textContent = 'Título cambiado tras clic';
+                      });
+                    &lt;/script&gt;
+                    
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                    </code></pre>
+                    
+                    </body>
+                    </html>
+                    
+                </code></pre>
+
                 <pre><code>
                 </code></pre>
                 </div>
             </tema-item>
-
+<!-- 8.Intermedio-Funciones Avanzadas -->
             <tema-item>
                 <titulo>
-                    <strong>8. Intermedio-Funciones Avanzadas.</strong><br>
+                    <strong>8.Intermedio-Funciones Avanzadas.</strong><br>
                     <br>
                     <strong></strong>
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Operadores</h2>
+                <h2>Funciones Avanzadas.</h2>
                 <p>Sólo texto simple.</p>
                 <pre><code>
                 </code></pre>
                 </div>
             </tema-item>
-            <tema-item nombre="Tema 10">
-                <h2>Contenido del Tema 1</h2>
+<!-- 9.Intermedio-Objetos y prototipos             -->
+            <tema-item>
+                <titulo>
+                    <strong>9.Intermedio-Objetos y prototipos.</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Objetos y prototipos.</h2>
                 <p>Este es un párrafo dentro del tema 1.</p>
                 <table class="table">
                     <thead>
@@ -601,23 +906,48 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
             </tema-item>
-
-            <tema-item nombre="Tema 11">
-                <h2>Contenido del Tema 2</h2>
+<!-- 10.Arrays y objetos avanzados  -->
+            <tema-item>
+                <titulo>
+                    <strong>10.Intermedio-Arrays y Objetos.</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Arrays y Objetos.</h2>
                 <p>Este es otro tema con contenido diferente.</p>
                 <ul>
                     <li>Punto A</li>
                     <li>Punto B</li>
                 </ul>
+                </div>
             </tema-item>
-
-            <tema-item nombre="Tema 12">
-                <h2>Tema sin tablas</h2>
+<!-- 11.ES6+(JavaScript moderno) -->
+            <tema-item>
+                <titulo>
+                    <strong>11.Intermedio-Javascript Moderno</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Javascript Moderno</h2>
                 <p>Sólo texto simple.</p>
+            </div>
             </tema-item>
-            <tema-item nombre="Tema 13">
-                <h2>Contenido del Tema 1</h2>
+<!-- 12.Asincronia             -->
+            <tema-item>
+                <titulo>
+                    <strong>12.Intermedio-Asincronia</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                <h2>Asincronia</h2>
                 <p>Este es un párrafo dentro del tema 1.</p>
                 <table class="table">
                     <thead>
@@ -637,21 +967,152 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
             </tema-item>
+<!-- 13.DOM Avanzado -->
+            <tema-item>
+                <titulo>
+                   <strong>13.Intermedio-DOM Avanzado.</strong><br>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                  <h2>DOM Avanzado.</h2>
+                  <p>Sólo texto simple.</p>
+                </div>
+            </tema-item>
+           
+           
+<!-- 14.Herramienta de desarrollo -->
+            <tema-item>
+                <titulo>
+                    <strong>14.Intermedio-Herramientas de Desarrollo.</strong>
+                    <br>
+                    <strong></strong>
+                </titulo>
+                 <subtitulo></subtitulo>
+                <div>
+                 <h2>Herramientas de Desarrollo.</h2>
+                  <p>Sólo texto simple.</p>
+                </div>
+            </tema-item>
+<!-- 15.Manejo Avanzado de Asincronía       -->
+<tema-item>
+    <titulo>
+        <strong>15.Manejo Avanzado de Asincronía</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Manejo Avanzado de Asincronía</h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
+<!-- 16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript. -->
+<tema-item>
+    <titulo>
+        <strong>16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Estructuras de Datos y Algoritmos en JavaScript.</h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
+ <!-- 17.Avanzado-Javascript en el Navegador y API WEB.    -->
+ <tema-item>
+    <titulo>
+        <strong>17.Avanzado-Javascript en el Navegador y API WEB.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Javascript en el Navegador y API WEB.</h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
+<!-- 18.Avanzado-Patrones de Diseño en Javascript. -->
+<tema-item>
+    <titulo>
+        <strong>18.Avanzado-Patrones de Diseño en Javascript.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Patrones de Diseño en Javascript.</h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
+<!-- 19.Avanzado-Principios de Código Limpio y Buenas Prácticas -->
+<tema-item>
+    <titulo>
+        <strong>19.Avanzado-Principios de Código Limpio y Buenas Prácticas </strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Principios de Código Limpio y Buenas Prácticas </h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
+<!-- 20.Avanzado-Compiladores y Transpiladores -->
+<tema-item>
+    <titulo>
+        <strong>20.Avanzado-Compiladores y Transpiladores</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Compiladores y Transpiladores</h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
 
-            <tema-item nombre="Tema 14">
-                <h2>Contenido del Tema 2</h2>
-                <p>Este es otro tema con contenido diferente.</p>
-                <ul>
-                    <li>Punto A</li>
-                    <li>Punto B</li>
-                </ul>
-            </tema-item>
-
-            <tema-item nombre="Tema 15">
-                <h2>Tema sin tablas</h2>
-                <p>Sólo texto simple.</p>
-            </tema-item>
+<!-- 21.Avanzado-Node.js e Integración Full-Stack. -->
+<tema-item>
+    <titulo>
+        <strong>21.Avanzado-Node.js e Integración Full-Stack.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+     <subtitulo></subtitulo>
+    <div>
+     <h2>Node.js e Integración Full-Stack.</h2>
+      <p>Sólo texto simple.</p>
+    </div>
+</tema-item>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
         </mi-lista>
 
 
