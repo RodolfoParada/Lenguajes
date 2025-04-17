@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/index.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Javascript</title>
-  
+
 </head>
+
 <body>
     <nav class="mb-5">
         <mi-navegacion></mi-navegacion>
@@ -15,63 +17,351 @@
     <main>
         <div class="hidden">Este texto será ocultado.</div>
         <div class="js-text mx-5">Javascript</div>
-   
+
         <mi-lista class="overflow-scroll">
             <tema-item>
                 <titulo>
                     <strong>Introducción:</strong><br>
                     ¿Qué es JavaScript?,<br>
                     <strong>Cómo funciona</strong>, instalación
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                    <h2>Qué es JavaScript?</h2>
+                    <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado y orientado a objetos,
+                        que se utiliza principalmente para crear páginas web <br>interactivas. Junto con HTML y CSS , forma
+                        el núcleo de las tecnologías del desarrollo web frontend y CSS, forma el núcleo de las
+                        tecnologías del desarrollo<br> web frontend.</p>
+                    <h2>¿Para qué sirve?</h2>
+                    <p>·&nbsp;Manipular el contenido de las páginas web (DOM).<br>·&nbsp;Validar
+                        formularios.<br>·&nbsp;Gestionar eventos del usuario.<br>·&nbsp;Realizar peticiones al servidor
+                        (AJAX / fetch).<br>·&nbsp;Desarrollar aplicaciones web completas (gracias a frameworks como
+                        React, Vue o Angular).<br>·&nbsp;También se usa del lado del servidor con Node.js.</p>
+                    <h2>Cómo funciona JavaScript en el navegador.</h2>
+                    <h3>1.&nbsp;Motor de JavaScript.</h3>
+                    <p>·&nbsp;V8 en Google Chrome y Opera.<br>·&nbsp;SpiderMonkey en Mozilla
+                        Firefox.<br>·&nbsp;JavaScriptCore (también conocido como Nitro) en Safari.<br>·&nbsp;Chakra en
+                        versiones antiguas de Microsoft Edge.</p>
+                    <p>Estos motores toman el código JavaScript, lo interpretan y, en muchos casos, lo compilan justo a
+                        tiempo (JIT, Just-In-Time) para optimizar el rendimiento.</p>
+                    <h3>2.&nbsp;Proceso de Carga y Ejecución</h3>
+                    <p class="mb-1"><b>a) Carga y Parsing del HTML.</b></p>
+                    <p class="mb-1">Cuando visitas una página web, el navegador realiza lo siguiente:</p>
+                    <p>·&nbsp;Descarga del HTML: El navegador descarga el documento HTML, que puede contener etiquetas
+                        script.<br>·&nbsp;Construcción del DOM: El HTML se analiza y se transforma en un árbol de nodos
+                        llamado Document Object Model (DOM), que representa la estructura de<br> la página.</p>
+                    <p class="mb-1"><b>b) Carga y Ejecución de JavaScript</b></p>
+                    <p class="mb-1">El código JavaScript puede incluirse de diferentes formas:</p>
+                    <p>·&nbsp;Código en línea (inline): Directamente en el HTML dentro de una etiqueta
+                        script.<br>·&nbsp;Archivos externos: A través de etiquetas
+                        <script src="archivo.js"></script>.
+                    </p>
+                    <p class="mb-1">El navegador puede ejecutar el código de formas distintas según cómo se carguen los
+                        scripts:</p>
+                    <p><b>Sin atributos adicionales:</b>El navegador detiene el parsing del HTML, descarga y ejecuta el
+                        script, y luego continúa con el rendering.<br><b>Con defer:</b> El script se descarga en
+                        paralelo, pero su ejecución se difiere hasta que el DOM esté completamente construido.<br><b>Con
+                            async:</b> El script se descarga de manera asíncrona y se ejecuta tan pronto como esté
+                        listo, lo que puede ocurrir en cualquier momento durante la carga de<br> la página.</p>
+                    <h3>3. Interacción con el DOM y Web APIs</h3>
+                    <p class="mb-1">Mientras se ejecuta el código JavaScript, puede interactuar con el contenido de la
+                        página a través del DOM. Esto permite:</p>
+                    <p><b>Manipulación del contenido:</b> Agregar, eliminar o modificar elementos HTML.<br><b>Estilos y
+                            animaciones:</b> Cambiar clases o aplicar estilos dinámicos a los elementos.<br><b>Gestión
+                            de eventos:</b> Registrar eventos (por ejemplo, clics, movimientos de mouse, entradas de
+                        teclado) y definir funciones que se ejecuten cuando ocurran<br> esos eventos.</p>
+                    <p class="mb-1">Además del DOM, los navegadores proporcionan un conjunto de Web APIs que expanden la
+                        funcionalidad de JavaScript, como:</p>
+                    <p>·&nbsp;APIs para peticiones AJAX/fetch: Para comunicarse con servidores sin recargar la
+                        página.<br>·&nbsp;APIs para almacenamiento local: Como localStorage y
+                        sessionStorage.<br>·&nbsp;APIs para multimedia: Manipular audio y video.<br>·&nbsp;APIs
+                        gráficas: Como Canvas o WebGL para gráficos en 2D y 3D.</p>
+                    <h4>4.&nbsp;Modelo de Concurrencia y Event Loop</h4>
+                    <p>JavaScript en el navegador se ejecuta en un único hilo (single-threaded). Para manejar
+                        operaciones asíncronas y mantener la interfaz responsiva, se utiliza el<br> event loop, que funciona
+                        de la siguiente manera:</p>
+                    <p>1.&nbsp;Call Stack: Es una pila donde se ubican todas las funciones que se van a ejecutar. Cuando
+                        una función es llamada, se añade a la pila y, al finalizar, se retira.<br>2.&nbsp;Web APIs:
+                        Operaciones asíncronas (como temporizadores con setTimeout, peticiones AJAX, etc.) se delegan a
+                        las APIs del navegador.<br>3.&nbsp;Colas de tareas y microtareas: Una vez que las operaciones
+                        asíncronas completan, sus callbacks se colocan en una cola de tareas o microtareas para ser<br>
+                        ejecutadas una vez que la pila se vacíe.<br>4.&nbsp;Event Loop: Es el mecanismo que supervisa el
+                        call stack y la cola, ejecutando los callbacks cuando la pila está libre.</p>
+                    <p>Este mecanismo permite que, aunque JavaScript sea single-threaded, se pueda trabajar de manera
+                        eficiente sin bloquear la interfaz del usuario.</p>
+                    <h2>Como usar Javascript en un Proyecto</h2>
+                    <p>Crear un archivo .js y luego importarlo en el archivo html con la
+                        estiqueta.<b>script</b><br>también se puede usar con modulo hay que agregar dentro del script la
+                        palabra reservada<b>module.</b><br>Si lo vas a subir a un repositorio github debes incorporar en
+                        el script la palabra reservada <b>defer.</b></p>
+                    <h3>Como dato adicional instalación de bootstrap</h3>
+                    <p>Puedes agregar esto en el html</p>
+                    <pre>
+                    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"<br> integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"&gt;
+                    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" <br>integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"&gt;&lt;/script&gt;
+                </pre>
+                    <p>Se puede actualizar y lo puedes encontrar en la página de Bootstrap.<br>
+                        Ir a <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>
+                    </p>
+                </div>
+            </tema-item>
+
+            <tema-item>
+                <titulo>
+                    <strong>Básico Sintaxis</strong><br>
+                    y Tipos de Datos.<br>
+                    <strong></strong>
                   </titulo>
                   <subtitulo></subtitulo>
                   <div>
-                <h2>Qué es JavaScript?</h2>
-                  <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado y orientado a objetos, que se utiliza principalmente para crear páginas web interactivas. Junto con HTML y CSS , forma el núcleo de las tecnologías del desarrollo web frontend .y CSS, forma el núcleo de las tecnologías del desarrollo web frontend.</p>
-                <h2>¿Para qué sirve?</h2>
-                  <p>·&nbsp;Manipular el contenido de las páginas web (DOM).<br>·&nbsp;Validar formularios.<br>·&nbsp;Gestionar eventos del usuario.<br>·&nbsp;Realizar peticiones al servidor (AJAX / fetch).<br>·&nbsp;Desarrollar aplicaciones web completas (gracias a frameworks como React, Vue o Angular).<br>·&nbsp;También se usa del lado del servidor con Node.js.</p>
-                <h2>Cómo funciona JavaScript en el navegador.</h2>
-                <h3>1.&nbsp;Motor de JavaScript.</h3>
-                  <p>·&nbsp;V8 en Google Chrome y Opera.<br>·&nbsp;SpiderMonkey en Mozilla Firefox.<br>·&nbsp;JavaScriptCore (también conocido como Nitro) en Safari.<br>·&nbsp;Chakra en versiones antiguas de Microsoft Edge.</p>
-                  <p>Estos motores toman el código JavaScript, lo interpretan y, en muchos casos, lo compilan justo a tiempo (JIT, Just-In-Time) para optimizar el rendimiento.</p>
-                <h3>2.&nbsp;Proceso de Carga y Ejecución</h3>
-                  <p class="mb-1"><b>a) Carga y Parsing del HTML.</b></p>
-                  <p class="mb-1">Cuando visitas una página web, el navegador realiza lo siguiente:</p>
-                  <p>·&nbsp;Descarga del HTML: El navegador descarga el documento HTML, que puede contener etiquetas script.<br>·&nbsp;Construcción del DOM: El HTML se analiza y se transforma en un árbol de nodos llamado Document Object Model (DOM), que representa la estructura de la página.</p>
-                  <p class="mb-1"><b>b) Carga y Ejecución de JavaScript</b></p>
-                  <p class="mb-1">El código JavaScript puede incluirse de diferentes formas:</p>
-                  <p>·&nbsp;Código en línea (inline): Directamente en el HTML dentro de una etiqueta script.<br>·&nbsp;Archivos externos: A través de etiquetas <script src="archivo.js"></script>.</p>
-                  <p class="mb-1">El navegador puede ejecutar el código de formas distintas según cómo se carguen los scripts:</p>
-                  <p><b>Sin atributos adicionales:</b>El navegador detiene el parsing del HTML, descarga y ejecuta el script, y luego continúa con el rendering.<br><b>Con defer:</b> El script se descarga en paralelo, pero su ejecución se difiere hasta que el DOM esté completamente construido.<br><b>Con async:</b> El script se descarga de manera asíncrona y se ejecuta tan pronto como esté listo, lo que puede ocurrir en cualquier momento durante la carga de la página.</p>
-                <h3>3. Interacción con el DOM y Web APIs</h3>
-                  <p class="mb-1">Mientras se ejecuta el código JavaScript, puede interactuar con el contenido de la página a través del DOM. Esto permite:</p>
-                  <p><b>Manipulación del contenido:</b> Agregar, eliminar o modificar elementos HTML.<br><b>Estilos y animaciones:</b> Cambiar clases o aplicar estilos dinámicos a los elementos.<br><b>Gestión de eventos:</b> Registrar eventos (por ejemplo, clics, movimientos de mouse, entradas de teclado) y definir funciones que se ejecuten cuando ocurran esos eventos.</p>
-                  <p class="mb-1">Además del DOM, los navegadores proporcionan un conjunto de Web APIs que expanden la funcionalidad de JavaScript, como:</p>
-                  <p>·&nbsp;APIs para peticiones AJAX/fetch: Para comunicarse con servidores sin recargar la página.<br>·&nbsp;APIs para almacenamiento local: Como localStorage y sessionStorage.<br>·&nbsp;APIs para multimedia: Manipular audio y video.<br>·&nbsp;APIs gráficas: Como Canvas o WebGL para gráficos en 2D y 3D.</p>
-                <h4>4.&nbsp;Modelo de Concurrencia y Event Loop</h4>
-                  <p>JavaScript en el navegador se ejecuta en un único hilo (single-threaded). Para manejar operaciones asíncronas y mantener la interfaz responsiva, se utiliza el event loop, que funciona de la siguiente manera:</p>
-                  <p>1.&nbsp;Call Stack: Es una pila donde se ubican todas las funciones que se van a ejecutar. Cuando una función es llamada, se añade a la pila y, al finalizar, se retira.<br>2.&nbsp;Web APIs: Operaciones asíncronas (como temporizadores con setTimeout, peticiones AJAX, etc.) se delegan a las APIs del navegador.<br>3.&nbsp;Colas de tareas y microtareas: Una vez que las operaciones asíncronas completan, sus callbacks se colocan en una cola de tareas o microtareas para ser ejecutadas una vez que la pila se vacíe.<br>4.&nbsp;Event Loop: Es el mecanismo que supervisa el call stack y la cola, ejecutando los callbacks cuando la pila está libre.</p>
-                  <p>Este mecanismo permite que, aunque JavaScript sea single-threaded, se pueda trabajar de manera eficiente sin bloquear la interfaz del usuario.</p>
-               <h2>Como usar Javascript en un Proyecto</h2>
-                  <p>Crear un archivo .js y luego importarlo en el archivo html con la estiqueta.<b>script</b><br>también se puede usar con modulo hay que agregar dentro del script la palabra reservada<b>module.</b><br>Si lo vas a subir a un repositorio github debes incorporar en el script la palabra reservada <b>defer.</b></p>
-                <h3>Como dato adicional instalación de bootstrap</h3>
-                   <p>Puedes agregar esto en el html</p> 
-                <pre>
-                    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"&gt;
-                    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"&gt;&lt;/script&gt;
-                </pre>
+                <h2>Sintaxis y Tipos de Datos.</h2>
+                <h3 class="mb-1">Variables</h3>
+                <p><b>Var:&nbsp;</b>tiene alcance de función, define una variable global o locan en una función din importar el ámbito del bloque.<br><b>Let:&nbsp;</b> tiene alcance de bloque y permite declarar variables limitando su alcance y se puede reasignar<br><b>Const:&nbsp;</b> tiene alcance de constante, se utiliza para declarar una constante que no se puede reasignar.</p>
+                <h3 class="mb-1">Estructura de Control</h3>
+                <p>Condicionales<br>Explicación:<br><b>if:</b> Ejecuta un bloque de código si la condición es verdadera.<br><b>if...else:</b>Proporciona una alternativa si la condición es falsa.<br><b>else if:</b> Permite verificar múltiples condiciones.</p>
+                <pre><code>
+                    if (condición1) {
+                        // código si condición1 es verdadera
+                    } else if (condición2) {
+                        // código si condición2 es verdadera
+                    } else {
+                        // código si ninguna condición es verdadera
+                    }
                     
-                   <p>Se puede actualizar y lo puedes encontrar en la página de Bootstrap.<br>
-                    Ir a <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>
-                   </p>
-                </div>  
+                </code></pre>
+
+                <p><b>Switch</b><br>Explicación: Selecciona uno de varios bloques de código a ejecutar, basado en el valor de una expresión.</p>    
+                <pre><code>
+                switch (expresión) {
+                    case valor1:
+                        // código si expresión es igual a valor1
+                        break;
+                    case valor2:
+                        // código si expresión es igual a valor2
+                        break;
+                    default:
+                        // código si ninguna de las condiciones anteriores es verdadera
+                }
+                
+                </code></pre>
+                <p><b>For</b><br>Explicación: Ejecuta un bloque de código un número específico de veces.</p>
+                <pre><code>
+                for (inicialización; condición; incremento) {
+                    // código a ejecutar
+                }
+                //Otro ejemplo
+                for (let i = 0; i < 5; i++) {
+                    console.log(i);
+                }
+                </code></pre>
+                <p><b>While</b><br>Explicación: Ejecuta un bloque de código mientras la condición sea verdadera.</p>
+                <pre><code>
+                while (condición) {
+                    // código a ejecutar
+                }
+                //otro ejemplo   
+                let contador = 0;
+
+                while (contador < 5) {
+                console.log("Contador:", contador);
+                contador++; // Incrementa el contador
+                }
+                </code></pre>
+                <p><b>Do while</b><br>Explicación: Similar a while, pero garantiza que el bloque de código se ejecutará al menos una vez</p>
+                <pre><code>
+                do {
+                    // código a ejecutar
+                } while (condición);
+                
+                // otro ejemplo
+                let contador = 0;
+
+                do {
+                console.log("Contador:", contador);
+                contador++; // Incrementa el contador
+                } while (contador < 5);
+
+
+                </code></pre>
+                <p><b>break:</b> Termina el bucle o el bloque switchactual.<br><b>continue:</b> Salta la iteración actual del bucle y pasa a la siguiente.</p>
+                <p>Try Catch<br>Explicación: Maneja excepciones que pueden ocurrir en el código.</p>   
+                <pre><code>
+                 try {
+                    // código que puede causar un error
+                } catch (error) {
+                    // código que maneja el error
+                } finally {
+                    // código que se ejecuta siempre, sin importar si hubo error o no
+                }
+                
+                </code></pre>
+                <h3 class="mb-1">Funciones</h3>
+                <p><b>Funciones Declaradas.</b><br>Explicación:&nbsp;Son funciones definidas con la palabra clave functiony tienen un nombre.<br> Se pueden llamar antes de ser declaradas debido al levantamiento.</p>
+                <pre><code>
+                    function saludar() {
+                        console.log("Hola!");
+                    }
+                </code></pre>
+                <p><b>Funciones Expresadas</b><br>Explicación:&nbsp;Son funciones que se definen como parte de una expresión, y pueden ser anónimas (sin nombre)<br> o nombradas. No se pueden llamar antes de su declaración.</p>
+                <pre><code>
+                    const despedir = function() {
+                        console.log("Adiós!");
+                    }; 
+                </code></pre>
+                <p><b>Funciones Flecha.</b><br>Explicación:&nbsp;Introducidas en ES6, las funciones flecha son una forma más concisa de escribir funciones.<br>No tienen su propio contexto this.</p>
+                <pre><code>
+                    const multiplicar = (a, b) => a * b;
+                </code></pre>
+                <p><b>Funciones Flecha de una sola expresión.</b><br>Explicación:&nbsp;Estas funciones utilizan una sintaxis simplificada. Si la función consiste en una sola expresión,<br> no es necesario usar llaves {}ni la palabra clave return. El resultado de la expresión se devuelve automáticamente.</p>
+                <pre><code>
+                    const sumar = (a, b) => a + b;
+                    console.log(sumar(5, 3)); // 8
+                    
+                </code></pre>
+                <p><b>Funciones Flecha de Múltiples Líneas</b><br>Explicación:&nbsp;Si la función tiene más de una expresión o se necesita realizar múltiples acciones, se deben usar llaves {}<br>y la declaración returnpara devolver un valor.</p>
+                <pre><code>
+                    const saludar = (nombre) => {
+                        const saludo = `Hola, ${nombre}!`;
+                        return saludo;
+                    };
+                    
+                    console.log(saludar("Juan")); // "Hola, Juan!"
+                    
+                </code></pre>
+                <p><b>Funciones Flecha con Fetch</b><br>Explicación:&nbsp;El método fetchse utiliza para hacer solicitudes de red y devuelve una promesa. Aquí hay un ejemplo<br> que muestra cómo hacer una solicitud GET a una API y procesar la respuesta usando una función flecha:.</p>
+                <pre><code>
+                    // Función flecha para obtener datos de una API
+                    const obtenerDatos = () => {
+                        fetch('https://jsonplaceholder.typicode.com/posts')
+                            .then(respuesta => {
+                                if (!respuesta.ok) {
+                                    throw new Error('Error en la respuesta de la red');
+                                }
+                                return respuesta.json(); // Convierte la respuesta a JSON
+                            })
+                            .then(datos => {
+                                console.log(datos); // Muestra los datos en la consola
+                            })
+                            .catch(error => {
+                                console.error('Hubo un problema con la solicitud:', error);
+                            });
+                    };
+                    
+                    // Llamar a la función
+                    obtenerDatos();
+                          
+                </code></pre>
+                <p><b>Funciones Flecha con async y await</b><br>Explicación:&nbsp;En este ejemplo, realizaremos una solicitud a una API utilizando fetchy manejaremos la respuesta asíncrona con asyncy await.</p>
+                <pre><code>
+                    // Función flecha asíncrona para obtener datos de una API
+                    const obtenerDatos = async () => {
+                        try {
+                            const respuesta = await fetch('https://jsonplaceholder.typicode.com/posts');
+                            
+                            if (!respuesta.ok) {
+                                throw new Error('Error en la respuesta de la red');
+                            }
+                            
+                            const datos = await respuesta.json(); // Convierte la respuesta a JSON
+                            console.log(datos); // Muestra los datos en la consola
+                        } catch (error) {
+                            console.error('Hubo un problema con la solicitud:', error);
+                        }
+                    };
+                    
+                    // Llamar a la función
+                    obtenerDatos();
+                    
+                </code></pre>
+                <p><b>Funciones Anónimas.</b><br>Explicación:&nbsp;Son funciones sin nombre, utilizadas como argumentos de otras funciones o en expresiones.</p>
+                <pre><code>
+                    setTimeout(function() {
+                        console.log("Ejecutado después de 2 segundos");
+                    }, 2000);       
+                </code></pre>
+                <p><b>Funciones de devolución de llamada</b><br>Explicación:&nbsp;Son funciones que se pasan como argumentos a otras funciones y se ejecutan en respuesta<br> a un evento o después de que se completa una tarea.</p>
+                <pre><code>
+                    function procesarDatos(callback) {
+                        // Simular procesamiento
+                        callback();
+                    }
+                    
+                    procesarDatos(() => console.log("Datos procesados"));                    
+                </code></pre>
+                <p><b>Funciones Constructoras</b><br>Explicación:&nbsp;Son funciones que se utilizan para crear objetos. Se invocan con la palabra clave new</p>
+                <pre><code>
+                        function Persona(nombre) {
+                            this.nombre = nombre;
+                        }
+                        
+                        const juan = new Persona("Juan");
+                        
+                </code></pre>
+                <p><b>Funciones Recursivas</b><br>Explicación:&nbsp;Son funciones que se llaman a sí mismas para resolver un problema.</p>
+                <pre><code>
+                        function factorial(n) {
+                            if (n === 0) return 1;
+                            return n * factorial(n - 1);
+                        }       
+                </code></pre>
+                <h3 class="mb-1">Tipos de Datos</h3>
+                <p><b>Undefine</b><br>Explicación: El tipo undefined representa una variable que ha sido declarada pero no inicializada.<br> Es el valor predeterminado de las variables que no se les ha asignado un valor.</p>
+                <pre><code>
+                    let x;
+                    console.log(x); // undefined
+                </code></pre>
+                <p><b>Null</b><br>Explicación:  null es un tipo de dato que representa la ausencia intencionada de un valor. <br>Se utiliza para indicar que una variable no tiene un valor válido. </p>
+                <pre><code>
+                    let y = null;
+                    console.log(y); // null                  
+                </code></pre>
+                <p><b>Boolean</b><br>Explicacion: El tipo boolean tiene solo dos valores posibles: true(verdadero) y false(falso). <br>Se utiliza para representar valores de verdad.</p>
+                <pre><code>
+                    let isTrue = true;
+                    let isFalse = false;                  
+                </code></pre>
+                <p><b>Number</b><br>Explicación:  El tipo number representa tanto enteros como números de punto flotante.<br> En JavaScript, todos los números son de tipo number, y no hay distinción entre enteros y decimales.</p>
+                <pre><code>
+                    let entero = 42;
+                    let decimal = 3.14;
+                    
+                </code></pre>
+                <p><b>BinInt</b><br>Explicación: BigIntes un tipo de dato que permite representar números enteros muy grandes que<br> no pueden ser representados por el tipo number. Se utiliza agregando nal final de un número.</p>
+                <pre><code>
+                    let grande = 1234567890123456789012345678901234567890n;
+                </code></pre>
+                <p><b>String</b><br>Explicación: El tipo string representa una secuencia de caracteres. Se puede definir utilizando comillas<br> simples, dobles o comillas invertidas (literales de plantilla).</p>
+                <pre><code>
+                    let texto = "Hola, mundo!";
+                </code></pre>
+                 <p><b>Simbol</b><br>Explicación:  Symbol es un tipo de dato introducido en ES6 que representa un identificador único e inmutable.<br>Se utiliza principalmente como clave para propiedades de objetos.</p>
+                <pre><code>
+                    const id = Symbol('id');
+                </code></pre>
+                <p><b>Object</b><br>Explicación:  El tipo object es una colección de pares clave-valor. Los objetos pueden almacenar datos y funciones<br>(métodos). Es el tipo de dato más complejo en JavaScript.</p>
+                <pre><code>
+                    let persona = {
+                        nombre: "Juan",
+                        edad: 30
+                    };
+                    
+                </code></pre>
+                <p><b>Array</b><br>Explicación: Aunque los arreglos son técnicamente un tipo de objeto, se consideran de forma separada.<br> Un array es una colección ordenada de elementos, que pueden ser de diferentes tipos. </p>
+                <pre><code>
+                    let frutas = ["manzana", "banana", "naranja"];
+                </code></pre>
+          
+                <p><b>Typeof</b><br>Explicación:    El operador typeof en JavaScript es una herramienta que se utiliza para determinar el tipo <br>de dato de una variable o de un valor. Es útil para entender qué tipo de datos estás manejando en tu código.<br>Aquí te explico cómo funciona typeof </p>
+                <pre><code>
+                    let edad = 30;
+                    console.log(typeof edad); // "number"
+                </code></pre>
+
+               <p>NOTA: Los tipos de datos compuestos son lo que pueden tener multiples datos como Function, Simbol, Array,<br>Object, Date, RegExp y todo los tipos de datos son llamados tipado dinámico</p>
+             
+                </div>
             </tema-item>
-        
-            <tema-item nombre="Introducción-Consola y entorno de desarrollo">
-                <h2>Contenido del Tema 2</h2>
-                <p>Este es otro tema con contenido diferente.</p>
-                <ul><li>Punto A</li><li>Punto B</li></ul>
-            </tema-item>
-        
+
             <tema-item nombre="Introducción-Sintaxis y tipos de datos">
                 <h2>Tema sin tablas</h2>
                 <p>Sólo texto simple.</p>
@@ -81,21 +371,33 @@
                 <p>Este es un párrafo dentro del tema 1.</p>
                 <table class="table">
                     <thead>
-                        <tr><th>Nombre</th><th>Edad</th></tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Ana</td><td>22</td></tr>
-                        <tr><td>Luis</td><td>35</td></tr>
+                        <tr>
+                            <td>Ana</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Luis</td>
+                            <td>35</td>
+                        </tr>
                     </tbody>
                 </table>
             </tema-item>
-        
+
             <tema-item nombre="Tema 5">
                 <h2>Contenido del Tema 2</h2>
                 <p>Este es otro tema con contenido diferente.</p>
-                <ul><li>Punto A</li><li>Punto B</li></ul>
+                <ul>
+                    <li>Punto A</li>
+                    <li>Punto B</li>
+                </ul>
             </tema-item>
-        
+
             <tema-item nombre="Tema 6">
                 <h2>Tema sin tablas</h2>
                 <p>Sólo texto simple.</p>
@@ -105,21 +407,33 @@
                 <p>Este es un párrafo dentro del tema 1.</p>
                 <table class="table">
                     <thead>
-                        <tr><th>Nombre</th><th>Edad</th></tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Ana</td><td>22</td></tr>
-                        <tr><td>Luis</td><td>35</td></tr>
+                        <tr>
+                            <td>Ana</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Luis</td>
+                            <td>35</td>
+                        </tr>
                     </tbody>
                 </table>
             </tema-item>
-        
+
             <tema-item nombre="Tema 7">
                 <h2>Contenido del Tema 2</h2>
                 <p>Este es otro tema con contenido diferente.</p>
-                <ul><li>Punto A</li><li>Punto B</li></ul>
+                <ul>
+                    <li>Punto A</li>
+                    <li>Punto B</li>
+                </ul>
             </tema-item>
-        
+
             <tema-item nombre="Tema 9">
                 <h2>Tema sin tablas</h2>
                 <p>Sólo texto simple.</p>
@@ -129,21 +443,33 @@
                 <p>Este es un párrafo dentro del tema 1.</p>
                 <table class="table">
                     <thead>
-                        <tr><th>Nombre</th><th>Edad</th></tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Ana</td><td>22</td></tr>
-                        <tr><td>Luis</td><td>35</td></tr>
+                        <tr>
+                            <td>Ana</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Luis</td>
+                            <td>35</td>
+                        </tr>
                     </tbody>
                 </table>
             </tema-item>
-        
+
             <tema-item nombre="Tema 11">
                 <h2>Contenido del Tema 2</h2>
                 <p>Este es otro tema con contenido diferente.</p>
-                <ul><li>Punto A</li><li>Punto B</li></ul>
+                <ul>
+                    <li>Punto A</li>
+                    <li>Punto B</li>
+                </ul>
             </tema-item>
-        
+
             <tema-item nombre="Tema 12">
                 <h2>Tema sin tablas</h2>
                 <p>Sólo texto simple.</p>
@@ -153,21 +479,33 @@
                 <p>Este es un párrafo dentro del tema 1.</p>
                 <table class="table">
                     <thead>
-                        <tr><th>Nombre</th><th>Edad</th></tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Ana</td><td>22</td></tr>
-                        <tr><td>Luis</td><td>35</td></tr>
+                        <tr>
+                            <td>Ana</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Luis</td>
+                            <td>35</td>
+                        </tr>
                     </tbody>
                 </table>
             </tema-item>
-        
+
             <tema-item nombre="Tema 14">
                 <h2>Contenido del Tema 2</h2>
                 <p>Este es otro tema con contenido diferente.</p>
-                <ul><li>Punto A</li><li>Punto B</li></ul>
+                <ul>
+                    <li>Punto A</li>
+                    <li>Punto B</li>
+                </ul>
             </tema-item>
-        
+
             <tema-item nombre="Tema 15">
                 <h2>Tema sin tablas</h2>
                 <p>Sólo texto simple.</p>
@@ -178,13 +516,14 @@
 
 
 
-</main>
+    </main>
     <footer class="footer">
         <mi-footer></mi-footer>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="js/nav.js"defer></script>
-      <script src="js/footer.js" defer></script>
-      <script src="js/lista.js" defer></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <script src="js/lista.js" defer></script>
 </body>
+
 </html>
