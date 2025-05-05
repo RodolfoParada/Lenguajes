@@ -19,18 +19,19 @@
         <div class="js-text mx-5">Javascript</div>
 
         <mi-lista class="overflow-scroll">
-<!-- 1.Introducción Javascript     -->
+            <!-- 1.Introducción Javascript     -->
             <tema-item>
                 <titulo>
                     <strong>1. Introducción:</strong><br>
                     ¿Qué es JavaScript?,<br>
                     <strong>Cómo funciona</strong>, instalación
                 </titulo>
-                  <subtitulo></subtitulo>
+                <subtitulo></subtitulo>
                 <div>
                     <h2>Qué es JavaScript?</h2>
                     <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado y orientado a objetos,
-                        que se utiliza principalmente para crear páginas web <br>interactivas. Junto con HTML y CSS , forma
+                        que se utiliza principalmente para crear páginas web <br>interactivas. Junto con HTML y CSS ,
+                        forma
                         el núcleo de las tecnologías del desarrollo web frontend y CSS, forma el núcleo de las
                         tecnologías del desarrollo<br> web frontend.</p>
                     <h2>¿Para qué sirve?</h2>
@@ -79,7 +80,8 @@
                         gráficas: Como Canvas o WebGL para gráficos en 2D y 3D.</p>
                     <h4>4.&nbsp;Modelo de Concurrencia y Event Loop</h4>
                     <p>JavaScript en el navegador se ejecuta en un único hilo (single-threaded). Para manejar
-                        operaciones asíncronas y mantener la interfaz responsiva, se utiliza el<br> event loop, que funciona
+                        operaciones asíncronas y mantener la interfaz responsiva, se utiliza el<br> event loop, que
+                        funciona
                         de la siguiente manera:</p>
                     <p>1.&nbsp;Call Stack: Es una pila donde se ubican todas las funciones que se van a ejecutar. Cuando
                         una función es llamada, se añade a la pila y, al finalizar, se retira.<br>2.&nbsp;Web APIs:
@@ -97,87 +99,121 @@
                         el script la palabra reservada <b>defer.</b></p>
                     <h3>Como dato adicional instalación de bootstrap</h3>
                     <p>Puedes agregar esto en el html</p>
-                    <pre>
+                
+                <code><pre>
                     &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"<br> integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"&gt;
                     &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" <br>integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"&gt;&lt;/script&gt;
-                </pre>
+                </pre></code>
                     <p>Se puede actualizar y lo puedes encontrar en la página de Bootstrap.<br>
                         Ir a <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>
                     </p>
                 </div>
             </tema-item>
-<!-- 2.Básico Sintaxis y Tipo de datos -->
+            <!-- 2.Básico Sintaxis y Tipo de datos -->
             <tema-item>
                 <titulo>
                     <strong>2. Básico Sintaxis</strong><br>
                     y Tipos de Datos.<br>
                     <strong></strong>
-                  </titulo>
-                  <subtitulo></subtitulo>
-                  <div>
-                <h2>Sintaxis y Tipos de Datos.</h2>
-                <h3 class="mb-1">Variables</h3>
-                <p><b>Var:&nbsp;</b>tiene alcance de función, define una variable global o locan en una función din importar el ámbito del bloque.<br><b>Let:&nbsp;</b> tiene alcance de bloque y permite declarar variables limitando su alcance y se puede reasignar<br><b>Const:&nbsp;</b> tiene alcance de constante, se utiliza para declarar una constante que no se puede reasignar.</p>
-    
-              
-                <h3 class="mb-1">Tipos de Datos</h3>
-                <p><b>Undefine</b><br>Explicación: El tipo undefined representa una variable que ha sido declarada pero no inicializada.<br> Es el valor predeterminado de las variables que no se les ha asignado un valor.</p>
-                <pre><code>
-                    let x;
-                    console.log(x); // undefined
-                </code></pre>
-                <p><b>Null</b><br>Explicación:  null es un tipo de dato que representa la ausencia intencionada de un valor. <br>Se utiliza para indicar que una variable no tiene un valor válido. </p>
-                <pre><code>
-                    let y = null;
-                    console.log(y); // null                  
-                </code></pre>
-                <p><b>Boolean</b><br>Explicacion: El tipo boolean tiene solo dos valores posibles: true(verdadero) y false(falso). <br>Se utiliza para representar valores de verdad.</p>
-                <pre><code>
-                    let isTrue = true;
-                    let isFalse = false;                  
-                </code></pre>
-                <p><b>Number</b><br>Explicación:  El tipo number representa tanto enteros como números de punto flotante.<br> En JavaScript, todos los números son de tipo number, y no hay distinción entre enteros y decimales.</p>
-                <pre><code>
-                    let entero = 42;
-                    let decimal = 3.14;
-                    
-                </code></pre>
-                <p><b>BinInt</b><br>Explicación: BigIntes un tipo de dato que permite representar números enteros muy grandes que<br> no pueden ser representados por el tipo number. Se utiliza agregando nal final de un número.</p>
-                <pre><code>
-                    let grande = 1234567890123456789012345678901234567890n;
-                </code></pre>
-                <p><b>String</b><br>Explicación: El tipo string representa una secuencia de caracteres. Se puede definir utilizando comillas<br> simples, dobles o comillas invertidas (literales de plantilla).</p>
-                <pre><code>
-                    let texto = "Hola, mundo!";
-                </code></pre>
-                 <p><b>Simbol</b><br>Explicación:  Symbol es un tipo de dato introducido en ES6 que representa un identificador único e inmutable.<br>Se utiliza principalmente como clave para propiedades de objetos.</p>
-                <pre><code>
-                    const id = Symbol('id');
-                </code></pre>
-                <p><b>Object</b><br>Explicación:  El tipo object es una colección de pares clave-valor. Los objetos pueden almacenar datos y funciones<br>(métodos). Es el tipo de dato más complejo en JavaScript.</p>
-                <pre><code>
-                    let persona = {
-                        nombre: "Juan",
-                        edad: 30
-                    };
-                    
-                </code></pre>
-                <p><b>Array</b><br>Explicación: Aunque los arreglos son técnicamente un tipo de objeto, se consideran de forma separada.<br> Un array es una colección ordenada de elementos, que pueden ser de diferentes tipos. </p>
-                <pre><code>
-                    let frutas = ["manzana", "banana", "naranja"];
-                </code></pre>
-          
-                <p><b>Typeof</b><br>Explicación:    El operador typeof en JavaScript es una herramienta que se utiliza para determinar el tipo <br>de dato de una variable o de un valor. Es útil para entender qué tipo de datos estás manejando en tu código.<br>Aquí te explico cómo funciona typeof </p>
-                <pre><code>
-                    let edad = 30;
-                    console.log(typeof edad); // "number"
-                </code></pre>
+                </titulo>
+                <subtitulo></subtitulo>
+                <div>
+                    <h2>Sintaxis y Tipos de Datos.</h2>
+                    <h3 class="mb-1">Variables</h3>
+                    <p><b>Var:&nbsp;</b>tiene alcance de función, define una variable global o locan en una función din
+                        importar el ámbito del bloque.<br><b>Let:&nbsp;</b> tiene alcance de bloque y permite declarar
+                        variables limitando su alcance y se puede reasignar<br><b>Const:&nbsp;</b> tiene alcance de
+                        constante, se utiliza para declarar una constante que no se puede reasignar.</p>
 
-               <p>NOTA: Los tipos de datos compuestos son lo que pueden tener multiples datos como Function, Simbol, Array,<br>Object, Date, RegExp y todo los tipos de datos son llamados tipado dinámico</p>
-             
+
+                    <h3 class="mb-1">Tipos de Datos</h3>
+                    <p><b>Undefine</b><br>
+                        Explicación: El tipo undefined representa una variable que ha sido declarada
+                        pero no inicializada.<br> 
+                        Es el valor predeterminado de las variables que no se les ha asignado
+                        un valor.
+                    </p>
+                    <code><pre>
+                        let x;
+                        console.log(x); // undefined
+                    </pre></code>
+                    
+                    <p><b>Null</b><br>Explicación: null es un tipo de dato que representa la ausencia intencionada de un
+                        valor. <br>Se utiliza para indicar que una variable no tiene un valor válido. </p>
+                    <code><pre>
+                        let y = null;
+                        console.log(y); // null                  
+                   </pre></code>
+                     <p><b>Boolean</b><br>Explicacion: El tipo boolean tiene solo dos valores posibles: true(verdadero) y
+                        false(falso). <br>Se utiliza para representar valores de verdad.</p>
+                    <code><pre>
+                            let isTrue = true;
+                            let isFalse = false; 
+                    </pre></code>  
+            
+                    <p><b>Number</b><br>Explicación: El tipo number representa tanto enteros como números de punto
+                        flotante.<br> En JavaScript, todos los números son de tipo number, y no hay distinción entre
+                        enteros y decimales.</p>
+              
+                    <code><pre>
+                           let entero = 42;
+                           let decimal = 3.14;
+                    </pre></code>
+               
+                    <p><b>BinInt</b><br>Explicación: BigIntes un tipo de dato que permite representar números enteros
+                        muy grandes que<br> no pueden ser representados por el tipo number. Se utiliza agregando nal
+                        final de un número.</p>
+
+                    <code><pre>
+                            let grande = 1234567890123456789012345678901234567890n;
+                    </pre></code>
+                                            
+                    <p><b>String</b><br>Explicación: El tipo string representa una secuencia de caracteres. Se puede
+                        definir utilizando comillas<br> simples, dobles o comillas invertidas (literales de plantilla).
+                    </p>
+                    <code><pre>
+                        let texto = "Hola, mundo!";
+                    </pre></code>
+                  
+                    <p><b>Simbol</b><br>Explicación: Symbol es un tipo de dato introducido en ES6 que representa un
+                        identificador único e inmutable.<br>Se utiliza principalmente como clave para propiedades de
+                        objetos.</p>
+                        <code><pre>
+                            const id = Symbol('id');
+                        </pre></code>
+            
+                    <p><b>Object</b><br>Explicación: El tipo object es una colección de pares clave-valor. Los objetos
+                        pueden almacenar datos y funciones<br>(métodos). Es el tipo de dato más complejo en JavaScript.
+                    </p>
+                    <code><pre>
+                        let persona = {
+                            nombre: "Juan",
+                            edad: 30
+                        };
+                    </pre></code>
+                       
+                    <p><b>Array</b><br>Explicación: Aunque los arreglos son técnicamente un tipo de objeto, se
+                        consideran de forma separada.<br> Un array es una colección ordenada de elementos, que pueden
+                        ser de diferentes tipos. </p>
+                        <code><pre>
+                            let frutas = ["manzana", "banana", "naranja"];
+                        </pre></code>
+                       
+                    <p><b>Typeof</b><br>Explicación: El operador typeof en JavaScript es una herramienta que se utiliza
+                        para determinar el tipo <br>de dato de una variable o de un valor. Es útil para entender qué
+                        tipo de datos estás manejando en tu código.<br>Aquí te explico cómo funciona typeof </p>
+                    
+                    <code><pre>
+                            let edad = 30;
+                            console.log(typeof edad); // "number"
+                    </pre></code> 
+
+                    <p>NOTA: Los tipos de datos compuestos son lo que pueden tener multiples datos como Function,
+                        Simbol, Array,<br>Object, Date, RegExp y todo los tipos de datos son llamados tipado dinámico
+                    </p>
                 </div>
             </tema-item>
-<!-- 3. Básico Operadores -->
+            <!-- 3. Básico Operadores -->
             <tema-item>
                 <titulo>
                     <strong>3. Básico Operadores</strong><br>
@@ -186,115 +222,133 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Operadores Aritmétios</h2>
-                <p>Suma (+): Suma dos operandos.</p>
-                <pre><code>
-                    let suma = 5 + 3; // 8
-                </code></pre>
-                <p>Resta (-): Resta el segundo operando del primero.</p>
-                <pre><code>
+                    <h2>Operadores Aritmétios</h2>
+                    <p>Suma (+): Suma dos operandos.</p>
+                    <code><pre>
+                        let suma = 5 + 3; // 8
+                    </pre></code>
+
+                    <code><pre>
+                    </pre></code>
+           
+                    <p>Resta (-): Resta el segundo operando del primero.</p>
+                    <pre><code>
                     let resta = 5 - 3; // 2
                 </code></pre>
-                <p>Multiplicación (*): Multiplica dos operandos.</p>
-                <pre><code>
+                    <p>Multiplicación (*): Multiplica dos operandos.</p>
+                    <pre><code>
                     let multiplicacion = 5 * 3; // 15
                 </code></pre>
-                <P>División (/): Divide el primer operando por el segundo.</P>
-                <pre><code>
+                    <P>División (/): Divide el primer operando por el segundo.</P>
+                    <pre><code>
                     let division = 5 / 2; // 2.5
                 </code></pre>
-                <p>Módulo (%): Retorna el residuo de la división entre dos operandos.</p>
-                <pre><code>
+                    <p>Módulo (%): Retorna el residuo de la división entre dos operandos.</p>
+                    <pre><code>
                     let modulo = 5 % 2; // 1
                 </code></pre>
-                <p> Exponenciación (**): Eleva el primer operando a la potencia del segundo.</p>
-                <pre><code>
+                    <p> Exponenciación (**): Eleva el primer operando a la potencia del segundo.</p>
+                    <pre><code>
                     let potencia = 2 ** 3; // 8
                 </code></pre>
-                <h3>Operadores Lógicos</h3>
-                <p>Los operadores lógicos se utilizan para combinar expresiones booleanas.</p>
-                <p>AND (&&): Retorna true si ambos operandos son verdaderos.</p>
-                <pre><code>
+                    <h3>Operadores Lógicos</h3>
+                    <p>Los operadores lógicos se utilizan para combinar expresiones booleanas.</p>
+                    <p>AND (&&): Retorna true si ambos operandos son verdaderos.</p>
+                    <pre><code>
                     let and = (true && false); // false
                 </code></pre>
-                <p>OR (||): Retorna true si al menos uno de los operandos es verdadero.</p>
-                <pre><code>
+                    <p>OR (||): Retorna true si al menos uno de los operandos es verdadero.</p>
+                    <pre><code>
                     let or = (true || false); // true
                 </code></pre>
-                <p>NOT (!): Invierte el valor de verdad de un operando.</p>
-                <pre><code>
+                    <p>NOT (!): Invierte el valor de verdad de un operando.</p>
+                    <pre><code>
                     let not = !true; // false
                 </code></pre>
-                <h3>Operadores de Comparación</h3>
-                <p>Los operadores de comparación se utilizan para comparar dos valores y retornan un valor booleano (true o false).</p>
-                <p>gualdad (==): Compara dos valores y retorna true si son iguales, sin considerar el tipo.</p>
-                <pre><code>
+                    <h3>Operadores de Comparación</h3>
+                    <p>Los operadores de comparación se utilizan para comparar dos valores y retornan un valor booleano
+                        (true o false).</p>
+                    <p>gualdad (==): Compara dos valores y retorna true si son iguales, sin considerar el tipo.</p>
+                    <pre><code>
                     let igual = (5 == '5'); // true
                 </code></pre>
-                <p>Identidad (===): Compara dos valores y retorna true si son iguales y del mismo tipo.</p>
-                <pre><code>
+                    <p>Identidad (===): Compara dos valores y retorna true si son iguales y del mismo tipo.</p>
+                    <pre><code>
                     let identidad = (5 === '5'); // false
                 </code></pre>
-                <p>Desigualdad (!=): Compara dos valores y retorna true si no son iguales, sin considerar el tipo.</p>
-                <pre><code>
+                    <p>Desigualdad (!=): Compara dos valores y retorna true si no son iguales, sin considerar el tipo.
+                    </p>
+                    <pre><code>
                     let desigual = (5 != '5'); // false
                 </code></pre>
-                <p>No identidad (!==): Compara dos valores y retorna true si no son iguales o de diferente tipo.</p>
-                <pre><code>
+                    <p>No identidad (!==): Compara dos valores y retorna true si no son iguales o de diferente tipo.</p>
+                    <pre><code>
                     let noIdentidad = (5 !== '5'); // true
                 </code></pre>
-                <p>Mayor que (>): Retorna true si el primer operando es mayor que el segundo.</p>
-                <pre><code>
+                    <p>Mayor que (>): Retorna true si el primer operando es mayor que el segundo.</p>
+                    <pre><code>
                     let mayor = (5 > 3); // true
                 </code></pre>
-                <p>Menor que (<): Retorna true si el primer operando es menor que el segundo.</p>
-                <pre><code>
+                    <p>Menor que (<): Retorna true si el primer operando es menor que el segundo.</p>
+                            <pre><code>
                     let menor = (5 < 3); // false
                 </code></pre>
-               <p>Mayor o igual que (>=): Retorna true si el primer operando es mayor o igual que el segundo.</p>
-                <pre><code>
+                            <p>Mayor o igual que (>=): Retorna true si el primer operando es mayor o igual que el
+                                segundo.</p>
+                            <pre><code>
                     let mayorIgual = (5 >= 5); // true
                 </code></pre>
-                <p>Menor o igual que (<=): Retorna true si el primer operando es menor o igual que el segundo.</p>
-                <pre><code>
+                            <p>Menor o igual que (<=): Retorna true si el primer operando es menor o igual que el
+                                    segundo.</p>
+                                    <pre><code>
                     let menorIgual = (5 <= 3); // false
                 </code></pre>
-                <h3>Operadores de asignación</h3>
-                <p>Los operadores de asignación se utilizan para asignar valores a variables. El operador de asignación más básico es =.</p>
-                <p>Asignación simple (=): Asigna el valor del operando derecho a la variable izquierda.</p>
-                <pre><code>
+                                    <h3>Operadores de asignación</h3>
+                                    <p>Los operadores de asignación se utilizan para asignar valores a variables. El
+                                        operador de asignación más básico es =.</p>
+                                    <p>Asignación simple (=): Asigna el valor del operando derecho a la variable
+                                        izquierda.</p>
+                                    <pre><code>
                     let a = 5;
                 </code></pre>
-                <p>Asignación de suma (+=): Suma el operando derecho al operando izquierdo y asigna el resultado al operando izquierdo.</p>
-                <pre><code>
+                                    <p>Asignación de suma (+=): Suma el operando derecho al operando izquierdo y asigna
+                                        el resultado al operando izquierdo.</p>
+                                    <pre><code>
                     a += 3; // a ahora es 8
                 </code></pre>
-                <p>Asignación de resta (-=): Resta el operando derecho del operando izquierdo y asigna el resultado al operando izquierdo.</p>
-                <pre><code>
+                                    <p>Asignación de resta (-=): Resta el operando derecho del operando izquierdo y
+                                        asigna el resultado al operando izquierdo.</p>
+                                    <pre><code>
                     a -= 2; // a ahora es 6
                 </code></pre>
-                <p>Asignación de multiplicación (*=): Multiplica el operando izquierdo por el derecho y asigna el resultado al operando izquierdo.</p>
-                <pre><code>
+                                    <p>Asignación de multiplicación (*=): Multiplica el operando izquierdo por el
+                                        derecho y asigna el resultado al operando izquierdo.</p>
+                                    <pre><code>
                     a *= 2; // a ahora es 12
                 </code></pre>
-                <p>Asignación de división (/=): Divide el operando izquierdo por el derecho y asigna el resultado al operando izquierdo.</p>
-                <pre><code>
+                                    <p>Asignación de división (/=): Divide el operando izquierdo por el derecho y asigna
+                                        el resultado al operando izquierdo.</p>
+                                    <pre><code>
                     a /= 3; // a ahora es 4
                 </code></pre>
-                <p>Asignación de módulo (%=): Aplica el operador módulo y asigna el resultado al operando izquierdo.</p>
-                <pre><code>
+                                    <p>Asignación de módulo (%=): Aplica el operador módulo y asigna el resultado al
+                                        operando izquierdo.</p>
+                                    <pre><code>
                     a %= 2; // a ahora es 0
                 </code></pre>
-                <h3>Operadores Ternarios</h3>
-                <p>Uso en asignación: El operador ternario también se puede utilizar para asignar valores a variables de manera más compacta:</p>
-                <pre><code>
+                                    <h3>Operadores Ternarios</h3>
+                                    <p>Uso en asignación: El operador ternario también se puede utilizar para asignar
+                                        valores a variables de manera más compacta:</p>
+                                    <pre><code>
                     let numero = 5;
                 let paridad = (numero % 2 === 0) ? "Par" : "Impar";
 
                 console.log(paridad); // "Impar"
                 </code></pre>
-                <p><b>Anidación de Operadores Ternarios</b><br>Los operadores ternarios se pueden anidar para manejar múltiples condiciones.<br> Sin embargo, es importante usarlos con moderación, ya que pueden hacer que el código sea menos legible.</p>
-                <pre><code>
+                                    <p><b>Anidación de Operadores Ternarios</b><br>Los operadores ternarios se pueden
+                                        anidar para manejar múltiples condiciones.<br> Sin embargo, es importante
+                                        usarlos con moderación, ya que pueden hacer que el código sea menos legible.</p>
+                                    <pre><code>
                     let nota = 85;
                 let resultado = (nota >= 90) ? "Sobresaliente" :
                 (nota >= 75) ? "Notable" :
@@ -305,7 +359,7 @@
                 </code></pre>
                 </div>
             </tema-item>
-<!-- 4.Básico Estructuras de Control.             -->
+            <!-- 4.Básico Estructuras de Control.             -->
             <tema-item>
                 <titulo>
                     <strong>4. Básico Estructuras de Control</strong><br>
@@ -314,9 +368,11 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Estructuras de Control</h2>
-                <p>Condicionales<br>Explicación:<br><b>if:</b> Ejecuta un bloque de código si la condición es verdadera.<br><b>if...else:</b>Proporciona una alternativa si la condición es falsa.<br><b>else if:</b> Permite verificar múltiples condiciones.</p>
-                <pre><code>
+                    <h2>Estructuras de Control</h2>
+                    <p>Condicionales<br>Explicación:<br><b>if:</b> Ejecuta un bloque de código si la condición es
+                        verdadera.<br><b>if...else:</b>Proporciona una alternativa si la condición es falsa.<br><b>else
+                            if:</b> Permite verificar múltiples condiciones.</p>
+                    <pre><code>
                     if (condición1) {
                         // código si condición1 es verdadera
                     } else if (condición2) {
@@ -327,8 +383,9 @@
                     
                 </code></pre>
 
-                <p><b>Switch</b><br>Explicación: Selecciona uno de varios bloques de código a ejecutar, basado en el valor de una expresión.</p>    
-                <pre><code>
+                    <p><b>Switch</b><br>Explicación: Selecciona uno de varios bloques de código a ejecutar, basado en el
+                        valor de una expresión.</p>
+                    <pre><code>
                 switch (expresión) {
                     case valor1:
                         // código si expresión es igual a valor1
@@ -341,8 +398,8 @@
                 }
                 
                 </code></pre>
-                <p><b>For</b><br>Explicación: Ejecuta un bloque de código un número específico de veces.</p>
-                <pre><code>
+                    <p><b>For</b><br>Explicación: Ejecuta un bloque de código un número específico de veces.</p>
+                    <pre><code>
                 for (inicialización; condición; incremento) {
                     // código a ejecutar
                 }
@@ -351,8 +408,8 @@
                     console.log(i);
                 }
                 </code></pre>
-                <p><b>While</b><br>Explicación: Ejecuta un bloque de código mientras la condición sea verdadera.</p>
-                <pre><code>
+                    <p><b>While</b><br>Explicación: Ejecuta un bloque de código mientras la condición sea verdadera.</p>
+                    <pre><code>
                 while (condición) {
                     // código a ejecutar
                 }
@@ -364,8 +421,9 @@
                 contador++; // Incrementa el contador
                 }
                 </code></pre>
-                <p><b>Do while</b><br>Explicación: Similar a while, pero garantiza que el bloque de código se ejecutará al menos una vez</p>
-                <pre><code>
+                    <p><b>Do while</b><br>Explicación: Similar a while, pero garantiza que el bloque de código se
+                        ejecutará al menos una vez</p>
+                    <pre><code>
                 do {
                     // código a ejecutar
                 } while (condición);
@@ -380,10 +438,18 @@
 
 
                 </code></pre>
-                <p><b>break:</b> Termina el bucle o el bloque switchactual.<br><b>continue:</b> Salta la iteración actual del bucle y pasa a la siguiente.</p>
-                <p><b>Try Catch</b><br>Explicación: Maneja excepciones que pueden ocurrir en el código.<br><b>Try:</b>La instrucción try se utiliza para envolver el código que puede generar un error.<br>Si se produce un error dentro del bloque try, el control se transfiere al bloque catch.<br><b>Catch:</b> El bloque catch se ejecuta si se produce un error en el bloque try.<br>Puedes acceder al objeto de error que se generó para obtener más información sobre el problema.<br><b>El bloque finally</b> se ejecuta después de los bloques try y catch, independientemente de si se lanzó un error o no.<br>Es útil para realizar tareas de limpieza, como cerrar conexiones o liberar recursos.</p>   
+                    <p><b>break:</b> Termina el bucle o el bloque switchactual.<br><b>continue:</b> Salta la iteración
+                        actual del bucle y pasa a la siguiente.</p>
+                    <p><b>Try Catch</b><br>Explicación: Maneja excepciones que pueden ocurrir en el
+                        código.<br><b>Try:</b>La instrucción try se utiliza para envolver el código que puede generar un
+                        error.<br>Si se produce un error dentro del bloque try, el control se transfiere al bloque
+                        catch.<br><b>Catch:</b> El bloque catch se ejecuta si se produce un error en el bloque
+                        try.<br>Puedes acceder al objeto de error que se generó para obtener más información sobre el
+                        problema.<br><b>El bloque finally</b> se ejecuta después de los bloques try y catch,
+                        independientemente de si se lanzó un error o no.<br>Es útil para realizar tareas de limpieza,
+                        como cerrar conexiones o liberar recursos.</p>
 
-                <pre><code>
+                    <pre><code>
                  try {
                     // código que puede causar un error
                 } catch (error) {
@@ -412,7 +478,7 @@
                 </code></pre>
                 </div>
             </tema-item>
-<!-- 5.Funciones Básicas -->
+            <!-- 5.Funciones Básicas -->
             <tema-item>
                 <titulo>
                     <strong>5. Básico Funciones</strong><br>
@@ -421,31 +487,41 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h3 class="mb-1">Funciones</h3>
-                <p><b>Funciones Declaradas.</b><br>Explicación:&nbsp;Son funciones definidas con la palabra clave functiony tienen un nombre.<br> Se pueden llamar antes de ser declaradas debido al levantamiento.</p>
-                <pre><code>
+                    <h3 class="mb-1">Funciones</h3>
+                    <p><b>Funciones Declaradas.</b><br>Explicación:&nbsp;Son funciones definidas con la palabra clave
+                        functiony tienen un nombre.<br> Se pueden llamar antes de ser declaradas debido al
+                        levantamiento.</p>
+                    <pre><code>
                     function saludar() {
                         console.log("Hola!");
                     }
                 </code></pre>
-                <p><b>Funciones Expresadas</b><br>Explicación:&nbsp;Son funciones que se definen como parte de una expresión, y pueden ser anónimas (sin nombre)<br> o nombradas. No se pueden llamar antes de su declaración.</p>
-                <pre><code>
+                    <p><b>Funciones Expresadas</b><br>Explicación:&nbsp;Son funciones que se definen como parte de una
+                        expresión, y pueden ser anónimas (sin nombre)<br> o nombradas. No se pueden llamar antes de su
+                        declaración.</p>
+                    <pre><code>
                     const despedir = function() {
                         console.log("Adiós!");
                     }; 
                 </code></pre>
-                <p><b>Funciones Flecha.</b><br>Explicación:&nbsp;Introducidas en ES6, las funciones flecha son una forma más concisa de escribir funciones.<br>No tienen su propio contexto this.</p>
-                <pre><code>
+                    <p><b>Funciones Flecha.</b><br>Explicación:&nbsp;Introducidas en ES6, las funciones flecha son una
+                        forma más concisa de escribir funciones.<br>No tienen su propio contexto this.</p>
+                    <pre><code>
                     const multiplicar = (a, b) => a * b;
                 </code></pre>
-                <p><b>Funciones Flecha de una sola expresión.</b><br>Explicación:&nbsp;Estas funciones utilizan una sintaxis simplificada. Si la función consiste en una sola expresión,<br> no es necesario usar llaves {}ni la palabra clave return. El resultado de la expresión se devuelve automáticamente.</p>
-                <pre><code>
+                    <p><b>Funciones Flecha de una sola expresión.</b><br>Explicación:&nbsp;Estas funciones utilizan una
+                        sintaxis simplificada. Si la función consiste en una sola expresión,<br> no es necesario usar
+                        llaves {}ni la palabra clave return. El resultado de la expresión se devuelve automáticamente.
+                    </p>
+                    <pre><code>
                     const sumar = (a, b) => a + b;
                     console.log(sumar(5, 3)); // 8
                     
                 </code></pre>
-                <p><b>Funciones Flecha de Múltiples Líneas</b><br>Explicación:&nbsp;Si la función tiene más de una expresión o se necesita realizar múltiples acciones, se deben usar llaves {}<br>y la declaración returnpara devolver un valor.</p>
-                <pre><code>
+                    <p><b>Funciones Flecha de Múltiples Líneas</b><br>Explicación:&nbsp;Si la función tiene más de una
+                        expresión o se necesita realizar múltiples acciones, se deben usar llaves {}<br>y la declaración
+                        returnpara devolver un valor.</p>
+                    <pre><code>
                     const saludar = (nombre) => {
                         const saludo = `Hola, ${nombre}!`;
                         return saludo;
@@ -454,8 +530,10 @@
                     console.log(saludar("Juan")); // "Hola, Juan!"
                     
                 </code></pre>
-                <p><b>Funciones Flecha con Fetch</b><br>Explicación:&nbsp;El método fetchse utiliza para hacer solicitudes de red y devuelve una promesa. Aquí hay un ejemplo<br> que muestra cómo hacer una solicitud GET a una API y procesar la respuesta usando una función flecha:.</p>
-                <pre><code>
+                    <p><b>Funciones Flecha con Fetch</b><br>Explicación:&nbsp;El método fetchse utiliza para hacer
+                        solicitudes de red y devuelve una promesa. Aquí hay un ejemplo<br> que muestra cómo hacer una
+                        solicitud GET a una API y procesar la respuesta usando una función flecha:.</p>
+                    <pre><code>
                     // Función flecha para obtener datos de una API
                     const obtenerDatos = () => {
                         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -477,8 +555,9 @@
                     obtenerDatos();
                           
                 </code></pre>
-                <p><b>Funciones Flecha con async y await</b><br>Explicación:&nbsp;En este ejemplo, realizaremos una solicitud a una API utilizando fetchy manejaremos la respuesta asíncrona con asyncy await.</p>
-                <pre><code>
+                    <p><b>Funciones Flecha con async y await</b><br>Explicación:&nbsp;En este ejemplo, realizaremos una
+                        solicitud a una API utilizando fetchy manejaremos la respuesta asíncrona con asyncy await.</p>
+                    <pre><code>
                     // Función flecha asíncrona para obtener datos de una API
                     const obtenerDatos = async () => {
                         try {
@@ -499,14 +578,17 @@
                     obtenerDatos();
                     
                 </code></pre>
-                <p><b>Funciones Anónimas.</b><br>Explicación:&nbsp;Son funciones sin nombre, utilizadas como argumentos de otras funciones o en expresiones.</p>
-                <pre><code>
+                    <p><b>Funciones Anónimas.</b><br>Explicación:&nbsp;Son funciones sin nombre, utilizadas como
+                        argumentos de otras funciones o en expresiones.</p>
+                    <pre><code>
                     setTimeout(function() {
                         console.log("Ejecutado después de 2 segundos");
                     }, 2000);       
                 </code></pre>
-                <p><b>Funciones de devolución de llamada</b><br>Explicación:&nbsp;Son funciones que se pasan como argumentos a otras funciones y se ejecutan en respuesta<br> a un evento o después de que se completa una tarea.</p>
-                <pre><code>
+                    <p><b>Funciones de devolución de llamada</b><br>Explicación:&nbsp;Son funciones que se pasan como
+                        argumentos a otras funciones y se ejecutan en respuesta<br> a un evento o después de que se
+                        completa una tarea.</p>
+                    <pre><code>
                     function procesarDatos(callback) {
                         // Simular procesamiento
                         callback();
@@ -514,8 +596,9 @@
                     
                     procesarDatos(() => console.log("Datos procesados"));                    
                 </code></pre>
-                <p><b>Funciones Constructoras</b><br>Explicación:&nbsp;Son funciones que se utilizan para crear objetos. Se invocan con la palabra clave new</p>
-                <pre><code>
+                    <p><b>Funciones Constructoras</b><br>Explicación:&nbsp;Son funciones que se utilizan para crear
+                        objetos. Se invocan con la palabra clave new</p>
+                    <pre><code>
                         function Persona(nombre) {
                             this.nombre = nombre;
                         }
@@ -523,19 +606,20 @@
                         const juan = new Persona("Juan");
                         
                 </code></pre>
-                <p><b>Funciones Recursivas</b><br>Explicación:&nbsp;Son funciones que se llaman a sí mismas para resolver un problema.</p>
-                <pre><code>
+                    <p><b>Funciones Recursivas</b><br>Explicación:&nbsp;Son funciones que se llaman a sí mismas para
+                        resolver un problema.</p>
+                    <pre><code>
                         function factorial(n) {
                             if (n === 0) return 1;
                             return n * factorial(n - 1);
                         }       
                 </code></pre>
-                <p></p>
-                <pre><code>
+                    <p></p>
+                    <pre><code>
                 </code></pre>
                 </div>
             </tema-item>
-<!-- 6. Matrices y Objetos básicos -->
+            <!-- 6. Matrices y Objetos básicos -->
             <tema-item>
                 <titulo>
                     <strong>6. Básico Matrices y Objeto.</strong><br>
@@ -544,56 +628,56 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>Matrices y Objetos Básicos.</h2>
-                <p>1. Crear y manipular matrices en JavaScript</p>
-                <pre><code>
+                    <h2>Matrices y Objetos Básicos.</h2>
+                    <p>1. Crear y manipular matrices en JavaScript</p>
+                    <pre><code>
                     let frutas = ['manzana', 'banana', 'naranja'];
                 </code></pre>
 
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Método</th>
-                            <th>Función</th>
-                            <th>Ejemplo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>.push()</td>
-                            <td>Añade uno o más elementos al final de la matriz</td>
-                            <td>frutas.push('pera'); // ['manzana', 'banana', 'naranja', 'pera']</td>
-                        </tr>
-                        <tr>
-                            <td>.pop()</td>
-                            <td>Elimina y devuelve el último elemento de la matriz</td>
-                            <td>let ultimaFruta = frutas.pop(); // 'pera' y matriz sin 'pera'</td>
-                        </tr>
-                        <tr>
-                            <td>.shift()</td>
-                            <td>Elimina y devuelve el primer elemento</td>
-                            <td>et primerFruta = frutas.shift(); // 'manzana' y matriz sin 'manzana'</td>
-                        </tr>
-                        <tr>
-                            <td>.unshift()</td>
-                            <td>Añade uno o más elementos al inicio</td>
-                            <td>frutas.unshift('fresa'); // ['fresa', 'banana', 'naranja']</td>
-                        </tr>
-                        <tr>
-                            <td>.splice()</td>
-                            <td>Elimina, reemplaza o añade elementos en la matriz</td>
-                            <td>frutas.splice(1, 1, 'limón'); // en índice 1 elimina 'banana' y añade 'limón'</td>
-                        </tr>
-                        <tr>
-                            <td>.slice()</td>
-                            <td>Extrae una copia de una parte de la matriz</td>
-                            <td>let algunasFrutas = frutas.slice(1, 3); // copia elementos en índice 1 y 2</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>2. Ejemplo práctico con todos los métodos</p>
-                <pre><code>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>Función</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>.push()</td>
+                                <td>Añade uno o más elementos al final de la matriz</td>
+                                <td>frutas.push('pera'); // ['manzana', 'banana', 'naranja', 'pera']</td>
+                            </tr>
+                            <tr>
+                                <td>.pop()</td>
+                                <td>Elimina y devuelve el último elemento de la matriz</td>
+                                <td>let ultimaFruta = frutas.pop(); // 'pera' y matriz sin 'pera'</td>
+                            </tr>
+                            <tr>
+                                <td>.shift()</td>
+                                <td>Elimina y devuelve el primer elemento</td>
+                                <td>et primerFruta = frutas.shift(); // 'manzana' y matriz sin 'manzana'</td>
+                            </tr>
+                            <tr>
+                                <td>.unshift()</td>
+                                <td>Añade uno o más elementos al inicio</td>
+                                <td>frutas.unshift('fresa'); // ['fresa', 'banana', 'naranja']</td>
+                            </tr>
+                            <tr>
+                                <td>.splice()</td>
+                                <td>Elimina, reemplaza o añade elementos en la matriz</td>
+                                <td>frutas.splice(1, 1, 'limón'); // en índice 1 elimina 'banana' y añade 'limón'</td>
+                            </tr>
+                            <tr>
+                                <td>.slice()</td>
+                                <td>Extrae una copia de una parte de la matriz</td>
+                                <td>let algunasFrutas = frutas.slice(1, 3); // copia elementos en índice 1 y 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>2. Ejemplo práctico con todos los métodos</p>
+                    <pre><code>
                     let colores = ['rojo', 'azul', 'verde'];
 
                 // push
@@ -615,8 +699,8 @@
                 let primerosColores = colores.slice(0, 2); // ['rojo', 'celeste']
 
                 </code></pre>
-                <p>3. Crear objetos con propiedades y métodos</p>
-                <pre><code>
+                    <p>3. Crear objetos con propiedades y métodos</p>
+                    <pre><code>
                     let persona = {
                         nombre: 'Juan',
                         edad: 30,
@@ -639,8 +723,8 @@
       
                 </code></pre>
 
-                <p>Ejemplo completo: Gestión de una librería</p>
-                <pre><code>
+                    <p>Ejemplo completo: Gestión de una librería</p>
+                    <pre><code>
                     // Crear una matriz de libros (cada libro es un objeto)
                 let libreria = [
                  { titulo: 'Cien Años de Soledad', autor: 'Gabriel García Márquez' },
@@ -715,7 +799,7 @@
                 </code></pre>
                 </div>
             </tema-item>
-<!-- 7.DOM Básico -->
+            <!-- 7.DOM Básico -->
             <tema-item>
                 <titulo>
                     <strong>7. DOM Básico</strong><br>
@@ -724,16 +808,18 @@
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
-                <h2>DOM Básico.</h2>
-                <p>1. Selección de elementos del DOM <br>getElementById: Permite seleccionar un elemento HTML por su atributo id.</p>
-                <pre><code>
+                    <h2>DOM Básico.</h2>
+                    <p>1. Selección de elementos del DOM <br>getElementById: Permite seleccionar un elemento HTML por su
+                        atributo id.</p>
+                    <pre><code>
                     <div id="miDiv">Hola Mundo</div>
 
                     let div = document.getElementById('miDiv');
                     console.log(div.textContent); // "Hola Mundo"
                 </code></pre>
-                <p>querySelector: Permite seleccionar el primer elemento que coincida con un selector CSS (clases, etiquetas, atributos, etc.).</p>
-                <pre><code>
+                    <p>querySelector: Permite seleccionar el primer elemento que coincida con un selector CSS (clases,
+                        etiquetas, atributos, etc.).</p>
+                    <pre><code>
                     <p class="parrafo">Este es un párrafo</p>
 
                     let parrafo = document.querySelector('.parrafo');
@@ -741,21 +827,21 @@
                     
                     let btn = document.querySelector('button#miBoton');
                 </code></pre>
-                <p>2. Manipulación de textos y atributos<br>Cambiar el contenido de un elemento</p>
-                <pre><code>
+                    <p>2. Manipulación de textos y atributos<br>Cambiar el contenido de un elemento</p>
+                    <pre><code>
                     let titulo = document.getElementById('titulo');
                     titulo.textContent = 'Nuevo Título'; // cambia solo el texto
                     titulo.innerHTML = '<strong>Nuevo Título en negrita</strong>'; // cambia el contenido HTML
                 </code></pre>
-                <p>Manipular atributos</p>
-                <pre><code>
+                    <p>Manipular atributos</p>
+                    <pre><code>
                     let enlace = document.querySelector('a'); // supongamos que hay un enlace
                     enlace.setAttribute('href', 'https://www.ejemplo.com'); // cambia o establece el atributo href
                     console.log(enlace.getAttribute('href')); // obtiene el valor del atributo
                     enlace.removeAttribute('href'); // elimina el atributo
                 </code></pre>
-                <p>3. Eventos: onclick y addEventListener<br>onclick (Directamente en HTML o JavaScript)</p>
-                <pre><code>
+                    <p>3. Eventos: onclick y addEventListener<br>onclick (Directamente en HTML o JavaScript)</p>
+                    <pre><code>
                     <button id="miBoton">Haz clic</button>
 
                     let boton = document.getElementById('miBoton');
@@ -764,8 +850,9 @@
                      alert('¡Has hecho clic en el botón!');
                     };
                 </code></pre>
-                <p>addEventListener (más flexible y recomendable)<br>Permite agregar múltiples manejadores de evento y es más limpio.</p>
-                <pre><code>
+                    <p>addEventListener (más flexible y recomendable)<br>Permite agregar múltiples manejadores de evento
+                        y es más limpio.</p>
+                    <pre><code>
                     let boton = document.getElementById('miBoton');
 
                     boton.addEventListener('click', function() {
@@ -777,8 +864,8 @@
                 console.log('El mouse está sobre el botón');
                 });
                 </code></pre>
-                <p>Ejemplo práctico.</p>
-                <pre><code>
+                    <p>Ejemplo práctico.</p>
+                    <pre><code>
                     <body>
                     
                     //Código JavaScript para manipular elementos del DOM
@@ -808,7 +895,7 @@
                       });
                     &lt;/script&gt;
                     </code></pre>
-                    
+
                     <!-- Aquí tienes el código HTML original para que puedas copiar y pegar -->
                     //Código HTML completo (para copiar y usar)
                     <pre><code>
@@ -852,26 +939,28 @@
                     &lt;/body&gt;
                     &lt;/html&gt;
                     </code></pre>
-                    
-                    </body>
-                    </html> 
-                </code></pre>
-                </div>
+
+                      </body>
+                       </html>
+                         </code></pre>
+                 </div>
             </tema-item>
 <!-- 8.Intermedio-Funciones Avanzadas -->
             <tema-item>
-                <titulo>
-                    <strong>8.Intermedio-Funciones Avanzadas.</strong><br>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-                <div>
+              <titulo>
+               <strong>8.Intermedio-Funciones Avanzadas.</strong><br>
+                <br>
+               <strong></strong>
+              </titulo>
+                 <subtitulo></subtitulo>
+              <div>
                 <h2>Funciones Avanzadas.</h2>
                 <p><b>1. Funciones como objetos de primera clase</b></p>
-                <p>En JavaScript, las funciones son ciertamente objetos de primera clase, lo que significa que:<br>Pueden ser almacenadas en variables.<br>Pasadas como argumentos a otras funciones.<br>Devueltas como valores desde funciones.<br>Tener propiedades y métodos propios.</p>
+                <p>En JavaScript, las funciones son ciertamente objetos de primera clase, lo que significa que:<br>Pueden ser
+                almacenadas en variables.<br>Pasadas como argumentos a otras funciones.<br>Devueltas como valores desde
+                funciones.<br>Tener propiedades y métodos propios.</p>
                 <pre><code>
-                    // Función asignada a una variable
+                // Función asignada a una variable
                 const saludar = function(nombre) {
                 return 'Hola, ' + nombre;
                 };
@@ -890,7 +979,8 @@
                 console.log(saludarConContador('Juan')); // "Hola, Juan! Esta es la vez número 1"
                 console.log(saludarConContador('Pedro')); // "Hola, Pedro! Esta es la vez número 2"
                 </code></pre>
-                <p><b>2.Callbacks (Funciones de devolución de llamada)</b><br>Una función callback es una función que se pasa como argumento a otra función y que será ejecutada en algún momento dentro de esa función.</p>
+                <p><b>2.Callbacks (Funciones de devolución de llamada)</b><br>Una función callback es una función que se pasa
+                como argumento a otra función y que será ejecutada en algún momento dentro de esa función.</p>
                 <pre><code>
                     function procesarNumero(numero, callback) {
                         let resultado = callback(numero);
@@ -907,8 +997,8 @@
                       }
                       procesarNumero(10, doble); // Resultado: 20                      
                 </code></pre>
-
-                <p><b>3. Clousures (Clausuras)</b><br>Una clausura es una función que "recuerda" el entorno en el que fue creada, es decir, puede acceder a variables externas incluso después de que esa función se ha ejecutado.</p>
+                 <p><b>3. Clousures (Clausuras)</b><br>Una clausura es una función que "recuerda" el entorno en el que fue
+                 creada, es decir, puede acceder a variables externas incluso después de que esa función se ha ejecutado.</p>
                 <pre><code>
                     function crearContador() {
                         let contador = 0; // variable externa a la función interna
@@ -928,7 +1018,9 @@
                       console.log(contador2()); // 2
                       
                 </code></pre>
-                <p><b>4.IIFE (Immediately Invoked Function Expression) — Funciones autoejecutables.</b><br>Una IIFE es una función que se define y se ejecuta inmediatamente. Se usa para crear un ámbito aislado y evitar colisiones de variables en el código global.</p>
+                <p><b>4.IIFE (Immediately Invoked Function Expression) — Funciones autoejecutables.</b><br>Una IIFE es una
+                función que se define y se ejecuta inmediatamente. Se usa para crear un ámbito aislado y evitar colisiones
+                de variables en el código global.</p>
                 <pre><code>
                     (function() {
                         // código aquí
@@ -947,20 +1039,20 @@
                       })();
                           
                 </code></pre>
-                </div>
+               </div>
             </tema-item>
 <!-- 9.Intermedio-Objetos y prototipos             -->
             <tema-item>
-                <titulo>
-                    <strong>9.Intermedio-Objetos y prototipos.</strong><br>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-                <div>
-                <h2>Objetos y prototipos.</h2>
-                <p><b> Objetos en JavaScript</b><br>Un objeto es una colección de propiedades y métodos.</p>
-                <pre><code> 
+              <titulo>
+                <strong>9.Intermedio-Objetos y prototipos.</strong><br>
+                  <br>
+                  <strong></strong>
+                   </titulo>
+                    <subtitulo></subtitulo>
+                   <div>
+                 <h2>Objetos y prototipos.</h2>
+                 <p><b> Objetos en JavaScript</b><br>Un objeto es una colección de propiedades y métodos.</p>
+                 <pre><code> 
                     const persona = {
                         nombre: 'Juan',
                         edad: 30,
@@ -969,9 +1061,10 @@
                         }
                       };
                       persona.saludar(); // Hola, Juan                      
-                </code></pre>
-                <p><b>2. Funciones constructoras y creación de objetos.</b><br>Las funciones constructoras sirven para crear objetos similares.</p>
-                <pre><code>  
+                 </code></pre>
+                 <p><b>2. Funciones constructoras y creación de objetos.</b><br>Las funciones constructoras sirven para crear
+                 objetos similares.</p>
+                 <pre><code>  
                     function Persona(nombre, edad) {
                         this.nombre = nombre;
                         this.edad = edad;
@@ -982,9 +1075,10 @@
                       
                       const p1 = new Persona('Ana', 25);
                       p1.saludar(); // Hola, soy Ana                      
-                </code></pre>
-                 <p><b>3. Prototipo y herencia prototípica</b><br>Cada función tiene un prototipo (una propiedad llamada prototype) donde se pueden definir métodos y propiedades compartidas</p>
-                <pre><code>  
+                  </code></pre>
+                   <p><b>3. Prototipo y herencia prototípica</b><br>Cada función tiene un prototipo (una propiedad llamada
+                  prototype) donde se pueden definir métodos y propiedades compartidas</p>
+                  <pre><code>  
                     function Persona(nombre, edad) {
                         this.nombre = nombre;
                         this.edad = edad;
@@ -997,9 +1091,9 @@
                       
                       const p2 = new Persona('Luis', 40);
                       p2.saludar(); // Hola, Luis                      
-                </code></pre>
-                <p><b>Herencia prototípica:</b><br>Creamos una "subclase" que hereda del prototipo de otra:</p>
-                <pre><code> 
+                  </code></pre>
+                   <p><b>Herencia prototípica:</b><br>Creamos una "subclase" que hereda del prototipo de otra:</p>
+                  <pre><code> 
                     function Estudiante(nombre, edad, escuela) {
                         Persona.call(this, nombre, edad); // Hereda propiedades
                         this.escuela = escuela;
@@ -1018,10 +1112,10 @@
                       alumno.saludar(); // Hola, Carlos
                       alumno.estudiar(); // Carlos está estudiando en MIT
                        
-                </code></pre>
-                <p><b>4. Uso de this, call, apply, y bind</b></p>
-                <p>this</p>
-                <pre><code> 
+                   </code></pre>
+                    <p><b>4. Uso de this, call, apply, y bind</b></p>
+                    <p>this</p>
+                   <pre><code> 
                     const persona = {
                         nombre: 'Ana',
                         hablar: function() {
@@ -1029,9 +1123,9 @@
                         }
                       };
                       persona.hablar(); // Hola, Ana                      
-                </code></pre>
-                <p>call()</p>
-                <pre><code>
+                   </code></pre>
+                    <p>call()</p>
+                   <pre><code>
                     function mostrar() {
                         console.log('Mi nombre es ' + this.nombre);
                       }
@@ -1041,94 +1135,94 @@
                       
                       mostrar.call(persona1); // Mi nombre es Luis
                       mostrar.call(persona2); // Mi nombre es Laura                        
-                </code></pre>
-                <p>apply()<br>Similar a call(), pero recibe los argumentos en forma de array.</p>
-                <pre><code>
+                    </code></pre>
+                     <p>apply()<br>Similar a call(), pero recibe los argumentos en forma de array.</p>
+                    <pre><code>
                     mostrar.apply(persona1); // Mi nombre es Luis  
-                </code></pre>
-                <p>bind()</p>
-                <pre><code> 
+                    </code></pre>
+                    <p>bind()</p>
+                    <pre><code> 
                     const hablarLuis = mostrar.bind(persona1);
                     hablarLuis(); // Mi nombre es Luis
-                </code></pre>
-            </div>
+                    </code></pre>
+                  </div>
             </tema-item>
 <!-- 10.Arrays y objetos avanzados  -->
             <tema-item>
-                <titulo>
-                    <strong>10.Intermedio-Arrays y Objetos.</strong><br>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-                <div>
-                <h2>Arrays y Objetos.</h2>
-                <p><b>1. Arrays avanzados</b></p>
-                <p>a) forEach(): Itera sobre cada elemento del array, sin devolver un nuevo array.</p>
-                <pre><code> 
+    <titulo>
+        <strong>10.Intermedio-Arrays y Objetos.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>Arrays y Objetos.</h2>
+        <p><b>1. Arrays avanzados</b></p>
+        <p>a) forEach(): Itera sobre cada elemento del array, sin devolver un nuevo array.</p>
+        <pre><code> 
                     const numeros = [1, 2, 3, 4];
                     numeros.forEach(n => console.log(n * 2));
                     // Salida: 2, 4, 6, 8
                 </code></pre>
-                <p>b) map(): Crea un nuevo array transformando cada elemento.</p>
-                <pre><code> 
+        <p>b) map(): Crea un nuevo array transformando cada elemento.</p>
+        <pre><code> 
                     const cuadrados = numeros.map(n => n * n);
                     console.log(cuadrados); // [1, 4, 9, 16]
                 </code></pre>
-                <p>c) filter(): Filtra los elementos que cumplen una condición y devuelve un nuevo array.</p>
-                <pre><code> 
+        <p>c) filter(): Filtra los elementos que cumplen una condición y devuelve un nuevo array.</p>
+        <pre><code> 
                     const pares = numeros.filter(n => n % 2 === 0);
                     console.log(pares); // [2, 4]
                 </code></pre>
-                <p>d) reduce(): Reduce un array a un único valor, acumulando los resultados.</p>
-                <pre><code> 
+        <p>d) reduce(): Reduce un array a un único valor, acumulando los resultados.</p>
+        <pre><code> 
                     const sumaTotal = numeros.reduce((acum, n) => acum + n, 0);
                     console.log(sumaTotal); // 10
                 </code></pre>
-                <p>e) find(): Busca y devuelve el primer elemento que cumple una condición.</p>
-                <pre><code>
+        <p>e) find(): Busca y devuelve el primer elemento que cumple una condición.</p>
+        <pre><code>
                     const busqueda = numeros.find(n => n > 2);
                     console.log(busqueda); // 3
                 </code></pre>
-                <p>f) some(): Verifica si al menos un elemento cumple una condición (devuelve true o false).</p>
-                <pre><code> 
+        <p>f) some(): Verifica si al menos un elemento cumple una condición (devuelve true o false).</p>
+        <pre><code> 
                     const hayPares = numeros.some(n => n % 2 === 0);
                     console.log(hayPares); // true
                 </code></pre>
-                <p>g) every(): Verifica si todos los elementos cumplen una condición.</p>
-                <pre><code> 
+        <p>g) every(): Verifica si todos los elementos cumplen una condición.</p>
+        <pre><code> 
                     const todosPositivos = numeros.every(n => n > 0);
                     console.log(todosPositivos); // true
                 </code></pre>
-                <p><b>2. Objetos avanzados y desestructuración</b></p>
-                <p>a) Desestructuración de objetos<br>Extraer propiedades fácilmente:</p>
-                <pre><code> 
+        <p><b>2. Objetos avanzados y desestructuración</b></p>
+        <p>a) Desestructuración de objetos<br>Extraer propiedades fácilmente:</p>
+        <pre><code> 
                     const persona = { nombre: 'Juan', edad: 30, ciudad: 'Madrid' };
                     const { nombre, edad } = persona;
                     console.log(nombre); // Juan
                     console.log(edad);   // 30
                 </code></pre>
-                <p>b) Desestructuración en arrays</p>
-                <pre><code>
+        <p>b) Desestructuración en arrays</p>
+        <pre><code>
                     const colores = ['rojo', 'azul', 'verde'];
                     const [color1, color2, color3] = colores;
                     console.log(color2); // azul
                 </code></pre>
-                <p>3. Operador spread (...) y operador rest (...)</p>
-                <p>a) Spread en arrays y objetos<br>En arrays:</p>
-                <pre><code>
+        <p>3. Operador spread (...) y operador rest (...)</p>
+        <p>a) Spread en arrays y objetos<br>En arrays:</p>
+        <pre><code>
                     const nums1 = [1, 2, 3];
                     const nums2 = [4, 5, 6];
                     const todos = [...nums1, ...nums2]; // [1, 2, 3, 4, 5, 6]
                 </code></pre>
-                <p>En objetos:</p>
-                <pre><code>
+        <p>En objetos:</p>
+        <pre><code>
                     const persona1 = { nombre: 'Ana', edad: 25 };
                     const persona2 = { ...persona1, ciudad: 'Sevilla' };
                     console.log(persona2); // { nombre: 'Ana', edad: 25, ciudad: 'Sevilla' }
                 </code></pre>
-                <p>b) Rest en funciones:<br>Permite recibir un número variable de argumentos:</p>
-                <pre><code>
+        <p>b) Rest en funciones:<br>Permite recibir un número variable de argumentos:</p>
+        <pre><code>
                     function sumar(...numeros) {
                         return numeros.reduce((acum, n) => acum + n, 0);
                       }
@@ -1136,8 +1230,8 @@
                       console.log(sumar(1, 2, 3, 4)); // 10
                       
                 </code></pre>
-                <p>Resumen</p>
-                <pre><code>
+        <p>Resumen</p>
+        <pre><code>
                     const productos = [
                  { id: 1, nombre: 'Lapiz', precio: 1.5 },
                  { id: 2, nombre: 'Cuaderno', precio: 3 },
@@ -1180,34 +1274,36 @@
            }
            imprimirProductos(...productos);
                 </code></pre>
-                </div>
+    </div>
             </tema-item>
 <!-- 11.ES6+(JavaScript moderno) -->
             <tema-item>
-                <titulo>
-                    <strong>11.Intemedio ES6 + Javascript Moderno</strong><br>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-                <div>
-                <h2>Javascript Moderno</h2>
-                <p><b>Let y Conts</b><br>let: declara variables que pueden cambiar su valor.<br>const: declara variables que no cambian (constantes).</p>
-                <pre><code>
+    <titulo>
+        <strong>11.Intemedio ES6 + Javascript Moderno</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>Javascript Moderno</h2>
+        <p><b>Let y Conts</b><br>let: declara variables que pueden cambiar su valor.<br>const: declara variables que no
+            cambian (constantes).</p>
+        <pre><code>
                     let nombre = "Rodolfo";
                         nombre = "Pedro"; // OK
 
                     const edad = 30;
                         edad = 31; // ❌ Error
                 </code></pre>
-                <p><b>Plantillas literales (Template Literals)</b><br>Permiten insertar variables fácilmente dentro de cadenas usando backticks ` y ${}:</p>
-                <pre><code>
+        <p><b>Plantillas literales (Template Literals)</b><br>Permiten insertar variables fácilmente dentro de cadenas
+            usando backticks ` y ${}:</p>
+        <pre><code>
                     const nombre = "Rodolfo";
                     const saludo = `Hola, mi nombre es ${nombre}`;
                     console.log(saludo); // "Hola, mi nombre es Rodolfo"
                 </code></pre>
-                <p><b>Funciones de Flecha (Arrow Funtions)</b><br>Una forma más corta de declarar funciones:</p>
-                <pre><code>
+        <p><b>Funciones de Flecha (Arrow Funtions)</b><br>Una forma más corta de declarar funciones:</p>
+        <pre><code>
                     // Tradicional
                     function sumar(a, b) {
                     return a + b;
@@ -1217,11 +1313,12 @@
                     const sumar = (a, b) => a + b;
                     <p>Nota: No tienen su propio this, lo cual las hace útiles para callbacks o métodos donde no quieres cambiar el contexto.</p>
                 </code></pre>
-                <p><b>Módulos (importación/exportación)</b><br>Permiten dividir el código en archivos reutilizables.<br>Archivo saludos.js:</p>
-                <pre><code>
+        <p><b>Módulos (importación/exportación)</b><br>Permiten dividir el código en archivos reutilizables.<br>Archivo
+            saludos.js:</p>
+        <pre><code>
                     export const saludar = (nombre) => `Hola, ${nombre}`;
                 </code></pre>
-                <pre><code>
+        <pre><code>
                     <p>Archivo app.js</p>
 
                     import { saludar } from './saludos.js';
@@ -1229,8 +1326,8 @@
 
                    <p>También puedes usar export default para exportar una sola cosa sin nombre fijo.</p>
                 </code></pre>
-                <p><b>Clases (class, extends, super)</b><br>Sintaxis orientada a objetos moderna:</p>
-                <pre><code>
+        <p><b>Clases (class, extends, super)</b><br>Sintaxis orientada a objetos moderna:</p>
+        <pre><code>
                     class Animal {
                         constructor(nombre) {
                           this.nombre = nombre;
@@ -1251,8 +1348,9 @@
                       miPerro.hablar();
                       
                 </code></pre>
-                <p><b>Promesas (Promise, .then, .catch)</b><br>Sirven para manejar operaciones asíncronas (como peticiones HTTP).</p>
-                <pre><code>
+        <p><b>Promesas (Promise, .then, .catch)</b><br>Sirven para manejar operaciones asíncronas (como peticiones
+            HTTP).</p>
+        <pre><code>
                     const obtenerDatos = () => {
                         return new Promise((resolve, reject) => {
                           setTimeout(() => {
@@ -1272,22 +1370,25 @@
 
                         <p>También puedes usar async/await para simplificar el código.</p>
                 </code></pre>
-                
-            </div>
+
+    </div>
             </tema-item>
 <!-- 12.Asincronia             -->
             <tema-item>
-                <titulo>
-                    <strong>12.Intermedio-Asincronia</strong><br>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-                <div>
-                <h2>Asincronia</h2>
-                <p><b>¿Qué es la asincronía?</b><br>avaScript es monohilo (un solo hilo de ejecución). Pero con asincronía puede realizar tareas que toman tiempo (como leer archivos, hacer peticiones a APIs, etc.) sin bloquear el hilo principal.</p>
-                <p><b>Promesas encadenadas (Chained Promises)</b><br>Las promesas (Promise) permiten manejar operaciones que se completan más adelante.</p>
-                <pre><code>
+    <titulo>
+        <strong>12.Intermedio-Asincronia</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>Asincronia</h2>
+        <p><b>¿Qué es la asincronía?</b><br>avaScript es monohilo (un solo hilo de ejecución). Pero con asincronía puede
+            realizar tareas que toman tiempo (como leer archivos, hacer peticiones a APIs, etc.) sin bloquear el hilo
+            principal.</p>
+        <p><b>Promesas encadenadas (Chained Promises)</b><br>Las promesas (Promise) permiten manejar operaciones que se
+            completan más adelante.</p>
+        <pre><code>
                     function pasoUno() {
                         return new Promise((resolve) => {
                           setTimeout(() => {
@@ -1317,8 +1418,9 @@
 
                         <p> Aquí encadenamos .then() para pasar los resultados de una promesa a la siguiente.</p>
                 </code></pre>
-                <p><b>async / await: sintaxis más limpia</b>Con async/await, puedes escribir código asíncrono como si fuera síncrono:</p>
-                <pre><code>
+        <p><b>async / await: sintaxis más limpia</b>Con async/await, puedes escribir código asíncrono como si fuera
+            síncrono:</p>
+        <pre><code>
                     async function proceso() {
                         try {
                           const resultado1 = await pasoUno();
@@ -1333,8 +1435,8 @@
                       
                       <p>Ventajas de async/await:<br>Más fácil de leer<br>Menos .then() anidados<br>Manejo de errores con try/catch</p>
                 </code></pre>
-                <p><b>Manejo de errores asíncronos</b></p>Con promesas:</p>
-                <pre><code>
+        <p><b>Manejo de errores asíncronos</b></p>Con promesas:</p>
+        <pre><code>
                     fetch("https://jsonplaceholder.typicode.com/posts/12345")
                     .then((res) => {
                     if (!res.ok) throw new Error("No se pudo obtener el recurso");
@@ -1343,8 +1445,8 @@
                     .then((data) => console.log(data))
                     .catch((err) => console.error("Error:", err.message));
                 </code></pre>
-                <p>Con async/await:</p>
-                <pre><code>
+        <p>Con async/await:</p>
+        <pre><code>
                     async function obtenerPost() {
                         try {
                           const res = await fetch("https://jsonplaceholder.typicode.com/posts/12345");
@@ -1358,59 +1460,59 @@
                       
                       obtenerPost();     
                 </code></pre>
-                <table border="2">
-                    <thead>
-                      <tr>
-                        <th>Técnica</th>
-                        <th>Ventajas</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>.then() encadenado</td>
-                        <td>Control detallado del flujo, útil para múltiples pasos</td>
-                      </tr>
-                      <tr>
-                        <td>async/await</td>
-                        <td>Sintaxis más limpia y parecida a código síncrono</td>
-                      </tr>
-                      <tr>
-                        <td>try/catch en async</td>
-                        <td>Permite manejo centralizado de errores</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  
-               
-            </div>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Técnica</th>
+                    <th>Ventajas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>.then() encadenado</td>
+                    <td>Control detallado del flujo, útil para múltiples pasos</td>
+                </tr>
+                <tr>
+                    <td>async/await</td>
+                    <td>Sintaxis más limpia y parecida a código síncrono</td>
+                </tr>
+                <tr>
+                    <td>try/catch en async</td>
+                    <td>Permite manejo centralizado de errores</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
             </tema-item>
 <!-- 13.DOM Avanzado -->
             <tema-item>
-                <titulo>
-                   <strong>13.Intermedio-DOM Avanzado.</strong><br>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-                <div>
-                  <h2>DOM Avanzado.</h2>
-                  <p><b>Crear y eliminar elementos</b></p>
-                  <p><b>Crear elementos</b></p>
-                <pre><code>
+    <titulo>
+        <strong>13.Intermedio-DOM Avanzado.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>DOM Avanzado.</h2>
+        <p><b>Crear y eliminar elementos</b></p>
+        <p><b>Crear elementos</b></p>
+        <pre><code>
                     const nuevoElemento = document.createElement("p");
                     nuevoElemento.textContent = "Hola, soy un nuevo párrafo";
                     document.body.appendChild(nuevoElemento);
                 </code></pre>
-                <p><b>Eliminar elementos</b></p>
-                <pre><code>
+        <p><b>Eliminar elementos</b></p>
+        <pre><code>
                     const eliminar = document.querySelector("p");
                     eliminar.remove(); // Elimina el elemento del DOM
 
                     <p>También se puede usar:</p>
                     padre.removeChild(hijo);
                 </code></pre>
-                <p><b>Manipulación de clases y estilos</b><br>Clases</p>
-                <pre><code>
+        <p><b>Manipulación de clases y estilos</b><br>Clases</p>
+        <pre><code>
                     const elemento = document.querySelector(".mi-elemento");
 
                     elemento.classList.add("nueva-clase");     // Agrega clase
@@ -1423,8 +1525,9 @@
                     elemento.style.backgroundColor = "#f0f0f0";
                 <p>Puedes modificar cualquier propiedad CSS en camelCase.</p>    
                 </code></pre>
-                <p><b>Delegación de eventos</b><br>Es una técnica donde asignas el evento a un contenedor, en lugar de a cada hijo individual. Útil cuando los hijos se crean dinámicamente.</p>
-                <pre><code>
+        <p><b>Delegación de eventos</b><br>Es una técnica donde asignas el evento a un contenedor, en lugar de a cada
+            hijo individual. Útil cuando los hijos se crean dinámicamente.</p>
+        <pre><code>
                     <p.js</p>
                     document.getElementById("lista").addEventListener("click", (e) => {
                         if (e.target.tagName === "LI") {
@@ -1438,8 +1541,8 @@
                       </ul>
                     <p>Ventaja: no necesitas volver a asignar eventos si agregas nuevos <li>.</p>                                           
                 </code></pre>
-                <p><b>Formularios y validación</b><br>Acceso a valores</p>
-                <pre><code>
+        <p><b>Formularios y validación</b><br>Acceso a valores</p>
+        <pre><code>
                     const formulario = document.querySelector("#mi-form");
 
                     formulario.addEventListener("submit", (e) => {
@@ -1449,8 +1552,8 @@
                  });
 
                 </code></pre>
-                <p><b>Validación básica</b></p>
-                <pre><code>
+        <p><b>Validación básica</b></p>
+        <pre><code>
                     formulario.addEventListener("submit", (e) => {
                         const nombre = formulario.nombre.value.trim();
                       
@@ -1468,38 +1571,39 @@
                     <p>También puedes usar validación HTML5 con required, minlength, etc., y complementarlo con JS para validaciones personalizadas.</p>    
              
                 </code></pre>
-                </div>
+    </div>
             </tema-item>
-             
+
 <!-- 14.Herramienta de desarrollo -->
             <tema-item>
-                <titulo>
-                    <strong>14.Intermedio-Herramientas de Desarrollo.</strong>
-                    <br>
-                    <strong></strong>
-                </titulo>
-                 <subtitulo></subtitulo>
-                <div>
-                 <h2>Herramientas de Desarrollo.</h2>
-                  <p>Estas son funciones o extensiones que mejoran el flujo de trabajo del desarrollador:</p>
-                  <p><b>Herramientas del navegador (DevTools)</b>Todos los navegadores modernos (Chrome, Firefox, Edge) incluyen:</p>
-                  <p>·&nbsp;Consola (console.log, errores, advertencias).<br>
-                     ·&nbsp;Inspector del DOM y estilos CSS.<br>
-                     ·&nbsp;Debugger (puntos de interrupción, paso a paso).<br>
-                     ·&nbsp;Network (ver llamadas fetch/AJAX).<br>
-                     ·&nbsp;Performance (medir velocidad, FPS, etc.)<br>
-                     <br>
-                     Atajo: F12 o clic derecho → "Inspeccionar"
-                    </p>
-        
-                  <p><b>Depuración en JavaScript</b><br>console.log(), console.error(), console.table(), console.dir()</p>
-                  <code><pre>
+    <titulo>
+        <strong>14.Intermedio-Herramientas de Desarrollo.</strong>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>Herramientas de Desarrollo.</h2>
+        <p>Estas son funciones o extensiones que mejoran el flujo de trabajo del desarrollador:</p>
+        <p><b>Herramientas del navegador (DevTools)</b>Todos los navegadores modernos (Chrome, Firefox, Edge) incluyen:
+        </p>
+        <p>·&nbsp;Consola (console.log, errores, advertencias).<br>
+            ·&nbsp;Inspector del DOM y estilos CSS.<br>
+            ·&nbsp;Debugger (puntos de interrupción, paso a paso).<br>
+            ·&nbsp;Network (ver llamadas fetch/AJAX).<br>
+            ·&nbsp;Performance (medir velocidad, FPS, etc.)<br>
+            <br>
+            Atajo: F12 o clic derecho → "Inspeccionar"
+        </p>
+
+        <p><b>Depuración en JavaScript</b><br>console.log(), console.error(), console.table(), console.dir()</p>
+        <code><pre>
                     console.log("Mensaje");            // Normal
                     console.error("Error");           // En rojo
                     console.table([{ a: 1 }, { a: 2 }]); // Tabla
                   </pre></code>
-                  <p>Debugger:<br>Detiene la ejecución para inspeccionar variables:</p>
-                  <code><pre>
+        <p>Debugger:<br>Detiene la ejecución para inspeccionar variables:</p>
+        <code><pre>
                     function prueba() {
                         const x = 10;
                         debugger; // Pausa aquí si tienes DevTools abierto
@@ -1507,19 +1611,20 @@
                         return y;
                       }                      
                   </pre></code>
-                  <p><b>Linters - ESLint</b><br>Un linter analiza tu código para detectar errores, inconsistencias o malas prácticas.</p>
-                 
-                  <p><b>¿Qué es ESLint?</b><br>
-                    ·&nbsp;Es el linter más usado en JS.<br>
-                    ·&nbsp;Puedes definir reglas para estilos, errores comunes, buenas prácticas.<br>
-                    ·&nbsp; Funciona con editores como VS Code.<br>
-                   </p>
-                  <code><pre>
+        <p><b>Linters - ESLint</b><br>Un linter analiza tu código para detectar errores, inconsistencias o malas
+            prácticas.</p>
+
+        <p><b>¿Qué es ESLint?</b><br>
+            ·&nbsp;Es el linter más usado en JS.<br>
+            ·&nbsp;Puedes definir reglas para estilos, errores comunes, buenas prácticas.<br>
+            ·&nbsp; Funciona con editores como VS Code.<br>
+        </p>
+        <code><pre>
                     npm install eslint --save-dev
                     npx eslint --init
                   </pre></code>
-                  <p> Archivo .eslintrc.js ejemplo:</p>
-                  <code><pre>
+        <p> Archivo .eslintrc.js ejemplo:</p>
+        <code><pre>
                     module.exports = {
                         env: {
                           browser: true,
@@ -1537,23 +1642,23 @@
                       };
                       
                   </pre></code>
-                  <p><b>Introducción a NPM (Node Package Manager)</b></p>
-                  <p><b>¿Qué es?</b><br>NPM es el gestor de paquetes de JavaScript. Sirve para:
-                    ·&nbsp;Instalar librerías o frameworks (React, Vue, Express, etc.).<br>
-                    ·&nbsp;Manejar dependencias del proyecto. <br>
-                    ·&nbsp;Crear scripts para automatizar tareas. <br>
-                    <br>
-                    Comandos clave
-                  </p>
-                  <code><pre>
+        <p><b>Introducción a NPM (Node Package Manager)</b></p>
+        <p><b>¿Qué es?</b><br>NPM es el gestor de paquetes de JavaScript. Sirve para:
+            ·&nbsp;Instalar librerías o frameworks (React, Vue, Express, etc.).<br>
+            ·&nbsp;Manejar dependencias del proyecto. <br>
+            ·&nbsp;Crear scripts para automatizar tareas. <br>
+            <br>
+            Comandos clave
+        </p>
+        <code><pre>
                     npm init          # Crea package.json
                     npm install       # Instala dependencias
                     npm install <paquete>       # Instala un paquete
                     npm install <paquete> --save-dev  # Solo para desarrollo
                     npm run (script)  # Corre un script definido en package.json
                   </pre></code>
-                  <p>package.json ejemplo</p>
-                  <code><pre>
+        <p>package.json ejemplo</p>
+        <code><pre>
                     {
                         "name": "mi-proyecto",
                         "version": "1.0.0",
@@ -1569,53 +1674,55 @@
                         }
                       }
                   </pre></code>
-                    <table border="2">
-                        <thead>
-                          <tr>
-                            <th>Herramienta</th>
-                            <th>Función Principal</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>DevTools</td>
-                            <td>Inspección y depuración visual</td>
-                          </tr>
-                          <tr>
-                            <td>console/debugger</td>
-                            <td>Depurar y entender errores</td>
-                          </tr>
-                          <tr>
-                            <td>ESLint</td>
-                            <td>Linter para calidad de código</td>
-                          </tr>
-                          <tr>
-                            <td>NPM</td>
-                            <td>Manejo de paquetes y dependencias</td>
-                          </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Herramienta</th>
+                    <th>Función Principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>DevTools</td>
+                    <td>Inspección y depuración visual</td>
+                </tr>
+                <tr>
+                    <td>console/debugger</td>
+                    <td>Depurar y entender errores</td>
+                </tr>
+                <tr>
+                    <td>ESLint</td>
+                    <td>Linter para calidad de código</td>
+                </tr>
+                <tr>
+                    <td>NPM</td>
+                    <td>Manejo de paquetes y dependencias</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
             </tema-item>
 <!-- 15.Manejo Avanzado de Asincronía       -->
-           <tema-item>
-              <titulo>
-                <strong>15.Manejo Avanzado de Asincronía</strong><br>
-                 <br>
-                <strong></strong>
-                </titulo>
-                <subtitulo></subtitulo>
-              <div>
-                <h2>Manejo Avanzado de Asincronía</h2>
-                <p><b>fetch() API – Solicitudes HTTP</b><br>Permite hacer peticiones a servidores de forma sencilla y basada en promesas.</p>
-             <code><pre>
+            <tema-item>
+    <titulo>
+        <strong>15.Manejo Avanzado de Asincronía</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>Manejo Avanzado de Asincronía</h2>
+        <p><b>fetch() API – Solicitudes HTTP</b><br>Permite hacer peticiones a servidores de forma sencilla y basada en
+            promesas.</p>
+        <code><pre>
                 fetch("https://jsonplaceholder.typicode.com/posts/1")
                  .then((res) => res.json())
                  .then((data) => console.log(data))
                  .catch((error) => console.error("Error:", error));
              </pre></code>
-             <p><b>AbortController – Cancelar solicitudes fetch<b><br>Controla la cancelación de peticiones fetch (útil para evitar fugas de memoria o peticiones innecesarias).</p>
-             <code><pre>
+        <p><b>AbortController – Cancelar solicitudes fetch</b><br>Controla la cancelación de peticiones fetch (útil para
+            evitar fugas de memoria o peticiones innecesarias).</p>
+        <code><pre>
                 const controller = new AbortController();
                 const signal = controller.signal;
 
@@ -1632,10 +1739,10 @@
 
             // Abortar luego de 100 ms
             setTimeout(() => controller.abort(), 100);
-            </pre></code>   
+            </pre></code>
 
-             <p><b>Promesas paralelas</b><br>Promise.all() – Espera que todas se resuelvan</p>
-             <code><pre>
+        <p><b>Promesas paralelas</b><br>Promise.all() – Espera que todas se resuelvan</p>
+        <code><pre>
                 const promesa1 = fetch("https://jsonplaceholder.typicode.com/posts/1").then(r => r.json());
                 const promesa2 = fetch("https://jsonplaceholder.typicode.com/users/1").then(r => r.json());
 
@@ -1654,9 +1761,9 @@
              Promise.race([lenta, rapida]).then(resultado => {
              console.log("Ganó:", resultado); // "Rápida"
             });
-             </pre></code>   
-             <p><b>APIs Web útiles en el navegador</b>Temporizadores</p>
-             <code><pre>
+             </pre></code>
+        <p><b>APIs Web útiles en el navegador</b>Temporizadores</p>
+        <code><pre>
                 setTimeout(() => console.log("Después de 1 segundo"), 1000);
 
                 let count = 0;
@@ -1664,9 +1771,9 @@
                 console.log("Contando:", ++count);
                 if (count === 3) clearInterval(intervalId);
                 }, 500);
-             </pre></code>   
-             <p>Geolocalización (si el navegador lo permite)</p>
-             <code><pre>
+             </pre></code>
+        <p>Geolocalización (si el navegador lo permite)</p>
+        <code><pre>
                 navigator.geolocation.getCurrentPosition(
                 (pos) => {
                 console.log("Lat:", pos.coords.latitude, "Long:", pos.coords.longitude);
@@ -1675,68 +1782,68 @@
                 console.error("Error obteniendo ubicación:", err);
                }
               );
-             </pre></code>   
-             <p><b>Almacenamiento Web (localStorage y sessionStorage)</b></p>
-             <code><pre>
+             </pre></code>
+        <p><b>Almacenamiento Web (localStorage y sessionStorage)</b></p>
+        <code><pre>
                 // localStorage (persiste aunque cierres el navegador)
                    localStorage.setItem("nombre", "Rodolfo");
                    console.log(localStorage.getItem("nombre")); // "Rodolfo"
 
                 // sessionStorage (solo en la sesión actual)
                 sessionStorage.setItem("tema", "oscuro");
-             </pre></code>   
-             <table border="1">
-                <thead>
-                  <tr>
+             </pre></code>
+        <table border="2">
+            <thead>
+                <tr>
                     <th>Herramienta / API</th>
                     <th>Uso Principal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <td>fetch()</td>
                     <td>Hacer peticiones HTTP</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>AbortController</td>
                     <td>Cancelar peticiones en curso</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Promise.all()</td>
                     <td>Ejecutar tareas en paralelo y esperar todas</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Promise.race()</td>
                     <td>Obtener el resultado de la primera en resolverse</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>setTimeout, setInterval</td>
                     <td>Ejecutar tareas con retraso o repetición</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>geolocation</td>
                     <td>Obtener ubicación del usuario (con permiso)</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>localStorage, sessionStorage</td>
                     <td>Guardar datos localmente en el navegador</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>    
-        </tema-item>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+            </tema-item>
 <!-- 16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript. -->
-        <tema-item>
-         <titulo>
-           <strong>16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript.</strong><br>
-             <br>
-           <strong></strong>
-         </titulo>
-         <subtitulo></subtitulo>
-         <div>
-           <h2>Estructuras de Datos y Algoritmos en JavaScript.</h2>
-            <p><b>1.Pilas (Stacks)</b><br>LIFO – Último en entrar, primero en salir.</p>
-             <code><pre>
+            <tema-item>
+    <titulo>
+        <strong>16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript.</strong><br>
+        <br>
+        <strong></strong>
+    </titulo>
+    <subtitulo></subtitulo>
+    <div>
+        <h2>Estructuras de Datos y Algoritmos en JavaScript.</h2>
+        <p><b>1.Pilas (Stacks)</b><br>LIFO – Último en entrar, primero en salir.</p>
+        <code><pre>
                 class Stack {
                     constructor() {
                       this.items = [];
@@ -1751,9 +1858,9 @@
                       return this.items[this.items.length - 1];
                     }
                   }        
-             </pre></code>   
-             <p><b>2.Colas (Queues)</b><br>FIFO – Primero en entrar, primero en salir.</p>
-             <code><pre>
+             </pre></code>
+        <p><b>2.Colas (Queues)</b><br>FIFO – Primero en entrar, primero en salir.</p>
+        <code><pre>
                 class Queue {
                     constructor() {
                       this.items = [];
@@ -1768,9 +1875,9 @@
                       return this.items[0];
                     }
                   }                  
-             </pre></code>   
-             <p><b>3.Listas enlazadas (Linked Lists)</b></p>
-             <code><pre>
+             </pre></code>
+        <p><b>3.Listas enlazadas (Linked Lists)</b></p>
+        <code><pre>
                 class Node {
                     constructor(value) {
                       this.value = value;
@@ -1804,9 +1911,9 @@
                       }
                     }
                   } 
-             </pre></code>   
-             <p><b>4.Árboles binarios (Binary Trees)</b></p>
-             <code><pre>
+             </pre></code>
+        <p><b>4.Árboles binarios (Binary Trees)</b></p>
+        <code><pre>
                 class TreeNode {
                     constructor(value) {
                       this.value = value;
@@ -1823,32 +1930,33 @@
                     }
                   }
                   
-             </pre></code>   
-             <p><b>5.Recursión</b><br>Una función que se llama a sí misma hasta cumplir una condición.<br>Ejemplo: factorial</p>
-             <code><pre>
+             </pre></code>
+        <p><b>5.Recursión</b><br>Una función que se llama a sí misma hasta cumplir una condición.<br>Ejemplo: factorial
+        </p>
+        <code><pre>
                 function factorial(n) {
                     if (n === 0) return 1;
                     return n * factorial(n - 1);
                   }                  
-             </pre></code>  
-             <p>Ejemplo: Fibonacci</p>
-             <code><pre>
+             </pre></code>
+        <p>Ejemplo: Fibonacci</p>
+        <code><pre>
                 function fibonacci(n) {
                     if (n <= 1) return n;
                     return fibonacci(n - 1) + fibonacci(n - 2);
                   }
-             </pre></code>  
-             <p><b>6.Algoritmos comunes</b><br>Búsqueda lineal</p>
-             <code><pre>
+             </pre></code>
+        <p><b>6.Algoritmos comunes</b><br>Búsqueda lineal</p>
+        <code><pre>
                 function linearSearch(arr, target) {
                     for (let i = 0; i < arr.length; i++) {
                       if (arr[i] === target) return i;
                     }
                     return -1;
                   }                  
-             </pre></code>  
-             <p><b>Búsqueda binaria (requiere arreglo ordenado)</b></p>
-             <code><pre>
+             </pre></code>
+        <p><b>Búsqueda binaria (requiere arreglo ordenado)</b></p>
+        <code><pre>
                 function binarySearch(arr, target) {
                     let left = 0, right = arr.length - 1;
                   
@@ -1862,9 +1970,9 @@
                   
                     return -1;
                   }                  
-             </pre></code>  
-             <p><b>Ordenamiento burbuja (Bubble Sort)</b></p>
-             <code><pre>
+             </pre></code>
+        <p><b>Ordenamiento burbuja (Bubble Sort)</b></p>
+        <code><pre>
                 function bubbleSort(arr) {
                     let n = arr.length;
                     for (let i = 0; i < n; i++) {
@@ -1876,9 +1984,9 @@
                     }
                     return arr;
                   }                  
-             </pre></code>  
-             <p><b>Ordenamiento rápido (Quick Sort)</b></p>
-             <code><pre>
+             </pre></code>
+        <p><b>Ordenamiento rápido (Quick Sort)</b></p>
+        <code><pre>
                 function quickSort(arr) {
                     if (arr.length <= 1) return arr;
                   
@@ -1889,170 +1997,823 @@
                     return [...quickSort(left), pivot, ...quickSort(right)];
                   }
                   
-             </pre></code>  
-             <table border="1">
-                <thead>
-                  <tr>
+             </pre></code>
+        <table border="2">
+            <thead>
+                <tr>
                     <th>Tema</th>
                     <th>Ejemplo clave</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <td>Pila (Stack)</td>
                     <td>push(), pop(), peek()</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Cola (Queue)</td>
                     <td>enqueue(), dequeue()</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Lista enlazada</td>
                     <td>append(), print()</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Árbol binario</td>
                     <td>inOrderTraversal()</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Recursión</td>
                     <td>factorial(n), fibonacci(n)</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Búsqueda lineal</td>
                     <td>linearSearch(arr, target)</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Búsqueda binaria</td>
                     <td>binarySearch(arr, target)</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Ordenamiento burbuja</td>
                     <td>bubbleSort(arr)</td>
-                  </tr>
-                  <tr>
+                </tr>
+                <tr>
                     <td>Ordenamiento rápido</td>
                     <td>quickSort(arr)</td>
-                  </tr>
-                </tbody>
-              </table>
-              
-            
-         </div>
-        </tema-item>
- <!-- 17.Avanzado-Javascript en el Navegador y API WEB.    -->
- <tema-item>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+            </tema-item>
+<!-- 17.Avanzado-Javascript en el Navegador y API WEB.    -->
+            <tema-item>
     <titulo>
         <strong>17.Avanzado-Javascript en el Navegador y API WEB.</strong><br>
         <br>
         <strong></strong>
     </titulo>
-     <subtitulo></subtitulo>
+    <subtitulo></subtitulo>
     <div>
-     <h2>Javascript en el Navegador y API WEB.</h2>
-      <p>Sólo texto simple.</p>
-      <p></p>
-      <code><pre>
-      </pre></code> 
-      <p></p>
-      <code><pre>
-      </pre></code> 
-      <p></p>
-      <code><pre>
-      </pre></code> 
+        <h2>Javascript en el Navegador y API WEB.</h2>
+        <p>JavaScript en el navegador no solo se limita a la lógica de programación: puede interactuar con muchas
+            funciones
+            del entorno del navegador a través de Web APIs (proporcionadas por el motor del navegador, como Chrome,
+            Firefox,
+            etc.). Estas API permiten hacer cosas como guardar datos, detectar ubicación, dibujar en pantalla, ejecutar
+            procesos en segundo plano, etc.</p>
+        <p><b>1. Almacenamiento local y de sesión</b><br>Permite guardar datos en el navegador del usuario, útil para
+            mantener estado entre recargas o sesiones.</p>
+        <p><b>localStorage</b><br>·&nbsp;Guarda datos sin fecha de expiración.<br>·&nbsp;Persiste incluso si se cierra
+            el navegador.</p>
+        <code><pre>
+            localStorage.setItem('nombre', 'Rodolfo');
+            const nombre = localStorage.getItem('nombre'); // "Rodolfo"
+            localStorage.removeItem('nombre');
+         </pre></code>
+        <p>sessionStorage<br>·&nbsp;Guarda datos solo durante la sesión del navegador.<br>·&nbsp;Se elimina al cerrar la
+            pestaña.</p>
+        <code><pre>
+            sessionStorage.setItem('tema', 'oscuro');
+            const tema = sessionStorage.getItem('tema'); // "oscuro"
+            sessionStorage.clear();
+         </pre></code>
+        <p><b>2. API de Geolocalización</b><br>Permite obtener la ubicación del usuario (con su permiso).</p>
+        <code><pre>
+            navigator.geolocation.getCurrentPosition(
+            (position) => {
+             console.log("Lat:", position.coords.latitude);
+             console.log("Long:", position.coords.longitude);
+            },
+           (error) => {
+           console.error("Error de geolocalización:", error);
+          }
+        );
+        <p>Usos: apps de mapas, recomendaciones locales, seguimiento, etc.</p>
+         </pre></code>
+        <p><b> 3. API de Canvas</b><br>Permite dibujar gráficos en 2D (o 3D con WebGL) directamente en la página.</p>
+
+
+        <code><pre>
+         <p>Html</p>
+         &lt;canvas id="miCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+
+          <p>JavaScript</p>        
+          const canvas = document.getElementById("miCanvas");
+          const ctx = canvas.getContext("2d");
+
+          ctx.fillStyle = "            blue";
+          ctx.fillRect(10, 10, 150, 75);
+    
+          <p>Usos: juegos, visualizaciones, gráficos, herramientas de dibujo, etc.</p>
+         </pre></code>
+        <p><b>4. Service Workers</b><br>Son scripts que el navegador ejecuta en segundo plano. Permiten interceptar
+            peticiones, almacenar en caché y habilitar funcionalidad sin conexión.</p>
+        <p><b>Características clave:</b><br>·&nbsp;Correr en segundo plano.<br>·&nbsp;No tienen acceso directo al
+            DOM<br>·&nbsp;Se usan principalmente para PWA</p>
+        <code><pre>
+            <p>Ejemplo de registro:</p>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(() => console.log('SW registrado'))
+                  .catch(err => console.error('SW fallo:', err));
+              }
+              
+         </pre></code>
+        <p><b>5. PWA (Progressive Web Apps)</b><br>Una PWA es una aplicación web que se comporta como una app nativa:
+        </p>
+        <p><b>Características:</b><br>·&nbsp;Se instala en el dispositivo<br>·&nbsp;Funciona
+            offline<br>·&nbsp;Notificaciones push<br>Diseño adaptable (responsive)</p>
+        <p><b>Componentes esenciales:</b><br>·&nbsp;1.Service Worker<br>·&nbsp;2.Manifiesto (manifest.json)<br>3.HTTPS
+            obligatorio.<br>4.Caché estático/dinámico</p>
+        <code><pre>
+            <p>Ejemplo de Manifest.json:</p>
+            {
+                "name": "Mi App Web",
+                "short_name": "App",
+                "start_url": "/index.html",
+                "display": "standalone",
+                "background_color": "#ffffff",
+                "icons": [
+                  {
+                    "src": "/icon.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                  }
+                ]
+              }
+              
+         </pre></code>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>API/Función</th>
+                    <th>Propósito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>localStorage</td>
+                    <td>Guardar datos persistentes en el navegador</td>
+                </tr>
+                <tr>
+                    <td>sessionStorage</td>
+                    <td>Guardar datos temporales por sesión</td>
+                </tr>
+                <tr>
+                    <td>geolocation</td>
+                    <td>Obtener ubicación geográfica del usuario</td>
+                </tr>
+                <tr>
+                    <td>canvas</td>
+                    <td>Dibujar gráficos 2D en el navegador</td>
+                </tr>
+                <tr>
+                    <td>serviceWorker</td>
+                    <td>Habilitar tareas en segundo plano y sin conexión</td>
+                </tr>
+                <tr>
+                    <td>PWA</td>
+                    <td>Convertir una web en una app instalable y offline</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</tema-item>
+            </tema-item>
 <!-- 18.Avanzado-Patrones de Diseño en Javascript. -->
-<tema-item>
+            <tema-item>
     <titulo>
         <strong>18.Avanzado-Patrones de Diseño en Javascript.</strong><br>
         <br>
         <strong></strong>
     </titulo>
-     <subtitulo></subtitulo>
+    <subtitulo></subtitulo>
     <div>
-     <h2>Patrones de Diseño en Javascript.</h2>
-      <p>Sólo texto simple.</p>
+        <h2>Patrones de Diseño en Javascript.</h2>
+        <p><b> ¿Qué son los patrones de diseño?</b><br>Los patrones de diseño son soluciones reutilizables a problemas
+            comunes en el diseño de software. Ayudan a escribir código más estructurado, mantenible y escalable.</p>
+        <p><b> 1. Patrón Módulo (Module Pattern)</b></p>
+        <p><b>Ventajas</b><br>·&nbsp;Encapsulación.<br>·&nbsp;Evita contaminación del espacio global.<br>·&nbsp;Ideal
+            para bibliotecas.</p>
+        <code><pre>
+            <p>ejemplo:</p>
+            const Contador = (function() {
+                let contador = 0;
+              
+                return {
+                  incrementar: () => ++contador,
+                  obtener: () => contador
+                };
+              })();
+              
+              console.log(Contador.incrementar()); // 1
+              console.log(Contador.obtener());     // 1
+              
+           </pre></code>
+        <p><b>2. Patrón Observador (Observer Pattern)</b><br>Un objeto (sujeto) mantiene una lista de observadores que
+            son notificados ante cambios.</p>
+        <p><b>Uso</b><br>·&nbsp;Interfaces reactivas<br>·&nbsp;EventEmitter<br>·&nbsp;Vue, React, RxJS</p>
+        <code><pre>
+            <p>Ejemplo Básico:</p>
+            class Subject {
+                constructor() {
+                  this.observers = [];
+                }
+              
+                subscribe(obs) {
+                  this.observers.push(obs);
+                }
+              
+                notify(data) {
+                  this.observers.forEach(obs => obs(data));
+                }
+              }
+              
+              const subject = new Subject();
+              
+              subject.subscribe(data => console.log("Obs1:", data));
+              subject.notify("¡Hola observadores!"); // Obs1: ¡Hola observadores!
+              
+           </pre></code>
+        <p><b> 3. Patrón Semifallo (Fail-Safe / Fallback)</b><br>Este patrón permite que un sistema siga funcionando de
+            forma limitada ante errores.</p>
+        <p><b>Usos:</b><br>·&nbsp;Redundancia<br>·&nbsp;Valores por defecto<br>·&nbsp;Mecanismos alternos</p>
+        <code><pre>
+            <p>Ejemplo</p>
+            function obtenerUsuario(id) {
+                try {
+                  // Simula error
+                  throw new Error("API no responde");
+                } catch (e) {
+                  console.warn("Usando datos por defecto");
+                  return { nombre: "Invitado" };
+                }
+              }
+              
+              const usuario = obtenerUsuario(123);
+              console.log(usuario.nombre); // Invitado
+              
+           </pre></code>
+        <p><b>4. MVC (Modelo - Vista - Controlador)</b><br>Separa responsabilidades en 3 partes:<br>
+            ·&nbsp;Modelo: lógica de negocio y datos.<br>
+            ·&nbsp;Vista: UI.<br>
+            ·&nbsp;Controlador: maneja eventos y conecta vista-modelo.
+        </p>
+        <p><b>Usos:</b><br>
+            ·&nbsp;Web apps (Backbone.js, Angular)<br>
+            ·&nbsp;Organización de código
+        </p>
+        <code><pre>
+            <p>Estructura Conceptual</p>
+            [ Vista ] <--> [ Controlador ] <--> [ Modelo ]
+           </pre></code>
+        <p><b>5. MVVM (Modelo - Vista - VistaModelo)</b><br>Similar a MVC, pero introduce un ViewModel que vincula datos
+            automáticamente a la vista.</p>
+        <p><b>Usos:</b><br>
+            ·&nbsp;Data-binding bidireccional<br>
+            ·&nbsp;Frameworks modernos (Vue, Knockout, Angular)
+        </p>
+        <code><pre>
+            <p>Ejemplo en vue</p>
+            const app = Vue.createApp({
+                data() {
+                  return {
+                    mensaje: "Hola mundo"
+                  };
+                }
+              });
+            <p>html</p>
+            <p>{{ mensaje }}</p> <!-- Bidireccional -->   
+           </pre></code>
+        <p> Otros patrones comunes en JavaScript</p>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Patrón</th>
+                    <th>Descripción breve</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Singleton</td>
+                    <td>Asegura una única instancia de un objeto</td>
+                </tr>
+                <tr>
+                    <td>Factory</td>
+                    <td>Crea objetos sin exponer su lógica de creación</td>
+                </tr>
+                <tr>
+                    <td>Strategy</td>
+                    <td>Permite intercambiar algoritmos en tiempo de ejecución</td>
+                </tr>
+                <tr>
+                    <td>Decorator</td>
+                    <td>Agrega funcionalidades a objetos dinámicamente</td>
+                </tr>
+                <tr>
+                    <td>Proxy</td>
+                    <td>Controla acceso a un objeto</td>
+                </tr>
+                <tr>
+                    <td>Command</td>
+                    <td>Encapsula una acción como un objeto</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Tabla resumen</p>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Patrón</th>
+                    <th>Uso Principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Módulo</td>
+                    <td>Encapsular datos y lógica</td>
+                </tr>
+                <tr>
+                    <td>Observador</td>
+                    <td>Notificar cambios a múltiples oyentes</td>
+                </tr>
+                <tr>
+                    <td>Semifallo</td>
+                    <td>Continuar con fallback cuando hay errores</td>
+                </tr>
+                <tr>
+                    <td>MVC</td>
+                    <td>Separar vista, datos y lógica</td>
+                </tr>
+                <tr>
+                    <td>MVVM</td>
+                    <td>Vínculo automático entre UI y datos</td>
+                </tr>
+                <tr>
+                    <td>Singleton</td>
+                    <td>Única instancia global</td>
+                </tr>
+                <tr>
+                    <td>Factory</td>
+                    <td>Crear objetos sin usar <code>new</code> directamente</td>
+                </tr>
+                <tr>
+                    <td>Decorator</td>
+                    <td>Añadir funcionalidades a objetos existentes</td>
+                </tr>
+                <tr>
+                    <td>Proxy</td>
+                    <td>Interceptar y controlar operaciones sobre objetos</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</tema-item>
+            </tema-item>
 <!-- 19.Avanzado-Principios de Código Limpio y Buenas Prácticas -->
-<tema-item>
+            <tema-item>
     <titulo>
         <strong>19.Avanzado-Principios de Código Limpio y Buenas Prácticas </strong><br>
         <br>
         <strong></strong>
     </titulo>
-     <subtitulo></subtitulo>
+    <subtitulo></subtitulo>
     <div>
-     <h2>Principios de Código Limpio y Buenas Prácticas </h2>
-      <p>Sólo texto simple.</p>
+        <h2>Principios de Código Limpio y Buenas Prácticas </h2>
+        <p><b>Principios de Código Limpio en JavaScript.</b><br>1. SOLID (Principios para diseño orientado a objetos)
+        </p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Principio</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>S – Single Responsibility</td>
+                    <td>Cada módulo debe tener una única responsabilidad.</td>
+                </tr>
+                <tr>
+                    <td>O – Open/Closed</td>
+                    <td>Abierto a extensión, cerrado a modificación.</td>
+                </tr>
+                <tr>
+                    <td>L – Liskov Substitution</td>
+                    <td>Las subclases deben ser intercambiables con la clase base.</td>
+                </tr>
+                <tr>
+                    <td>I – Interface Segregation</td>
+                    <td>Usar interfaces pequeñas y específicas (relevante en TypeScript).</td>
+                </tr>
+                <tr>
+                    <td>D – Dependency Inversion</td>
+                    <td>Depender de abstracciones, no implementaciones concretas.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <code><pre>
+        <p>Ejemplo(S-responsabilidad única)</p>
+      
+        // ❌ Violación de SRP
+        function guardarUsuarioYEnviarEmail(usuario) {
+        guardarUsuario(usuario);
+        enviarEmail(usuario.email);
+       }
+
+        // ✅ Separar responsabilidades
+        function guardarUsuario(usuario) {
+        // lógica de guardado
+       }
+
+        function notificarUsuario(email) {
+        // lógica de notificación
+        }         
+      </pre></code>
+        <p><b>2. DRY (Don’t Repeat Yourself)</b><br>Evita duplicar código. Extrae funciones reutilizables.</p>
+        <code><pre>
+        // ❌ Duplicado
+       if (usuario.rol === 'admin') { /* ... */ }
+       if (usuario.rol === 'admin') { /* ... */ }
+
+       // ✅ DRY
+       function esAdmin(usuario) {
+       return usuario.rol === 'admin';
+      }
+      </pre></code>
+        <p><b>3. KISS (Keep It Simple, Stupid)</b><br>Haz que el código sea lo más simple posible. Evita complejidad
+            innecesaria.</p>
+        <code><pre>
+        // ❌ Código complejo
+        function esPar(num) {
+        return num % 2 === 0 ? true : false;
+    }
+        // ✅ Simple
+       function esPar(num) {
+       return num % 2 === 0;
+   }
+      </pre></code>
+        <p><b>4. YAGNI (You Aren’t Gonna Need It)</b><br>No escribas código anticipando necesidades futuras.</p>
+        <code><pre>
+        // ❌ Agregar funcionalidad que nadie pidió aún
+        function guardarUsuario(usuario) {
+        // lógica de guardado
+        // enviarEmail(usuario.email); ❌ Aún no es necesario
+    }
+      </pre></code>
+        <p><b>Testing en JavaScript</b><br>Tipos de pruebas:</p>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pruebas unitarias</td>
+                    <td>Verifican funciones individuales</td>
+                </tr>
+                <tr>
+                    <td>Pruebas de integración</td>
+                    <td>Verifican módulos interactuando</td>
+                </tr>
+                <tr>
+                    <td>Pruebas E2E</td>
+                    <td>Pruebas completas simulando usuario</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><b>Herramientas populares:</b><br>
+            ·&nbsp;Jest: testing framework completo.<br>
+            ·&nbsp;Mocha + Chai: más personalizable.<br>
+            ·&nbsp;Vitest: alternativa moderna para proyectos Vite.<br>
+            ·&nbsp;·Playwright / Cypress: pruebas end-to-end
+        </p>
+        <code><pre>
+        <p>Ejemplo en con jest<br>JS</p>
+        // suma.js
+        function suma(a, b) {
+        return a + b;
+       }
+       module.exports = suma;
+
+       <p>js</p>
+       // suma.test.js
+       const suma = require('./suma');
+
+       test('suma de 2 + 3 debe ser 5', () => {
+       expect(suma(2, 3)).toBe(5);
+     });
+
+      </pre></code>
+        <p><b>Documentación</b><br>Buenas Prácticas:<br>&nbsp;Usa JSDoc para documentar funciones:</p>
+        <code><pre>
+        /**
+        * Suma dos números
+        * @param {number} a
+        * @param {number} b
+        * @returns {number}
+        */
+        function suma(a, b) {
+        return a + b;
+      }
+
+      </pre></code>
+        <p><b>Resumen</b></p>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Principio / Herramienta</th>
+                    <th>Propósito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SOLID</td>
+                    <td>Diseño orientado a objetos claro y escalable</td>
+                </tr>
+                <tr>
+                    <td>DRY</td>
+                    <td>Evita duplicación de código</td>
+                </tr>
+                <tr>
+                    <td>KISS</td>
+                    <td>Mantén el código simple</td>
+                </tr>
+                <tr>
+                    <td>YAGNI</td>
+                    <td>No programes lo que no necesitas aún</td>
+                </tr>
+                <tr>
+                    <td>Jest / Mocha / Chai</td>
+                    <td>Pruebas unitarias e integración</td>
+                </tr>
+                <tr>
+                    <td>JSDoc / README</td>
+                    <td>Documentación clara y útil</td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
-</tema-item>
+            </tema-item>
 <!-- 20.Avanzado-Compiladores y Transpiladores -->
-<tema-item>
+            <tema-item>
     <titulo>
         <strong>20.Avanzado-Compiladores y Transpiladores</strong><br>
         <br>
         <strong></strong>
     </titulo>
-     <subtitulo></subtitulo>
+    <subtitulo></subtitulo>
     <div>
-     <h2>Compiladores y Transpiladores</h2>
-      <p>Sólo texto simple.</p>
+        <h2>Compiladores y Transpiladores</h2>
+        <p><b>Babel</b><br>
+            Un transpilador que convierte código JavaScript moderno (ES6+) en una versión compatible con navegadores
+            antiguos.<br>
+            <br>Ejemplo:
+        </p>
+        <code><pre>
+        // Código original (ES6+)
+        const saludo = () => console.log('Hola');
+
+        // Transpilado por Babel
+        var saludo = function() {
+        console.log('Hola');
+        };
+ 
+         <p>Uso común: junto con Webpack o Vite para asegurar compatibilidad.</p>
+         </pre></code>
+        <p><b>Empaquetadores (Bundlers)</b><br>
+            Webpack<br>
+            ·&nbsp;Agrupa (bundlea) archivos JS, CSS, imágenes, etc. en uno o varios archivos optimizados.<br>
+            ·&nbsp;Se configura mediante un archivo webpack.config.js.<br>
+            <br>
+            Vite<br>
+            ·&nbsp;Alternativa moderna y rápida a Webpack.<br>
+            ·&nbsp;Utiliza ES Modules en desarrollo y es mucho más rápido gracias a esbuild.<br>
+            <br>Ambos pueden trabajar junto con Babel.
+        </p>
+        <p><b>Minificación</b><br>
+            ·&nbsp;Elimina espacios, comentarios, renombra variables para reducir el tamaño del archivo final.<br>
+            ·&nbsp;Ejemplo de código minificado:
+        </p>
+        <code><pre>
+            // Código original
+            function saludar(nombre) {
+            console.log("Hola " + nombre);
+            }
+
+            // Minificado
+            function saludar(a){console.log("Hola "+a);}
+         </pre></code>
+        <p><b>Tree Shaking</b><br>
+            ·&nbsp;Técnica para eliminar código muerto (no usado) en el bundle final.<br>
+            ·&nbsp;requiere:<br>
+            &nbsp;&nbsp;&nbsp;·&nbsp; Módulos ES6 (import / export)<br>
+            &nbsp;&nbsp;&nbsp;·&nbsp; Herramientas como Webpack o Rollup
+        </p>
+        <code><pre>
+            <p>ejemplo:</p>
+            // utils.js
+            export function usada() { return 'sí'; }
+            export function noUsada() { return 'no'; }
+
+            // index.js
+            import { usada } from './utils.js';
+            console.log(usada());
+
+            // 👉 Solo la función `usada` será incluida tras tree shaking
+
+         </pre></code>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Herramienta / Técnica</th>
+                    <th>Propósito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Babel</td>
+                    <td>Transpilar JS moderno a versiones compatibles</td>
+                </tr>
+                <tr>
+                    <td>Webpack / Vite</td>
+                    <td>Agrupar, optimizar y servir archivos del proyecto</td>
+                </tr>
+                <tr>
+                    <td>Minificación</td>
+                    <td>Reducir el tamaño del código eliminando elementos innecesarios</td>
+                </tr>
+                <tr>
+                    <td>Tree Shaking</td>
+                    <td>Eliminar código que no se utiliza en producción</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p></p>
+        <code><pre>
+         </pre></code>
     </div>
-</tema-item>
+            </tema-item>
 
 <!-- 21.Avanzado-Node.js e Integración Full-Stack. -->
-<tema-item>
-    <titulo>
-        <strong>21.Avanzado-Node.js e Integración Full-Stack.</strong><br>
-        <br>
-        <strong></strong>
-    </titulo>
-     <subtitulo></subtitulo>
-    <div>
-     <h2>Node.js e Integración Full-Stack.</h2>
-      <p>Sólo texto simple.</p>
-    </div>
-</tema-item>
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-        </mi-lista>
+            <tema-item>
+              <titulo>
+               <strong>21.Avanzado-Node.js e Integración Full-Stack.</strong><br>
+                 <br>
+               <strong></strong>
+              </titulo>
+              <subtitulo></subtitulo>
+              <div>
+                <h2>Node.js e Integración Full-Stack.</h2>
+                <p><b>Introducción a Node.js</b><br>
+                 ·&nbsp;Node.js es un entorno de ejecución para JavaScript del lado del servidor. <br>
+                 ·&nbsp;Permite crear servidores, herramientas de línea de comandos, y aplicaciones full-stack con JS.<br>
+                </p>
+                <p><b>¿Por qué usar Node.js?</b><br>
+                 ·&nbsp;Usa JavaScript en el backend.<br>
+                 ·&nbsp;Altamente escalable.<br>
+                 ·&nbsp;Basado en eventos y asincronía.
+                </p>
+                <p><b>Introducción a NPM</b><br>
+                 ·&nbsp;NPM (Node Package Manager) es el gestor de paquetes de Node.js.<br>
+                 ·&nbsp;Permite instalar librerías de terceros y manejar dependencias
+                </p>
+                <code><pre>
+                  npm init -y             # Crea package.json
+                  npm install express     # Instala Express.js
+                </pre></code>
+                <table border="2">
+                   <thead>
+                     <tr>
+                        <th>Módulo</th>
+                        <th>Propósito</th>
+                        <th>Ejemplo básico</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                      <tr>
+                        <td><code>fs</code></td>
+                        <td>Leer y escribir archivos</td>
+                        <td><code>fs.readFileSync('file.txt')</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>http</code></td>
+                        <td>Crear servidores HTTP</td>
+                        <td><code>http.createServer(...)</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>path</code></td>
+                        <td>Trabajar con rutas de archivos</td>
+                        <td><code>path.join(__dirname, 'file.txt')</code></td>
+                      </tr>
+                    </tbody>
+                </table>
+                <p><b>Express.js básico</b><br>Express.js es un framework minimalista para crear servidores y APIs en Node.js.</p>
+                <code><pre>
+                 const express = require('express');
+                 const app = express();
 
+                 app.get('/', (req, res) => {
+                 res.send('¡Hola desde Express!') ;
+                 });
 
+                 app.listen(3000, () => {
+                 console.log('Servidor en http://localhost:3000');
+                });
+                </pre></code>
+                <p><b>API RESTful con JavaScript (CRUD básico)</b></p>
+                <code><pre>
+                  const express = require('express');
+                  const app = express();
 
+                  app.use(express.json());
 
+                  let items = [{ id: 1, name: 'Item 1' }];
 
+                  // GET all
+                  app.get('/api/items', (req, res) => {
+                  res.json(items);
+                });
+
+                // GET by ID
+                app.get('/api/items/:id', (req, res) => {
+                const item = items.find(i => i.id == req.params.id);
+                item ? res.json(item) : res.status(404).send('No encontrado');
+               });
+
+               // POST
+               app.post('/api/items', (req, res) => {
+               const newItem = { id: Date.now(), ...req.body };
+               items.push(newItem);
+               res.status(201).json(newItem);
+               });
+
+               // PUT
+               app.put('/api/items/:id', (req, res) => {
+               const index = items.findIndex(i => i.id == req.params.id);
+               if (index !== -1) {
+               items[index] = { ...items[index], ...req.body };
+               res.json(items[index]);
+               } else {
+               res.status(404).send('No encontrado');
+               }
+            });
+
+               // DELETE
+            app.delete('/api/items/:id', (req, res) => {
+            items = items.filter(i => i.id != req.params.id);
+            res.status(204).send();
+           });
+
+            app.listen(3000, () => console.log('API corriendo en puerto 3000'));
+            </pre></code>
+            <p>Resumen</p>
+            <table border="1">
+              <thead>
+                 <tr>
+                   <th>Concepto</th>
+                   <th>Descripción</th>
+                 </tr>
+              </thead>
+               <tbody>
+                  <tr>
+                     <td>Node.js</td>
+                     <td>Entorno para ejecutar JS en el servidor</td>
+                  </tr>
+                   <tr>
+                     <td>NPM</td>
+                     <td>Gestión de paquetes y dependencias</td>
+                  </tr>
+                   <tr>
+                     <td>Módulos nativos</td>
+                     <td>fs, http, path: para archivos, red, rutas</td>
+                  </tr>
+                   <tr>
+                     <td>Express.js</td>
+                     <td>Framework para crear servidores y APIs</td>
+                  </tr>
+                   <tr>
+                     <td>API RESTful</td>
+                     <td>Permite realizar operaciones CRUD sobre recursos</td>
+                  </tr>
+                </tbody>
+             </table>
+            </div>
+              </tema-item>
+                </mi-lista>
     </main>
-    <footer class="footer">
-        <mi-footer></mi-footer>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/nav.js" defer></script>
-    <script src="js/footer.js" defer></script>
-    <script src="js/lista.js" defer></script>
+<footer class="footer">
+    <mi-footer></mi-footer>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/footer.js" defer></script>
+<script src="js/lista.js" defer></script>
 </body>
-
 </html>
