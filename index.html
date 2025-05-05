@@ -854,11 +854,7 @@
                     </code></pre>
                     
                     </body>
-                    </html>
-                    
-                </code></pre>
-
-                <pre><code>
+                    </html> 
                 </code></pre>
                 </div>
             </tema-item>
@@ -872,8 +868,84 @@
                 <subtitulo></subtitulo>
                 <div>
                 <h2>Funciones Avanzadas.</h2>
-                <p>Sólo texto simple.</p>
+                <p><b>1. Funciones como objetos de primera clase</b></p>
+                <p>En JavaScript, las funciones son ciertamente objetos de primera clase, lo que significa que:<br>Pueden ser almacenadas en variables.<br>Pasadas como argumentos a otras funciones.<br>Devueltas como valores desde funciones.<br>Tener propiedades y métodos propios.</p>
                 <pre><code>
+                    // Función asignada a una variable
+                const saludar = function(nombre) {
+                return 'Hola, ' + nombre;
+                };
+
+                // Usar la función
+                console.log(saludar('Ana')); // "Hola, Ana"
+
+                // Función con propiedades
+                saludar.contador = 0;
+
+                const saludarConContador = function(nombre) {
+                saludar.contador++;
+                return 'Hola, ' + nombre + '! Esta es la vez número ' + saludar.contador;
+                };
+
+                console.log(saludarConContador('Juan')); // "Hola, Juan! Esta es la vez número 1"
+                console.log(saludarConContador('Pedro')); // "Hola, Pedro! Esta es la vez número 2"
+                </code></pre>
+                <p><b>2.Callbacks (Funciones de devolución de llamada)</b><br>Una función callback es una función que se pasa como argumento a otra función y que será ejecutada en algún momento dentro de esa función.</p>
+                <pre><code>
+                    function procesarNumero(numero, callback) {
+                        let resultado = callback(numero);
+                        console.log('Resultado:', resultado);
+                      }
+                      
+                      procesarNumero(5, function(n) {
+                        return n * n; // devuelve el cuadrado
+                      }); // Resultado: 25
+                      
+                      // También con funciones nombradas
+                      function doble(n) {
+                        return n * 2;
+                      }
+                      procesarNumero(10, doble); // Resultado: 20                      
+                </code></pre>
+
+                <p><b>3. Clousures (Clausuras)</b><br>Una clausura es una función que "recuerda" el entorno en el que fue creada, es decir, puede acceder a variables externas incluso después de que esa función se ha ejecutado.</p>
+                <pre><code>
+                    function crearContador() {
+                        let contador = 0; // variable externa a la función interna
+                        
+                        return function() {
+                          contador++;
+                          return contador;
+                        };
+                      }
+                      
+                      const contador1 = crearContador();
+                      console.log(contador1()); // 1
+                      console.log(contador1()); // 2
+                      
+                      const contador2 = crearContador();
+                      console.log(contador2()); // 1
+                      console.log(contador2()); // 2
+                      
+                </code></pre>
+                <p><b>4.IIFE (Immediately Invoked Function Expression) — Funciones autoejecutables.</b><br>Una IIFE es una función que se define y se ejecuta inmediatamente. Se usa para crear un ámbito aislado y evitar colisiones de variables en el código global.</p>
+                <pre><code>
+                    (function() {
+                        // código aquí
+                      })();
+
+                      (function() {
+                        const mensaje = 'Hola desde la IIFE';
+                        console.log(mensaje);
+                      })();
+                      
+                      // La variable mensaje no existe fuera de la IIFE
+                      // console.log(mensaje); // Error: mensaje no definido
+                      
+                      (() => {
+                        console.log('Soy una función flecha autoejecutable');
+                      })();
+                          
                 </code></pre>
                 </div>
             </tema-item>
@@ -887,25 +959,98 @@
                 <subtitulo></subtitulo>
                 <div>
                 <h2>Objetos y prototipos.</h2>
-                <p>Este es un párrafo dentro del tema 1.</p>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ana</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Luis</td>
-                            <td>35</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p><b> Objetos en JavaScript</b><br>Un objeto es una colección de propiedades y métodos.</p>
+                <pre><code> 
+                    const persona = {
+                        nombre: 'Juan',
+                        edad: 30,
+                        saludar: function() {
+                          console.log('Hola, ' + this.nombre);
+                        }
+                      };
+                      persona.saludar(); // Hola, Juan                      
+                </code></pre>
+                <p><b>2. Funciones constructoras y creación de objetos.</b><br>Las funciones constructoras sirven para crear objetos similares.</p>
+                <pre><code>  
+                    function Persona(nombre, edad) {
+                        this.nombre = nombre;
+                        this.edad = edad;
+                        this.saludar = function() {
+                          console.log('Hola, soy ' + this.nombre);
+                        };
+                      }
+                      
+                      const p1 = new Persona('Ana', 25);
+                      p1.saludar(); // Hola, soy Ana                      
+                </code></pre>
+                 <p><b>3. Prototipo y herencia prototípica</b><br>Cada función tiene un prototipo (una propiedad llamada prototype) donde se pueden definir métodos y propiedades compartidas</p>
+                <pre><code>  
+                    function Persona(nombre, edad) {
+                        this.nombre = nombre;
+                        this.edad = edad;
+                      }
+                      
+                      // Agregar método al prototipo
+                      Persona.prototype.saludar = function() {
+                        console.log('Hola, ' + this.nombre);
+                      };
+                      
+                      const p2 = new Persona('Luis', 40);
+                      p2.saludar(); // Hola, Luis                      
+                </code></pre>
+                <p><b>Herencia prototípica:</b><br>Creamos una "subclase" que hereda del prototipo de otra:</p>
+                <pre><code> 
+                    function Estudiante(nombre, edad, escuela) {
+                        Persona.call(this, nombre, edad); // Hereda propiedades
+                        this.escuela = escuela;
+                      }
+                      
+                      // La herencia: asignar el prototipo de Estudiante al de Persona
+                      Estudiante.prototype = Object.create(Persona.prototype);
+                      Estudiante.prototype.constructor = Estudiante;
+                      
+                      // Agregar método específico
+                      Estudiante.prototype.estudiar = function() {
+                        console.log(this.nombre + ' está estudiando en ' + this.escuela);
+                      };
+                      
+                      const alumno = new Estudiante('Carlos', 20, 'MIT');
+                      alumno.saludar(); // Hola, Carlos
+                      alumno.estudiar(); // Carlos está estudiando en MIT
+                       
+                </code></pre>
+                <p><b>4. Uso de this, call, apply, y bind</b></p>
+                <p>this</p>
+                <pre><code> 
+                    const persona = {
+                        nombre: 'Ana',
+                        hablar: function() {
+                          console.log('Hola, ' + this.nombre);
+                        }
+                      };
+                      persona.hablar(); // Hola, Ana                      
+                </code></pre>
+                <p>call()</p>
+                <pre><code>
+                    function mostrar() {
+                        console.log('Mi nombre es ' + this.nombre);
+                      }
+                      
+                      const persona1 = { nombre: 'Luis' };
+                      const persona2 = { nombre: 'Laura' };
+                      
+                      mostrar.call(persona1); // Mi nombre es Luis
+                      mostrar.call(persona2); // Mi nombre es Laura                        
+                </code></pre>
+                <p>apply()<br>Similar a call(), pero recibe los argumentos en forma de array.</p>
+                <pre><code>
+                    mostrar.apply(persona1); // Mi nombre es Luis  
+                </code></pre>
+                <p>bind()</p>
+                <pre><code> 
+                    const hablarLuis = mostrar.bind(persona1);
+                    hablarLuis(); // Mi nombre es Luis
+                </code></pre>
             </div>
             </tema-item>
 <!-- 10.Arrays y objetos avanzados  -->
@@ -918,24 +1063,216 @@
                 <subtitulo></subtitulo>
                 <div>
                 <h2>Arrays y Objetos.</h2>
-                <p>Este es otro tema con contenido diferente.</p>
-                <ul>
-                    <li>Punto A</li>
-                    <li>Punto B</li>
-                </ul>
+                <p><b>1. Arrays avanzados</b></p>
+                <p>a) forEach(): Itera sobre cada elemento del array, sin devolver un nuevo array.</p>
+                <pre><code> 
+                    const numeros = [1, 2, 3, 4];
+                    numeros.forEach(n => console.log(n * 2));
+                    // Salida: 2, 4, 6, 8
+                </code></pre>
+                <p>b) map(): Crea un nuevo array transformando cada elemento.</p>
+                <pre><code> 
+                    const cuadrados = numeros.map(n => n * n);
+                    console.log(cuadrados); // [1, 4, 9, 16]
+                </code></pre>
+                <p>c) filter(): Filtra los elementos que cumplen una condición y devuelve un nuevo array.</p>
+                <pre><code> 
+                    const pares = numeros.filter(n => n % 2 === 0);
+                    console.log(pares); // [2, 4]
+                </code></pre>
+                <p>d) reduce(): Reduce un array a un único valor, acumulando los resultados.</p>
+                <pre><code> 
+                    const sumaTotal = numeros.reduce((acum, n) => acum + n, 0);
+                    console.log(sumaTotal); // 10
+                </code></pre>
+                <p>e) find(): Busca y devuelve el primer elemento que cumple una condición.</p>
+                <pre><code>
+                    const busqueda = numeros.find(n => n > 2);
+                    console.log(busqueda); // 3
+                </code></pre>
+                <p>f) some(): Verifica si al menos un elemento cumple una condición (devuelve true o false).</p>
+                <pre><code> 
+                    const hayPares = numeros.some(n => n % 2 === 0);
+                    console.log(hayPares); // true
+                </code></pre>
+                <p>g) every(): Verifica si todos los elementos cumplen una condición.</p>
+                <pre><code> 
+                    const todosPositivos = numeros.every(n => n > 0);
+                    console.log(todosPositivos); // true
+                </code></pre>
+                <p><b>2. Objetos avanzados y desestructuración</b></p>
+                <p>a) Desestructuración de objetos<br>Extraer propiedades fácilmente:</p>
+                <pre><code> 
+                    const persona = { nombre: 'Juan', edad: 30, ciudad: 'Madrid' };
+                    const { nombre, edad } = persona;
+                    console.log(nombre); // Juan
+                    console.log(edad);   // 30
+                </code></pre>
+                <p>b) Desestructuración en arrays</p>
+                <pre><code>
+                    const colores = ['rojo', 'azul', 'verde'];
+                    const [color1, color2, color3] = colores;
+                    console.log(color2); // azul
+                </code></pre>
+                <p>3. Operador spread (...) y operador rest (...)</p>
+                <p>a) Spread en arrays y objetos<br>En arrays:</p>
+                <pre><code>
+                    const nums1 = [1, 2, 3];
+                    const nums2 = [4, 5, 6];
+                    const todos = [...nums1, ...nums2]; // [1, 2, 3, 4, 5, 6]
+                </code></pre>
+                <p>En objetos:</p>
+                <pre><code>
+                    const persona1 = { nombre: 'Ana', edad: 25 };
+                    const persona2 = { ...persona1, ciudad: 'Sevilla' };
+                    console.log(persona2); // { nombre: 'Ana', edad: 25, ciudad: 'Sevilla' }
+                </code></pre>
+                <p>b) Rest en funciones:<br>Permite recibir un número variable de argumentos:</p>
+                <pre><code>
+                    function sumar(...numeros) {
+                        return numeros.reduce((acum, n) => acum + n, 0);
+                      }
+                      
+                      console.log(sumar(1, 2, 3, 4)); // 10
+                      
+                </code></pre>
+                <p>Resumen</p>
+                <pre><code>
+                    const productos = [
+                 { id: 1, nombre: 'Lapiz', precio: 1.5 },
+                 { id: 2, nombre: 'Cuaderno', precio: 3 },
+                 { id: 3, nombre: 'Borrador', precio: 0.5 },
+                 { id: 4, nombre: 'Goma', precio: 0.7 }
+                ];
+
+                // map: lista de nombres
+                const nombres = productos.map(p => p.nombre);
+                console.log(nombres); // ['Lapiz', 'Cuaderno', 'Borrador', 'Goma']
+
+                // filter: productos con precio > 1
+                const caros = productos.filter(p => p.precio > 1);
+                console.log(caros);
+
+                // reduce: suma total de precios
+               const total = productos.reduce((acum, p) => acum + p.precio, 0);
+               console.log(total);
+
+              // find: producto con id 2
+             const productoEncontrado = productos.find(p => p.id === 2);
+             console.log(productoEncontrado);
+
+             // some: hay productos con precio menor a 0.6
+             const barato = productos.some(p => p.precio < 0.6);
+             console.log(barato); // true
+
+            // every: todos tienen precio mayor a 0.4
+            const todosCaros = productos.every(p => p.precio > 0.4);
+            console.log(todosCaros); // true
+
+            // Desestructuración
+            const { nombre } = productoEncontrado;
+            console.log(nombre); // Cuaderno
+
+            // Spread y Rest
+           const copiaProductos = [...productos]; // copia del array
+           function imprimirProductos(...productos) {
+           productos.forEach(p => console.log(p.nombre));
+           }
+           imprimirProductos(...productos);
+                </code></pre>
                 </div>
             </tema-item>
 <!-- 11.ES6+(JavaScript moderno) -->
             <tema-item>
                 <titulo>
-                    <strong>11.Intermedio-Javascript Moderno</strong><br>
+                    <strong>11.Intemedio ES6 + Javascript Moderno</strong><br>
                     <br>
                     <strong></strong>
                 </titulo>
                 <subtitulo></subtitulo>
                 <div>
                 <h2>Javascript Moderno</h2>
-                <p>Sólo texto simple.</p>
+                <p><b>Let y Conts</b><br>let: declara variables que pueden cambiar su valor.<br>const: declara variables que no cambian (constantes).</p>
+                <pre><code>
+                    let nombre = "Rodolfo";
+                        nombre = "Pedro"; // OK
+
+                    const edad = 30;
+                        edad = 31; // ❌ Error
+                </code></pre>
+                <p><b>Plantillas literales (Template Literals)</b><br>Permiten insertar variables fácilmente dentro de cadenas usando backticks ` y ${}:</p>
+                <pre><code>
+                    const nombre = "Rodolfo";
+                    const saludo = `Hola, mi nombre es ${nombre}`;
+                    console.log(saludo); // "Hola, mi nombre es Rodolfo"
+                </code></pre>
+                <p><b>Funciones de Flecha (Arrow Funtions)</b><br>Una forma más corta de declarar funciones:</p>
+                <pre><code>
+                    // Tradicional
+                    function sumar(a, b) {
+                    return a + b;
+                    }
+
+                    // Arrow function
+                    const sumar = (a, b) => a + b;
+                    <p>Nota: No tienen su propio this, lo cual las hace útiles para callbacks o métodos donde no quieres cambiar el contexto.</p>
+                </code></pre>
+                <p><b>Módulos (importación/exportación)</b><br>Permiten dividir el código en archivos reutilizables.<br>Archivo saludos.js:</p>
+                <pre><code>
+                    export const saludar = (nombre) => `Hola, ${nombre}`;
+                </code></pre>
+                <pre><code>
+                    <p>Archivo app.js</p>
+
+                    import { saludar } from './saludos.js';
+                    console.log(saludar("Rodolfo"));
+
+                   <p>También puedes usar export default para exportar una sola cosa sin nombre fijo.</p>
+                </code></pre>
+                <p><b>Clases (class, extends, super)</b><br>Sintaxis orientada a objetos moderna:</p>
+                <pre><code>
+                    class Animal {
+                        constructor(nombre) {
+                          this.nombre = nombre;
+                        }
+                        hablar() {
+                          console.log(`${this.nombre} hace un ruido`);
+                        }
+                      }
+                      
+                      class Perro extends Animal {
+                        hablar() {
+                          super.hablar(); // llama a método del padre
+                          console.log(`${this.nombre} ladra`);
+                        }
+                      }
+                      
+                      const miPerro = new Perro("Firulais");
+                      miPerro.hablar();
+                      
+                </code></pre>
+                <p><b>Promesas (Promise, .then, .catch)</b><br>Sirven para manejar operaciones asíncronas (como peticiones HTTP).</p>
+                <pre><code>
+                    const obtenerDatos = () => {
+                        return new Promise((resolve, reject) => {
+                          setTimeout(() => {
+                            const exito = true;
+                            if (exito) {
+                              resolve("Datos obtenidos");
+                            } else {
+                              reject("Error al obtener datos");
+                            }
+                          }, 1000);
+                        });
+                      };
+                      
+                      obtenerDatos()
+                        .then((resultado) => console.log(resultado))
+                        .catch((error) => console.error(error));
+
+                        <p>También puedes usar async/await para simplificar el código.</p>
+                </code></pre>
+                
             </div>
             </tema-item>
 <!-- 12.Asincronia             -->
@@ -948,25 +1285,103 @@
                 <subtitulo></subtitulo>
                 <div>
                 <h2>Asincronia</h2>
-                <p>Este es un párrafo dentro del tema 1.</p>
-                <table class="table">
+                <p><b>¿Qué es la asincronía?</b><br>avaScript es monohilo (un solo hilo de ejecución). Pero con asincronía puede realizar tareas que toman tiempo (como leer archivos, hacer peticiones a APIs, etc.) sin bloquear el hilo principal.</p>
+                <p><b>Promesas encadenadas (Chained Promises)</b><br>Las promesas (Promise) permiten manejar operaciones que se completan más adelante.</p>
+                <pre><code>
+                    function pasoUno() {
+                        return new Promise((resolve) => {
+                          setTimeout(() => {
+                            console.log("Paso 1 completo");
+                            resolve("Resultado del paso 1");
+                          }, 1000);
+                        });
+                      }
+                      
+                      function pasoDos(datoAnterior) {
+                        return new Promise((resolve) => {
+                          setTimeout(() => {
+                            console.log("Paso 2 usando:", datoAnterior);
+                            resolve("Resultado del paso 2");
+                          }, 1000);
+                        });
+                      }
+                      
+                      pasoUno()
+                        .then((resultado1) => pasoDos(resultado1))
+                        .then((resultado2) => {
+                          console.log("Todo completo:", resultado2);
+                        })
+                        .catch((error) => {
+                          console.error("Error en la cadena:", error);
+                        });
+
+                        <p> Aquí encadenamos .then() para pasar los resultados de una promesa a la siguiente.</p>
+                </code></pre>
+                <p><b>async / await: sintaxis más limpia</b>Con async/await, puedes escribir código asíncrono como si fuera síncrono:</p>
+                <pre><code>
+                    async function proceso() {
+                        try {
+                          const resultado1 = await pasoUno();
+                          const resultado2 = await pasoDos(resultado1);
+                          console.log("Proceso finalizado:", resultado2);
+                        } catch (error) {
+                          console.error("Error en proceso async:", error);
+                        }
+                      }
+                      
+                      proceso();
+                      
+                      <p>Ventajas de async/await:<br>Más fácil de leer<br>Menos .then() anidados<br>Manejo de errores con try/catch</p>
+                </code></pre>
+                <p><b>Manejo de errores asíncronos</b></p>Con promesas:</p>
+                <pre><code>
+                    fetch("https://jsonplaceholder.typicode.com/posts/12345")
+                    .then((res) => {
+                    if (!res.ok) throw new Error("No se pudo obtener el recurso");
+                    return res.json();
+                    })
+                    .then((data) => console.log(data))
+                    .catch((err) => console.error("Error:", err.message));
+                </code></pre>
+                <p>Con async/await:</p>
+                <pre><code>
+                    async function obtenerPost() {
+                        try {
+                          const res = await fetch("https://jsonplaceholder.typicode.com/posts/12345");
+                          if (!res.ok) throw new Error("No se pudo obtener el recurso");
+                          const data = await res.json();
+                          console.log(data);
+                        } catch (err) {
+                          console.error("Error async/await:", err.message);
+                        }
+                      }
+                      
+                      obtenerPost();     
+                </code></pre>
+                <table border="2">
                     <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                        </tr>
+                      <tr>
+                        <th>Técnica</th>
+                        <th>Ventajas</th>
+                      </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Ana</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>Luis</td>
-                            <td>35</td>
-                        </tr>
+                      <tr>
+                        <td>.then() encadenado</td>
+                        <td>Control detallado del flujo, útil para múltiples pasos</td>
+                      </tr>
+                      <tr>
+                        <td>async/await</td>
+                        <td>Sintaxis más limpia y parecida a código síncrono</td>
+                      </tr>
+                      <tr>
+                        <td>try/catch en async</td>
+                        <td>Permite manejo centralizado de errores</td>
+                      </tr>
                     </tbody>
-                </table>
+                  </table>
+                  
+               
             </div>
             </tema-item>
 <!-- 13.DOM Avanzado -->
@@ -979,11 +1394,83 @@
                 <subtitulo></subtitulo>
                 <div>
                   <h2>DOM Avanzado.</h2>
-                  <p>Sólo texto simple.</p>
+                  <p><b>Crear y eliminar elementos</b></p>
+                  <p><b>Crear elementos</b></p>
+                <pre><code>
+                    const nuevoElemento = document.createElement("p");
+                    nuevoElemento.textContent = "Hola, soy un nuevo párrafo";
+                    document.body.appendChild(nuevoElemento);
+                </code></pre>
+                <p><b>Eliminar elementos</b></p>
+                <pre><code>
+                    const eliminar = document.querySelector("p");
+                    eliminar.remove(); // Elimina el elemento del DOM
+
+                    <p>También se puede usar:</p>
+                    padre.removeChild(hijo);
+                </code></pre>
+                <p><b>Manipulación de clases y estilos</b><br>Clases</p>
+                <pre><code>
+                    const elemento = document.querySelector(".mi-elemento");
+
+                    elemento.classList.add("nueva-clase");     // Agrega clase
+                    elemento.classList.remove("otra-clase");   // Elimina clase
+                    elemento.classList.toggle("activa");       // Alterna clase
+                    elemento.classList.contains("activa");     // Devuelve true/false
+
+                    <p>Estilos</p>
+                    elemento.style.color = "red";
+                    elemento.style.backgroundColor = "#f0f0f0";
+                <p>Puedes modificar cualquier propiedad CSS en camelCase.</p>    
+                </code></pre>
+                <p><b>Delegación de eventos</b><br>Es una técnica donde asignas el evento a un contenedor, en lugar de a cada hijo individual. Útil cuando los hijos se crean dinámicamente.</p>
+                <pre><code>
+                    <p.js</p>
+                    document.getElementById("lista").addEventListener("click", (e) => {
+                        if (e.target.tagName === "LI") {
+                          alert(`Clic en: ${e.target.textContent}`);
+                        }
+                      });
+                    <p>html</p>
+                    <ul id="lista">
+                        <li>Elemento 1</li>
+                        <li>Elemento 2</li>
+                      </ul>
+                    <p>Ventaja: no necesitas volver a asignar eventos si agregas nuevos <li>.</p>                                           
+                </code></pre>
+                <p><b>Formularios y validación</b><br>Acceso a valores</p>
+                <pre><code>
+                    const formulario = document.querySelector("#mi-form");
+
+                    formulario.addEventListener("submit", (e) => {
+                    e.preventDefault(); // Evita recarga
+                    const nombre = formulario.querySelector("input[name='nombre']").value;
+                    console.log("Nombre:", nombre);
+                 });
+
+                </code></pre>
+                <p><b>Validación básica</b></p>
+                <pre><code>
+                    formulario.addEventListener("submit", (e) => {
+                        const nombre = formulario.nombre.value.trim();
+                      
+                        if (nombre === "") {
+                          alert("El nombre es obligatorio");
+                          e.preventDefault(); // Cancela el envío
+                        }
+                      });
+                
+                      <p>Puedes combinarlo con clases para mostrar errores visualmente:</p>
+
+                      if (nombre === "") {
+                        formulario.nombre.classList.add("error");
+                      }
+                    <p>También puedes usar validación HTML5 con required, minlength, etc., y complementarlo con JS para validaciones personalizadas.</p>    
+             
+                </code></pre>
                 </div>
             </tema-item>
-           
-           
+             
 <!-- 14.Herramienta de desarrollo -->
             <tema-item>
                 <titulo>
@@ -994,35 +1481,465 @@
                  <subtitulo></subtitulo>
                 <div>
                  <h2>Herramientas de Desarrollo.</h2>
-                  <p>Sólo texto simple.</p>
+                  <p>Estas son funciones o extensiones que mejoran el flujo de trabajo del desarrollador:</p>
+                  <p><b>Herramientas del navegador (DevTools)</b>Todos los navegadores modernos (Chrome, Firefox, Edge) incluyen:</p>
+                  <p>·&nbsp;Consola (console.log, errores, advertencias).<br>
+                     ·&nbsp;Inspector del DOM y estilos CSS.<br>
+                     ·&nbsp;Debugger (puntos de interrupción, paso a paso).<br>
+                     ·&nbsp;Network (ver llamadas fetch/AJAX).<br>
+                     ·&nbsp;Performance (medir velocidad, FPS, etc.)<br>
+                     <br>
+                     Atajo: F12 o clic derecho → "Inspeccionar"
+                    </p>
+        
+                  <p><b>Depuración en JavaScript</b><br>console.log(), console.error(), console.table(), console.dir()</p>
+                  <code><pre>
+                    console.log("Mensaje");            // Normal
+                    console.error("Error");           // En rojo
+                    console.table([{ a: 1 }, { a: 2 }]); // Tabla
+                  </pre></code>
+                  <p>Debugger:<br>Detiene la ejecución para inspeccionar variables:</p>
+                  <code><pre>
+                    function prueba() {
+                        const x = 10;
+                        debugger; // Pausa aquí si tienes DevTools abierto
+                        const y = x * 2;
+                        return y;
+                      }                      
+                  </pre></code>
+                  <p><b>Linters - ESLint</b><br>Un linter analiza tu código para detectar errores, inconsistencias o malas prácticas.</p>
+                 
+                  <p><b>¿Qué es ESLint?</b><br>
+                    ·&nbsp;Es el linter más usado en JS.<br>
+                    ·&nbsp;Puedes definir reglas para estilos, errores comunes, buenas prácticas.<br>
+                    ·&nbsp; Funciona con editores como VS Code.<br>
+                   </p>
+                  <code><pre>
+                    npm install eslint --save-dev
+                    npx eslint --init
+                  </pre></code>
+                  <p> Archivo .eslintrc.js ejemplo:</p>
+                  <code><pre>
+                    module.exports = {
+                        env: {
+                          browser: true,
+                          es2021: true
+                        },
+                        extends: ['eslint:recommended'],
+                        parserOptions: {
+                          ecmaVersion: 12,
+                          sourceType: 'module'
+                        },
+                        rules: {
+                          'no-unused-vars': 'warn',
+                          'semi': ['error', 'always']
+                        }
+                      };
+                      
+                  </pre></code>
+                  <p><b>Introducción a NPM (Node Package Manager)</b></p>
+                  <p><b>¿Qué es?</b><br>NPM es el gestor de paquetes de JavaScript. Sirve para:
+                    ·&nbsp;Instalar librerías o frameworks (React, Vue, Express, etc.).<br>
+                    ·&nbsp;Manejar dependencias del proyecto. <br>
+                    ·&nbsp;Crear scripts para automatizar tareas. <br>
+                    <br>
+                    Comandos clave
+                  </p>
+                  <code><pre>
+                    npm init          # Crea package.json
+                    npm install       # Instala dependencias
+                    npm install <paquete>       # Instala un paquete
+                    npm install <paquete> --save-dev  # Solo para desarrollo
+                    npm run (script)  # Corre un script definido en package.json
+                  </pre></code>
+                  <p>package.json ejemplo</p>
+                  <code><pre>
+                    {
+                        "name": "mi-proyecto",
+                        "version": "1.0.0",
+                        "scripts": {
+                          "lint": "eslint src/",
+                          "start": "node index.js"
+                        },
+                        "dependencies": {
+                          "axios": "^1.5.0"
+                        },
+                        "devDependencies": {
+                          "eslint": "^8.56.0"
+                        }
+                      }
+                  </pre></code>
+                    <table border="2">
+                        <thead>
+                          <tr>
+                            <th>Herramienta</th>
+                            <th>Función Principal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>DevTools</td>
+                            <td>Inspección y depuración visual</td>
+                          </tr>
+                          <tr>
+                            <td>console/debugger</td>
+                            <td>Depurar y entender errores</td>
+                          </tr>
+                          <tr>
+                            <td>ESLint</td>
+                            <td>Linter para calidad de código</td>
+                          </tr>
+                          <tr>
+                            <td>NPM</td>
+                            <td>Manejo de paquetes y dependencias</td>
+                          </tr>
+                        </tbody>
+                    </table>
                 </div>
             </tema-item>
 <!-- 15.Manejo Avanzado de Asincronía       -->
-<tema-item>
-    <titulo>
-        <strong>15.Manejo Avanzado de Asincronía</strong><br>
-        <br>
-        <strong></strong>
-    </titulo>
-     <subtitulo></subtitulo>
-    <div>
-     <h2>Manejo Avanzado de Asincronía</h2>
-      <p>Sólo texto simple.</p>
-    </div>
-</tema-item>
+           <tema-item>
+              <titulo>
+                <strong>15.Manejo Avanzado de Asincronía</strong><br>
+                 <br>
+                <strong></strong>
+                </titulo>
+                <subtitulo></subtitulo>
+              <div>
+                <h2>Manejo Avanzado de Asincronía</h2>
+                <p><b>fetch() API – Solicitudes HTTP</b><br>Permite hacer peticiones a servidores de forma sencilla y basada en promesas.</p>
+             <code><pre>
+                fetch("https://jsonplaceholder.typicode.com/posts/1")
+                 .then((res) => res.json())
+                 .then((data) => console.log(data))
+                 .catch((error) => console.error("Error:", error));
+             </pre></code>
+             <p><b>AbortController – Cancelar solicitudes fetch<b><br>Controla la cancelación de peticiones fetch (útil para evitar fugas de memoria o peticiones innecesarias).</p>
+             <code><pre>
+                const controller = new AbortController();
+                const signal = controller.signal;
+
+                fetch("https://jsonplaceholder.typicode.com/posts", { signal })
+                .then(res => res.json())
+                .then(data => console.log("Datos:", data))
+                .catch(err => {
+                if (err.name === "AbortError") {
+                console.warn("Solicitud abortada");
+                } else {
+                console.error("Error:", err);
+                }
+            });
+
+            // Abortar luego de 100 ms
+            setTimeout(() => controller.abort(), 100);
+            </pre></code>   
+
+             <p><b>Promesas paralelas</b><br>Promise.all() – Espera que todas se resuelvan</p>
+             <code><pre>
+                const promesa1 = fetch("https://jsonplaceholder.typicode.com/posts/1").then(r => r.json());
+                const promesa2 = fetch("https://jsonplaceholder.typicode.com/users/1").then(r => r.json());
+
+                Promise.all([promesa1, promesa2])
+                .then(([post, user]) => {
+                console.log("Post:", post);
+                console.log("Usuario:", user);
+              })
+             .catch(err => console.error("Error en alguna promesa:", err));
+
+             <p>Promise.race() – Se resuelve o rechaza con la primera promesa en completarse</p>
+
+             const lenta = new Promise(resolve => setTimeout(() => resolve("Lenta"), 1000));
+             const rapida = new Promise(resolve => setTimeout(() => resolve("Rápida"), 300));
+
+             Promise.race([lenta, rapida]).then(resultado => {
+             console.log("Ganó:", resultado); // "Rápida"
+            });
+             </pre></code>   
+             <p><b>APIs Web útiles en el navegador</b>Temporizadores</p>
+             <code><pre>
+                setTimeout(() => console.log("Después de 1 segundo"), 1000);
+
+                let count = 0;
+                const intervalId = setInterval(() => {
+                console.log("Contando:", ++count);
+                if (count === 3) clearInterval(intervalId);
+                }, 500);
+             </pre></code>   
+             <p>Geolocalización (si el navegador lo permite)</p>
+             <code><pre>
+                navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                console.log("Lat:", pos.coords.latitude, "Long:", pos.coords.longitude);
+                },
+                (err) => {
+                console.error("Error obteniendo ubicación:", err);
+               }
+              );
+             </pre></code>   
+             <p><b>Almacenamiento Web (localStorage y sessionStorage)</b></p>
+             <code><pre>
+                // localStorage (persiste aunque cierres el navegador)
+                   localStorage.setItem("nombre", "Rodolfo");
+                   console.log(localStorage.getItem("nombre")); // "Rodolfo"
+
+                // sessionStorage (solo en la sesión actual)
+                sessionStorage.setItem("tema", "oscuro");
+             </pre></code>   
+             <table border="1">
+                <thead>
+                  <tr>
+                    <th>Herramienta / API</th>
+                    <th>Uso Principal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>fetch()</td>
+                    <td>Hacer peticiones HTTP</td>
+                  </tr>
+                  <tr>
+                    <td>AbortController</td>
+                    <td>Cancelar peticiones en curso</td>
+                  </tr>
+                  <tr>
+                    <td>Promise.all()</td>
+                    <td>Ejecutar tareas en paralelo y esperar todas</td>
+                  </tr>
+                  <tr>
+                    <td>Promise.race()</td>
+                    <td>Obtener el resultado de la primera en resolverse</td>
+                  </tr>
+                  <tr>
+                    <td>setTimeout, setInterval</td>
+                    <td>Ejecutar tareas con retraso o repetición</td>
+                  </tr>
+                  <tr>
+                    <td>geolocation</td>
+                    <td>Obtener ubicación del usuario (con permiso)</td>
+                  </tr>
+                  <tr>
+                    <td>localStorage, sessionStorage</td>
+                    <td>Guardar datos localmente en el navegador</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>    
+        </tema-item>
 <!-- 16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript. -->
-<tema-item>
-    <titulo>
-        <strong>16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript.</strong><br>
-        <br>
-        <strong></strong>
-    </titulo>
-     <subtitulo></subtitulo>
-    <div>
-     <h2>Estructuras de Datos y Algoritmos en JavaScript.</h2>
-      <p>Sólo texto simple.</p>
-    </div>
-</tema-item>
+        <tema-item>
+         <titulo>
+           <strong>16.Avanzado-Estructuras de Datos y Algoritmos en JavaScript.</strong><br>
+             <br>
+           <strong></strong>
+         </titulo>
+         <subtitulo></subtitulo>
+         <div>
+           <h2>Estructuras de Datos y Algoritmos en JavaScript.</h2>
+            <p><b>1.Pilas (Stacks)</b><br>LIFO – Último en entrar, primero en salir.</p>
+             <code><pre>
+                class Stack {
+                    constructor() {
+                      this.items = [];
+                    }
+                    push(item) {
+                      this.items.push(item);
+                    }
+                    pop() {
+                      return this.items.pop();
+                    }
+                    peek() {
+                      return this.items[this.items.length - 1];
+                    }
+                  }        
+             </pre></code>   
+             <p><b>2.Colas (Queues)</b><br>FIFO – Primero en entrar, primero en salir.</p>
+             <code><pre>
+                class Queue {
+                    constructor() {
+                      this.items = [];
+                    }
+                    enqueue(item) {
+                      this.items.push(item);
+                    }
+                    dequeue() {
+                      return this.items.shift();
+                    }
+                    front() {
+                      return this.items[0];
+                    }
+                  }                  
+             </pre></code>   
+             <p><b>3.Listas enlazadas (Linked Lists)</b></p>
+             <code><pre>
+                class Node {
+                    constructor(value) {
+                      this.value = value;
+                      this.next = null;
+                    }
+                  }
+                  
+                  class LinkedList {
+                    constructor() {
+                      this.head = null;
+                    }
+                  
+                    append(value) {
+                      const node = new Node(value);
+                      if (!this.head) {
+                        this.head = node;
+                      } else {
+                        let curr = this.head;
+                        while (curr.next) {
+                          curr = curr.next;
+                        }
+                        curr.next = node;
+                      }
+                    }
+                  
+                    print() {
+                      let curr = this.head;
+                      while (curr) {
+                        console.log(curr.value);
+                        curr = curr.next;
+                      }
+                    }
+                  } 
+             </pre></code>   
+             <p><b>4.Árboles binarios (Binary Trees)</b></p>
+             <code><pre>
+                class TreeNode {
+                    constructor(value) {
+                      this.value = value;
+                      this.left = null;
+                      this.right = null;
+                    }
+                  }
+                  
+                  function inOrderTraversal(node) {
+                    if (node) {
+                      inOrderTraversal(node.left);
+                      console.log(node.value);
+                      inOrderTraversal(node.right);
+                    }
+                  }
+                  
+             </pre></code>   
+             <p><b>5.Recursión</b><br>Una función que se llama a sí misma hasta cumplir una condición.<br>Ejemplo: factorial</p>
+             <code><pre>
+                function factorial(n) {
+                    if (n === 0) return 1;
+                    return n * factorial(n - 1);
+                  }                  
+             </pre></code>  
+             <p>Ejemplo: Fibonacci</p>
+             <code><pre>
+                function fibonacci(n) {
+                    if (n <= 1) return n;
+                    return fibonacci(n - 1) + fibonacci(n - 2);
+                  }
+             </pre></code>  
+             <p><b>6.Algoritmos comunes</b><br>Búsqueda lineal</p>
+             <code><pre>
+                function linearSearch(arr, target) {
+                    for (let i = 0; i < arr.length; i++) {
+                      if (arr[i] === target) return i;
+                    }
+                    return -1;
+                  }                  
+             </pre></code>  
+             <p><b>Búsqueda binaria (requiere arreglo ordenado)</b></p>
+             <code><pre>
+                function binarySearch(arr, target) {
+                    let left = 0, right = arr.length - 1;
+                  
+                    while (left <= right) {
+                      let mid = Math.floor((left + right) / 2);
+                  
+                      if (arr[mid] === target) return mid;
+                      else if (arr[mid] < target) left = mid + 1;
+                      else right = mid - 1;
+                    }
+                  
+                    return -1;
+                  }                  
+             </pre></code>  
+             <p><b>Ordenamiento burbuja (Bubble Sort)</b></p>
+             <code><pre>
+                function bubbleSort(arr) {
+                    let n = arr.length;
+                    for (let i = 0; i < n; i++) {
+                      for (let j = 0; j < n - i - 1; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // swap
+                        }
+                      }
+                    }
+                    return arr;
+                  }                  
+             </pre></code>  
+             <p><b>Ordenamiento rápido (Quick Sort)</b></p>
+             <code><pre>
+                function quickSort(arr) {
+                    if (arr.length <= 1) return arr;
+                  
+                    const pivot = arr[0];
+                    const left = arr.slice(1).filter(x => x < pivot);
+                    const right = arr.slice(1).filter(x => x >= pivot);
+                  
+                    return [...quickSort(left), pivot, ...quickSort(right)];
+                  }
+                  
+             </pre></code>  
+             <table border="1">
+                <thead>
+                  <tr>
+                    <th>Tema</th>
+                    <th>Ejemplo clave</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pila (Stack)</td>
+                    <td>push(), pop(), peek()</td>
+                  </tr>
+                  <tr>
+                    <td>Cola (Queue)</td>
+                    <td>enqueue(), dequeue()</td>
+                  </tr>
+                  <tr>
+                    <td>Lista enlazada</td>
+                    <td>append(), print()</td>
+                  </tr>
+                  <tr>
+                    <td>Árbol binario</td>
+                    <td>inOrderTraversal()</td>
+                  </tr>
+                  <tr>
+                    <td>Recursión</td>
+                    <td>factorial(n), fibonacci(n)</td>
+                  </tr>
+                  <tr>
+                    <td>Búsqueda lineal</td>
+                    <td>linearSearch(arr, target)</td>
+                  </tr>
+                  <tr>
+                    <td>Búsqueda binaria</td>
+                    <td>binarySearch(arr, target)</td>
+                  </tr>
+                  <tr>
+                    <td>Ordenamiento burbuja</td>
+                    <td>bubbleSort(arr)</td>
+                  </tr>
+                  <tr>
+                    <td>Ordenamiento rápido</td>
+                    <td>quickSort(arr)</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            
+         </div>
+        </tema-item>
  <!-- 17.Avanzado-Javascript en el Navegador y API WEB.    -->
  <tema-item>
     <titulo>
@@ -1034,6 +1951,15 @@
     <div>
      <h2>Javascript en el Navegador y API WEB.</h2>
       <p>Sólo texto simple.</p>
+      <p></p>
+      <code><pre>
+      </pre></code> 
+      <p></p>
+      <code><pre>
+      </pre></code> 
+      <p></p>
+      <code><pre>
+      </pre></code> 
     </div>
 </tema-item>
 <!-- 18.Avanzado-Patrones de Diseño en Javascript. -->
