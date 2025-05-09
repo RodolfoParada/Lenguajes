@@ -23,16 +23,93 @@
                  <subtitulo></subtitulo>
                   <div>
                     <h2>Introducción a Node.js</h2>
-                    <p>Sólo texto simple.</p>
-                  <p></p>
+                    <h4>¿Qué es Node.js?</h4>
+                    <p>Node.js es un entorno de ejecución para JavaScript del lado del servidor, 
+                      basado en el motor V8 de Google Chrome. Permite ejecutar código JavaScript 
+                      fuera del navegador, lo que lo hace ideal para construir aplicaciones backend 
+                      como APIs, servidores web, aplicaciones en tiempo real, entre otros.
+                    </p>
+                    <p><b>Características clave.</b><br>
+                      ·&nbsp;Asíncrono y no bloqueante: Usa eventos y promesas para manejar múltiples conexiones de manera eficiente.<br>
+                      ·&nbsp;Rápido: Gracias al motor V8 y su arquitectura basada en eventos.<br>
+                      ·&nbsp;Multiplataforma: Funciona en Windows, macOS y Linux.<br>
+                      ·&nbsp;Gran ecosistema: Tiene acceso a miles de módulos a través de npm.
+                    </p>
+                    <h4>¿Por qué usar Node.js?</h4>
+                    <p>
+                      ·&nbsp;🔄 I/O no bloqueante: Ideal para aplicaciones en tiempo real como chats o videojuegos multijugador.<br>
+                      ·&nbsp;🛠️ Mismo lenguaje en cliente y servidor: Usa JavaScript en ambos lados, facilitando el desarrollo. <br> 
+                      ·&nbsp;📦 npm (Node Package Manager): Ofrece acceso a más de 1 millón de paquetes de código abierto. <br>
+                      ·&nbsp;🚀 Gran rendimiento: Gracias al motor V8.<br>
+                      ·&nbsp;🌐 Ideal para APIs REST, microservicios, y WebSockets.<br> 
+                    </p>
+                    <h4>Instalación de Node.js y npm</h4>
+                    <p>
+                      1.&nbsp;Descarga Node.js desde: <a href="https://nodejs.org">https://nodejs.org</a><br>
+                      &nbsp;&nbsp;·&nbsp;e recomienda la versión LTS (Long Term Support).<br>    
+                      2.&nbsp;El instalador incluye tanto Node.js como npm.<br>
+                      3.&nbsp;Verifica la instalación:
+                    </p>
                   <code><pre>
-                  </pre></code> 
-                  <p></p>
+                    node -v     # Muestra la versión de Node.js
+                    npm -v      # Muestra la versión de npm
+                  </pre></code>
+                  <h4>Primer programa: Hello World</h4> 
+                  <p>Crea un archivo hello.js con el siguiente contenido:</p>
                   <code><pre>
+                    console.log("Hola mundo desde Node.js");  
                   </pre></code> 
-                  <p></p>
+                  <p>Ejecuta en la terminal:</p>
                   <code><pre>
+                  </pre></code>
+                  <p>Ejecuta en la terminal:</p>
+                  <code><pre>
+                    node hello.js
                   </pre></code> 
+                  <p>También puedes crear un servidor básico:</p>
+                  <code><pre>
+                    // archivo: server.js
+                    const http = require('http');
+
+                    const server = http.createServer((req, res) => {
+                    res.writeHead(200, {'Content-Type': 'text/plain'});
+                    res.end('Hola desde el servidor Node.js');
+                  });
+
+                    server.listen(3000, () => {
+                    console.log('Servidor ejecutándose en http://localhost:3000');
+                  });
+                  </pre></code>
+                  <h4>📦 Módulos en Node.js</h4>
+                  <p>Los módulos permiten organizar el código y reutilizarlo fácilmente.</p> 
+                  <h3>Tipos de módulos:</h3>
+                  <p>1.Módulos nativos (built-in): Vienen con Node.js<br>
+                    Ejemplo: fs, http, path, os, url, etc.
+                  </p>
+                  <code><pre>
+                    const fs = require('fs');
+                    fs.writeFileSync('archivo.txt', 'Contenido de prueba');
+                  </pre></code> 
+                  <p>2.Módulos personalizados: Creas tus propios archivos .js y los exportas/importas.</p>
+                  <code><pre>
+                    // archivo: saludar.js
+                    module.exports = function(nombre) {
+                    return `Hola, ${nombre}`;
+                  };
+
+                    // archivo: app.js
+                    const saludar = require('./saludar');
+                    console.log(saludar('Carlos'));
+                  </pre></code>
+                  <p>3.Módulos de terceros: Se instalan con npm</p>
+                  <code><pre>
+                    npm install moment
+                  </pre></code> 
+                  <p>Js</p>
+                  <code><pre>
+                    const moment = require('moment');
+                    console.log(moment().format('YYYY-MM-DD'));
+                  </pre></code>   
                   </div>
                 </tema-item>
 <!--2.Básico-Módulos en Node.js           -->
@@ -45,16 +122,154 @@
                   <subtitulo></subtitulo>
                     <div>
                       <h2>Módulos en Node.js</h2>
-                      <p>Sólo texto simple.</p>
-                    <p></p>
-                    <code><pre>
-                    </pre></code> 
-                    <p></p>
-                    <code><pre>
-                    </pre></code> 
-                    <p></p>
-                    <code><pre>
-                    </pre></code> 
+                      <h4>📦 ¿Qué son los módulos en Node.js?</h4>
+                      <p>Un módulo es simplemente un archivo de JavaScript que encapsula código relacionado. 
+                        Node.js utiliza el sistema de módulos CommonJS para dividir el código en partes 
+                        reutilizables y organizadas.<br>
+                        Node.js viene con varios módulos nativos, puedes instalar módulos de terceros con npm,
+                        y también puedes crear tus propios módulos personalizados.</p>
+                      <h4>require() y module.exports</h4>
+                      <p>require() <br>
+                        Es una función que se usa para importar un módulo en tu archivo:
+                      </p>
+                      <code><pre>
+                        <p>JS</p>
+                        const fs = require('fs');
+                      </pre></code> 
+                      <p>module.exports<br>
+                        Es la forma de exportar funciones, objetos o variables desde un módulo para que otros archivos puedan usarlos.
+                      </p>
+                      <code><pre>
+                        <p>Ejemplo:<br>js</p>
+                        // archivo: operaciones.js
+                        function suma(a, b) {
+                        return a + b;
+                        }
+
+                        module.exports = suma;
+                      </pre></code> 
+                      <code><pre>
+                        <p>JS</p>
+                        // archivo: app.js
+                        const suma = require('./operaciones');
+                        console.log(suma(2, 3)); // 5
+                      </pre></code>
+                      <h4>Módulos nativos en Node.js</h4>
+                      <p>1. fs (File System) – Trabaja con archivos</p>
+                      <code><pre>
+                        const fs = require('fs');
+
+                        // Escribe un archivo 
+                        fs.writeFileSync('hola.txt', 'Hola desde Node.js');
+
+                        // Lee un archivo
+                        const contenido = fs.readFileSync('hola.txt', 'utf8');
+                        console.log(contenido);
+                      </pre></code> 
+                      <p>2. path – Manejo de rutas de archivos</p>
+                      <code><pre>
+                        const path = require('path');
+
+                        const ruta = path.join(__dirname, 'carpeta', 'archivo.txt');
+                        console.log(ruta);
+
+                        console.log(path.basename(ruta)); // archivo.txt
+                        console.log(path.extname(ruta));  // .txt
+                      </pre></code> 
+                      <p>3. os – Información del sistema operativo</p>
+                      <code><pre>
+                        const os = require('os');
+
+                        console.log('Nombre del SO:', os.type());
+                        console.log('Plataforma:', os.platform());
+                        console.log('Memoria libre:', os.freemem());
+                      </pre></code>
+                      <p>4. http – Crear servidores web</p>
+                      <code><pre>
+                        const http = require('http');
+
+                        const server = http.createServer((req, res) => {
+                        res.write('Hola desde servidor Node.js');
+                        res.end();
+                      });
+
+                        server.listen(3000, () => {
+                        console.log('Servidor corriendo en http://localhost:3000');
+                      });
+                      </pre></code>
+                      <h4>✏️ Crear y reutilizar tus propios módulos</h4> 
+                      <p>Paso 1: Crear un módulo</p>
+                      <code><pre>
+                        <p>JS</p>
+                        // archivo: calculadora.js
+                        function sumar(a, b) {
+                        return a + b;
+                        }
+
+                        function restar(a, b) {
+                        return a - b;
+                        }
+
+                        module.exports = {
+                        sumar,
+                        restar
+                        };
+                      </pre></code> 
+                      <p>Paso 2: Reutilizar el módulo</p>
+                      <code><pre>
+                        // archivo: app.js
+                        const calc = require('./calculadora');
+
+                        console.log(calc.sumar(10, 5));  // 15
+                        console.log(calc.restar(10, 5)); // 5
+                      </pre></code> 
+                      <table border="1" cellpadding="8" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>🧩 Concepto</th>
+                            <th>📄 Descripción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><code>require()</code></td>
+                            <td>Función para <strong>importar</strong> módulos (nativos, propios o de terceros).</td>
+                          </tr>
+                          <tr>
+                            <td><code>module.exports</code></td>
+                            <td>Objeto usado para <strong>exportar</strong> funciones, objetos o variables desde un módulo.</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Módulos nativos</strong></td>
+                            <td>Módulos que vienen con Node.js, no requieren instalación con npm.</td>
+                          </tr>
+                          <tr>
+                            <td><code>fs</code></td>
+                            <td>Módulo para <strong>leer y escribir archivos</strong> en el sistema.</td>
+                          </tr>
+                          <tr>
+                            <td><code>path</code></td>
+                            <td>Módulo para <strong>trabajar con rutas</strong> de archivos y carpetas.</td>
+                          </tr>
+                          <tr>
+                            <td><code>os</code></td>
+                            <td>Módulo para obtener <strong>información del sistema operativo</strong>.</td>
+                          </tr>
+                          <tr>
+                            <td><code>http</code></td>
+                            <td>Módulo para <strong>crear servidores web</strong> básicos sin frameworks externos.</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Módulos personalizados</strong></td>
+                            <td>Archivos <code>.js</code> que contienen y exportan código reutilizable creado por ti.</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Reutilización</strong></td>
+                            <td>Se reutilizan usando <code>require('./archivo')</code> en otros archivos del proyecto.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
                     </div>
                 </tema-item>
 <!--3.Básico-Sistemas de Archivos(FS)           -->
@@ -67,17 +282,123 @@
                                       <subtitulo></subtitulo>
                       <div>
                         <h2>Sistemas de Archivos (FS)</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
-                      </div> 
+                        <h4>📁 1. ¿Qué es el módulo fs?</h4>
+                        <p>El módulo fs permite interactuar con el sistema de archivos de tu computadora: 
+                           leer, escribir, crear, eliminar archivos y carpetas.<br>
+                           Forma de uso:
+                        </p>
+                        <code><pre>
+                          <p>JS</p>
+                          const fs = require('fs');
+                        </pre></code>
+                        <h4>2. Leer archivos (fs.readFile)</h4> 
+                        <code><pre>
+                          <p>JS</p>
+                          const fs = require('fs');
+
+                          fs.readFile('archivo.txt', 'utf8', (err, data) => {
+                            if (err) {
+                              console.error('Error al leer:', err);
+                              return;
+                            }
+                            console.log('Contenido:', data);
+                          });
+                          <br>
+                          <p>·&nbsp;'utf8' especifica que el archivo se debe leer como texto. <br>
+                             ·&nbsp;Usa callbacks (o puedes usar la versión fs.promises.readFile con async/await).
+                          </p>                                   
+                        </pre></code>
+                        <h4>📝 3. Escribir archivos (fs.writeFile)</h4> 
+                        <code><pre>
+                          <p>JS</p>
+                          fs.writeFile('archivo.txt', 'Contenido nuevo', (err) => {
+                            if (err) {
+                              console.error('Error al escribir:', err);
+                              return;
+                            }
+                            console.log('Archivo creado o sobrescrito.');
+                          });
+                          <br>
+                          <p>Si el archivo no existe, lo crea. Si existe, lo sobrescribe.</p>                          
+                        </pre></code>
+                        <h4>📂 4. Crear carpetas (fs.mkdir)</h4>
+                        <code><pre>
+                          <p>JS</p>
+                          fs.mkdir('nuevaCarpeta', (err) => {
+                            if (err) {
+                              console.error('Error al crear carpeta:', err);
+                              return;
+                            }
+                            console.log('Carpeta creada');
+                          });
+                          <br>
+                          <p>Puedes usar { recursive: true } para crear subcarpetas si ya existen.</p>
+                        </pre></code> 
+                        <h4>🗑️ 5. Eliminar archivos y carpetas</h4>
+                        <p>Eliminar archivo: fs.unlink</p>
+                        <code><pre>
+                          fs.unlink('archivo.txt', (err) => {
+                            if (err) {
+                              console.error('Error al eliminar archivo:', err);
+                              return;
+                            }
+                            console.log('Archivo eliminado');
+                          });                          
+                        </pre></code> 
+                        <p>Eliminar carpeta vacía: fs.rmdir (obsoleto en versiones nuevas)<br>
+                          Usar mejor fs.rm con { recursive: true }
+                        </p>
+                        <code><pre>
+                          fs.rm('nuevaCarpeta', { recursive: true }, (err) => {
+                            if (err) {
+                              console.error('Error al eliminar carpeta:', err);
+                              return;
+                            }
+                            console.log('Carpeta eliminada');
+                          });                          
+                        </pre></code>
+                        <p>🧭 6. Uso de rutas con path<br>
+                          path te permite construir rutas independientes del sistema operativo (Windows usa \, Linux/Mac usan /).
+                        </p>
+                        <code><pre>
+                          const path = require('path');
+
+                          // Une partes de una ruta
+                          const ruta = path.join(__dirname, 'carpeta', 'archivo.txt'); 
+                          console.log(ruta);
+
+                          // Extrae solo el nombre del archivo
+                          console.log(path.basename(ruta)); // archivo.txt
+
+                          // Extensión del archivo
+                          console.log(path.extname(ruta));  // .txt
+
+                        </pre></code> 
+                        <h4>Ejemplo Completo: </h4>
+                        <code><pre>
+                          const fs = require('fs');
+                          const path = require('path');
+
+                          const rutaArchivo = path.join(__dirname, 'datos', 'texto.txt');
+
+                          // Crear carpeta
+                          fs.mkdir(path.dirname(rutaArchivo), { recursive: true }, (err) => {
+                          if (err) throw err;
+
+                          // Escribir archivo
+                          fs.writeFile(rutaArchivo, 'Hola desde Node.js', (err) => {
+                          if (err) throw err;
+
+                          // Leer archivo
+                          fs.readFile(rutaArchivo, 'utf8', (err, data) => {
+                          if (err) throw err;
+                          console.log('Contenido leído:', data);
+                            });
+                          });
+                       });
+
+                        </pre></code>
+                        </div> 
                 </tema-item>
 <!--4.Básico-Gestión de eventos           -->
                 <tema-item>
@@ -89,16 +410,101 @@
                     <subtitulo></subtitulo>
                       <div>
                         <h2>Gestión de eventos</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <h4>🔄 ¿Qué es EventEmitter?</h4>
+                        <p>EventEmitter es una clase incluida en el módulo events de Node.js. Puedes usarla para:<br>
+                          ·&nbsp;Emitir eventos (con emit)<br>
+                          ·&nbsp;Escuchar eventos (con on o once)<br>
+                         Es muy útil para comunicación interna entre componentes o clases. 
+                        </p>
+                        <h4>✅ Cómo usar EventEmitter.</h4>
+                        <p>Paso 1: Importar y crear un emisor de eventos</p>
+                        <code><pre>
+                          <p>JS</p>
+                          const EventEmitter = require('events');
+                          const emisor = new EventEmitter();
+                        </pre></code>
+                        <h4>🧏‍♂️ Escuchar eventos con .on()</h4>
+                        <code><pre>
+                          emisor.on('saludo', (nombre) => {
+                            console.log(`Hola, ${nombre}`);
+                          });
+                          <br>
+                          <p>
+                            ·&nbsp;El primer argumento es el nombre del evento<br>
+                            ·&nbsp;El primer argumento es el nombre del evento
+                          </p>
+                        </pre></code> 
+                        <h4>📢 Emitir eventos con .emit()</h4>
+                        <code><pre>
+                          <p>JS</p>
+                          emisor.emit('saludo', 'Carlos'); // Muestra: Hola, Carlos
+                          <br>
+                          <p>·&nbsp;El evento 'saludo' se dispara, y se ejecuta la función que lo escucha.</p>
+                       </pre></code>
+                       <h4>🕐 .once(): Escuchar un evento solo una vez</h4>
+                       <p></p>
+                        <code><pre>
+                          <p>JS</p>
+                          emisor.once('inicio', () => {
+                            console.log('Este evento se ejecuta una sola vez');
+                          });
+                          
+                          emisor.emit('inicio');
+                          emisor.emit('inicio'); // No se ejecutará de nuevo                          
+                        </pre></code>
+                        <h4>🧠 Ejemplo completo</h4> 
+                        <code><pre>
+                          const EventEmitter = require('events');
+
+                          class MiEmisor extends EventEmitter {}
+
+                          const emisor = new MiEmisor();
+
+                          // Escuchar evento personalizado
+                          emisor.on('mensaje', (texto) => {
+                          console.log('Mensaje recibido:', texto);
+                        });
+
+                          // Emitir evento
+                          emisor.emit('mensaje', '¡Hola desde EventEmitter!');
+                        </pre></code> 
+                        <h4>🧱 ¿Para qué se usa EventEmitter?</h4>
+                        <p>
+                          ·&nbsp;Comunicación entre módulos o clases.<br>
+                          ·&nbsp;Control de flujo de eventos en servidores HTTP o WebSocket<br>
+                          ·&nbsp;Manejadores de tareas, logs, colas, notificaciones, etc. 
+                        </p>
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Método</th>
+                              <th>Descripción</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><code>on(evento, callback)</code></td>
+                              <td>Escucha y ejecuta el <strong>callback</strong> cada vez que se emite el evento.</td>
+                            </tr>
+                            <tr>
+                              <td><code>once(evento, callback)</code></td>
+                              <td>Escucha el evento <strong>solo una vez</strong>; luego se elimina automáticamente.</td>
+                            </tr>
+                            <tr>
+                              <td><code>emit(evento, [...args])</code></td>
+                              <td>Emite (lanza) el evento y pasa argumentos al callback del evento.</td>
+                            </tr>
+                            <tr>
+                              <td><code>removeListener(evento, callback)</code></td>
+                              <td>Elimina un listener previamente registrado con <code>on()</code>.</td>
+                            </tr>
+                            <tr>
+                              <td><code>removeAllListeners(evento)</code></td>
+                              <td>Elimina todos los listeners registrados para un evento específico.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
                       </div> 
                 </tema-item>                                    
 <!--5.NPM (Administrador de paquetes de nodos.)           -->
@@ -111,16 +517,140 @@
                     <subtitulo></subtitulo>
                         <div>
                           <h2>NPM (Administrador de paquetes de nodos.)</h2>
-                          <p>Sólo texto simple.</p>
-                        <p></p>
-                        <code><pre>
-                        </pre></code> 
-                        <p></p>
-                        <code><pre>
-                        </pre></code> 
-                        <p></p>
-                        <code><pre>
-                        </pre></code>
+                          <h4>📦 ¿Qué es NPM?</h4>
+                          <p>NPM (Node Package Manager) es el administrador de paquetes oficial de Node.js. Sirve para:<br>
+                            ·&nbsp;Instalar librerías (paquetes) de terceros<br>
+                            ·&nbsp;Manejar versiones de dependencias<br>
+                            ·&nbsp;Compartir tu propio código como paquetes reutilizables
+                          </p>
+                          <h4>🛠️ Inicializar un proyecto: npm init</h4>
+                          <p>Este comando crea el archivo package.json, que define tu proyecto y sus dependencias.</p>
+                          <code><pre>
+                            npm init
+                          </pre></code> 
+                          <p>Te preguntará nombre, versión, descripción, etc.<br>
+                            También puedes usar:
+                          </p>
+                          <code><pre>
+                            npm init -y
+                          <br>
+                          <p>Para crear package.json con valores por defecto.</p>
+                          <h4>📥 Instalar paquetes: npm install</h4>
+                          <p>Instalar un paquete localmente:</p>
+                          </pre></code>
+                          npm install express 
+                          <br>
+                          <p>·&nbsp;Instala el paquete express en la carpeta node_modules<br>
+                             ·&nbsp;Agrega express como dependencia en package.json
+                          </p>
+                          <p>🔹 Instalar un paquete como dependencia de desarrollo:</p>
+                          <code><pre>
+                            npm install nodemon --save-dev
+                            <br>
+                            <p>Se guarda en la sección "devDependencies" de package.json.</p>
+                          </pre></code>
+                          <p>🔹 Instalar paquetes globalmente:</p>
+                          <code><pre>
+                            npm install -g nodemon
+                            <br>
+                            <p>Esto instala el paquete en todo el sistema, y puedes usarlo desde la terminal (como un comando).</p>
+                          </pre></code>
+                          <h4>📄 package.json</h4> 
+                          <p>Archivo que contiene metadatos del proyecto, como:<br>
+                            ·&nbsp;Nombre, versión, scripts<br>
+                            ·&nbsp;Dependencias (dependencies)<br>
+                            ·&nbsp;Dependencias (dependencies)
+                          </p>
+                          <code><pre>
+                            <p>Ejemplo: </p>
+                            {
+                              "name": "mi-proyecto",
+                              "version": "1.0.0",
+                              "main": "index.js",
+                              "scripts": {
+                                "start": "node index.js"
+                              },
+                              "dependencies": {
+                                "express": "^4.18.2"
+                              },
+                              "devDependencies": {
+                                "nodemon": "^2.0.22"
+                              }
+                            }
+                            
+                          </pre></code>
+                          <h4>📄 package-lock.json</h4> 
+                          <p>Este archivo:<br>
+                            ·&nbsp;Se genera automáticamente al instalar paquetes<br>
+                            ·&nbsp;Registra exactamente qué versiones fueron instaladas (incluso las internas)<br>
+                            ·&nbsp;Asegura que otros desarrolladores o servidores instalen las mismas dependencias<br>
+                            ¡No lo borres! Es útil para consistencia en producción.
+                          </p>
+                          <table border="1" cellpadding="8" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Comando / Archivo</th>
+                                <th>Descripción</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><code>npm init</code></td>
+                                <td>Inicializa un nuevo proyecto Node.js y crea el archivo <code>package.json</code>.</td>
+                              </tr>
+                              <tr>
+                                <td><code>npm init -y</code></td>
+                                <td>Crea <code>package.json</code> con valores predeterminados (sin preguntas).</td>
+                              </tr>
+                              <tr>
+                                <td><code>npm install &lt;paquete&gt;</code></td>
+                                <td>Instala un paquete y lo agrega como dependencia en <code>package.json</code>.</td>
+                              </tr>
+                              <tr>
+                                <td><code>npm install --save-dev &lt;paquete&gt;</code></td>
+                                <td>Instala un paquete como <strong>dependencia de desarrollo</strong>.</td>
+                              </tr>
+                              <tr>
+                                <td><code>npm install -g &lt;paquete&gt;</code></td>
+                                <td>Instala un paquete de forma <strong>global</strong>, disponible como comando en la terminal.</td>
+                              </tr>
+                              <tr>
+                                <td><code>package.json</code></td>
+                                <td>Archivo que describe el proyecto: nombre, versión, scripts y dependencias.</td>
+                              </tr>
+                              <tr>
+                                <td><code>package-lock.json</code></td>
+                                <td>Archivo automático que asegura la instalación exacta de versiones de paquetes.</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <br>
+                          <h3>Diferencias entre dependencias locales y globales</h3>
+                          <table border="1" cellpadding="8" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Tipo</th>
+                                <th>Uso en <code>package.json</code></th>
+                                <th>Ruta de instalación</th>
+                                <th>¿Usable como comando global?</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Locales</td>
+                                <td>Sí (<code>dependencies</code>)</td>
+                                <td>Dentro del proyecto (<code>node_modules</code>)</td>
+                                <td>No, a menos que se use desde scripts</td>
+                              </tr>
+                              <tr>
+                                <td>Globales</td>
+                                <td>No</td>
+                                <td>En el sistema (ej. <code>/usr/local/lib</code>)</td>
+                                <td>Sí, accesible desde cualquier parte en la terminal</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          
                         </div> 
                 </tema-item>  
 <!--6.Intermedio-Servidor web con Node.js           -->
@@ -133,16 +663,150 @@
                   <subtitulo></subtitulo>
                       <div>
                         <h2>Servidor web con Node.js</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <h4>🌐 ¿Qué es un servidor web en Node.js?</h4>
+                        <p>Un servidor web en Node.js permite:<br>
+                          ·&nbsp;Escuchar peticiones HTTP (GET, POST, etc.)<br>
+                          ·&nbsp;Procesar rutas (/, /about, etc.)<br>
+                          ·&nbsp;Responder al navegador o cliente (HTML, JSON, texto, etc.)<br>
+                          Se puede hacer sin frameworks usando el módulo http, que viene con Node.js.
+                        </p>
+                        <h4>⚙️ Crear un servidor básico</h4>
+                        <code><pre>
+                          <p>JS</p>
+                          const http = require('http');
+
+                          const servidor = http.createServer((req, res) => {
+                          res.writeHead(200, { 'Content-Type': 'text/plain' });
+                          res.end('Hola, este es mi servidor en Node.js');
+                        });
+
+                          servidor.listen(3000, () => {
+                          console.log('Servidor escuchando en http://localhost:3000');
+                        });
+                        <br>
+                        <p>Explicación:
+                          ·&nbsp;req: Objeto de solicitud HTTP<br>
+                          ·&nbsp;req: Objeto de solicitud HTTP<br>
+                          ·&nbsp;res.writeHead: Establece el código de estado y cabeceras<br>
+                          ·&nbsp;res.end: Finaliza la respuesta y envía datos
+                        </p>
+                        </pre></code>
+                        <h4>🧭 Manejo de rutas</h4> 
+                        <code><pre>
+                          <p>JS</p>
+                          const http = require('http');
+
+                          const servidor = http.createServer((req, res) => {
+                          const url = req.url;
+
+                          if (url === '/') {
+                          res.writeHead(200, { 'Content-Type': 'text/html' });
+                          res.end('<p>Página de inicio</p>');
+                          } else if (url === '/about') {
+                          res.writeHead(200, { 'Content-Type': 'text/html' });
+                          res.end('<p>Acerca de nosotros</p>');
+                          } else {
+                          res.writeHead(404, { 'Content-Type': 'text/html' });
+                          res.end('<p>Página no encontrada</p>');
+                        }
+                       });
+
+                          servidor.listen(3000, () => {
+                          console.log('Servidor en http://localhost:3000');
+                        });
+                        </pre></code> 
+                        <h4>📨 Manejo de métodos HTTP</h4>
+                        <p>Puedes verificar también el método (GET, POST, etc.):</p>
+                        <code><pre>
+                          <p>JS</p>
+                          const servidor = http.createServer((req, res) => {
+                            if (req.method === 'GET' && req.url === '/api') {
+                              res.writeHead(200, { 'Content-Type': 'application/json' });
+                              res.end(JSON.stringify({ mensaje: 'Hola desde GET' }));
+                            } else if (req.method === 'POST' && req.url === '/api') {
+                              let cuerpo = '';
+                              req.on('data', chunk => {
+                                cuerpo += chunk.toString();
+                              });
+                              req.on('end', () => {
+                                res.writeHead(200, { 'Content-Type': 'application/json' });
+                                res.end(JSON.stringify({ recibido: cuerpo }));
+                              });
+                            }
+                          });
+                        </pre></code>
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Concepto</th>
+                              <th>Descripción</th>
+                              <th>Ejemplo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Crear servidor</td>
+                              <td>Se usa <code>http.createServer()</code> para crear un servidor HTTP básico.</td>
+                              <td>
+                                <pre><code>
+                        const http = require('http');
+                        const server = http.createServer((req, res) => {
+                          res.end('Hola mundo');
+                        });
+                        server.listen(3000);
+                                </code></pre>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Manejo de rutas</td>
+                              <td>Usar <code>req.url</code> para determinar qué contenido enviar según la ruta.</td>
+                              <td>
+                                <pre><code>
+                        if (req.url === '/') {
+                          res.end('Inicio');
+                        } else if (req.url === '/about') {
+                          res.end('Acerca de');
+                        }
+                                </code></pre>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Métodos HTTP</td>
+                              <td>Usar <code>req.method</code> para diferenciar entre GET, POST, etc.</td>
+                              <td>
+                                <pre><code>
+                        if (req.method === 'GET') {
+                          res.end('GET recibido');
+                        }
+                                </code></pre>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Manejo de POST</td>
+                              <td>Escuchar los eventos <code>data</code> y <code>end</code> del objeto <code>req</code> para obtener el cuerpo.</td>
+                              <td>
+                                <pre><code>
+                        let body = '';
+                        req.on('data', chunk => body += chunk);
+                        req.on('end', () => {
+                          res.end('Datos: ' + body);
+                        });
+                                </code></pre>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Enviar respuesta</td>
+                              <td>Usar <code>res.writeHead()</code> para definir cabeceras y <code>res.end()</code> para finalizar la respuesta.</td>
+                              <td>
+                                <pre><code>
+                        res.writeHead(200, { 'Content-Type': 'text/html' });
+                        res.end('&lt;h1&gt;Hola&lt;/h1&gt;');
+                                </code></pre>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
                       </div> 
                 </tema-item> 
 <!--7.Intermedio-Express.js Básico           -->
@@ -155,16 +819,156 @@
                   <subtitulo></subtitulo>
                       <div>
                         <h2>Express.js básico</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <h4>🚀 ¿Qué es Express.js?</h4>
+                        <p>Express.js es un framework minimalista y flexible para crear aplicaciones web 
+                           y APIs con Node.js. Está construido sobre el módulo http, pero lo simplifica
+                           enormemente.
+                        </p>
+                        <p>🔧 ¿Por qué usar Express?<br>
+                          ·&nbsp;Facilita el manejo de rutas y peticiones<br>
+                          ·&nbsp;Middleware para procesar solicitudes (body, auth, etc.)<br>
+                          ·&nbsp;Es ampliamente usado, con gran comunidad y documentación<br>
+                          ·&nbsp;Permite crear APIs REST de forma clara y rápida
+                        </p>
+                        <h4>⚙️ Instalación y configuración</h4>
+                        <p>1.Inicializa tu proyecto:</p>
+                        <code><pre>
+                          npm init -y
+                        </pre></code> 
+                        <p>2.Instala Express:</p>
+                        <code><pre>
+                          npm install express
+                        </pre></code> 
+                        <p>3.Crea un archivo index.js:</p>
+                        <code><pre>
+                          const express = require('express');
+                          const app = express();
+                          const PORT = 3000;
+
+                          app.use(express.json()); // Para procesar JSON en peticiones POST/PUT
+
+                          app.listen(PORT, () => {
+                          console.log(`Servidor Express escuchando en http://localhost:${PORT}`);
+                         });
+                        </pre></code>
+                        <h4>📌 Rutas en Express</h4>
+                        <p>🔹 GET</p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.get('/', (req, res) => {
+                            res.send('Ruta GET principal');
+                          });                          
+                        </pre></code> 
+                        <p>🔹 POST</p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.post('/usuarios', (req, res) => {
+                            res.send(`Usuario recibido: ${JSON.stringify(req.body)}`);
+                          }); 
+                        </pre></code> 
+                        <p>🔹 PUT</p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.put('/usuarios/:id', (req, res) => {
+                            res.send(`Usuario actualizado con ID ${req.params.id}`);
+                          });
+                        </pre></code>
+                        <p>🔹 DELETE</p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.delete('/usuarios/:id', (req, res) => {
+                            res.send(`Usuario con ID ${req.params.id} eliminado`);
+                          });                          
+                        </pre></code>
+                        <h4>🔍 Parámetros y Query Strings</h4> 
+                        <p>🧾 Parámetros de ruta</p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.get('/productos/:id', (req, res) => {
+                            res.send(`Producto ID: ${req.params.id}`);
+                          });
+                          
+                        </pre></code> 
+                        <p>🔗 Cadenas de consulta (query)</p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.get('/buscar', (req, res) => {
+                            const { q, categoria } = req.query;
+                            res.send(`Buscando: ${q}, categoría: ${categoria}`);
+                          });                          
+                        </pre></code>
+                        <p>Ejemplo:</p>
+                        <code><pre>
+                          http://localhost:3000/buscar?q=libro&categoria=educacion
+                        </pre></code> 
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Concepto</th>
+                              <th>Descripción</th>
+                              <th>Ejemplo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>¿Qué es Express?</td>
+                              <td>Framework minimalista para Node.js que facilita la creación de servidores y APIs.</td>
+                              <td><code>const express = require('express');</code></td>
+                            </tr>
+                            <tr>
+                              <td>Instalación</td>
+                              <td>Instala Express en tu proyecto con NPM.</td>
+                              <td><code>npm install express</code></td>
+                            </tr>
+                            <tr>
+                              <td>Configurar servidor</td>
+                              <td>Crear una instancia de Express y escuchar un puerto.</td>
+                              <td>
+                                <pre><code>
+                        const app = express();
+                        app.listen(3000, () => {
+                          console.log("Servidor activo");
+                        });
+                                </code></pre>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Ruta GET</td>
+                              <td>Define una ruta que responde a solicitudes GET.</td>
+                              <td><code>app.get('/', (req, res) => res.send('Hola'));</code></td>
+                            </tr>
+                            <tr>
+                              <td>Ruta POST</td>
+                              <td>Define una ruta para recibir datos desde formularios o JSON.</td>
+                              <td><code>app.post('/datos', (req, res) => res.send(req.body));</code></td>
+                            </tr>
+                            <tr>
+                              <td>Ruta PUT</td>
+                              <td>Usada para actualizar recursos por ID u otra clave.</td>
+                              <td><code>app.put('/item/:id', (req, res) => res.send(req.params.id));</code></td>
+                            </tr>
+                            <tr>
+                              <td>Ruta DELETE</td>
+                              <td>Usada para eliminar recursos.</td>
+                              <td><code>app.delete('/item/:id', (req, res) => res.send('Eliminado'));</code></td>
+                            </tr>
+                            <tr>
+                              <td>Parámetros en la URL</td>
+                              <td>Se accede a valores dinámicos usando <code>req.params</code>.</td>
+                              <td><code>/usuario/:id → req.params.id</code></td>
+                            </tr>
+                            <tr>
+                              <td>Query strings</td>
+                              <td>Accede a valores en la URL con <code>req.query</code>.</td>
+                              <td><code>/buscar?q=libro → req.query.q</code></td>
+                            </tr>
+                            <tr>
+                              <td>Middleware JSON</td>
+                              <td>Permite procesar cuerpos JSON en peticiones POST/PUT.</td>
+                              <td><code>app.use(express.json());</code></td>
+                            </tr>
+                          </tbody>
+                        </table>                        
                       </div> 
               </tema-item>
 <!--8.Intermedio-Middleware           -->
@@ -177,16 +981,152 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Middleware</h2>
+                        <h4>🔄 ¿Qué es un Middleware en Express.js?</h4>
                         <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <p>Un middleware es una función que se ejecuta entre que el servidor recibe una solicitud (request) y
+                           envía una respuesta (response).
+                        </p>
+                        <p>Permite:<br>
+                          ·&nbsp;Modificar la solicitud o la respuesta.<br>
+                          ·&nbsp;Finalizar el ciclo de respuesta.<br>
+                          ·&nbsp;Llamar a otros middleware con next().
+                        </p>
+                        <h4>✅ Sintaxis básica de un middleware</h4>
+                        <code><pre>
+                          <p>JS</p>
+                          function middlewareEjemplo(req, res, next) {
+                            console.log('Middleware ejecutado');
+                            next(); // pasa al siguiente middleware o ruta
+                          }
+                          
+                          app.use(middlewareEjemplo);                          
+                        </pre></code>
+                        <h4>🔧 Middleware integrados en Express</h4> 
+                        <p>📦 express.json()<br>
+                          Permite procesar cuerpos JSON (en peticiones POST, PUT, etc.)
+                        </p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.use(express.json());
+                        </pre></code> 
+                        <p>🧾 express.urlencoded()<br>
+                          Procesa datos enviados por formularios HTML (application/x-www-form-urlencoded)
+                        </p>
+                        <code><pre>
+                          <p>JS</p>
+                          app.use(express.urlencoded({ extended: true }));
+                        </pre></code>
+                        <h4>🧑‍💻 Middleware personalizados</h4>
+                        <p>Puedes crear funciones middleware para verificar datos, logs, autenticación, etc.</p>
+                        <code><pre>
+                          <p>JS</p>
+                          const verificarToken = (req, res, next) => {
+                            if (req.headers['x-token'] === '123') {
+                              next();
+                            } else {
+                              res.status(403).send('Acceso denegado');
+                            }
+                          };
+                          
+                          app.use(verificarToken); // se aplica a todas las rutas                          
+                        </pre></code> 
+                        <p>También puedes aplicarlo solo a una ruta:</p>
+                        <code><pre>
+                          app.get('/privado', verificarToken, (req, res) => {
+                            res.send('Bienvenido al área privada');
+                          });                          
+                        </pre></code>
+                        <h4>📘 Morgan (middleware de logging)</h4> 
+                        <p>morgan es un middleware que muestra logs HTTP en consola.</p>
+                        <code><pre>
+                          <p>Instalación:</p>
+                          npm install morgan
+                        </pre></code>
+                        <p>Uso:</p>
+                        <code><pre>
+                          const morgan = require('morgan');
+                          app.use(morgan('dev'));
+                        </pre></code> 
+                        <p>Salida Típica:</p>
+                        <code><pre>
+                          GET /usuarios 200 15ms - 345b
+                        </pre></code>
+                        <h4>🌍 CORS (Cross-Origin Resource Sharing)</h4> 
+                        <p>Permite o restringe peticiones desde otros dominios (importante en APIs públicas).</p>
+                        <p>Instalación:</p>
+                        <code><pre>
+                          npm install cors
+                        </pre></code>
+                        <p>Uso:</p>
+                        <code><pre>
+                          const cors = require('cors');
+                          app.use(cors()); // permite todos los orígenes por defecto
+                        </pre></code> 
+                        <p>También puedes configurarlo:</p>
+                        <code><pre>
+                          app.use(cors({
+                            origin: 'http://localhost:4200'
+                          }));                          
+                        </pre></code> 
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Middleware</th>
+                              <th>Descripción</th>
+                              <th>Ejemplo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>¿Qué es un middleware?</td>
+                              <td>Función que se ejecuta entre la solicitud y la respuesta, puede modificar o validar datos.</td>
+                              <td><pre><code>
+                        app.use((req, res, next) => {
+                          console.log("Middleware ejecutado");
+                          next();
+                        });
+                              </code></pre></td>
+                            </tr>
+                            <tr>
+                              <td><code>express.json()</code></td>
+                              <td>Parsea cuerpos en formato JSON (usado en POST, PUT).</td>
+                              <td><code>app.use(express.json());</code></td>
+                            </tr>
+                            <tr>
+                              <td><code>express.urlencoded()</code></td>
+                              <td>Parsea datos de formularios (x-www-form-urlencoded).</td>
+                              <td><code>app.use(express.urlencoded({ extended: true }));</code></td>
+                            </tr>
+                            <tr>
+                              <td>Middleware personalizado</td>
+                              <td>Función creada por el usuario para validaciones, logs, seguridad, etc.</td>
+                              <td><pre><code>
+                        const validar = (req, res, next) => {
+                          if (req.query.token === 'abc') next();
+                          else res.send('No autorizado');
+                        };
+                        app.use(validar);
+                              </code></pre></td>
+                            </tr>
+                            <tr>
+                              <td><code>morgan</code></td>
+                              <td>Middleware de terceros para mostrar logs HTTP en consola.</td>
+                              <td><pre><code>
+                        const morgan = require('morgan');
+                        app.use(morgan('dev'));
+                              </code></pre></td>
+                            </tr>
+                            <tr>
+                              <td><code>cors</code></td>
+                              <td>Habilita CORS para permitir solicitudes desde otros dominios.</td>
+                              <td><pre><code>
+                        const cors = require('cors');
+                        app.use(cors());
+                              </code></pre></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
                       </div> 
               </tema-item>
 <!--9.Intermedio-Asincronía en Node.js           -->
@@ -199,16 +1139,141 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Asincronía en Node.js</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
+                        <h4>⚙️ ¿Qué es la asincronía en Node.js?</h4>
+                      <p>Node.js es asíncrono y no bloqueante, lo que significa que puede iniciar tareas (como leer archivos, 
+                         hacer peticiones a bases de datos o servidores) y continuar ejecutando otras cosas mientras espera 
+                         los resultados.
+                      </p>
+                      <p>Esto se maneja principalmente con:<br>
+                        ·&nbsp;Callbacks (devoluciones de llamada)<br>
+                        ·&nbsp;Promesas <br>
+                        ·&nbsp;async/await
+                      </p>
+                      <h4>🔁 1. Devoluciones de llamada (Callbacks)</h4>
+                      <p>Un callback es una función que se pasa como argumento a otra función y se ejecuta cuando la operación termina.</p>
                       <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
+                        <p>JS</p>
+                        const fs = require('fs');
+
+                        fs.readFile('archivo.txt', 'utf8', (err, datos) => {
+                        if (err) {
+                        console.error('Error:', err);
+                        return;
+                        }
+                        console.log('Contenido:', datos);
+                        });
+                        <br>
+                        <p>Desventaja: puede provocar callback hell (pirámide de funciones anidadas).</p>
                       </pre></code>
+                      <h4>🧾 2. Promesas</h4> 
+                      <p>Una promesa representa un valor que puede estar disponible ahora, en el futuro, o nunca. Se usa con .then() y .catch()./p>
+                      <code><pre>
+                        <p>JS</p>
+                        const promesa = new Promise((resolve, reject) => {
+                          const exito = true;
+                          if (exito) {
+                            resolve('Todo bien');
+                          } else {
+                            reject('Algo salió mal');
+                          }
+                        });
+                        
+                        promesa
+                          .then((resultado) => console.log(resultado))
+                          .catch((error) => console.error(error));
+                        
+                      </pre></code> 
+                      <h4>🧠 3. async/await</h4>
+                      <p>async/await permite escribir código asíncrono con una sintaxis más clara, parecida a la secuencial.</p>
+                      <code><pre>
+                        <p>JS</p>
+                        function esperar(ms) {
+                          return new Promise(resolve => setTimeout(resolve, ms));
+                        }
+                        
+                        async function ejecutar() {
+                          console.log('Esperando...');
+                          await esperar(1000);
+                          console.log('¡Listo!');
+                        }
+                        
+                        ejecutar();
+                        
+                      </pre></code>
+                      <h4>⚠️ 4. Manejo de errores asíncronos</h4>
+                      <p>Con async/await, se recomienda usar try/catch para manejar errores:</p>
+                      <code><pre>
+                        <p>JS</p>
+                        async function leerArchivo() {
+                          try {
+                            const datos = await fs.promises.readFile('archivo.txt', 'utf8');
+                            console.log(datos);
+                          } catch (error) {
+                            console.error('Error al leer archivo:', error.message);
+                          }
+                        }
+                        
+                      </pre></code> 
+                      <table border="1" cellpadding="8" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>Técnica</th>
+                            <th>Descripción</th>
+                            <th>Ventajas</th>
+                            <th>Desventajas</th>
+                            <th>Ejemplo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Callbacks</td>
+                            <td>Función pasada como argumento que se ejecuta al finalizar una tarea.</td>
+                            <td>Sencillo, ampliamente soportado.</td>
+                            <td>Callback hell, difícil de mantener.</td>
+                            <td>
+                              <pre><code>
+                      fs.readFile('archivo.txt', 'utf8', (err, datos) => {
+                        if (err) return console.error(err);
+                        console.log(datos);
+                      });
+                              </code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Promesas</td>
+                            <td>Representan un valor futuro con `.then()` y `.catch()`.</td>
+                            <td>Más legible que callbacks, permite encadenamiento.</td>
+                            <td>Manejo de errores menos estructurado.</td>
+                            <td>
+                              <pre><code>
+                      nuevaPromesa()
+                        .then(data => console.log(data))
+                        .catch(err => console.error(err));
+                              </code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>async/await</td>
+                            <td>Permite usar Promesas con sintaxis clara y secuencial.</td>
+                            <td>Fácil de leer y mantener, parecido a código síncrono.</td>
+                            <td>Requiere try/catch para manejar errores.</td>
+                            <td>
+                              <pre><code>
+                      async function leer() {
+                        try {
+                          const data = await fs.promises.readFile('archivo.txt', 'utf8');
+                          console.log(data);
+                        } catch (e) {
+                          console.error(e);
+                        }
+                      }
+                      leer();
+                              </code></pre>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
                       </div> 
               </tema-item> 
 <!--10.Intermedio-Plantilla y archivos estáticos          -->
@@ -221,16 +1286,124 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Plantillas y archivos estáticos.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <h4>🖼️ 1. Servir archivos estáticos en Express (CSS, imágenes, JS)</h4>
+                        <p>Express permite servir archivos estáticos desde una carpeta como
+                           public (u otra). Esto incluye imágenes, hojas de estilo CSS, JS 
+                           del frontend, etc.
+                        </p>
+                        <p>Ejemplo Básico:</p>
+                        <code><pre>
+                          const express = require('express');
+                          const app = express();
+
+                          // Servir archivos desde la carpeta "public"
+                          app.use(express.static('public'));
+
+                          app.listen(3000, () => console.log('Servidor en puerto 3000'));
+                        </pre></code> 
+                        <p>Estructura</p>
+                        <code><pre>
+                          /public
+                            ├── style.css
+                            ├── imagen.jpg
+                            └── script.js
+                          <p>Puedes acceder a: http://localhost:3000/style.css</p>
+                        </pre></code> 
+                        <h4>🧩 2. Motores de plantilla (Template engines)</h4>
+                        <p>Los motores de plantilla permiten generar HTML dinámico desde el servidor usando datos. 
+                           Express soporta muchos motores como:
+                        </p>
+                        <code><pre>
+                          <table border="1" cellpadding="8" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Motor</th>
+                                <th>Sintaxis</th>
+                                <th>Archivo típico</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>EJS</td>
+                                <td>Similar a HTML con <code>&lt;%= %&gt;</code></td>
+                                <td><code>index.ejs</code></td>
+                              </tr>
+                              <tr>
+                                <td>Handlebars (HBS)</td>
+                                <td>Basado en Mustache</td>
+                                <td><code>index.hbs</code></td>
+                              </tr>
+                              <tr>
+                                <td>Pug</td>
+                                <td>Sintaxis indentada (sin etiquetas HTML)</td>
+                                <td><code>index.pug</code></td>
+                              </tr>
+                            </tbody>
+                          </table>   
+                        </pre></code>
+                        <h4>📦 3. Usar un motor de plantillas (ejemplo con EJS)</h4>
+                        <p>1. Instalar EJS:</p>
+                        <code><pre>
+                          npm install ejs
+                        </pre></code> 
+                        <p>2. Configurar Express para usar EJS:</p>
+                        <code><pre>
+                          const express = require('express');
+                          const app = express();
+
+                          app.set('view engine', 'ejs');
+                          app.set('views', './views');
+
+                         app.get('/', (req, res) => {
+                         res.render('index', { nombre: 'Juan' });
+                        });
+                        </pre></code> 
+                        <p>3. Archivo /views/index.ejs:</p>
+                        <pre><code>
+                          &lt;!DOCTYPE html&gt;
+                          &lt;html&gt;
+                          &lt;head&gt;&lt;title&gt;Inicio&lt;/title&gt;&lt;/head&gt;
+                          &lt;body&gt;
+                          &lt;h1&gt;Hola &lt;%= nombre %&gt;&lt;/h1&gt;
+                          &lt;/body&gt;
+                          &lt;/html&gt;
+                        </code></pre>
+                        <h4>🔄 Comparativa de motores de plantilla</h4>
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Motor</th>
+                              <th>Ventajas</th>
+                              <th>Desventajas</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>EJS</td>
+                              <td>Muy usado, sintaxis HTML normal</td>
+                              <td>Poca lógica avanzada</td>
+                            </tr>
+                            <tr>
+                              <td>Handlebars</td>
+                              <td>Lógica simple, seguro por defecto</td>
+                              <td>Poco flexible para lógica compleja</td>
+                            </tr>
+                            <tr>
+                              <td>Pug</td>
+                              <td>Sintaxis limpia y compacta</td>
+                              <td>Difícil para nuevos usuarios</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h4>Resumen de pasos.</h4>
+                        <p> 
+                          1.&nbsp;Servir archivos estáticos con express.static().<br>
+                          2.&nbsp;Instalar un motor de plantillas con npm install.<br>
+                          3.&nbsp;Configurar Express con app.set().<br>
+                          4.&nbsp;Crear archivos en /views/ con la extensión del motor.<br>
+                          5.&nbsp;Usar res.render() para generar HTML dinámico.
+                        </p>
+                       
                       </div> 
               </tema-item>
 <!--11.Intermedio-Proyecto CRUD con Express          -->
@@ -243,16 +1416,162 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Proyecto CRUD con Express.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
+                        <p>A continuación tienes un ejemplo paso a paso de un proyecto CRUD con Express, que
+                           expone una API RESTful, hace validaciones básicas, y usa un array en memoria como
+                           “base de datos”:
+                        </p>
+                      <p>1. Estructura básica</p>
                       <code><pre>
+                        mi-crud/
+                        ├── index.js
+                        └── package.json
                       </pre></code> 
-                      <p></p>
+                      <p>2. Inicializar proyecto e instalar dependencias</p>
                       <code><pre>
+                        npm init -y
+                        npm install express
                       </pre></code> 
-                      <p></p>
+                      <p>3. Código completo en index.js</p>
                       <code><pre>
+                        const express = require('express');
+                        const { body, param, validationResult } = require('express-validator');
+
+                        const app = express();
+                        const PORT = 3000;
+
+                        // Middleware para parsear JSON
+                        app.use(express.json());
+
+                        // "Base de datos" en memoria
+                        let usuarios = [];
+                        let siguienteId = 1;
+
+                        // Middleware de validación de errores
+                        function validar(req, res, next) {
+                        const errores = validationResult(req);
+                        if (!errores.isEmpty()) {
+                        return res.status(400).json({ errores: errores.array() });
+                        }
+                        next();
+                        }
+
+                        /** 
+                        * Rutas CRUD para /api/usuarios
+                        */
+
+                        // GET  /api/usuarios
+                        // Devuelve todos los usuarios
+                        app.get('/api/usuarios', (req, res) => {
+                        res.json(usuarios);
+                        });
+
+                       // GET  /api/usuarios/:id
+                       // Devuelve un solo usuario por id
+                       app.get(
+                           '/api/usuarios/:id',
+                           [ param('id').isInt({ gt: 0 }).withMessage('ID debe ser entero > 0') ],
+                           validar,
+                           (req, res) => {
+                          const id = +req.params.id;
+                          const u = usuarios.find(u => u.id === id);
+                      if (!u) return res.status(404).json({ error: 'Usuario no encontrado' });
+                      res.json(u);
+                      }
+                      );
+
+                      // POST /api/usuarios
+                      // Crea un nuevo usuario
+                      app.post(
+                         '/api/usuarios',
+                      [
+                      body('nombre').isString().isLength({ min: 3 }).withMessage('Nombre mínimo 3 caracteres'),
+                       body('email').isEmail().withMessage('Email inválido')
+                     ],
+                    validar,
+                    (req, res) => {
+                      const { nombre, email } = req.body;
+                      const nuevo = { id: siguienteId++, nombre, email };
+                      usuarios.push(nuevo);
+                      res.status(201).json(nuevo);
+                      }
+                   );
+
+                    // PUT  /api/usuarios/:id 
+                    // Actualiza un usuario existente
+                    app.put(
+                    '/api/usuarios/:id',
+                    [
+                    param('id').isInt({ gt: 0 }).withMessage('ID debe ser entero > 0'),
+                    body('nombre').optional().isString().isLength({ min: 3 }),
+                    body('email').optional().isEmail()
+                    ],
+                    validar,
+                    (req, res) => {
+                        const id = +req.params.id;
+                        const idx = usuarios.findIndex(u => u.id === id);
+                        if (idx === -1) return res.status(404).json({ error: 'Usuario no encontrado' });
+
+                    // Actualizar solo campos enviados
+                    const actualizado = { ...usuarios[idx], ...req.body };
+                    usuarios[idx] = actualizado;
+                    res.json(actualizado);
+                      }
+                    );
+
+                    // DELETE /api/usuarios/:id
+                    // Elimina un usuario
+                    app.delete(
+                    '/api/usuarios/:id',
+                    [ param('id').isInt({ gt: 0 }) ],
+                    validar,
+                    (req, res) => {
+                      const id = +req.params.id;
+                      const idx = usuarios.findIndex(u => u.id === id);
+                      if (idx === -1) return res.status(404).json({ error: 'Usuario no encontrado' });
+
+                      usuarios.splice(idx, 1);
+                      res.status(204).send(); // Sin contenido
+                    }
+                 );
+
+                    // Arrancar servidor
+                    app.listen(PORT, () => {
+                    console.log(`Servidor escuchando en http://localhost:${PORT}`);
+                  });
                       </pre></code>
+                      <h4>Explicación.</h4>
+                      <p>1.Array en memoria</p>
+                      <code><pre>
+                        <p>JS</p>
+                        let usuarios = [];
+                        let siguienteId = 1;
+                        <p>Simula nuestra “tabla” de usuarios.</p>
+                      </pre></code> 
+                      <p>2.Middleware express.json()<br>
+                        &nbsp;&nbsp;·&nbsp;Permite leer req.body en rutas POST/PUT.
+                      </p> 
+                      <p>3.Validaciones con express-validator<br>
+                        &nbsp;&nbsp;·&nbsp;Instalación: npm install express-validator.<br>
+                        &nbsp;&nbsp;·&nbsp;Instalación: npm install express-validator.
+                      </p>
+                      <p>4.Rutas RESTful<br>
+                        &nbsp;&nbsp;·&nbsp;GET /api/usuarios → Devuelve todos los usuarios.<br>
+                        &nbsp;&nbsp;·&nbsp;GET /api/usuarios/:id → Devuelve un usuario por ID.<br>
+                        &nbsp;&nbsp;·&nbsp;POST /api/usuarios → Crea un nuevo usuario.<br>
+                        &nbsp;&nbsp;·&nbsp;PUT /api/usuarios/:id → Actualiza un usuario por ID.<br>
+                        &nbsp;&nbsp;·&nbsp;DELETE /api/usuarios/:id → Elimina un usuario por ID
+                      </p>
+                      <p>5.Códigos de estado<br>
+                        &nbsp;&nbsp;·&nbsp;201 Created al crear<br>
+                        &nbsp;&nbsp;·&nbsp;204 No Content al borrar<br>
+                        &nbsp;&nbsp;·&nbsp;400 Bad Request en validaciones<br>
+                        &nbsp;&nbsp;·&nbsp;404 Not Found si no existe el recurso
+                      </p>
+                      <p>
+                        Con este esquema ya tienes un CRUD completo y sencillo. Puedes probarlo con 
+                        Postman o curl, y más adelante reemplazar el array por una BD real 
+                        (Mongo, MySQL, etc.) siguiendo la misma estructura de rutas y validaciones. 
+                      </p>
                       </div> 
               </tema-item>
 <!--12.Avanzado-MongoDB y Mongoose          -->
@@ -265,16 +1584,183 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>MongoDB y Mongoose</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <h4>📦 1. ¿Qué es MongoDB y por qué Mongoose?</h4>
+                        <p>
+                          ·&nbsp;MongoDB es una base de datos NoSQL orientada a documentos, que guarda datos en forma de JSON (BSON internamente).<br>
+                          ·&nbsp;Mongoose es un ODM (Object Data Modeling) para Node.js que añade un esquema riguroso y utilidades a MongoDB, incluyendo validaciones, middleware y relaciones.
+                        </p>
+                        <h4>🔗 2. Conexión a MongoDB Atlas</h4>
+                        <p>1.Crea un cluster en MongoDB Atlas y obtén tu cadena de conexión (URI), algo como:</p>
+                        <code><pre>
+                          mongodb+srv://<usuario>:<password>@cluster0.xyz.mongodb.net/miBase?retryWrites=true&w=majority
+                        </pre></code> 
+                        <p>2.Instala Mongoose:</p>
+                        <code><pre>
+                          npm install mongoose
+                        </pre></code> 
+                        <p>3.Conéctate en tu archivo principal, p.ej. index.js:</p>
+                        <code><pre>
+                          const mongoose = require('mongoose');
+
+                          const URI = process.env.MONGO_URI || 'tu_uri_de_atlas_aquí';
+
+                          mongoose.connect(URI, { 
+                          useNewUrlParser: true,
+                          useUnifiedTopology: true
+                          })
+                          .then(() => console.log('✅ Conectado a MongoDB Atlas'))
+                          .catch(err => console.error('❌ Error al conectar:', err));
+                        </pre></code>
+                        <h4>🏗️ 3. Definir esquemas y modelos</h4>
+                        <p>Cada colección en MongoDB tendrá un esquema en Mongoose:</p>
+                        <code><pre>
+                          const { Schema, model } = require('mongoose');
+
+                          const usuarioSchema = new Schema({
+                            nombre: {
+                              type: String,
+                              required: true,
+                              minlength: 3
+                            },
+                            email: {
+                              type: String,
+                              required: true,
+                              unique: true,
+                              match: /.+\@.+\..+/  // validación de formato
+                            },
+                            edad: {
+                              type: Number,
+                              min: 0
+                            },
+                            creadoEn: {
+                              type: Date,
+                              default: Date.now
+                            }
+                          });
+                          
+                          // Crear el modelo
+                          const Usuario = model('Usuario', usuarioSchema);
+                          
+                          module.exports = Usuario;                           
+                        </pre></code>
+                        <h4>🔄 4. Operaciones CRUD con Mongoose</h4> 
+                        <p>Asumiendo que ya tienes const Usuario = require('./models/Usuario'):<br>
+                          ·&nbsp;Crear:
+                        </p>
+                        <code><pre>
+                          const nuevo = new Usuario({ nombre: 'Ana', email: 'ana@ejemplo.com', edad: 25 });
+                          await nuevo.save();
+                        </pre></code> 
+                        <p>·&nbsp;Leer:</p>
+                        <code><pre>
+                          const todos = await Usuario.find();               // todos los documentos
+                          const uno = await Usuario.findById('6412ab...');   // por ID
+                          const filtro = await Usuario.find({ edad: { $gt: 18 } });
+                        </pre></code>
+                        <p>·&nbsp;Actualizar:</p>
+                        <code><pre>
+                          const actualizado = await Usuario.findByIdAndUpdate(
+                          '6412ab...',
+                          { edad: 26 },
+                          { new: true, runValidators: true }
+                          );
+                        </pre></code> 
+                        <p>·&nbsp;Eliminanar:</p>
+                        <code><pre>
+                          await Usuario.findByIdAndDelete('6412ab...');
+                        </pre></code> 
+                        <h4>5.Validaciones.</h4>
+                        <p>Mongoose las resuelve en el esquema:<br>
+                          ·&nbsp;required, minlength, unique, match, rangos (min, max), enums…<br>
+                          ·&nbsp;Si fallan, .save() o métodos como findByIdAndUpdate con { runValidators: true } lanzan un ValidationError:
+                        </p>
+                        <code><pre>
+                          <p>JS</p>
+                          try {
+                            await Usuario.create({ nombre: 'A', email: 'no-mail' });
+                          } catch (err) {
+                            console.error(err.errors); // detalles de cada campo
+                          }       
+                        </pre></code>
+                        <h4>6. Relaciones (Refs y populate)</h4>
+                        <p>MongoDB no tiene joins nativos, pero Mongoose permite referencias:</p>
+                        <code><pre>
+                          // models/Producto.js
+                          const productoSchema = new Schema({
+                          nombre: String,
+                          precio: Number,
+                          vendedor: { type: Schema.Types.ObjectId, ref: 'Usuario' }
+                          });
+                          const Producto = model('Producto', productoSchema);
+                        </pre></code> 
+                        <p>Crear un producto referenciando un usuario:</p>
+                        <code><pre>
+                          const user = await Usuario.findOne({ email: 'ana@ejemplo.com' });
+                          const prod = await Producto.create({
+                            nombre: 'Libro',
+                            precio: 12.5,
+                            vendedor: user._id
+                          });
+                        </pre></code> 
+                        <p>Al leer, usar .populate() para traer datos del usuario:</p>
+                        <code><pre>
+                          const listado = await Producto.find().populate('vendedor', 'nombre email');
+                          /*
+                          [
+                            {
+                             _id: ...,
+                             nombre: 'Libro',
+                             precio: 12.5,
+                             vendedor: { _id: ..., nombre: 'Ana', email: 'ana@ejemplo.com' }
+                            },
+                            …
+                          ]
+                          */
+                        </pre></code>
+                        <h4>⚙️ 7. Ejemplo completo rápido</h4>
+                        <code><pre>
+                          // index.js
+                          const express = require('express');
+                          const mongoose = require('mongoose');
+                          const Usuario = require('./models/Usuario');
+                          const Producto = require('./models/Producto');
+                          
+                          const app = express();
+                          app.use(express.json());
+                          
+                          mongoose.connect('tu_uri_atlas', { useNewUrlParser: true, useUnifiedTopology: true });
+                          
+                          // CRUD Usuarios
+                          app.post('/usuarios', async (req, res) => {
+                            try {
+                              const u = await Usuario.create(req.body);
+                              res.status(201).json(u);
+                            } catch (e) {
+                              res.status(400).json({ error: e.message });
+                            }
+                          });
+                          
+                          // CRUD Productos
+                          app.post('/productos', async (req, res) => {
+                            try {
+                              const p = await Producto.create(req.body);
+                              res.status(201).json(p);
+                            } catch (e) {
+                              res.status(400).json({ error: e.message });
+                            }
+                          });
+                          
+                          app.get('/productos', async (req, res) => {
+                            const lista = await Producto.find().populate('vendedor', 'nombre');
+                            res.json(lista);
+                          });
+                          
+                          app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
+                            
+                        </pre></code> 
+                        <p></p>
+                        <code><pre>
+                        </pre></code> 
                       </div> 
               </tema-item>
 <!--13.Avanzado-Autenticación y seguridad          -->
@@ -287,16 +1773,149 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Autenticación y seguridad.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <h4>🔐 1. JSON Web Tokens (JWT).</h4>
+                        <p>Los JWT son tokens firmados que transportan información de usuario de forma 
+                          segura entre cliente y servidor.<br>
+                          Instalación.
+                        </p>
+                        <code><pre>
+                          npm install jsonwebtoken
+                        </pre></code> 
+                        <p>Generar un token</p>
+                        <code><pre>
+                          const jwt = require('jsonwebtoken');
+                          const SECRET = process.env.JWT_SECRET || 'mi_clave_ultrasecreta';
+
+                          // Tras validar credenciales:
+                          const payload = { id: usuario._id, email: usuario.email };
+                          const token = jwt.sign(payload, SECRET, { expiresIn: '1h' });
+
+                          <p>
+                            ·&nbsp;payload puede incluir los datos que quieras exponer (mejor que sean mínimos).<br>
+                            ·&nbsp;expiresIn define la expiración del token.
+                          </p>
+                        </pre></code> 
+                        <p>Verificar un token</p>
+                        <code><pre>
+                          try {
+                            const datos = jwt.verify(tokenRecibido, SECRET);
+                            // datos contiene { id, email, iat, exp }
+                          } catch (e) {
+                            // token inválido o expirado
+                          }
+                          
+                        </pre></code>
+                        <h4>🛡️ 2. Middleware de autenticación</h4>
+                        <p>Intercepta peticiones y valida el JWT antes de permitir el acceso a rutas protegidas.</p>
+                        <code><pre>
+                          <p>JS</p>
+                          function autenticarJWT(req, res, next) {
+                            const authHeader = req.headers.authorization; // "Bearer <token>"
+                            if (!authHeader) return res.status(401).json({ error: 'Token requerido' });
+                          
+                            const token = authHeader.split(' ')[1];
+                            try {
+                              const datos = jwt.verify(token, SECRET);
+                              req.usuario = datos;   // pasar datos al siguiente handler
+                              next();
+                            } catch (e) {
+                              res.status(403).json({ error: 'Token inválido o expirado' });
+                            }
+                          }
+                          
+                          // Uso en rutas:
+                          app.get('/privado', autenticarJWT, (req, res) => {
+                            res.json({ mensaje: `Hola ${req.usuario.email}` });
+                          });
+                          
+                        </pre></code> 
+                        <h4>🔑 3. Cifrado de contraseñas con bcrypt</h4>
+                        <p>Nunca almacenes contraseñas en texto plano: usa bcrypt para hashearlas.</p>
+                        <code><pre>
+                          <p>Instalación</p>
+                          npm install bcrypt
+                        </pre></code> 
+                        <p>Hashear una contraseña</p>
+                        <code><pre>
+                          <p>JS</p>
+                          const bcrypt = require('bcrypt');
+                          const SALT_ROUNDS = 10;
+
+                        async function crearUsuario(email, passPlain) {
+                          const hash = await bcrypt.hash(passPlain, SALT_ROUNDS);
+                          // guardar en BD: usuario.password = hash
+                        }                        
+                        </pre></code>
+                        <p>Verificar contraseña</p>
+                        <code><pre>
+                          const coincide = await bcrypt.compare(passPlain, hashAlmacenado);
+                          if (!coincide) throw new Error('Credenciales inválidas');
+                        </pre></code>
+                        <h4>🏰 4. Seguridad HTTP con Helmet</h4> 
+                        <p>Helmet ajusta cabeceras HTTP para proteger contra vulnerabilidades comunes (XSS, clickjacking…).</p>
+                        <code><pre>
+                          <p>Instalación:</p>
+                          npm install helmet
+                        </pre></code> 
+                        <p>Uso:</p>
+                        <code><pre>
+                          const helmet = require('helmet');
+                          app.use(helmet());
+                        </pre></code>
+                        <h4>⏱️ 5. Rate limiting</h4>
+                        <p>Limita el número de peticiones por IP para mitigar ataques de fuerza bruta o DoS.</p>
+                        <code><pre>
+                          <p>Instalación</p>
+                          npm install express-rate-limit
+                        </pre></code> 
+                        <p>Configuración básica</p>
+                        <code><pre>
+                          const rateLimit = require('express-rate-limit');
+
+                        const limiter = rateLimit({
+                          windowMs: 15 * 60 * 1000, // 15 minutos
+                          max: 100,                 // máximo 100 peticiones por IP en ese periodo
+                           message: 'Demasiadas peticiones, inténtalo más tarde'
+                        });
+
+                        app.use(limiter);
+                        </pre></code>
+                        <h4>🌐 6. CORS</h4>
+                        <p>Configura Cross-Origin Resource Sharing para controlar qué orígenes pueden acceder a tu API.</p> 
+                        <code><pre>
+                          <p>Instalación</p>
+                          npm install cors
+                        </pre></code>
+                        <p>Uso</p>
+                        <code><pre>
+                          const cors = require('cors');
+
+                          // Permitir todos los orígenes
+                          app.use(cors());
+
+                          // O configuración más estricta:
+                          app.use(cors({
+                             origin: 'https://mi-frontend.com',
+                             methods: ['GET','POST','PUT','DELETE'],
+                             credentials: true
+                        }));
+                        </pre></code>
+                        <h4>🧠 Flujo típico de autenticación</h4> 
+                        <p>Registro:<br>
+                          ·&nbsp;El usuario envía email + contraseña.<br>
+                          ·&nbsp;Hash con bcrypt y guardar en BD.
+                        </p>
+                       <p>Hash con bcrypt y guardar en BD.<br>
+                        ·&nbsp;Usuario envía credenciales.<br>
+                        ·&nbsp;Verificar con bcrypt.compare.<br>
+                        ·&nbsp;Si ok, generar JWT y devolverlo.
+                       </p>
+                       <p>Acceso a rutas protegidas:<br>
+                        ·&nbsp;Cliente envía el token en la cabecera Authorization: Bearer <token>.<br>
+                        ·&nbsp;Middleware autenticarJWT verifica y añade req.usuario.<br>
+                        ·&nbsp;a ruta responde o rechaza según permisos.
+                       </p>
+                       <p>Con estas herramientas tendrás una app Node.js segura y con autenticación robusta.</p>
                       </div> 
               </tema-item>
 <!--14.Avanzado-Pruebas          -->
@@ -309,16 +1928,193 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Pruebas.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <p>una introducción a las pruebas automatizadas en Node.js y los frameworks más comunes, 
+                           con ejemplos de cómo probar tanto lógica como rutas HTTP.
+                        </p>
+                        <h4>🧪 1. ¿Por qué hacer pruebas automatizadas?</h4>
+                        <p>
+                          ·&nbsp;Confiabilidad: asegura que el código hace lo esperado y previene regresiones.<br>
+                          ·&nbsp;Documentación viva: los tests muestran el comportamiento de tus funciones y API.<br>
+                          ·&nbsp;Refactor seguro: puedes cambiar internals sabiendo que los tests te alertarán de roturas.
+                        </p>
+                        <h4>🎯 2. Herramientas principales</h4>
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Framework</th>
+                              <th>Uso principal</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Jest</td>
+                              <td>Todo en uno: assertions, mocks, coverage.</td>
+                            </tr>
+                            <tr>
+                              <td>Mocha</td>
+                              <td>Runner flexible (se suele combinar con Chai).</td>
+                            </tr>
+                            <tr>
+                              <td>Chai</td>
+                              <td>Librería de assertions (BDD/TDD)</td>
+                            </tr>
+                            <tr>
+                              <td>Supertest</td>
+                              <td>Facilita pruebas de rutas Express (HTTP).</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h4>Jest</h4>
+                        <p>Jest es un framework “todo-en-uno” de Facebook. Incluye assertions, mocks, spies y coverage.</p>
+                        <code><pre>
+                          <p>Instalación:</p>
+                          npm install --save-dev jest
+                        </pre></code> 
+                        <p>Añade un script en tu package.json:</p>
+                        <code><pre>
+                          "scripts": {
+                            "test": "jest"
+                          }                          
+                        </pre></code> 
+                        <p>Test de función (lógica)<br>Supongamos que tienes sumar.js:</p>
+                        <code><pre>
+                          // src/sumar.js
+                          function sumar(a, b) {
+                          return a + b;
+                          }
+                        module.exports = sumar;
+                        </pre></code>
+                        <p>Crea sumar.test.js:</p>
+                        <code><pre>
+                          // tests/sumar.test.js
+                          const sumar = require('../src/sumar');
+                          
+                          test('sumar devuelve la suma de dos números', () => {
+                            expect(sumar(2, 3)).toBe(5);
+                            expect(sumar(-1, 1)).toBe(0);
+                          });                            
+                        </pre></code> 
+                        <p>Ejecuta:</p>
+                        <code><pre>
+                          npm test
+                        </pre></code> 
+                        <h4>🔧 4. Mocha + Chai</h4>
+                        <p>Mocha es sólo el runner; Chai aporta las assertions.</p>
+                        <code><pre>
+                          <p>Instalación:</p>
+                          npm install --save-dev mocha chai
+                        </pre></code>
+                        <p>Añade en package.json:</p>
+                        <code><pre>
+                          "scripts": {
+                            "test": "mocha"
+                          }                          
+                        </pre></code> 
+                        <p>Test de función con Chai</p>
+                        <code><pre>
+                          // tests/sumar.spec.js
+                          const { expect } = require('chai');
+                          const sumar = require('../src/sumar');
+                          
+                          describe('sumar()', () => {
+                            it('debe sumar dos números positivos', () => {
+                              expect(sumar(2, 3)).to.equal(5);
+                            });
+                            it('debe manejar negativos', () => {
+                              expect(sumar(-1, 1)).to.equal(0);
+                            });
+                          });                            
+                        </pre></code> 
+                        <p>Ejecuta:</p>
+                        <code><pre>
+                          npm test
+                        </pre></code>
+                        <h4>🌐 5. Supertest (pruebas de rutas Express)</h4>
+                        <p>Supertest permite montar tu app Express y lanzar peticiones HTTP en caliente, 
+                           sin necesidad de levantar servidor aparte.
+                        </p>
+                        <code><pre>
+                          <p>Instalación:</p>
+                          npm install --save-dev supertest
+                        </pre></code> 
+                        <p>Ejemplo de API simple</p>
+                        <code><pre>
+                          <p>JS</p>
+                          // src/app.js
+                          const express = require('express');
+                          const app = express();
+                          app.use(express.json());
+
+                          let items = [];
+                          app.get('/items', (req, res) => res.json(items));
+                          app.post('/items', (req, res) => {
+                            const { name } = req.body;
+                            if (!name) return res.status(400).json({ error: 'name es requerido' });
+                            const nuevo = { id: items.length + 1, name };
+                            items.push(nuevo);
+                            res.status(201).json(nuevo);
+                          });
+
+                          module.exports = app;
+                        </pre></code> 
+                        <code><pre>
+                          <p>JS</p>
+                          // src/server.js
+                          const app = require('./app');
+                          app.listen(3000, () => console.log('Servidor en 3000'));
+                        </pre></code>
+                        <p>Test con Supertest + Jest</p>
+                        <code><pre>
+                          // tests/items.test.js
+                          const request = require('supertest');
+                          const app = require('../src/app');
+                          
+                          describe('Rutas /items', () => {
+                            beforeEach(() => {
+                              // Reiniciar estado si es necesario
+                            });
+                          
+                            it('GET /items → [] inicialmente', async () => {
+                              const res = await request(app).get('/items');
+                              expect(res.statusCode).toBe(200);
+                              expect(res.body).toEqual([]);
+                            });
+                          
+                            it('POST /items crea un nuevo ítem', async () => {
+                              const res = await request(app)
+                                .post('/items')
+                                .send({ name: 'Manzana' });
+                              expect(res.statusCode).toBe(201);
+                              expect(res.body).toHaveProperty('id', 1);
+                              expect(res.body).toHaveProperty('name', 'Manzana');
+                            });
+                          
+                            it('POST /items sin name → 400', async () => {
+                              const res = await request(app)
+                                .post('/items')
+                                .send({});
+                              expect(res.statusCode).toBe(400);
+                              expect(res.body).toHaveProperty('error', 'name es requerido');
+                            });
+                          });
+                            
+                        </pre></code> 
+                        <p>Ejecuta con Jest:</p>
+                        <code><pre>
+                          npm test
+                          <br>
+                          <p>O bien con Mocha y Chai adaptando la sintaxis de assertions.</p>  
+                        </pre></code>
+
+                        <h4>📋 6. Buenas prácticas</h4> 
+                        <p>
+                          1.&nbsp;Organiza tus tests en carpetas (tests/ o __tests__/).<br>
+                          2.&nbsp;Aísla estado: limpia tu “base de datos” en memoria entre tests (beforeEach).<br>
+                          3.&nbsp;Mockea dependencias externas (DB, servicios HTTP) para tests unitarios.<br>
+                          4.&nbsp;Usa coverage para medir qué parte de tu código está testeada (jest --coverage).<br>
+                          5·&nbsp;Integra tus tests en CI (GitHub Actions, GitLab CI…) para garantizar calidad.
+                        </p>
+                        <p>Integra tus tests en CI (GitHub Actions, GitLab CI…) para garantizar calidad.</p>
                       </div> 
               </tema-item>
 <!--15.Avanzado-Arquitectura de Aplicaciones          -->
@@ -331,16 +2127,112 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Arquitectura de Aplicaciones.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                        <p>Una visión global de cómo estructurar y organizar una aplicación Node.js 
+                           siguiendo una arquitectura en capas, aplicando patrones de diseño y 
+                           buenas prácticas:
+                        </p>
+                        <h4>1. Separación de Capas</h4>
+                        <p>1.Rutas (Routes)<br>
+                          ·&nbsp;Definen los endpoints HTTP y delegan la lógica al controlador.<br>
+                          ·&nbsp;Definen los endpoints HTTP y delegan la lógica al controlador.
+                        </p>
+                        <p>2.Controladores (Controllers)<br>
+                          ·&nbsp;Orquestan la lógica de la petición: reciben req, invocan servicios, y devuelven la respuesta (res).<br>
+                          ·&nbsp;Validaciones básicas de parámetros/path/query.
+                        </p>
+                        <p>
+                          3.Servicios (Services)<br>
+                          ·&nbsp;Contienen la lógica de negocio “pura”: cálculos, reglas, flujos de trabajo.<br>
+                          ·&nbsp;Pueden llamar a múltiples modelos o integrarse con APIs externas.
+                        </p>
+                        <p>
+                          4.Modelos (Models)<br>
+                          ·&nbsp;Abstracción de datos (ORM/ODM o acceso directo a la BD).<br>
+                          ·&nbsp; Definen esquemas, validaciones y operaciones CRUD puntuales.
+                        </p>
+                        <p>
+                          5.Utilitarios / Helpers / Middlewares<br>
+                          ·&nbsp;Código transversal: manejo de errores, autenticación, logging, formateo.<br>
+                          ·&nbsp;e inyectan (o aplican) en la capa de rutas o servidor principal.
+                        </p>
+                        <h4>2. Ejemplo de Estructura de Carpetas</h4>
+                        <code><pre>
+                          src/
+                          ├── config/             # Variables de entorno, configuración de DB, CORS, rate-limit
+                          │   └── index.js
+                          ├── middlewares/        # Funciones express de uso transversal
+                          │   ├── auth.js
+                          │   └── errorHandler.js
+                          ├── routes/             # Definición de rutas y enlace a controladores
+                          │   └── usuario.routes.js
+                          ├── controllers/        # Controladores que reciben req/res
+                          │   └── usuario.controller.js
+                          ├── services/           # Lógica de negocio
+                          │   └── usuario.service.js
+                          ├── models/             # Esquemas y acceso a datos (Mongoose, Sequelize, etc.)
+                          │   └── usuario.model.js
+                          ├── utils/              # Helpers genéricos (formatos de fecha, validadores, ...)
+                          │   └── logger.js
+                          └── app.js              # Inicialización de Express, middlewares globales y rutas
+                            
+                        </pre></code> 
+                        <h4>3. Patrones de Diseño Clave</h4>
+                        <p>·&nbsp;MVC (Model-View-Controller)<br>
+                          Aunque en APIs no hay “View”, la separación Model-Controller se mantiene:<br>
+                          Rutas → Controlador → Servicio/Modelo → Respuesta.
+                        </p>
+                        <p>·&nbsp;Servicio-Repositório<br>
+                          Los servicios invocan repositorios (acceso a datos), que encapsulan queries o llamadas al ORM.
+                        </p>
+                        <p>·&nbsp;Inyección de Dependencias (DI)<br>
+                          Facilita el testing y la flexibilidad: los controladores reciben instancias de servicios en lugar de importarlos directamente.
+                        </p>
+                        <p>·&nbsp;Singleton<br>
+                          Para recursos únicos (p. ej. conexión a base de datos, cliente de cache).
+                        </p>
+                        <p>·&nbsp;Factory<br>
+                          Para crear objetos complejos (p. ej. clientes de servicios externos) sin exponer su complejidad.
+                        </p>
+                        <p>·&nbsp;Middleware Pipeline<br>
+                          Encadena responsabilidad (auth, logging, validación) sin ensuciar rutas o controladores.
+                        </p>
+                        <h4>Buenas Prácticas</h4>
+                        <p>
+                          ·&nbsp;Configuración fuera del código.<br>
+                          Usa variables de entorno (.env) y un módulo config/ para centralizar.<br>
+                          ·&nbsp;Error Handling centralizado.<br>
+                          Un middleware final captura errores y da respuestas consistentes ({status, message}).<br>
+                          ·&nbsp;Validaciones estructuradas. <br>
+                          Usa librerías como joi o express-validator en la capa de rutas o controladores.<br>
+                          ·&nbsp;Logging. <br>
+                          Emplea un logger (p. ej. winston o pino) en lugar de console.log.<br>
+                          ·&nbsp;Modularidad y cohesión<br>
+                          Cada archivo tiene una responsabilidad clara y un único motivo de cambio.<br>
+                          ·&nbsp;Testing en cada capa.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Unit tests: servicios y utilitarios.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Integration tests: controladores + base de datos simulada (in-memory).<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;End-to-end: pruebas de API completas (Supertest).<br>
+                          ·&nbsp;Versionado de API<br>
+                          Incluye prefijos como /api/v1/usuarios para futuras versiones.<br>
+                          ·&nbsp;Documentación<br>
+                          Usa OpenAPI/Swagger para describir rutas, modelos de datos y respuestas.<br>
+                          ·&nbsp;Usa OpenAPI/Swagger para describir rutas, modelos de datos y respuestas.<br>
+                          Helmet, rate-limit, sanitización de inputs, CORS configurado, y autenticación en middleware.
+                        </p>
+                        <h4>5. Flujo Típico de una Petición</h4>
+                        <p>
+                          1.Cliente<br>
+                          2.Express.json() / cors() / helmet() (middlewares globales) <br>
+                          3.Router (usuario.routes.js) <br>
+                          4.Middleware específico (auth, validación) <br>
+                          5.Controlador (usuario.controller.js) <br>
+                          6.Servicio (usuario.service.js) <br>
+                          7.Modelo (usuario.model.js) <br>
+                          8.Respuesta retorna por la misma cadena hacia el cliente <br>
+                        </p>
+                        <p>
+                          Con esta arquitectura tendrás un proyecto escalable, fácil de mantener y probar. ¡A programar!
+                        </p>
                       </div> 
               </tema-item>
 <!--16.Avanzado-WebSockets y Tiempo Real          -->
@@ -353,16 +2245,124 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>WebSockets y Tiempo Real.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
+                        <h4>1. ¿Qué son los WebSockets?</h4>
+                      <p>
+                        ·&nbsp;WebSocket es un protocolo que establece una conexión bidireccional y persistente 
+                        entre cliente y servidor sobre TCP.<br>
+                        ·&nbsp;A diferencia de HTTP puro (request–response), con WebSocket el servidor puede 
+                        empujar datos al cliente en cualquier momento, y el cliente puede enviar datos al servidor sin reabrir la conexión.
+                      </p>
+                      <h4>2. ¿Por qué usar Socket.IO?</h4>
+                      <p>·&nbsp;Socket.IO es una biblioteca que abstrae WebSockets y provee:<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Fallbacks automáticos (long-polling) si WebSocket no está disponible.<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Reconexión automática.<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Rooms y namespaces para segmentar canales de comunicación.<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Manejo sencillo de eventos.
+                      </p>
+                      <h4>3. Instalación y configuración básica</h4>
+                      <p>1.Instala Socket.IO en tu proyecto Express:</p>
                       <code><pre>
+                        npm install socket.io
                       </pre></code> 
-                      <p></p>
+                      <p>2.Servidor (index.js):</p>
                       <code><pre>
+                        const express = require('express');
+                        const http = require('http');
+                        const { Server } = require('socket.io');
+                        const path = require('path');
+                        
+                        const app = express();
+                        const server = http.createServer(app);
+                        const io = new Server(server);
+                        
+                        // Servir archivos estáticos (cliente)
+                        app.use(express.static(path.join(__dirname, 'public')));
+                        
+                        // Al conectar un cliente
+                        io.on('connection', socket => {
+                          console.log('Cliente conectado:', socket.id);
+                        
+                          // Escuchar evento "mensaje"
+                          socket.on('mensaje', data => {
+                            // Reenviar a todos (broadcast)
+                            io.emit('mensaje', data);
+                          });
+                        
+                          socket.on('disconnect', () => {
+                            console.log('Cliente desconectado:', socket.id);
+                          });
+                        });
+                        
+                        server.listen(3000, () => {
+                          console.log('Servidor escuchando en http://localhost:3000');
+                        });                          
                       </pre></code> 
-                      <p></p>
-                      <code><pre>
-                      </pre></code>
+                      <p>3.Cliente (public/index.html):</p>
+                      <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                          &lt;meta charset="UTF-8"&gt;
+                          &lt;title&gt;Chat en Tiempo Real&lt;/title&gt;
+                          &lt;style&gt;
+                            body { font-family: sans-serif; }
+                            #mensajes { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 5px; }
+                            #form { margin-top: 10px; }
+                          &lt;/style&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                          &lt;h1&gt;Chat&lt;/h1&gt;
+                          &lt;div id="mensajes"&gt;&lt;/div&gt;
+                          &lt;form id="form"&gt;
+                            &lt;input id="input" autocomplete="off" placeholder="Escribe un mensaje…" /&gt;&lt;button&gt;Enviar&lt;/button&gt;
+                          &lt;/form&gt;
+                        
+                          &lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;
+                          &lt;script&gt;
+                            const socket = io();
+                        
+                            const form = document.getElementById('form');
+                            const input = document.getElementById('input');
+                            const mensajes = document.getElementById('mensajes');
+                        
+                            // Al recibir un mensaje
+                            socket.on('mensaje', msg =&gt; {
+                              const item = document.createElement('div');
+                              item.textContent = msg;
+                              mensajes.appendChild(item);
+                              mensajes.scrollTop = mensajes.scrollHeight;
+                            });
+                        
+                            // Al enviar el formulario
+                            form.addEventListener('submit', e =&gt; {
+                              e.preventDefault();
+                              if (input.value) {
+                                socket.emit('mensaje', input.value);
+                                input.value = '';
+                              }
+                            });
+                          &lt;/script&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                        </code></pre>
+                        <h4>4.Flujo de comunicación</h4>
+                        <p>
+                          1.El cliente carga socket.io.js y llama a io(), estableciendo una conexión WebSocket.<br>
+                          2.El servidor recibe io.on('connection', ...) con un objeto socket que representa al cliente.<br>
+                          3.Cliente y servidor intercambian mensajes vía socket.emit(evento, datos) y socket.on(evento, callback).<br>
+                          4.Con io.emit(...) el servidor envía a todos los clientes; con socket.broadcast.emit(...) envía a todos menos al emisor.<br>
+                          5.Se pueden crear namespaces (io.of('/chat')) o rooms (socket.join('sala1')) para segmentar la comunicación.
+                        </p> 
+                        <h4>5. Buenas prácticas y extensiones</h4>
+                         <p>
+                          ·&nbsp;Autenticación: verifica el token JWT antes de aceptar la conexión (io.use(...)).<br>
+                          ·&nbsp;Escalabilidad: usa adaptadores como Redis para compartir eventos entre múltiples instancias de servidor.<br>
+                          ·&nbsp;Control de tráfico: limita la frecuencia de mensajes con middleware personalizado.<br>
+                          ·&nbsp;Seguridad: usa HTTPS/WSS, valida datos recibidos y desinfecta inputs.
+                         </p>
+                         <p> ya tienes los conceptos básicos de WebSockets, cómo usar Socket.IO para crear un chat en tiempo real, y las 
+                          ideas para expandirlo a aplicaciones más complejas. ¡A disfrutar del tiempo real en tu app!
+                        </p>
                       </div> 
               </tema-item>
 <!--17.Avanzado-Subida de Archivos          -->
@@ -375,16 +2375,137 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Subida de Archivos.</h2>
-                        <p>Sólo texto simple.</p>
-                      <p></p>
+                        <p>Una guía paso a paso para implementar la subida de archivos en una app Node.js 
+                           con Express usando Multer, incluyendo configuración de almacenamiento, validaciones 
+                           y manejo de errores.
+                        </p>
+                      <h4>1. Instalación.</h4>
                       <code><pre>
+                        npm install multer
                       </pre></code> 
-                      <p></p>
+                      <h4>2. ¿Qué es Multer?</h4>
+                      <p>Multer es un middleware para Express que procesa multipart/form-data 
+                        (formularios con archivos) y expone los datos en req.file o req.files.
+                      </p>
+                      <p>Internamente, Multer puede:<br>
+                        ·&nbsp;Almacenar archivos en disco (diskStorage)<br>
+                        ·&nbsp;Mantenerlos en memoria (memoryStorage)
+                      </p>
+                      <h4>3. Configuración de almacenamiento</h4>
+                      <p>a) Almacenamiento en disco (diskStorage)</p>
                       <code><pre>
+                        const multer  = require('multer');
+                        const path    = require('path');
+                        
+                        // Configuración de storage
+                        const storage = multer.diskStorage({
+                          destination: (req, file, cb) => {
+                            cb(null, path.join(__dirname, 'uploads')); // carpeta destino
+                          },
+                          filename: (req, file, cb) => {
+                            // conservar extensión y prefijar con timestamp
+                            const ext = path.extname(file.originalname);
+                            const name = path.basename(file.originalname, ext);
+                            cb(null, `${name}-${Date.now()}${ext}`);
+                          }
+                        });
+                        
+                        const upload = multer({ storage });
+                          
                       </pre></code> 
-                      <p></p>
+                      <p>b) Almacenamiento en memoria (memoryStorage)</p>
                       <code><pre>
+                        const storage = multer.memoryStorage();
+                        const upload = multer({ storage });
+                        // los buffers subidos quedan en req.file.buffer
+                          
                       </pre></code>
+                      <h4>4. Validación de archivos</h4>
+                      <p>Puedes usar la opción fileFilter de Multer para aceptar/rechazar archivos según tipo MIME,
+                         extensión, etc.:
+                      </p>
+                      <code><pre>
+                        function fileFilter(req, file, cb) {
+                          // permitir solo imágenes JPEG/PNG
+                          if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+                            cb(null, true);
+                          } else {
+                            cb(new Error('Solo se permiten imágenes JPEG/PNG'), false);
+                          }
+                        }
+                        
+                        const upload = multer({
+                          storage,
+                          fileFilter,
+                          limits: {
+                            fileSize: 2 * 1024 * 1024   // límite: 2 MB
+                          }
+                        });
+                      <br>
+                       <p>
+                        ·&nbsp;limits.fileSize impone el tamaño máximo de cada archivo.<br>
+                        ·&nbsp;En caso de superar límites, Multer lanzará un error LIMIT_FILE_SIZE.
+                       </p>   
+                      </pre></code> 
+                      <h4>5. Uso en rutas Express</h4>
+                      <p>a) Subida de un solo archivo</p>
+                      <code><pre>
+                        app.post('/perfil', upload.single('avatar'), (req, res) => {
+                          // req.file contiene info del archivo subido
+                          if (!req.file) {
+                            return res.status(400).json({ error: 'Archivo no subido' });
+                          }
+                          res.json({ filename: req.file.filename, path: req.file.path });
+                        });
+                          
+                      </pre></code> 
+                      <p>b) Subida de múltiples archivos (array)</p>
+                      <code><pre>
+                        app.post('/fotos', upload.array('imagenes', 5), (req, res) => {
+                          // hasta 5 archivos con name="imagenes"
+                          res.json(req.files.map(f => ({ file: f.filename, size: f.size })));
+                        });
+                          
+                      </pre></code>
+                      <p>c) Campos mixtos</p>
+                      <code><pre>
+                        app.post('/documentos', upload.fields([
+                        { name: 'cv', maxCount: 1 },
+                        { name: 'portafolio', maxCount: 3 }
+                      ]), (req, res) => {
+                        // req.files = { cv: [...], portafolio: [...] }
+                        res.json(req.files);
+                      });                        
+                      </pre></code>
+                      <h4>6. Manejo de errores</h4> 
+                      <code><pre>
+                        app.post('/upload', (req, res) => {
+                          upload.single('archivo')(req, res, err => {
+                            if (err instanceof multer.MulterError) {
+                              // errores de Multer: límites, número de archivos, etc.
+                              return res.status(400).json({ error: err.message });
+                            } else if (err) {
+                              // otros errores
+                              return res.status(500).json({ error: err.message });
+                            }
+                            // OK
+                            res.json({ file: req.file });
+                          });
+                        });
+                          
+                      </pre></code>
+                      <h4>7. Buenas prácticas</h4> 
+                      <p>
+                        ·&nbsp;Crear la carpeta uploads/ de forma segura y con permisos adecuados.<br>
+                        ·&nbsp;Limitar el tamaño y filtrar tipos para evitar subir binarios maliciosos.<br>
+                        ·&nbsp;Sanitizar el nombre de archivos (evitar caracteres peligrosos).<br>
+                        ·&nbsp;Servir archivos estáticos con app.use('/uploads', express.static('uploads')).<br>
+                        ·&nbsp;Considera usar nombres únicos o UUID para evitar colisiones.
+                      </p>
+                      <p>Con esta configuración tendrás un sistema de subida de archivos robusto, 
+                        con validación de tipo y tamaño, almacenamiento configurable y manejo de errores. 
+                        ¡A implementarlo!
+                      </p>
                       </div> 
               </tema-item>
 <!--18.Avanzado-Despliegue          -->
@@ -397,17 +2518,148 @@
                 <subtitulo></subtitulo>
                       <div>
                         <h2>Despliegue.</h2>
-                        <p>Sólo texto simple.</p>
+                        <h4>1.Plataformas de despliegue.</h4>
+                        <table border="1" cellpadding="8" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>Plataforma</th>
+                              <th>Características principales</th>
+                              <th>Comando CLI típico</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Heroku</td>
+                              <td>
+                                - Fácil integración con Git<br/>
+                                - Gratis (con “sleep” en free)<br/>
+                                - Add-ons para bases y colas
+                              </td>
+                              <td>
+                                <code>heroku create</code><br/>
+                                <code>git push heroku main</code>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Vercel</td>
+                              <td>
+                                - Perfecto para frontend y serverless<br/>
+                                - Deploy automático desde Git<br/>
+                                - Plan gratuito generoso
+                              </td>
+                              <td><code>vercel</code></td>
+                            </tr>
+                            <tr>
+                              <td>Render</td>
+                              <td>
+                                - Apps tradicionales o contenedores<br/>
+                                - Bases y cron jobs integrados<br/>
+                                - SSL automático
+                              </td>
+                              <td>– Configuración vía dashboard, Git o CLI</td>
+                            </tr>
+                            <tr>
+                              <td>Railway</td>
+                              <td>
+                                - Muy sencillo de usar<br/>
+                                - Integración con DBs en un click<br/>
+                                - Preview environments
+                              </td>
+                              <td><code>railway up</code></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                        <p>Flujo de despliegue: <br>
+                        1.Empaqueta tu app (asegúrate de tener un Procfile en Heroku o build script en package.json).<br>
+                        2.Configura variables de entorno en el dashboard o CLI.<br>
+                        3.Haces push/publish y la plataforma levanta tu server automáticamente.
+                        </p>
                       <p></p>
+                      <h4>2. Variables de entorno con dotenv</h4>
+                      <p>1.Instalación</p>
                       <code><pre>
+                        npm install dotenv  
                       </pre></code> 
-                      <p></p>
+                      <p>2.Archivo .env (no lo subas a tu repositorio)</p>
                       <code><pre>
+                        PORT=3000
+                        MONGO_URI=mongodb+srv://usuario:pass@cluster.mongodb.net/miDB
+                        JWT_SECRET=clave_secreta                          
                       </pre></code> 
-                      <p></p>
+                      <p>3.Carga en tu app (antes de cualquier otro require)</p>
                       <code><pre>
+                        require('dotenv').config();
+                        const express = require('express');
+                        const app = express();
+                        const PORT = process.env.PORT || 3000;
+                        // ...
+                        app.listen(PORT, () => console.log(`Escuchando en ${PORT}`));                          
                       </pre></code>
-                      </div> 
+                      <p>4.En producción: usa el dashboard de tu plataforma para definir esas mismas variables.</p>
+                      <h4>3. Logs y monitoreo</h4>
+                      <p>
+                        ·&nbsp;Salida estándar<br>
+                        Todas las plataformas capturan automáticamente console.log, console.error.<br>
+                        ·&nbsp;Herramientas externas<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;LogDNA<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Papertrail<br>
+                              &nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;Datadog<br>
+                        ·&nbsp;Integración básica
+                      </p>
+                      <code><pre>
+                        const winston = require('winston');
+                        const logger = winston.createLogger({
+                          level: 'info',
+                          transports: [ new winston.transports.Console() ]
+                        });
+                        logger.info('Servidor arrancado');
+                        logger.error('Algo falló', { error: err });
+                          
+                      </pre></code>
+                      <h4>4. Reinicio automático y gestión de procesos con PM2</h4> 
+                      <p>PM2 es un process manager para Node que permite:<br>
+                        ·&nbsp;Reinicio automático al crash o cambios de código.<br>
+                        ·&nbsp;Clustering (multi-core).<br>
+                        ·&nbsp;Monitor en tiempo real.<br>
+                        ·&nbsp;Logs consolidados.
+                      </p>
+                      <p>Instalación global</p>
+                      <code><pre>
+                        npm install -g pm2  
+                      </pre></code> 
+                      <code><pre>
+                        # Iniciar tu app
+                        pm2 start index.js --name mi-app
+                        
+                        # Reiniciar en crash o tras cambios
+                        pm2 start index.js --watch
+                        
+                        # Mostrar estado
+                        pm2 status
+                        
+                        # Ver logs en vivo
+                        pm2 logs mi-app
+                        
+                        # Guardar configuración para reinicio tras reboot
+                        pm2 save
+                        pm2 startup                          
+                      </pre></code>
+                      <h4>5. Buenas prácticas finales</h4> 
+                      <p>
+                        1.&nbsp;Build step: agrega en package.json un script "build" si transpilas (TypeScript, Babel).<br>
+                        2.&nbsp;Procfile (Heroku):<br>
+                        <code><pre>
+                          web: pm2-runtime index.js
+                        </pre></code> 
+                        
+                        3.&nbsp;PM2 Runtime: en producción usa pm2-runtime (optimizado para contenedores).<br>
+                        4.&nbsp;Health Checks: define rutas como /health para verificar que tu servicio esté vivo.<br>
+                        5.&nbsp;SSL/TLS: muchas plataformas lo configuran por ti, pero si gestionas tu propio servidor, usa Let's Encrypt.
+
+                      </p>
+                      <p>Con estos pasos tu aplicación Node.js estará lista para un despliegue profesional y robusto.</p>
+                    </div> 
               </tema-item>                      
             </mi-lista>
     </main>
