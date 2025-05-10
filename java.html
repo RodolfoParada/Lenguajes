@@ -23,16 +23,76 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Introducción a Java</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>1. Introducción a Java</h4>
+                 <p>Java es un lenguaje de programación orientado a objetos, desarrollado por Sun Microsystems y
+                    lanzado en 1995. Fue diseñado con la idea de escribir código que se pudiera ejecutar en 
+                    cualquier dispositivo sin necesidad de modificación (gracias al lema: "Write Once, Run Anywhere").
+                 </p>
+                 <h4>🕰️ 2. Historia de Java</h4>
+                 <p>
+                  ·&nbsp;1991: James Gosling y su equipo en Sun Microsystems crean un proyecto llamado Oak, 
+                   que luego se convertiría en Java.<br>
+                  ·&nbsp;1995: Se lanza oficialmente Java como una plataforma para aplicaciones web y de escritorio.<br>
+                  ·&nbsp;2009: Oracle Corporation adquiere Sun Microsystems y con ello Java.<br>
+                  ·&nbsp;Actualidad: Java sigue siendo uno de los lenguajes más utilizados en el mundo, 
+                         especialmente en sistemas empresariales, móviles (Android) y aplicaciones de servidor.
+                 </p>
+                 <h4>⭐ 3. Características de Java</h4>
+                 <p>
+                  ·&nbsp;Multiplataforma: Gracias a la JVM (Java Virtual Machine), puedes ejecutar el mismo programa 
+                    en diferentes sistemas operativos.<br>
+                  ·&nbsp;Orientado a objetos: Todo en Java es un objeto (salvo los tipos primitivos).<br>
+                  ·&nbsp;Sintaxis similar a C/C++: Facilita el aprendizaje si ya conoces estos lenguajes.<br>
+                  ·&nbsp;Recogida de basura automática: Java libera la memoria automáticamente.<br>
+                  ·&nbsp;Seguro: Manejo de errores, control de acceso, y verificación de bytecode.<br>
+                  ·&nbsp;Multihilo (multithreading): Permite ejecutar múltiples tareas al mismo tiempo.
+                 </p>
+                 <h4>🛠️ 4. Instalación de JDK y configuración del entorno</h4>
+                 <p>a) Descargar el JDK<br>
+                   1.Ve a la página oficial de Oracle:  <a href="https://www.oracle.com/java/technologies/downloads/">JDK JAVA</a><br>
+                   2.Descarga el JDK (Java Development Kit) adecuado para tu sistema operativo.<br>
+                   3.Instala el JDK.  
+                 </p>
+                  <p>b) Configurar variables de entorno (Windows)<br>
+                   1.Abre el Panel de control > Sistema > Configuración avanzada del sistema.<br>
+                   2.Haz clic en Variables de entorno.<br>
+                   3.Agrega o edita la variable JAVA_HOME con la ruta donde instalaste el JDK (por ejemplo: C:\Program Files\Java\jdk-17).<br>
+                   4.Agrega %JAVA_HOME%\bin a la variable Path.<br>
+                 </p>
+                 <p>
+                  c) Verificar la instalación.<br>
+                  Abre la terminal o consola y ejecuta:
+                 </p>
+                 <code><pre>
+                  java -version
+                  javac -version
+                 </pre></code> 
+                 <p>Deberías ver la versión de Java instalada.</p>
+                 <h4>💻 5. Primer programa en Java: Hola Mundo</h4>
+                 <p>a) Crear el archivo<br>
+                  Crea un archivo llamado HolaMundo.java con el siguiente contenido:
+                 </p>
+                 <code><pre>
+                  public class HolaMundo {
+                    public static void main(String[] args) {
+                        System.out.println("¡Hola, mundo!");
+                    }
+                  }               
+                 </pre></code> 
+                 <p>b) Compilar el archivo><br>
+                  Abre la terminal en la carpeta donde está el archivo y escribe:
+                 </p>
+                 <code><pre>
+                  javac HolaMundo.java
+                 </pre></code>
+                 <p>c) Ejecutar el programa</p>
+                 <code><pre>
+                  java HolaMundo 
+                 </pre></code> 
+                 <p>Salida:</p>
+                 <code><pre>
+                  ¡Hola, mundo!
+                 </pre></code>  
                </div>
             </tema-item>
 <!-- 2.Básico-Sintaxis básica           -->
@@ -45,16 +105,125 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Sintaxis Básica</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>1. Sintaxis básica de Java</h4>
+                 <p>Java es un lenguaje fuertemente tipado y orientado a objetos. Cada 
+                     línea de código debe terminar en ;, y el código se organiza en clases.
+                 </p>
+                 <h4>2.Estructura de una clase en Java</h4>
+                 <code><pre>
+                 public class Persona {
+                 // Atributos o propiedades
+                 String nombre;
+                  int edad;
+
+                // Constructor
+                public Persona(String nombre, int edad) {
+                     this.nombre = nombre;
+                     this.edad = edad;
+                }
+
+                // Método
+                public void saludar() {
+                System.out.println("Hola, mi nombre es " + nombre);
+                 }
+                }
+                <br>
+                <p>
+                ·&nbsp;public class Persona: definición de la clase.<br>
+                ·&nbsp;Atributos: nombre y edad.<br>
+                ·&nbsp;Constructor: se llama igual que la clase.<br>
+                ·&nbsp;Método: función dentro de la clase (saludar).  
+                </p>
+                </pre></code>
+                <h4>3.Métodos y funciones</h4>
+                <p>En Java toda función es un método, ya que debe pertenecer a una clase.<br>
+                Sintaxis de un método:
+                </p> 
+                <code><pre>
+                  [modificador de acceso] [tipo de retorno] nombreMetodo(parámetros) {
+                   // código
+                  }
+                </pre></code> 
+                <p>Ejemplo:</p>
+                <code><pre>
+                  public int sumar(int a, int b) {
+                  return a + b;
+                }
+                </pre></code>
+                <p>
+                  ·&nbsp;public: modificador de acceso.<br>
+                  ·&nbsp;int: tipo de retorno.<br>
+                  ·&nbsp;sumar: nombre del método.<br>
+                  ·&nbsp;(int a, int b): parámetros.<br>
+                  ·&nbsp;return: valor que devuelve.
+                </p>
+                <h4>4.Método main</h4>
+                <p>Punto de entrada de un programa Java. Obligatorio para que se pueda ejecutar.</p>
+                <code><pre>
+                  public class Principal {
+                  public static void main(String[] args) {
+                  Persona p = new Persona("Rodolfo", 30);
+                  p.saludar();
+                    }
+                  }
+                  <br>
+                  <p>
+                   ·&nbsp;public static void main(String[] args): método principal.<br>
+                   ·&nbsp; String[] args: argumentos de línea de comandos (opcional de usar).
+                  </p>
+                </pre></code>
+                <h4> 5. Comentarios</h4> 
+                <code><pre>
+                // Comentario de una línea
+                /*
+                Comentario
+                de varias
+                líneas
+                */
+
+                /                **
+                 * Comentario de documentación (JavaDoc)
+                 * para describir clases o métodos.
+                 */
+                </pre></code>
+                <h4>6. Convenciones de nombres en Java</h4>
+                <table border="1">
+                  <thead>
+                    <tr>
+                     <th>Tipo</th>
+                      <th>Convención</th>
+                      <th>Ejemplo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Clases</td>
+                      <td>PascalCase (inicial mayúsc.)</td>
+                      <td>MiClase, Persona</td>
+                    </tr>
+                    <tr>
+                      <td>Métodos/funciones</td>
+                      <td>camelCase</td>
+                      <td>calcularSuma()</td>
+                    </tr>
+                    <tr>
+                      <td>Variables</td>
+                      <td>camelCase</td>
+                      <td>miEdad, nombreCompleto</td>
+                    </tr>
+                    <tr>
+                      <td>Constantes</td>
+                      <td>MAYÚSCULAS_CON_GUIONES</td>
+                      <td>VALOR_MAXIMO</td>
+                    </tr>
+                    <tr>
+                      <td>Paquetes</td>
+                      <td>minúsculas y puntos</td>
+                      <td>com.ejemplo.miapp</td>
+                   </tr>
+                  </tbody>
+                </table>
+           
                </div>
             </tema-item>
 <!-- 3.Básico-Tipo de datos y variables           -->
@@ -67,17 +236,179 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Tipo de datos y variables.</h2>
+                 <h4>Tipos de datos en Java</h4>
                  <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               </div>
+                 <p>Java divide los tipos de datos en dos grandes categorías:<br>
+                 ·&nbsp; a) Tipos primitivos (almacenan directamente valores)
+                 </p>
+                 <code><pre>
+                 <table border="1">
+                   <thead>
+                     <tr>
+                       <th>Tipo</th>
+                       <th>Tamaño (bits)</th>
+                       <th>Valor Ejemplo</th>
+                       <th>Descripción</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td>byte</td>
+                        <td>8</td>
+                        <td>byte edad = 25;</td>
+                        <td>Entero pequeño (-128 a 127)</td>
+                      </tr>
+                      <tr>
+                        <td>short</td>
+                        <td>16</td>
+                        <td>short s = 1000;</td>
+                        <td>Entero corto</td>
+                      </tr>
+                      <tr>
+                        <td>int</td>
+                        <td>32</td>
+                        <td>int x = 100000;</td>
+                        <td>Entero común</td>
+                      </tr>
+                      <tr>
+                        <td>long</td>
+                        <td>64</td>
+                        <td>long l = 123456L;</td>
+                        <td>Entero grande (añade L)</td>
+                     </tr>
+                      <tr>
+                        <td>float</td>
+                        <td>32</td>
+                        <td>float f = 5.5f;</td>
+                       <td>Decimal (usa f)</td>
+                      </tr>
+                      <tr>
+                        <td>double</td>
+                        <td>64</td>
+                        <td>double d = 3.14;</td>
+                        <td>Decimal más preciso</td>
+                      </tr>
+                      <tr>
+                        <td>char</td>
+                       <td>16</td>
+                        <td>char c = 'A';</td>
+                        <td>Carácter Unicode</td>
+                      </tr>
+                      <tr>
+                        <td>boolean</td>
+                        <td>1 (lógico)</td>
+                        <td>boolean b = true;</td>
+                        <td>true o false</td>
+                      </tr>
+                    </tbody>
+                 </table>
+                 </pre></code>
+                 <p>🔹 b) Tipos por referencia (objetos)<br>
+                 String, Array, Clases, Interfaces
+                 </p> 
+                 <code><pre>
+                  String nombre = "Rodolfo";
+                  int[] numeros = {1, 2, 3};
+                 </pre></code> 
+                 <p>2. Variables.<br>
+                 Declaración:
+                 </p>
+                 <code><pre>
+                  int edad = 30;
+                  String nombre = "Ana";
+                  <br>
+                  <p>
+                    ·&nbsp;Se especifica el tipo, el nombre y, opcionalmente, un valor.<br>
+                    ·&nbsp;Se pueden declarar múltiples variables del mismo tipo:
+                  </p>
+                 </pre></code>
+                 <code><pre>
+                  int a = 1, b = 2, c = 3;
+                 </pre></code> 
+                 <p>3. Constantes (final)<br>
+                 ·&nbsp;Las constantes no pueden cambiar su valor una vez asignadas.
+                 </p>
+                 <code><pre>
+                  final double PI = 3.1416;
+                  ·&nbsp;Convención: usar mayúsculas con guiones bajos.<br>
+                  ·&nbsp;Se pueden usar con private, static, etc.
+                 </pre></code> 
+                 <code><pre>
+                  private static final int VALOR_MAXIMO = 100;
+                 </pre></code>
+                 <h4> 4. Modificadores comunes</h4>
+                  <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Modificador</th>
+                        <th>Significado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>public</code></td>
+                        <td>Accesible desde cualquier clase</td>
+                      </tr>
+                      <tr>
+                        <td><code>private</code></td>
+                        <td>Accesible solo dentro de la clase</td>
+                      </tr>
+                                        <tr>
+                        <td><code>protected</code></td>
+                        <td>Accesible dentro del paquete o subclases</td>
+                      </tr>
+                      <tr>
+                        <td><code>static</code></td>
+                        <td>Pertenece a la clase y no a instancias</td>
+                      </tr>
+                      <tr>
+                        <td><code>final</code></td>
+                        <td>No puede cambiar su valor o ser sobreescrito</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>5. Conversión y casting</h4>
+                  <p> a) Conversión implícita (widening)<br>
+                  De un tipo menor a uno mayor automáticamente:
+                  </p>
+                  <code><pre>
+                    int x = 10;
+                    double y = x; // int a double (automático)
+                  </pre></code> 
+                  <p>🔹 b) Casting explícito (narrowing)<br>
+                  De un tipo mayor a uno menor (puede perder información):
+                  </p>
+                  <code><pre>
+                    double a = 9.8;
+                    int b = (int) a; // b será 9
+                  </pre></code> 
+                  <p> c) Conversiones con objetos</p>
+                  <code><pre>
+                    String numero = "123";
+                    int n = Integer.parseInt(numero); // String a int
+                  </pre></code>
+                  <p>📌 Ejemplo resumen en código:</p>
+                  <code><pre>
+                  public class EjemploTipos {
+                    public static void main(String[] args) {
+                        final double PI = 3.1416; // constante
+
+                        int edad = 30;
+                        double peso = 70.5;
+                        boolean esMayor = true;
+                        char inicial = 'R';
+
+                        S                 tring nombre = "Rodolfo";
+                        int numero = Integer.parseInt("100");
+
+                        double resultado = edad + peso; // conversión implícita
+                        int truncado = (int) peso; // casting explícito
+
+                        System.out.println("Hola " + nombre + ", edad: " + edad);
+                    }
+                  }
+                  </pre></code>  
+              </div>
              </tema-item>
 <!-- 4.Básico-Operadores           -->
             <tema-item>
@@ -89,16 +420,197 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Operadores.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <p>En Java existen distintos tipos de operadores que permiten realizar operaciones
+                    con variables y valores. A continuación, te explico cada tipo con ejemplos:
+                  </p>
+                 <h4>1. Operadores Aritméticos</h4>
+                 <p>Se usan para realizar operaciones matemáticas.</p>
+                 <table border="1">
+                   <thead>
+                     <tr>
+                       <th>Operador</th>
+                       <th>Significado</th>
+                       <th>Ejemplo (<code>a = 10</code>, <code>b = 3</code>)</th>
+                       <th>Resultado</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td><code>+</code></td>
+                       <td>Suma</td>
+                       <td><code>a + b</code></td>
+                       <td>13</td>
+                     </tr>
+                     <tr>
+                       <td><code>-</code></td>
+                       <td>Resta</td>
+                       <td><code>a - b</code></td>
+                       <td>7</td>
+                     </tr>
+                     <tr>
+                       <td><code>*</code></td>
+                       <td>Multiplicación</td>
+                       <td><code>a * b</code></td>
+                       <td>30</td>
+                     </tr>
+                     <tr>
+                       <td><code>/</code></td>
+                       <td>División</td>
+                       <td><code>a / b</code></td>
+                       <td>3</td>
+                     </tr>
+                     <tr>
+                       <td><code>%</code></td>
+                       <td>Módulo (resto)</td>
+                       <td><code>a % b</code></td>
+                       <td>1</td>
+                     </tr>
+                   </tbody>
+                 </table>
+                 <h4> 2. Operadores Relacionales (de comparación)</h4>
+                 <p>Comparan dos valores y devuelven true o false.</p>
+                 <table border="1">
+                   <thead>
+                     <tr>
+                       <th>Operador</th>
+                       <th>Significado</th>
+                       <th>Ejemplo (<code>a = 10</code>, <code>b = 3</code>)</th>
+                       <th>Resultado</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td><code>==</code></td>
+                       <td>Igual a</td>
+                       <td><code>a == b</code></td>
+                       <td>false</td>
+                     </tr>
+                     <tr>
+                       <td><code>!=</code></td>
+                      <td>Distinto de</td>
+                       <td><code>a != b</code></td>
+                       <td>true</td>
+                     </tr>
+                     <tr>
+                       <td><code>></code></td>
+                       <td>Mayor que</td>
+                       <td><code>a > b</code></td>
+                       <td>true</td>
+                     </tr>
+                     <tr>
+                       <td><code><</code></td>
+                       <td>Menor que</td>
+                       <td><code>a < b</code></td>
+                       <td>false</td>
+                     </tr>
+                     <tr>
+                       <td><code>>=</code></td>
+                       <td>Mayor o igual que</td>
+                       <td><code>a >= b</code></td>
+                       <td>true</td>
+                     </tr>
+                     <tr>
+                       <td><code><=</code></td>
+                       <td>Menor o igual que</td>
+                       <td><code>a <= b</code></td>
+                       <td>false</td>
+                     </tr>
+                    </tbody>
+                 </table>
+                 <h4>3. Operadores Lógicos</h4>
+                 <p>Se usan con expresiones booleanas (true o false).</p>
+                 <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Operador</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo (<code>a = 10</code>, <code>b = 3</code>)</th>
+                        <th>Resultado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>&&</code></td>
+                        <td>AND lógico</td>
+                        <td>Verdadero si <strong>ambas condiciones</strong> son <code>true</code></td>
+                        <td><code>(a > 5 && b < 5)</code></td>
+                        <td>true</td>
+                      </tr>
+                      <tr>
+                        <td><code>||</code></td>
+                        <td>OR lógico</td>
+                        <td>Verdadero si <strong>al menos una</strong> condición es <code>true</code></td>
+                        <td><code>(a < 5 || b < 5)</code></td>
+                        <td>true</td>
+                      </tr>
+                      <tr>
+                        <td><code>!</code></td>
+                        <td>NOT lógico</td>
+                        <td>Invierte el valor lógico</td>
+                        <td><code>!(a > b)</code></td>
+                        <td>false</td>
+                      </tr>
+                    </tbody>
+                 </table>
+                 <h4>4. Operadores de Asignación</h4>
+                 <p>Asignan valores a las variables.</p>
+                 <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Operador</th>
+                        <th>Ejemplo</th>
+                        <th>Equivalente a</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>=</code></td>
+                        <td><code>x = 5</code></td>
+                        <td>Asigna 5 a <code>x</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>+=</code></td>
+                        <td><code>x += 2</code></td>
+                        <td><code>x = x + 2</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>-=</code></td>
+                        <td><code>x -= 2</code></td>
+                        <td><code>x = x - 2</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>*=</code></td>
+                        <td><code>x *= 3</code></td>
+                        <td><code>x = x * 3</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>/=</code></t>
+                        <td><code>x /= 2</code></td>
+                        <td><code>x = x / 2</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>%=</code></td>
+                        <td><code>x %= 2</code></td>
+                        <td><code>x = x % 2</code></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>5. Operador Ternario</h4>
+                  <p>Es una forma corta de escribir una condición if-else.<br>
+                  Sintaxis:
+                  </p>
+                 <code><pre>
+                  resultado = (condición) ? valor_si_verdadero : valor_si_falso;
+                 </pre></code> 
+                 <code><pre>
+                  int edad = 18;
+                  String mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
+                  System.out.println(mensaje); // Imprime "Mayor de edad"
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
                </div>
              </tema-item>
 <!-- 5.Básico-Control de flujo           -->
@@ -111,17 +623,210 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Control de flujo.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
+                 <p> En Java, el control de flujo permite tomar decisiones y repetir
+                     acciones según ciertas condiciones. Se divide principalmente en 
+                     condicionales y bucles. A continuación te explico cada uno con ejemplos:
+                  </p>
+               <h4>🔹 CONDICIONALES</h4>
+               <p>1. if <br>
+               Ejecuta un bloque de código si la condición es verdadera.
+               </p>
                <code><pre>
+                int edad = 20;
+
+                if (edad >= 18) {
+                System.out.println("Eres mayor de edad.");
+                }
                </pre></code> 
-               <p></p>
+               <p>2. if - else<br>
+               Permite ejecutar una alternativa si la condición es falsa.
+               </p>
                <code><pre>
+                if (edad >= 18) {
+                System.out.println("Mayor de edad");
+                } else {
+                System.out.println("Menor de edad");
+                }
                </pre></code> 
-               <p></p>
+               <p>3. if - else if - else<br>
+               Permite evaluar múltiples condiciones.
+               </p>
                <code><pre>
+                int nota = 7;
+
+                if (nota >= 6) {
+                System.out.println("Excelente");
+                } else if (nota >= 4) {
+                System.out.println("Aprobado");
+                } else {
+                System.out.println("Reprobado");
+                }
+               </pre></code>
+               <p>4. switch <br>
+              Selecciona una de muchas opciones posibles según el valor de una variable.
+               </p>
+               <code><pre>
+                int dia = 3;
+
+                switch (dia) {
+                    case 1:
+                        System.out.println("Lunes");
+                        break;
+                    case 2:
+                        System.out.println("Martes");
+                        break;
+                    case 3:
+                        System.out.println("Miércoles");
+                        break;
+                    default:
+                        System.out.println("Día inválido");
+                }
+                <br>
+                <p> Usa break para salir del bloque switch y evitar que continúe evaluando otros case.</p>
+               </pre></code>
+               <h4>🔹 BUCLES</h4> 
+               <p>1. for<br>
+               Repite un bloque un número determinado de veces. 
+               </p>
+               <code><pre>
+                for (int i = 1; i <= 5; i++) {
+                System.out.println("Repetición " + i);
+                }
+               </pre></code>
+               <p>2. while<br>
+                Repite mientras la condición sea verdadera.
+               </p>
+               <code><pre>
+                int i = 1;
+
+                while (i <= 5) {
+                System.out.println("Contador: " + i);
+                i++;
+                }
                </pre></code> 
-               </div>
+               <p>3. do-while<br>
+               Similar a while, pero se ejecuta al menos una vez.
+               </p>
+               <code><pre>
+                int i = 1;
+
+                do {
+                System.out.println("Contador: " + i);
+                i++;
+                } while (i <= 5);
+               </pre></code> 
+               <p>¿Cuándo usar cuál?</p>
+                 <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Estructura</th>
+                        <th>Se usa cuando...</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>if</code></td>
+                        <td>Se toma una decisión simple.</td>
+                      </tr>
+                      <tr>
+                        <td><code>if-else</code></td>
+                        <td>Hay dos caminos posibles.</td>
+                      </tr>
+                      <tr>
+                        <td><code>else if</code></td>
+                         <td>Se deben evaluar múltiples condiciones.</td>
+                      </tr>
+                      <tr>
+                        <td><code>switch</code></td>
+                        <td>Se elige entre varias opciones fijas (enteros, strings, etc.).</td>
+                      </tr>
+                      <tr>
+                        <td><code>for</code></td>
+                        <td>Sabes cuántas veces repetirás.</td>
+                      </tr>
+                      <tr>
+                        <td><code>while</code></td>
+                        <td>Repetición depende de una condición.</td>
+                      </tr>
+                      <tr>
+                        <td><code>do-while</code></td>
+                        <td>Al menos una ejecución garantizada.</td>
+                      </tr>
+                    </tbody>
+                 </table>
+                 <h4>🔹 break</h4>
+                 <p>Se utiliza para salir inmediatamente de un bucle o switch.<br>
+                 Ejemplo en un for:
+                 </p>
+                 <code><pre>
+                  for (int i = 1; i <= 10; i++) {
+                  if (i == 5) {
+                  break; // Se detiene cuando i es 5
+                  }
+                  System.out.println("i = " + i);
+                  }
+                 </pre></code> 
+                 <p>Salida:</p>
+                 <code><pre>
+                  i = 1
+                  i = 2
+                  i = 3
+                  i = 4
+                 </pre></code>
+                 <p>También se usa en switch:</p>
+                 <code><pre>
+                  switch (dia) {
+                  case 1:
+                  System.out.println("Lunes");
+                  break; // evita que siga evaluando otros casos
+                  case 2:
+                  System.out.println("Martes");
+                  break;
+                  }
+                 </pre></code>
+                 <h4>🔹 continue</h4> 
+                 <p>Se usa para saltar al siguiente ciclo de iteración, ignorando el resto del código en esa vuelta.<br>
+                  Ejemplo en un for:
+                 </p>
+                 <code><pre>
+                  for (int i = 1; i <= 5; i++) {
+                  if (i == 3) {
+                  continue; // salta esta iteración cuando i es 3
+                  }
+                  System.out.println("i = " + i);
+                  }
+                 </pre></code> 
+                 <p>Salida:</p>
+                 <code><pre>
+                  i = 1
+                  i = 2
+                  i = 4
+                  i = 5
+                 </pre></code> 
+                 <h4>Resumen.</h4>
+                 <table border="1">
+                   <thead>
+                                      <tr>
+                       <th>Palabra clave</th>
+                      <th>¿Qué hace?</th>
+                       <th>¿Dónde se usa?</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td><code>break</code></td>
+                       <td>Sale inmediatamente del bucle o <code>switch</code></td>
+                       <td><code>for</code>, <code>while</code>, <code>do-while</code>, <code>switch</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>continue</code></td>
+                       <td>Salta el resto del ciclo actual y pasa al siguiente</td>
+                       <td><code>for</code>, <code>while</code>, <code>do-while</code></td>
+                     </tr>
+                   </tbody>
+                 </table>
+ 
+                 </div>
             </tema-item>
 <!-- 6.Básico-Arreglos y cuerdas           -->
             <tema-item>
@@ -133,17 +838,127 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Arreglos y cuerdas.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               </div>
+                 <p>En Java, arreglos y cadenas de texto (Strings) son estructuras clave para
+                     almacenar y manipular datos.
+                 </p>
+                 <h4>🔹 ARREGLOS (Arrays)</h4>
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
+                 <p>1. ¿Qué es un arreglo?<br>
+                  Un arreglo es una estructura que almacena múltiples valores del mismo tipo en una sola variable.
+                 </p>
+                 <p>2. Declaración y uso de un arreglo</p>
+                 <code><pre>
+                  int[] numeros = new int[5];           // Arreglo de 5 enteros
+                  numeros[0] = 10;                      // Asignar valor al primer elemento
+                  System.out.println(numeros[0]);      // Mostrar el primer valor
+                 </pre></code> 
+                 <p>También se puede inicializar directamente:</p>
+                 <code><pre>
+                  int[] pares = {2, 4, 6, 8};
+                  System.out.println(pares[2]);  // Imprime 6
+                 </pre></code>
+                 <p>3. Recorrer un arreglo con for</p>
+                 <code><pre>
+                  for (int i = 0; i < pares.length; i++) {
+                  System.out.println(pares[i]);
+                  }
+                 </pre></code> 
+                 <p>4. Arreglos multidimensionales<br>
+                 Son arreglos de arreglos (matrices):
+                 </p>
+                 <code><pre>
+                  int[][] matriz = {
+                  {1, 2, 3},
+                  {4, 5, 6}
+                  };
+
+                  System.out.println(matriz[1][2]); // Imprime 6
+                 </pre></code> 
+                 <p>Para recorrerlos:</p>
+                 <code><pre>
+                  for (int i = 0; i < matriz.length; i++) {
+                  for (int j = 0; j < matriz[i].length; j++) {
+                  System.out.print(matriz[i][j] + " ");
+                  }
+                  System.out.println();
+                  }
+                 </pre></code>
+                 <h4>🔹 CADENAS DE TEXTO (Strings)</h4>
+                 <p>1. ¿Qué es un String?<br>
+                 Una cadena de texto (String) es un objeto que representa texto.
+                 </p>
+                 <code><pre>
+                  String saludo = "Hola mundo";
+                  System.out.println(saludo);
+                 </pre></code> 
+                 <p>2. Métodos útiles de String</p>
+                 <table border="1">
+                   <thead>
+                     <tr>
+                        <th>Método</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>length()</code></td>
+                        <td>Largo de la cadena</td>
+                        <td><code>saludo.length()</code> → <code>10</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>charAt(i)</code></td>
+                        <td>Devuelve carácter en posición <code>i</code></td>
+                        <td><code>saludo.charAt(0)</code> → <code>'H'</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>toUpperCase()</code></td>
+                        <td>Convierte a mayúsculas</td>
+                        <td><code>saludo.toUpperCase()</code> → <code>"HOLA MUNDO"</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>toLowerCase()</code></td>
+                        <td>Convierte a minúsculas</td>
+                        <td><code>saludo.toLowerCase()</code> → <code>"hola mundo"</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>substring(i, j)</code></td>
+                       <td>Extrae subcadena desde <code>i</code> hasta <code>j</code></td>
+                        <td><code>saludo.substring(0, 4)</code> → <code>"Hola"</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>equals(str)</code></td>
+                        <td>Compara si dos strings son iguales</td>
+                        <td><code>"Hola".equals("hola")</code> → <code>false</code></td>
+                     </tr>
+                      <tr>
+                        <td><code>contains(str)</code></td>
+                        <td>Verifica si contiene subcadena</td>
+                        <td><code>saludo.contains("mun")</code> → <code>true</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>replace(a, b)</code></td>
+                        <td>Reemplaza texto</td>
+                        <td><code>saludo.replace("Hola", "Chao")</code></td>
+                      </tr>
+                    </tbody>
+                 </table>
+                 <h4>3. Concatenación de Strings</h4>
+                 <code><pre>
+                  String nombre = "Rodolfo";
+                  String mensaje = "Hola " + nombre; // Usando +
+                  System.out.println(mensaje);
+
+                  String completo = String.format("Hola %s", nombre); // Usando format
+                 </pre></code> 
+                 <h4>4. Convertir entre String y tipos primitivos</h4>
+                 <code><pre>
+                  int numero = Integer.parseInt("123");    // String a int
+                  String texto = String.valueOf(456);      // int a String
+                 </pre></code>   
+                 </div>
             </tema-item>
 <!-- 7.Básico-Métodos y alcance           -->
             <tema-item>
@@ -155,16 +970,121 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Métodos y alcance.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔹 ¿Qué es un método en Java?</h4>
+                 <p>Un método es un bloque de código que se puede reutilizar. 
+                    Sirve para agrupar instrucciones que realizan una tarea específica.
+                 </p>
+                 <p>Sintaxis básica:</p>
+                 <code><pre>
+                  public tipoDeRetorno nombreMetodo(tipo parametro) {
+                  // cuerpo del método
+                  return valor; // si no es void
+                  }
+                 </pre></code>
+                 <h4>🔸 Parámetros y retorno (return)</h4> 
+                 <p>Los métodos pueden recibir parámetros (valores de entrada) y devolver un valor con return.<br>
+                  Ejemplo:
+                 </p>
+                 <code><pre>
+                  public int sumar(int a, int b) {
+                  return a + b;
+                  }
+                 </pre></code> 
+                 <p>Llamada:</p>
+                 <code><pre>
+                  int resultado = sumar(2, 3); // resultado = 5
+                  <br>
+                  <p>
+                    ·&nbsp;int → tipo de retorno<br>
+                    ·&nbsp;a, b → parámetros<br>
+                    ·&nbsp;return a + b; → valor que retorna el método
+                  </p>
+                 </pre></code>
+                 <h4>🔸 Método void (sin retorno)</h4>
+                 <code><pre>
+                  public void saludar(String nombre) {
+                  System.out.println("Hola, " + nombre);
+                  }
+                 </pre></code>
+                 <h4>🔹 Sobrecarga de métodos (Overloading)</h4> 
+                 <p>Es cuando un mismo método tiene el mismo nombre pero diferentes parámetros (tipo o número).</p>
+                 <code><pre>
+                  public int sumar(int a, int b) {
+                  return a + b;
+                  }
+
+                  public double sumar(double a, double b) {
+                  return a + b;
+                  }
+                  <br>
+                  <p>Java elige cuál ejecutar según los argumentos.</p>
+                 </pre></code>
+                 <h4>🔹 Variables locales y globales</h4> 
+                 <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Tipo</th>
+                        <th>¿Dónde se declara?</th>
+                        <th>¿Alcance?</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Local</td>
+                        <td>Dentro de un método</td>
+                      </tr>
+                      <tr>
+                        <td>Global / de instancia</td>
+                        <td>Dentro de la clase (fuera de métodos)</td>
+                        <td>Accesible desde todos los métodos de la clase</td>
+                                        </tr>
+                    </tbody>
+                  </table>
+                 <p>Ejemplo:</p>
+                 <code><pre>
+                  public class Persona {
+                  // Variable global o de instancia
+                  String nombre = "Rodolfo";
+
+                  public void mostrarNombre() {
+                  // Variable local
+                  int edad = 30;
+                  System.out.println(nombre + ", edad: " + edad);
+                  }
+                }
+                 </pre></code>
+                 <h4>Resumen de tipos de métodos</h4>
+                 <table border="1">
+                   <thead>
+                     <tr>
+                       <th>Tipo</th>
+                       <th>Tiene retorno</th>
+                       <th>Tiene parámetros</th>
+                       <th>Ejemplo</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td>Método simple</td>
+                       <td>No</td>
+                       <td>No</td>
+                       <td><code>public void mostrar()</code></td>
+                     </tr>
+                     <tr>
+                       <td>Con parámetros</td>
+                       <td>No</td>
+                       <td>Sí</td>
+                       <td><code>public void saludar(String nombre)</code></td>
+                     </tr>
+                     <tr>
+                       <td>Con retorno</td>
+                       <td>Sí</td>
+                       <td>Sí</td>
+                       <td><code>public int sumar(int a, int b)</code></td>
+                     </tr>
+                   </tbody>
+                  </table>
+  
                </div>
             </tema-item>
 <!-- 8.Intermedio-POO           -->
@@ -177,16 +1097,120 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Programación Orientada a Objetos.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <p>Te explico cada uno de estos conceptos de Programación Orientada 
+                    a Objetos (POO) en Java, con ejemplos simples para que se entienda mejor:
+                 </p>
+                 <h4> 1. Clases</h4>
+                 <p>Una clase es una plantilla o molde que define cómo serán los objetos. Contiene atributos
+                    (variables) y métodos (funciones).
+                 </p>
+                 <code><pre>
+                  public class Persona {
+                    String nombre;
+                    int edad;
+
+                    void saludar() {
+                    System.out.println("Hola, mi nombre es " + nombre);
+                      }
+                  }
+                 </pre></code>
+                 <h4>🔹 2. Objetos</h4> 
+                 <p>Un objeto es una instancia de una clase. Se crea usando new.</p>
+                 <code><pre>
+                  Persona p1 = new Persona();
+                  p1.nombre = "Juan";
+                  p1.edad = 30;
+                  p1.saludar(); // Imprime: Hola, mi nombre es Juan
+                 </pre></code>
+                 <h4> 3. Encapsulamiento</h4> 
+                 <p>Es ocultar los datos internos de una clase y acceder a ellos solo 
+                    mediante métodos públicos (getters y setters).
+                 </p>
+                 <code><pre>
+                  public class CuentaBancaria {
+                    private double saldo; // Atributo privado
+
+                    public double getSaldo() {
+                      return saldo;
+                    }
+
+                  public void depositar(double cantidad) {
+                    if (cantidad > 0) {
+                    saldo += cantidad;
+                    }
+                  }
+                }
+                 </pre></code>
+                 <p>Uso:</p>
+                 <code><pre>
+                  CuentaBancaria cuenta = new CuentaBancaria();
+                  cuenta.depositar(500);
+                  System.out.println(cuenta.getSaldo()); // Imprime: 500.0
+                 </pre></code>
+                 <h4>4. Constructores</h4> 
+                 <p>Un constructor es un método especial que se llama al crear un objeto. Se usa para inicializar atributos.</p>
+                 <code><pre>
+                  public class Persona {
+                      String nombre;
+                      int edad;
+
+                      // Constructor
+                      public Persona(String nombre, int edad) {
+                      this.nombre = nombre;
+                      this.edad = edad;
+                    }
+                  }
+                 </pre></code> 
+                 <p>Uso:</p>
+                 <code><pre>
+                  Persona p2 = new Persona("Ana", 25);
+                 </pre></code>
+                 <h4>🔹 5. this</h4>
+                 <p>La palabra clave this se refiere al objeto actual. Se usa para distinguir 
+                    entre atributos y parámetros con el mismo nombre.
+                 </p>
+                 <code><pre>
+                  public class Persona {
+                    String nombre;
+
+                  public Persona(String nombre) {
+                    this.nombre = nombre; // this.nombre se refiere al atributo
+                    }
+                  }
+                 </pre></code>
+                 <h4>🔹 6. super</h4> 
+                 <p>La palabra clave super se usa para:<br>
+                  ·&nbsp;Llamar al constructor de la clase padre.<br>
+                  ·&nbsp;Acceder a métodos o atributos heredados.
+                 </p>
+                 <code><pre>
+                  public class Animal {
+                   String tipo;
+
+                   public Animal(String tipo) {
+                   this.tipo = tipo;
+                   }
+
+                   void hacerSonido() {
+                   System.out.println("Sonido genérico");
+                  }
+                }
+
+                  public class Perro extends Animal {
+                  public Perro() {
+                  super("Canino"); // Llama al constructor de Animal
+                  }
+
+                  @Override
+                  void hacerSonido() {
+                  super.hacerSonido(); // Llama al método de la clase padre
+                  System.out.println("Guau!");
+                  }
+                }
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code>   
                </div>
             </tema-item>
 <!-- 9.Intermedio-Herencia y Polimorfismo.           -->
@@ -199,16 +1223,119 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Herencia y Polimorfismo.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔷 1. Herencia</h4>
+                 <p>La herencia permite que una clase herede atributos y métodos de otra. 
+                    Promueve la reutilización de código.<br>
+                    ·&nbsp;🧱 Ejemplo:
+                 </p>
+                 <code><pre>
+                  public class Animal {
+                       void hacerSonido() {
+                            System.out.println("Sonido genérico");
+                        }
+                      }
+
+                  public class Perro extends Animal {
+                         void moverCola() {
+                             System.out.println("El perro mueve la cola");
+                        }
+                      }
+                 </pre></code> 
+                 <p>Uso:</p>
+                 <code><pre>
+                  Perro miPerro = new Perro();
+                  miPerro.hacerSonido(); // Heredado de Animal
+                  miPerro.moverCola();   // Propio de Perro
+                 </pre></code>
+                 <h4>🔷 2. Clases Derivadas (Subclases)</h4> 
+                 <p>Una clase derivada o subclase es la que hereda de otra. Se declara con extends.</p>
+                 <code><pre>
+                  public class Gato extends Animal {
+                      void maullar() {
+                          System.out.println("Miau");
+                      }
+                    }
+                 </pre></code>
+                 <h4>🔷 3. Polimorfismo</h4>
+                 <p>
+                  El polimorfismo permite que un mismo método tenga diferentes comportamientos 
+                  dependiendo del objeto que lo invoque.
+                 </p>
+                 <h5>🔸 Tipos de polimorfismo en Java:</h5>
+                 <p>a. Polimorfismo en tiempo de compilación (Overload)<br>
+                  Overload es cuando hay varios métodos con el mismo nombre pero diferentes parámetros.
+                 </p>
+                 <code><pre>
+                  public class Calculadora {
+                      int sumar(int a, int b) {
+                          return a + b;
+                      }
+
+                      double sumar(double a, double b) {
+                          return a + b;
+                      }
+                    }
+                 </pre></code> 
+                 <p> b. Polimorfismo en tiempo de ejecución (Override)<br>
+                  Override es cuando una subclase redefine un método de su superclase.
+                 </p>
+                 <code><pre>
+                  public class Animal {
+                     void hacerSonido() {
+                         System.out.println("Sonido genérico");
+                      }
+                  }
+
+                  public class Gato extends Animal {
+                      @Override
+                      void hacerSonido() {
+                          System.out.println("Miau");
+                       }
+                  }
+
+                 </pre></code> 
+                 <p>Uso:</p>
+                 <code><pre>
+                  Animal miAnimal = new Gato(); // Polimorfismo
+                  miAnimal.hacerSonido(); // Imprime: Miau
+                  <br>
+                  <p>
+                    Aunque miAnimal es de tipo Animal, el método sobrescrito de Gato se ejecuta.
+                  </p>
+                 </pre></code> 
+                 <h4>🔷 4. Resumen Visual</h4>
+                 <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Concepto</th>
+                        <th>¿Qué hace?</th>
+                        <th>Palabra clave</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Herencia</td>
+                        <td>Reutiliza código de una superclase</td>
+                        <td><code>extends</code></td>
+                      </tr>
+                      <tr>
+                                          <td>Override</td>
+                        <td>Redefine un método heredado</td>
+                        <td><code>@Override</code></td>
+                      </tr>
+                      <tr>
+                        <td>Overload</td>
+                        <td>Crea métodos con mismo nombre, distintos parámetros</td>
+                        <td>(ninguna)</td>
+                      </tr>
+                      <tr>
+                        <td>Polimorfismo</td>
+                        <td>Cambia comportamiento según el tipo del objeto</td>
+                        <td>dinámico</td>
+                      </tr>
+                    </tbody>
+                  </table>
+ 
                </div>
             </tema-item>
 <!-- 10.Intermedio-Interfaces y clases abstractas.           -->
@@ -222,15 +1349,162 @@
                <div>
                  <h2>Interfaces y clases abstractas.</h2>
                  <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔷 1. Clases Abstractas</h4>
+                 <p>Una clase abstracta es una clase que no se puede instanciar 
+                    y puede tener métodos abstractos (sin cuerpo) y métodos normales
+                    (con implementación). Se usa como base para otras clases.
+                 </p>
+                 <p>Ejemplo</p>
+                 <code><pre>
+                  public abstract class Animal {
+                      // Método abstracto (sin cuerpo)
+                      public abstract void hacerSonido();
+
+                      // Método concreto (con implementación)
+                      public void dormir() {
+                          System.out.println("El animal está durmiendo");
+                        }
+                    }
+                 </pre></code> 
+                 <p>Subclase concreta que la implementa:</p>
+                 <code><pre>
+                  public class Perro extends Animal {
+                  @Override
+                  public void hacerSonido() {
+                     System.out.println("Guau");
+                     }
+                  }
+                 </pre></code>
+                 <h4>🔷 2. Interfaces</h4> 
+                 <p>Una interface es como un contrato: define métodos públicos 
+                  abstractos que una clase debe implementar. Las clases usan 
+                  implements para aplicar una interfaz.
+                 </p>
+                 <p>
+                   Ejemplo:
+                 </p>
+                 <code><pre>
+                  public interface Vehiculo {
+                      void arrancar();
+                      void detener();
+                  }
+                 </pre></code>
+                 <p>Clase que implementa la interfaz:</p>
+                 <code><pre>
+                  public class Auto implements Vehiculo {
+                       @Override
+                       public void arrancar() {
+                           System.out.println("El auto arranca");
+                       }
+
+                       @Override
+                       public void detener() {
+                           System.out.println("El auto se detiene");
+                        }
+                    }
+                 </pre></code>
+                 <h4>🔷 3. Diferencias: Clase Abstracta vs Interfaz</h4>
+                 <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Característica</th>
+                        <th>Clase Abstracta</th>
+                        <th>Interfaz</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Herencia</td>
+                        <td><code>extends</code></td>
+                        <td><code>implements</code></td>
+                      </tr>
+                      <tr>
+                        <td>Métodos abstractos</td>
+                        <td>Puede tener</td>
+                        <td>Todos abstractos por defecto (hasta Java 7)</td>
+                      </tr>
+                      <tr>
+                        <td>Métodos con código</td>
+                        <td>Puede tener</td>
+                        <td>Desde Java 8, sí (default/static)</td>
+                      </tr>
+                      <tr>
+                        <td>Múltiples implementaciones</td>
+                        <td>No (solo una clase padre)</td>
+                        <td>Sí (una clase puede implementar varias)</td>
+                      </tr>
+                      <tr>
+                        <td>Constructores</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h4>🔷 4. Métodos Abstractos</h4>
+                  <p>Son métodos sin cuerpo. Las clases hijas deben implementarlos.</p>
+                  <code><pre>
+                    abstract class Figura {
+                         public abstract double calcularArea();
+                    }
+                  </pre></code>
+                  <h4>🔷 5. Interfaces Funcionales (Desde Java 8)</h4>
+                  <p>Una interfaz funcional es una interfaz que tiene solo un método abstracto. 
+                      Son usadas con expresiones lambda.
+                  </p>
+                  <p>Ejemplo:</p>
+                  <code><pre>
+                    @FunctionalInterface
+                    public interface Operacion {
+                        int aplicar(int a, int b);
+                    }
+                  </pre></code> 
+                  <p>Uso con lambda:</p>
+                  <code><pre>
+                    public class Main {
+                       public static void main(String[] args) {
+                           Operacion suma = (a, b) -> a + b;
+                           System.out.println(suma.aplicar(3, 5)); // Imprime: 8
+                         }
+                    }
+                  </pre></code>
+                  <h4>🔚 Resumen</h4> 
+                  <table border="1" cellpadding="8" cellspacing="0">
+                     <thead>
+                       <tr>
+                         <th>Concepto</th>
+                         <th>¿Qué es?</th>
+                         <th>Palabra clave</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td>Clase abstracta</td>
+                         <td>Clase incompleta que sirve como base</td>
+                         <td><code>abstract class</code></td>
+                       </tr>
+                       <tr>
+                         <td>Método abstracto</td>
+                         <td>Método sin cuerpo que se debe implementar</td>
+                         <td><code>abstract</code></td>
+                       </tr>
+                       <tr>
+                         <td>Interfaz</td>
+                         <td>Contrato con métodos abstractos por implementar</td>
+                         <td><code>interface</code></td>
+                       </tr>
+                       <tr>
+                         <td>Implementación</td>
+                                            <td>Clase que aplica una interfaz</td>
+                         <td><code>implements</code></td>
+                       </tr>
+                       <tr>
+                         <td>Interfaz funcional</td>
+                         <td>Interfaz con un solo método abstracto (para lambdas)</td>
+                         <td><code>@FunctionalInterface</code></td>
+                       </tr>
+                     </tbody>
+                   </table>
+  
                </div>
             </tema-item> 
 <!-- 11.Intermedio-Modificadores de acceso.           -->
@@ -243,16 +1517,123 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Modificadores de acceso.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <p>Vamos paso a paso explicando modificadores de acceso, 
+                    modificadores de clase, y manejo de excepciones en Java, 
+                    con ejemplos claros.
+                 </p>
+                 <h4>🔷 1. Modificadores de Acceso</h4>
+                 <p>Los modificadores de acceso controlan la visibilidad de clases, métodos y atributos.</p>
+                 <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Modificador</th>
+                        <th>Accesible desde…</th>
+                        <th>Palabra clave</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>public</code></td>
+                        <td>Cualquier clase de cualquier paquete</td>
+                        <td><code>public</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>private</code></td>
+                        <td>Solo dentro de la misma clase</td>
+                        <td><code>private</code></td>
+                      </tr>
+                      <tr>
+                        <td><code>protected</code></td>
+                        <td>Misma clase, subclases y mismo paquete</td>
+                        <td><code>protected</code></td>
+                      </tr>
+                      <tr>
+                        <td>(por defecto)</td>
+                        <td>Solo dentro del mismo paquete</td>
+                        <td><em>(sin palabra)</em></td>
+                      </tr>
+                   </tbody>
+                 </table>
+                 <h4>🔷 2. Modificadores static y final</h4>
+                 <p>static: pertenece a la clase y no al objeto.</p>
+                 <code><pre>
+                  public class Util {
+                     public static int sumar(int a, int b) {
+                     return a + b;
+                    }
+                  }
+
+                  // Se usa así:
+                  int resultado = Util.sumar(5, 3);
+                 </pre></code> 
+                 <p> final: impide que algo se modifique.<br>
+                  ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;final en variables: no puede cambiar su valor.<br>
+                  ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;final en métodos: no puede ser sobrescrito.<br>
+                  ·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;final en clases: no puede ser heredada.
+                 </p>
+                 <code><pre>
+                  final int PI = 3.1416; // constante
+
+                  final class MiClase {
+                  // Esta clase no puede tener subclases
+                  }
+                 </pre></code>
+                 <h4>🔷 3. Manejo de Excepciones en Java</h4> 
+                 <p>Se usa para manejar errores en tiempo de ejecución sin que el programa se detenga bruscamente.<br>
+                  try-catch:
+                 </p>
+                 <code><pre>
+                  try {
+                      int resultado = 10 / 0; // Error: división por cero
+                  } catch (ArithmeticException e) {
+                      System.out.println("Error: " + e.getMessage());
+                  }
+                 </pre></code>
+                 <p>finally: se ejecuta siempre, haya error o no.</p>
+                 <code><pre>
+                  try {
+                      // Código riesgoso
+                  } catch (Exception e) {
+                     // Manejo
+                  } finally {
+                     System.out.println("Siempre se ejecuta");
+                  }
+                 </pre></code>
+                 <h4>4. throw y throws</h4> 
+                 <p>throw: lanza una excepción específica manualmente.</p>
+                 <code><pre>
+                  if (edad < 0) {
+                  throw new IllegalArgumentException("Edad no puede ser negativa");
+                  }
+                 </pre></code> 
+                 <p>throws: declara que un método puede lanzar una excepción.</p>
+                 <code><pre>
+                  public void leerArchivo(String nombre) throws IOException {
+                 // Puede lanzar IOException
+                }
+                 </pre></code>
+                 <h4>🔷 5. Excepciones Personalizadas </h4>
+                 <p>Puedes crear tus propias excepciones heredando de Exception o RuntimeException.<br>
+                  Ejemplo:
+                 </p>
+                 <code><pre>
+                  public class EdadInvalidaException extends Exception {
+                     public EdadInvalidaException(String mensaje) {
+                     super(mensaje);
+                     }
+                  }
+                 </pre></code> 
+                 <p>Uso:</p>
+                 <code><pre>
+                  public void setEdad(int edad) throws EdadInvalidaException {
+                     if (edad < 0) {
+                        throw new EdadInvalidaException("Edad no válida");
+                     }
+                  }
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
                </div>
             </tema-item>
 <!-- 12.Intermedio-Colecciones.           -->
@@ -265,16 +1646,171 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Colecciones.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔹 1. Listas (List)</h4>
+                 <p>Las listas mantienen el orden de inserción y permiten elementos duplicados.</p>
+                 <p>ArrayList<br>
+                    ·&nbsp;Implementación basada en arreglos dinámicos.<br>
+                    ·&nbsp;Acceso rápido por índice, pero inserciones/eliminaciones son lentas (excepto al final).
+                 </p>
+                 <code><pre>
+                  import java.util.ArrayList;
+
+                  ArrayList<String> lista = new ArrayList<>();
+                  lista.add("Juan");
+                  lista.add("Ana");
+                  System.out.println(lista.get(0)); // Juan
+                 </pre></code> 
+                 <p>LinkedList<br>
+                    ·&nbsp;Basada en lista doblemente enlazada.<br>
+                    ·&nbsp;Inserciones y eliminaciones más rápidas en el medio, pero acceso más lento por índice.
+                 </p>
+                 <code><pre>
+                  import java.util.LinkedList;
+
+                  LinkedList<String> lista = new LinkedList<>();
+                  lista.add("Carlos");
+                  lista.addFirst("Luis");
+                  System.out.println(lista); // [Luis, Carlos]
+                 </pre></code>
+                 <h4>🔹 2. Conjuntos (Set)</h4> 
+                 <p>No permiten elementos duplicados.</p>
+                 <p>HashSet<br>
+                   ·&nbsp;No mantiene orden. <br>
+                   ·&nbsp;Basado en una tabla hash.<br>
+                   ·&nbsp;Muy rápido para búsqueda e inserción.
+                 </p>
+                 <code><pre>
+                  import java.util.HashSet;
+
+                  HashSet<String> conjunto = new HashSet<>();
+                  conjunto.add("Rojo");
+                  conjunto.add("Verde");
+                  conjunto.add("Rojo"); // No se repite
+                  System.out.println(conjunto); // [Rojo, Verde]
+                 </pre></code>
+                 <p>TreeSet<br>
+                  ·&nbsp;Mantiene los elementos en orden natural (alfabético o numérico).<br>
+                  ·&nbsp;Más lento que HashSet.
+                 </p>
+                 <code><pre>
+                  import java.util.TreeSet;
+
+                  TreeSet<Integer> numeros = new TreeSet<>();
+                  numeros.add(5);
+                  numeros.add(2);
+                  numeros.add(9);
+                  System.out.println(numeros); // [2, 5, 9]
+                 </pre></code>
+                 <h4>🔹 3. Mapas (Map)</h4> 
+                 <p>Almacenan pares clave-valor. Las claves deben ser únicas.</p>
+                 <p>HashMap<br>
+                   ·&nbsp;No garantiza orden.<br>
+                   ·&nbsp;Muy eficiente.
+                 </p>
+                 <code><pre>
+                  import java.util.HashMap;
+
+                  HashMap<String, Integer> edades = new HashMap<>();
+                  edades.put("Ana", 30);
+                  edades.put("Luis", 25);
+                  System.out.println(edades.get("Ana")); // 30
+                 </pre></code> 
+                 <p>TreeMap<br>
+                   ·&nbsp;Ordena las claves en orden natural.
+                 </p>
+                 <code><pre>
+                  import java.util.TreeMap;
+ 
+                  TreeMap<String, String> paises = new TreeMap<>();
+                  paises.put("MX", "México");
+                  paises.put("US", "Estados Unidos");
+                  System.out.println(paises); // {MX=México, US=Estados Unidos}
+                 </pre></code>
+                 <h4>🔹 4. Iteradores</h4> 
+                 <p>Se usan para recorrer colecciones con más control que un bucle for.</p>
+                 <code><pre>
+                  import java.util.Iterator;
+                  import java.util.ArrayList;
+
+                  ArrayList<String> nombres = new ArrayList<>();
+                  nombres.add("Ana");
+                  nombres.add("Luis");
+
+                  Iterator<String> it = nombres.iterator();
+                  while (it.hasNext()) {
+                       System.out.println(it.next());
+                  }
+                 </pre></code>
+                 <h4>🔹 5. Bucle for-each</h4> 
+                 <p>Forma más simple de recorrer colecciones.</p>
+                 <code><pre>
+                  for (String nombre : nombres) {
+                      System.out.println(nombre);
+                  }
+                 </pre></code> 
+                 <h4> Resumen </h4>
+                 <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Tipo</th>
+                        <th>Clase</th>
+                        <th>Orden</th>
+                        <th>Duplicados</th>
+                        <th>Clave/Valor</th>
+                        <th>Ejemplo uso</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Lista</td>
+                        <td>ArrayList</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>Acceso rápido</td>
+                      </tr>
+                      <tr>
+                        <td>Lista</td>
+                        <td>LinkedList</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>Inserción rápida</td>
+                      </tr>
+                      <tr>
+                        <td>Conjunto</td>
+                        <td>HashSet</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Detección duplicados</td>
+                      </tr>
+                      <tr>
+                        <td>Conjunto</td>
+                        <td>TreeSet</td>
+                        <td>Sí</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Orden natural</td>
+                      </tr>
+                      <tr>
+                        <td>Mapa</td>
+                        <td>HashMap</td>
+                        <td>No</td>
+                        <td>-</td>
+                        <td>Sí</td>
+                        <td>Acceso por clave</td>
+                      </tr>
+                      <tr>
+                        <td>Mapa</td>
+                        <td>TreeMap</td>
+                        <td>Sí</td>
+                        <td>-</td>
+                        <td>Sí</td>
+                        <td>Orden por clave</td>
+                      </tr>
+                    </tbody>
+                  </table>
                </div>
             </tema-item>
 <!-- 13.Intermedio-Cadenas y Fechas.           -->
@@ -287,16 +1823,123 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Cadenas y Fechas.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔹 1. Cadenas en Java (String y StringBuilder)</h4>
+                 <p>String<br>
+                    ·&nbsp;Es inmutable: no se puede modificar una vez creada.<br>
+                    ·&nbsp;Operaciones comunes:
+                 </p>
+                 <code><pre>
+                  String texto = "Hola";
+                  texto = texto + " mundo"; // Se crea un nuevo objeto
+                  System.out.println(texto); // Hola mundo
+
+                  // Otros métodos útiles
+                  texto.length();
+                  texto.toUpperCase();
+                  texto.contains("mundo");
+                 </pre></code> 
+                 <p>StringBuilder<br>
+                   ·&nbsp;Clase mutable, ideal para concatenar muchas cadenas sin crear nuevos objetos.<br>
+                   ·&nbsp;Mucho más eficiente que String en ciclos o grandes volúmenes.
+                 </p>
+                 <code><pre>
+                  StringBuilder sb = new StringBuilder("Hola");
+                  sb.append(" mundo");
+                  System.out.println(sb.toString()); // Hola mundo
+                 </pre></code> 
+                 <h4>🔹2. Fechas antiguas (Date y Calendar)</h4>
+                 <p>Date (java.util.Date) <br>
+                  ·&nbsp;Clase antigua, reemplazada en gran parte por java.time.<br>
+                  ·&nbsp;Sirve para representar fechas y horas, pero su API es limitada.
+                 </p>
+                 <code><pre>
+                  import java.util.Date;
+
+                  Date ahora = new Date();
+                  System.out.println(ahora); // Muestra fecha y hora actuales
+                 </pre></code>
+                 <p>Calendar<br>
+                 ·&nbsp;Permite manipular componentes individuales de la fecha.
+                 </p>
+                 <code><pre>
+                  import java.util.Calendar;
+
+                  Calendar cal = Calendar.getInstance();
+                  cal.set(2025, Calendar.MAY, 9);
+                  System.out.println(cal.getTime()); // Fri May 09 00:00:00 ...
+                 </pre></code>
+                 <h4>🔹 3. Nueva API de fechas (java.time) – desde Java 8</h4> 
+                 <p>Mucho más moderna, segura y legible.</p>
+                 <p>LocalDate<br>
+                  ·&nbsp;Representa una fecha sin hora (solo año, mes, día).
+                 </p>
+                 <code><pre>
+                  import java.time.LocalDate;
+
+                  LocalDate hoy = LocalDate.now();
+                  LocalDate nacimiento = LocalDate.of(2000, 5, 15);
+                  System.out.println(hoy); // 2025-05-09
+                  System.out.println(nacimiento); // 2000-05-15
+
+                  // Operaciones útiles
+                  System.out.println(hoy.getYear());      // 2025
+                  System.out.println(hoy.plusDays(5));    // 2025-05-14
+                  System.out.println(hoy.isAfter(nacimiento)); // true
+                 </pre></code> 
+                 <p> Otras clases útiles<br>
+                  ·&nbsp;LocalTime: solo la hora (sin fecha).<br>
+                  ·&nbsp;LocalDateTime: fecha + hora.<br>
+                  ·&nbsp;Period: diferencia entre fechas.<br>
+                  ·&nbsp;DateTimeFormatter: para formatear fechas.
+                 </p>
+                 <code><pre>
+                  import java.time.format.DateTimeFormatter;
+
+                  DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                  System.out.println(hoy.format(formato)); // 09/05/2025
+                 </pre></code>  
+                 <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Tema</th>
+                        <th>Clase</th>
+                        <th>Uso principal</th>
+                      </tr>
+                                      </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cadenas</td>
+                        <td><code>String</code></td>
+                        <td>Texto inmutable</td>
+                      </tr>
+                      <tr>
+                        <td>Cadenas eficientes</td>
+                        <td><code>StringBuilder</code></td>
+                        <td>Concatenación y modificación rápida</td>
+                      </tr>
+                      <tr>
+                        <td>Fecha/Hora vieja</td>
+                        <td><code>Date</code>, <code>Calendar</code></td>
+                        <td>Representación básica (obsoleta)</td>
+                      </tr>
+                      <tr>
+                        <td>Fecha moderna</td>
+                        <td><code>LocalDate</code></td>
+                        <td>Fecha sin hora (Java 8+)</td>
+                      </tr>
+                      <tr>
+                        <td>Fecha + Hora</td>
+                        <td><code>LocalDateTime</code></td>
+                        <td>Fecha con hora</td>
+                      </tr>
+                      <tr>
+                        <td>Formateo</td>
+                        <td><code>DateTimeFormatter</code></td>
+                        <td>Cambiar formato de fecha</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                </div>
             </tema-item>
 <!-- 14.Avanzado-PROGRAMACIÓN FUNCIONAL.           -->
@@ -309,16 +1952,176 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Programación Funcional.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
+                 <h4>🔹 ¿Qué es la programación funcional en Java?</h4>
+                 <p>Es un estilo que trata las funciones como ciudadanos de primera clase, 
+                    lo que permite pasar funciones como argumentos, devolverlas, almacenarlas 
+                    en variables, etc. Java incorpora esto mediante:
+                 </p>
+               <p>
+                ·&nbsp;Expresiones lambda<br>
+                ·&nbsp;Interfaces funcionales<br>
+                ·&nbsp;Streams
+               </p>
+               <h4>🔹 1. Expresiones Lambda</h4>
+               <p>Permiten representar funciones anónimas (sin nombre). Sintaxis:</p>
                <code><pre>
+                (parámetros) -> { cuerpo }
                </pre></code> 
-               <p></p>
+               <p>Ejemplo:</p>
                <code><pre>
-               </pre></code> 
-               <p></p>
+                // Tradicional
+                Runnable r = new Runnable() {
+                public void run() {
+                System.out.println("Hola");
+                }
+               };
+
+               // Con lambda
+               Runnable r2 = () -> System.out.println("Hola");
+               </pre></code>
+               <h4>🔹 2. Interfaces Funcionales</h4> 
+               <p>Son interfaces que tienen solo un método abstracto. Se pueden usar con lambdas.</p>
+               <p>✅ Anotación @FunctionalInterface</p>
                <code><pre>
+                @FunctionalInterface
+                interface Operacion {
+                    int aplicar(int a, int b);
+                }
                </pre></code> 
+               <p>Interfaces comunes en java.util.function</p>
+               <table border="1" cellpadding="8" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Interfaz</th>
+                      <th>Descripción</th>
+                      <th>Ejemplo lambda</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>Predicate&lt;T&gt;</code></td>
+                      <td>Devuelve <code>true</code> o <code>false</code></td>
+                      <td><code>x -> x &gt; 5</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>Function&lt;T,R&gt;</code></td>
+                      <td>Transforma un valor de tipo T en tipo R</td>
+                      <td><code>x -> x.toString()</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>Consumer&lt;T&gt;</code></td>
+                      <td>Ejecuta una acción sin devolver nada</td>
+                      <td><code>x -> System.out.println(x)</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>Supplier&lt;T&gt;</code></td>
+                      <td>Provee un valor sin recibir nada</td>
+                      <td><code>() -> "Hola"</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>UnaryOperator&lt;T&gt;</code></td>
+                      <td>Toma un valor y devuelve uno del mismo tipo</td>
+                      <td><code>x -> x * x</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>BinaryOperator&lt;T&gt;</code></td>
+                      <td>Opera con dos valores del mismo tipo T</td>
+                      <td><code>(a, b) -> a + b</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h4>🔹 3. API Stream</h4>
+                <p>Permite trabajar con colecciones de forma funcional, declarativa y fluida.</p>
+                <p>🔸 Ejemplo básico:</p>
+                <code><pre>
+                  import java.util.Arrays;
+                  import java.util.List;
+                  import java.util.stream.Collectors;
+
+                  List<String> nombres = Arrays.asList("Ana", "Luis", "Pedro", "Ana");
+
+                  // Filtrar, transformar a mayúsculas y recolectar
+                  List<String> resultado = nombres.stream()
+                      .filter(n -> !n.equals("Ana"))        // Filtrar
+                      .map(String::toUpperCase)             // Transformar
+                      .collect(Collectors.toList());        // Recolectar
+
+                  System.out.println(resultado); // [LUIS, PEDRO]
+                </pre></code>
+                <h4>🔹 4. Operaciones comunes con Streams</h4>
+                <table border="1" cellpadding="8" cellspacing="0">
+                   <thead>
+                     <tr>
+                       <th>Operación</th>
+                       <th>Qué hace</th>
+                       <th>Ejemplo</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td><code>filter()</code></td>
+                       <td>Filtra elementos</td>
+                       <td><code>.filter(x -> x &gt; 10)</code></td>
+                                     </tr>
+                     <tr>
+                       <td><code>map()</code></td>
+                       <td>Transforma elementos</td>
+                       <td><code>.map(x -> x * 2)</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>collect()</code></td>
+                       <td>Recolecta en una lista, set, etc.</td>
+                       <td><code>.collect(Collectors.toList())</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>forEach()</code></td>
+                       <td>Ejecuta acción por cada elemento</td>
+                       <td><code>.forEach(System.out::println)</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>sorted()</code></td>
+                       <td>Ordena los elementos</td>
+                       <td><code>.sorted()</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>distinct()</code></td>
+                       <td>Elimina duplicados</td>
+                       <td><code>.distinct()</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>count()</code></td>
+                       <td>Cuenta elementos</td>
+                       <td><code>.count()</code></td>
+                     </tr>
+                     <tr>
+                       <td><code>anyMatch()</code></td>
+                       <td>¿Algún elemento cumple condición?</td>
+                       <td><code>.anyMatch(x -> x &lt; 0)</code></td>
+                     </tr>
+                   </tbody>
+                </table>
+                <h4>Ejemplo completo</h4>
+                <code><pre>
+                  import java.util.*;
+                  import java.util.stream.*;
+
+                  public class Ejemplo {
+                      public static void main(String[] args) {
+                          List<Integer> numeros = Arrays.asList(2, 3, 4, 5, 6, 7, 8);
+                  
+                          List<Integer> paresCuadrados = numeros.stream()
+                              .filter(n -> n % 2 == 0)       // Solo pares
+                              .map(n -> n * n)              // Cuadrado
+                              .collect(Collectors.toList());
+
+                          paresCuadrados.forEach(System.out::println); // 4, 16, 36, 64
+                      }
+                  }
+
+                </pre></code> 
+                <p></p>
+                <code><pre>
+                </pre></code> 
                </div>
             </tema-item>
 <!-- 15.Avanzado-PROGRAMACIÓN FUNCIONAL.           -->
@@ -331,16 +2134,112 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Hilos y Concurrencia.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🧵 ¿Qué es un hilo (thread)?</h4>
+                 <p>Un hilo es una unidad de ejecución dentro de un proceso. 
+                    Java permite que múltiples hilos se ejecuten en paralelo, 
+                    lo que se conoce como concurrencia.
+                 </p>
+                 <h4>🧱 Formas de crear hilos en Java</h4>
+                 <table border="1">
+                     <thead>
+                       <tr>
+                         <th>Método</th>
+                         <th>Cómo se hace</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td><strong>Extender <code>Thread</code></strong></td>
+                         <td>Crear una clase que hereda de <code>Thread</code> y sobrescribir <code>run()</code></td>
+                       </tr>
+                       <tr>
+                         <td><strong>Implementar <code>Runnable</code></strong></td>
+                         <td>Crear una clase que implementa <code>Runnable</code> y pasarla a un <code>Thread</code></td>
+                       </tr>
+                     </tbody>
+                 </table>
+                 <code><pre>
+                  class MiHilo extends Thread {
+                  public void run() {
+                  System.out.println("Hola desde el hilo!");
+                     }
+                  }
+                 </pre></code> 
+                 <p>Ejemplo con Runnable:</p>
+                 <code><pre>
+                  class Tarea implements Runnable {
+                  public void run() {
+                  System.out.println("Ejecutando tarea...");
+                    }
+                  }
+
+                 // Uso:
+                 Thread hilo = new Thread(new Tarea());
+                 hilo.start();
+                 </pre></code> 
+                 <h4>🧩 synchronized, wait(), notify()</h4>  
+                 <table border="1">
+                      <thead>
+                        <tr>
+                          <th>Palabra clave</th>
+                          <th>Función</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>synchronized</code></td>
+                          <td>Evita que dos hilos accedan a una sección crítica al mismo tiempo</td>
+                        </tr>
+                        <tr>
+                          <td><code>wait()</code></td>
+                          <td>Hace que un hilo espere hasta que otro lo notifique</td>
+                        </tr>
+                        <tr>
+                          <td><code>notify()</code> / <code>notifyAll()</code></td>
+                          <td>Despierta uno o todos los hilos que están esperando</td>
+                        </tr>
+                      </tbody>
+                 </table>
+                 <p>Ejemplo simple:</p>
+                 <code><pre>
+                  synchronized(obj) {
+                       while (!condicion) {
+                           obj.wait();
+                       }
+                      // hacer algo
+                      obj.notify(); // o notifyAll()
+                  }
+                 </pre></code> 
+                 <h4>⚙️ ExecutorService (desde Java 5)</h4>
+                 <p>Es una interfaz que gestiona un pool de hilos, lo que permite 
+                    ejecutar tareas de manera más eficiente que crear hilos manualmente.
+                 </p>
+                 <p>Ejemplo con ExecutorService:</p>
+                 <code><pre>
+                  import java.util.concurrent.*;
+
+                  ExecutorService executor = Executors.newFixedThreadPool(2);
+
+                  executor.execute(() -> System.out.println("Tarea 1"));
+                  executor.execute(() -> System.out.println("Tarea 2"));
+
+                  executor.shutdown(); // No acepta más tareas
+                 </pre></code> 
+                 <h4>🚦 ¿Qué es la programación concurrente?</h4>
+                 <p>Es un paradigma donde múltiples tareas se ejecutan al mismo tiempo, ya sea de forma paralela 
+                    (con múltiples núcleos) o intercalada (un solo núcleo compartido).
+                 </p>
+                 <h4>✅ Ventajas de la concurrencia:</h4>
+                 <p>
+                  ·&nbsp;Mejor uso de CPU multinúcleo.<br>
+                  ·&nbsp;Mayor rendimiento en tareas como servidores web, procesamiento paralelo, etc.
+                 </p>
+                 <h4>Desafíos:</h4>
+                 <p>
+                  ·&nbsp;Condiciones de carrera.<br>
+                  ·&nbsp;Bloqueos (deadlocks).<br>
+                  ·&nbsp;Dificultad de depuración.
+                 </p>
                </div>
             </tema-item>
 <!-- 16.Avanzado-ENTRADA Y SALIDA.           -->
@@ -352,18 +2251,124 @@
               </titulo>
               <subtitulo></subtitulo>
                <div>
-                 <h2>Entrada y Salida.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               </div>
+                 <h2>Entrada y Salida  de archivos en Java (I/O).</h2>
+                 <p>Java proporciona dos grandes grupos de clases para trabajar con archivos:</p>
+                 <h4>1. Flujos de bytes (Streams)</h4>
+                 <p>Se usan para leer y escribir datos binarios (imágenes, videos, etc.)</p>
+                 <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Clase</th>
+                        <th>Uso</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>InputStream</code></td>
+                        <td>Leer bytes desde una fuente</td>
+                      </tr>
+                      <tr>
+                        <td><code>OutputStream</code></td>
+                        <td>Escribir bytes a un destino</td>
+                      </tr>
+                    </tbody>
+                 </table>
+                 <p>Ejemplo:</p>
+                 <code><pre>
+                  FileInputStream fis = new FileInputStream("archivo.txt");
+                  int dato = fis.read();
+                  fis.close();
+                 </pre></code>
+                 <h4>2. Flujos de caracteres (Readers/Writers)</h4> 
+                 <p>Se usan para leer y escribir texto (caracteres Unicode).</p>
+
+                 <p>Ejemplo:</p>
+                 <table border="1">
+                   <thead>
+                     <tr>
+                       <th>Clase</th>
+                       <th>Uso</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                                        <td><code>Reader</code></td>
+                       <td>Leer caracteres desde una fuente</td>
+                     </tr>
+                     <tr>
+                       <td><code>Writer</code></td>
+                       <td>Escribir caracteres a un destino</td>
+                     </tr>
+                   </tbody>
+                 </table>
+                 <code><pre>
+                  FileWriter fw = new FileWriter("salida.txt");
+                  fw.write("Hola Mundo");
+                  fw.close();
+                 </pre></code>
+                 <h4>💾 Serialización de objetos</h4> 
+                 <p>La serialización permite convertir un objeto en una secuencia de bytes 
+                    para guardarlo en un archivo o enviarlo por red, y luego reconstruirlo.
+                 </p>
+                 <h4>1. ¿Cómo se serializa?</h4>
+                 <p>
+                   ·&nbsp;La clase debe implementar Serializable.<br>
+                   ·&nbsp;Se usa ObjectOutputStream para guardar, y ObjectInputStream para leer.
+                 </p>
+                 <p>
+                  Ejemplo de serialización:
+                 </p>
+                 <code><pre>
+                  import java.io.*;
+
+                  class Persona implements Serializable {
+                       String nombre;
+                       int edad;
+                      }
+
+                       Persona p = new Persona(); 
+                       p.nombre = "Ana";
+                       p.edad = 30;
+
+                       // Guardar objeto
+                       ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("persona.dat"));
+                       oos.writeObject(p);
+                       oos.close();
+                 </pre></code>
+                 <p>Ejemplo de deserialización:</p> 
+                 <code><pre>
+                  ObjectInputStream ois = new ObjectInputStream(new FileInputStream("persona.dat"));
+                  Persona recuperada = (Persona) ois.readObject();
+                  ois.close();
+                 </pre></code>
+                 <h4>🧠 Resumen de clases clave</h4> 
+               <table border="1">
+                  <thead>
+                    <tr>
+                      <th>Tipo</th>
+                     <th>Clase principal</th>
+                     <th>Uso común</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <td>Bytes</td>
+                     <td><code>InputStream</code> / <code>OutputStream</code></td>
+                     <td>Archivos binarios</td>
+                   </tr>
+                   <tr>
+                     <td>Caracteres</td>
+                      <td><code>Reader</code> / <code>Writer</code></td>
+                      <td>Archivos de texto</td>
+                    </tr>
+                    <tr>
+                      <td>Serialización</td>
+                      <td><code>ObjectInputStream</code> / <code>ObjectOutputStream</code></td>
+                      <td>Guardar/cargar objetos</td>
+                    </tr>
+                  </tbody>
+                 </table>
+                 </div>
             </tema-item>
 <!-- 17.Avanzado-Anotaciones.           -->
             <tema-item>
@@ -374,17 +2379,110 @@
               </titulo>
               <subtitulo></subtitulo>
                <div>
-                 <h2>Anotaciones.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h2>Anotaciones en Java.</h2>
+                 <p>Las anotaciones (annotations) son etiquetas especiales en el código que agregan
+                    metainformación y pueden ser utilizadas por el compilador o en tiempo de ejecución 
+                    (por ejemplo, con reflexión).
+                  </p>
+                  <h5>📌 Anotaciones comunes</h5>
+                  <table border="1">
+                    <thead>
+                     <tr>
+                       <th>Anotación</th>
+                        <th>¿Qué hace?</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td><code>@Override</code></td>
+                       <td>Indica que un método está sobrescribiendo uno heredado. Ayuda a detectar errores de escritura.</td>
+                     </tr>
+                     <tr>
+                       <td><code>@Deprecated</code></td>
+                       <td>Marca un elemento como obsoleto; no debe usarse en código nuevo.</td>
+                     </tr>
+                     <tr>
+                       <td><code>@SuppressWarnings</code></td>
+                        <td>Suprime advertencias del compilador, por ejemplo, por uso de tipos sin genéricos.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Ejemplo:</p>
+                  <code><pre>
+                    class Animal {
+                        void sonido() {}
+                    }
+
+                    class Perro extends Animal {
+                        @Override
+                        void sonido() {
+                            System.out.println("Guau");
+                    }
+
+                        @Deprecated
+                        void metodoViejo() {
+                            System.out.println("Obsoleto");
+                        }
+                    }
+                  </pre></code> 
+                  <h3>🧩 Anotaciones personalizadas</h3>
+                  <p>Puedes crear tus propias anotaciones con @interface.</p>
+                  <p>Ejemplo de anotación personalizada:</p>
+                  <code><pre>
+                     @interface Informacion {
+                          String autor();
+                          String fecha();
+                        }
+                  </pre></code> 
+                  <p>Usando la anotación:</p>
+                  <code><pre>
+                    @Informacion(autor = "Juan", fecha = "2025-05-09")
+                    public class Demo {}
+                  </pre></code>
+                  <h3>🔍 Procesamiento con reflexión</h3>
+                  <p>Puedes leer anotaciones en tiempo de ejecución usando reflexión:</p>
+                  <code><pre>
+                    import java.lang.reflect.*;
+
+                    public class Main {
+                         public static void main(String[] args) {
+                             Class<?> clase = Demo.class;
+
+                             if (clase.isAnnotationPresent(Informacion.class)) {
+                             Informacion info = clase.getAnnotation(Informacion.class);
+                             System.out.println("Autor: " + info.autor());
+                             System.out.println("Fecha: " + info.fecha());
+                           }
+                          }
+                        }
+                  </pre></code> 
+                  <h4>Resumen.</h4>
+                   <table border="1">
+                     <thead>
+                       <tr>
+                         <th>Tema</th>
+                         <th>Descripción</th>
+                       </tr>
+                     </thead>
+                     <tbody>                    
+                       <tr>
+                         <td><code>@Override</code></td>
+                        <td>Verifica que se está sobrescribiendo correctamente</td>
+                      </tr>
+                      <tr>
+                        <td><code>@Deprecated</code></td>
+                        <td>Marca métodos/clases obsoletos</td>
+                      </tr>
+                       <tr>
+                        <td><code>Anotaciones personalizadas</code></td>
+                        <td>Permite definir etiquetas propias para clases, métodos, etc.</td>
+                      </tr>
+                      <tr>
+                        <td><code>Reflexión</code></td>
+                        <td>Permite inspeccionar clases y leer anotaciones en tiempo de ejecución</td>
+                      </tr>
+                     </tbody>
+                   </table>
                </div>
             </tema-item>
 <!-- 18.Avanzado-Reflexión y metadatos.           -->
@@ -397,16 +2495,151 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Reflexión y Metadatos.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <p>En Java, reflexión (reflection) es una poderosa característica que permite 
+                    a los programas inspeccionar y manipular clases, interfaces, campos y métodos 
+                    en tiempo de ejecución, incluso si no se conocían en tiempo de compilación. 
+                    Esto se logra a través del paquete java.lang.reflect.
+                 </p>
+                 <h4>🧠 ¿Para qué sirve la reflexión?</h4>
+                 <p>
+                  ·&nbsp;Obtener información sobre clases, métodos, campos y constructores.<br>
+                  ·&nbsp;Crear objetos de clases dinámicamente.<br>
+                  ·&nbsp;Llamar métodos o acceder a campos privados.<br>
+                  ·&nbsp;Leer anotaciones (metadatos) en clases, métodos, etc.
+                 </p>
+                 <h4>🔍 Principales clases del paquete java.lang.reflect</h4>
+                 <table>
+                    <thead>
+                      <tr>
+                        <th>Clase</th>
+                        <th>Función principal</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>Class</code></td>
+                        <td>Representa cualquier clase o interfaz en Java.</td>
+                      </tr>
+                      <tr>
+                        <td><code>Field</code></td>
+                                          <td>Representa atributos o variables de instancia.</td>
+                      </tr>
+                      <tr>
+                        <td><code>Method</code></td>
+                        <td>Representa un método declarado en una clase.</td>
+                      </tr>
+                      <tr>
+                        <td><code>Constructor</code></td>
+                        <td>Representa un constructor de una clase.</td>
+                      </tr>
+                      <tr>
+                        <td><code>Modifier</code></td>
+                        <td>Permite analizar modificadores (public, static...).</td>
+                      </tr>
+                   </tbody>
+                 </table>
+                 <p>🧪 Ejemplo básico de reflexión:</p>
+                 <code><pre>
+                  import java.lang.reflect.*;
+
+                  public class Prueba {
+                      private String mensaje = "Hola";
+                  
+                      public void saludar() {
+                          System.out.println(mensaje);
+                      }
+                  
+                      public static void main(String[] args) throws Exception {
+                          Class<?> clase = Class.forName("Prueba");
+                  
+                          Object obj = clase.getDeclaredConstructor().newInstance();
+                  
+                          Field campo = clase.getDeclaredField("mensaje");
+                          campo.setAccessible(true); // Acceder a campo privado
+                          campo.set(obj, "Hola con reflexión!");
+                  
+                          Method metodo = clase.getDeclaredMethod("saludar");
+                          metodo.invoke(obj); // Imprime: Hola con reflexión!
+                      }
+                  }
+                 </pre></code>
+                 <h4>🏷️ ¿Qué son los metadatos?</h4> 
+                 <p>Son información adicional sobre el código, usualmente representada mediante 
+                    anotaciones (@Override, @Deprecated, etc.). Con reflexión, puedes leer 
+                    anotaciones en tiempo de ejecución.
+                 </p>
+                 <h4>🧰 Casos comunes de uso:</h4>
+                 <p>
+                  ·&nbsp;Frameworks como Spring o Hibernate.<br>
+                  ·&nbsp;Inyección de dependencias.<br>
+                  ·&nbsp;Sistemas de serialización y deserialización.<br>
+                  ·&nbsp;Sistemas de pruebas automatizadas (JUnit).
+                 </p>
+                 <h4>Ejemplo Reflexión y Anotaciones Personalizadas</h4>
+                 <p>🎯 Objetivo:<br>
+                  ·&nbsp;Crear una anotación personalizada llamada @Informacion.<br>
+                  ·&nbsp;Aplicarla a una clase y a un método.<br>
+                  ·&nbsp;Usar reflexión para leer esa anotación en tiempo de ejecución.
+                 </p>
+                 <h4>Paso 1: Definir la anotación</h4>
+                 <code><pre>
+                  import java.lang.annotation.*;
+
+                  @Retention(RetentionPolicy.RUNTIME)
+                  @Target({ElementType.TYPE, ElementType.METHOD})
+                  public @interface Informacion {
+                  String autor();
+                  String fecha();
+                  }
+                 </pre></code> 
+                 <p>
+                   ·&nbsp;@Retention(RetentionPolicy.RUNTIME): hace que la anotación esté disponible en tiempo de ejecución.<br>
+                   ·&nbsp;@Target(...): define dónde se puede usar la anotación (clases, métodos, etc.).
+                 </p>
+                 <h4>Paso 2: Usar la anotación</h4>
+                 <code><pre>
+                  @Informacion(autor = "Juan", fecha = "2025-05-09")
+                  public class Demo {
+
+                       @Informacion(autor = "Juan", fecha = "2025-05-09")
+                       public void saludar() {
+                           System.out.println("Hola mundo");
+                        }
+                  }
+                 </pre></code> 
+                 <h4> Paso 3: Leer la anotación con reflexión</h4>
+                 <code><pre>
+                  import java.lang.reflect.*;
+
+                  public class LectorAnotacion {
+                      public static void main(String[] args) {
+                          try {
+                              Class<?> clase = Demo.class;
+                  
+                              // Leer anotación de la clase
+                              if (clase.isAnnotationPresent(Informacion.class)) {
+                                  Informacion info = clase.getAnnotation(Informacion.class);
+                                  System.out.println("Clase - Autor: " + info.autor() + ", Fecha: " + info.fecha());
+                              }
+                  
+                              // Leer anotación del método
+                              Method metodo = clase.getDeclaredMethod("saludar");
+                              if (metodo.isAnnotationPresent(Informacion.class)) {
+                                  Informacion infoMetodo = metodo.getAnnotation(Informacion.class);
+                                  System.out.println("Método - Autor: " + infoMetodo.autor() + ", Fecha: " + infoMetodo.fecha());
+                              }
+                  
+                          } catch (Exception e) {
+                              e.printStackTrace();
+                          }
+                      }
+                  }
+                 </pre></code> 
+                 <p>🧾 Salida esperada:</p>
+                 <code><pre>
+                  Clase - Autor: Juan, Fecha: 2025-05-09
+                  Método - Autor: Juan, Fecha: 2025-05-09
+                 </pre></code> 
                </div>
             </tema-item>
 <!-- 19.Avanzado-Módulos(desde Java 9).           -->
@@ -419,16 +2652,65 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Módulos desde Java 9.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔷 ¿Qué es un módulo en Java?</h4>
+                 <p>Un módulo es una unidad de encapsulamiento de código que agrupa 
+                    paquetes y recursos. Cada módulo declara qué paquetes expone y 
+                    qué dependencias necesita mediante el archivo module-info.java.
+                 </p>
+                 <h4></h4>
+                 <code><pre>
+                  mi-aplicacion/
+                  ├── module-info.java
+                  ├── com/
+                  │   └── ejemplo/
+│                 └── Saludo.java
+                 </pre></code> 
+                 <p>🧾 Ejemplo de module-info.java</p>
+                 <code><pre>
+                  module com.ejemplo.saludo {
+                     exports com.ejemplo;            // Expone el paquete com.ejemplo
+                     requires java.sql;              // Requiere el módulo java.sql
+                  }
+                 </pre></code> 
+                 <p>
+                   ·&nbsp;exports: hace visible un paquete a otros módulos.<br>
+                   ·&nbsp;requires: indica que este módulo depende de otro.
+                 </p>
+                 <h4>🧩 Encapsulamiento de paquetes</h4>
+                 <p>Con módulos:<br>
+                   ·&nbsp;Solo los paquetes exportados en module-info.java son accesibles desde otros módulos.<br>
+                   ·&nbsp;Los demás paquetes quedan encapsulados, es decir, no se pueden usar fuera del módulo, aunque sean public.<br>
+                   Esto refuerza la ocultación y reduce dependencias innecesarias.
+                 </p> 
+                 <h4>🎯 Ventajas del sistema de módulos</h4>
+                 <code><pre>
+                  <table border="1">
+                    <thead>
+                      <tr>
+                        <th>Ventaja</th>
+                        <th>Descripción</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Encapsulamiento fuerte</td>
+                        <td>Oculta detalles internos no exportados.</td>
+                      </tr>
+                      <tr>
+                        <td>Carga más rápida</td>
+                        <td>Solo se cargan los módulos necesarios.</td>
+                      </tr>
+                      <tr>
+                        <td>Dependencias claras</td>
+                        <td>Declara explícitamente qué módulos necesita.</td>
+                      </tr>
+                      <tr>
+                        <td>Seguridad mejorada</td>
+                        <td>Menos superficie de ataque al ocultar APIs no necesarias.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 </pre></code> 
                </div>
             </tema-item>
 <!-- 20.Avanzado-Buenas prácticas y patrones de diseño.           -->
@@ -441,16 +2723,65 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Buenas Prácticas y Patrones de Diseño.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <p>
+                  ·&nbsp;Nombres claros: Usa nombres descriptivos para clases, métodos y variables.<br>
+                  ·&nbsp;Una clase, una responsabilidad: Mantén las clases enfocadas en una tarea.<br>
+                  ·&nbsp;Evita duplicación de código: Reutiliza métodos y abstrae lógica repetida.<br>
+                  ·&nbsp;Usa colecciones adecuadas: Elige entre List, Set, Map según el caso.<br>
+                  ·&nbsp;Manejo adecuado de excepciones: Usa try-catch solo cuando sea necesario.
+                 </p>
+                <h4>🧱 Principios SOLID</h4> 
+                <table border="1">
+                 <thead>
+                    <tr>
+                     <th>Letra</th>
+                     <th>Principio</th>
+                     <th>Descripción breve</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <td>S</td>
+                     <td><strong>Single Responsibility</strong></td>
+                      <td>Una clase debe tener una única razón para cambiar.</td>
+                   </tr>
+                   <tr>
+                     <td>O</td>
+                     <td><strong>Open/Closed</strong></td>
+                     <td>Abierto a extensión, cerrado a modificación.</td>
+                   </tr>
+                   <tr>
+                     <td>L</td>
+                     <td><strong>Liskov Substitution</strong></td>
+                     <td>Una subclase debe poder usarse como su clase padre sin alterar el comportamiento.</td>
+                   </tr>
+                   <tr>
+                     <td>I</td>
+                      <td><strong>Interface Segregation</strong></td>
+                     <td>No forzar a implementar interfaces con métodos que no se necesitan.</td>
+                    </tr>
+                    <tr>
+                      <td>D</td>
+                      <td><strong>Dependency Inversion</strong></td>
+                      <td>Depender de abstracciones, no de implementaciones concretas.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h4>🧹 Limpieza de Código</h4>
+                <p>
+                  ·&nbsp;Divide métodos largos en funciones pequeñas con nombres claros.<br>
+                  ·&nbsp;Evita comentarios innecesarios: el código limpio se explica por sí solo.<br>
+                  ·&nbsp;Elimina código muerto (no usado).<br>
+                  ·&nbsp;Aplica consistencia en estilo y formato.
+                </p>
+                <h4>🔧 Refactorización</h4>
+               <p>Es el proceso de mejorar la estructura del código sin cambiar su funcionalidad:</p>
+               <p>
+                ·&nbsp;Extraer métodos repetidos.<br>
+                ·&nbsp;Renombrar variables para mejor comprensión.<br>
+                ·&nbsp;Aplicar patrones donde sea necesario.<br>
+                ·&nbsp;Simplificar condicionales complejos.
+               </p>
                </div>
             </tema-item>
 <!-- 21.Avanzado-Pruebas con JUnit.           -->
@@ -463,16 +2794,196 @@
               <subtitulo></subtitulo>
                <div>
                  <h2>Pruebas con JUnit.</h2>
-                 <p>Sólo texto simple.</p>
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
-               <p></p>
-               <code><pre>
-               </pre></code> 
+                 <h4>🔹 ¿Qué es JUnit?</h4>
+                 <p>JUnit es un framework para escribir pruebas unitarias en Java. 
+                    Permite verificar que los métodos de una clase funcionan correctamente.
+                 </p>
+                 <h4>🔹 Anotaciones principales de JUnit</h4>
+                 <table border="1">
+                   <tr>
+                      <th>Anotación</th>
+                      <th>Propósito</th>
+                    </tr>
+                    <tr>
+                      <td><code>@Test</code></td>
+                      <td>Marca un método como prueba.</td>
+                    </tr>
+                    <tr>
+                      <td><code>@BeforeEach</code></td>
+                      <td>Se ejecuta <strong>antes</strong> de cada prueba. (Inicialización)</td>
+                    </tr>
+                    <tr>
+                      <td><code>@AfterEach</code></td>
+                      <td>Se ejecuta <strong>después</strong> de cada prueba. (Limpieza)</td>
+                    </tr>
+                   <tr>
+                     <td><code>@BeforeAll</code></td>
+                     <td>Se ejecuta <strong>una vez</strong> antes de todas las pruebas (requiere <code>static</code>).</td>
+                   </tr>
+                    <tr>
+                      <td><code>@AfterAll</code></td>
+                      <td>Se ejecuta <strong>una vez</strong> después de todas las pruebas (requiere <code>static</code>).</td>
+                    </tr>
+                 </table>
+                 <h4>🔹 Métodos assert comunes (JUnit)</h4>
+                 <table border="1">
+                  <tr>
+                    <th>Método</th>
+                    <th>Qué hace</th>
+                  </t>
+                  <tr>
+                    <td><code>assertEquals(a, b)</code></td>
+                    <td>Verifica que <code>a</code> y <code>b</code> son iguales</td>
+                  </tr>
+                   <tr>
+                     <td><code>assertTrue(condición)</code></td>
+                     <td>Verifica que la condición es verdadera</td>
+                   </tr>
+                   <tr>
+                     <td><code>assertFalse(condición)</code></td>
+                    <td>Verifica que la condición es falsa</td>
+                  </tr>
+                  <tr>
+                    <td><code>assertThrows()</code></td>
+                    <td>Verifica que se lanza una excepción</td>
+                  </tr>
+                  <tr>
+                    <td><code>assertNotNull(obj)</code></td>
+                     <td>Verifica que el objeto no sea <code>null</code></td>
+                   </tr>
+                </table>
+                 <p>🔹 Ejemplo básico con JUnit 5</p>
+                 <code><pre>
+                  import org.junit.jupiter.api.*;
+
+                  import static org.junit.jupiter.api.Assertions.*;
+
+                  class CalculadoraTest {
+                  
+                      Calculadora calc;
+                  
+                     @BeforeEach
+                     void setUp() {
+                         calc = new Calculadora();
+                     }
+                  
+                      @Test
+                      void sumaDebeSerCorrecta() {
+                          assertEquals(5, calc.sumar(2, 3));
+                      }
+                  
+                     @Test
+                     void divisionPorCeroLanzaExcepcion() {
+                         assertThrows(ArithmeticException.class, () -> calc.dividir(5, 0));
+                     }
+                  
+                     @AfterEach
+                     void tearDown() {
+                         calc = null;
+                     }
+                  }
+                 </pre></code>
+                 <h4>🔹 ¿Qué es Mockito?</h4> 
+                 <p>Mockito es una librería para crear mocks o simulacros: objetos falsos 
+                    que imitan el comportamiento de dependencias reales para pruebas aisladas.
+                 </p>
+                 <h4>🔹 Conceptos clave de Mockito</h4>
+                 <table border="1">
+                   <tr>
+                     <th>Función</th>
+                     <th>Descripción</th>
+                   </tr>
+                   <tr>
+                     <td><code>mock(Clase.class)</code></td>
+                     <td>Crea un objeto simulado.</td>
+                   </tr>
+                   <tr>
+                     <td><code>when(...).thenReturn(...)</code></td>
+                     <td>Define qué devolver cuando se llama a un método simulado.</td>
+                   </tr>
+                   <tr>
+                     <td><code>verify(mock)</code></td>
+                     <td>Verifica que un método fue llamado en el mock.</td>
+                   </tr>
+                 </table>
+                 <p>🔹 Ejemplo con Mockito</p>
+                 <code><pre>
+                  import static org.mockito.Mockito.*;
+                  import org.junit.jupiter.api.Test;
+                  import java.util.List;
+
+                  public class EjemploMockito {
+                  
+                      @Test
+                      void pruebaMockLista() {
+                          List<String> listaMock = mock(List.class);
+                  
+                          when(listaMock.get(0)).thenReturn("Hola");
+                  
+                          assertEquals("Hola", listaMock.get(0));
+                  
+                          verify(listaMock).get(0);
+                      }
+                  }
+                 </pre></code>
+                 <h4>Resumen.</h4>
+                 <code><pre>
+                  <table border="1">
+                     <tr>
+                      <th>Concepto</th>
+                       <th>Descripción</th>
+                       <th>Ejemplo</th>
+                     </tr>
+                     <tr>
+                       <td>Mock</td>
+                       <td>Objeto simulado que imita el comportamiento de una clase real.</td>
+                       <td><code>MiServicio mock = mock(MiServicio.class);</code></td>
+                     </tr>
+                    <tr>
+                       <td>Stubbing</td>
+                       <td>Definir qué debe devolver un método simulado.</td>
+                       <td><code>when(mock.metodo()).thenReturn("Valor");</code></td>
+                     </tr>
+                     <tr>
+                       <td>Verificación</td>
+                       <td>Comprobar que se llamó a un método específico.</td>
+                       <td><code>verify(mock).metodo();</code></td>
+                     </tr>
+                     <tr>
+                       <td>ArgumentMatchers</td>
+                       <td>Permite usar valores genéricos en stubs o verificaciones.</td>
+                       <td><code>when(mock.metodo(anyInt())).thenReturn("ok");</code></td>
+                                       </tr>
+                                       <tr>
+                       <td>Inyección de mocks</td>
+                       <td>Mocks que se inyectan automáticamente en la clase a probar.</td>
+                       <td><code>@InjectMocks</code> + <code>@Mock</code></td>
+                     </tr>
+                     <tr>
+                       <td>Spy</td>
+                       <td>Parcialmente real: permite usar métodos reales y simular algunos.</td>
+                       <td><code>SpyList spy = spy(new ArrayList());</code></td>
+                     </tr>
+                  </table>
+                 </pre></code> 
+                 <!-- <p></p>
+                 <code><pre>
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code> 
+                 <p></p>
+                 <code><pre>
+                 </pre></code>  -->
                </div>
             </tema-item>                                              
          </mi-lista>
